@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>cxgn_breedbase.public</title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <link rel="icon" type="image/png" sizes="16x16" href="../favicon.png">
+        <!-- Bootstrap 3.3.5 -->
+        <link rel="stylesheet" href="../bower/admin-lte/bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="../bower/font-awesome/css/font-awesome.min.css">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="../bower/ionicons/css/ionicons.min.css">
+        <!-- DataTables -->
+        <link rel="stylesheet" href="../bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" href="../bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+        <!-- Code Mirror -->
+        <link rel="stylesheet" href="../bower/codemirror/codemirror.css">
+        <!-- Fonts -->
+        <link href='../fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+        <link href='../fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+
+        <!-- Theme style -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/AdminLTE.min.css">
+        <!-- Salvattore -->
+        <link rel="stylesheet" href="../bower/salvattore/salvattore.css">
+        <!-- AdminLTE Skins. Choose a skin from the css/skins
+           folder instead of downloading all of them to reduce the load. -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/skins/_all-skins.min.css">
+        <!-- SchemaSpy -->
+        <link rel="stylesheet" href="../schemaSpy.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="../bower/html5shiv/html5shiv.min.js"></script>
+        <script src="../bower/respond/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+    <body class="hold-transition skin-blue layout-top-nav">
+        <div class="wrapper">
+            <header class="main-header">
+                <nav class="navbar navbar-static-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <a href="../index.html" class="navbar-brand"><b>cxgn_breedbase</b></a><span class="navbar-brand" style="padding-left: 0">.public</span>
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"><i class="fa fa-bars"></i></button>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a href="../index.html">Tables <span class="sr-only">(current)</span></a></li>
+                                <li><a href="../columns.html" title="All of the columns in the schema">Columns</a></li>
+                                <li><a href="../constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+                                <li><a href="../relationships.html" title="Diagram of table relationships">Relationships</a></li>
+                                <li><a href="../orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>
+                                <li><a href="../anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+                                <li><a href="../routines.html" title="Procedures and functions">Routines</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                        <!-- Navbar Right Menu -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </nav>
+            </header>
+            <!-- Main content -->
+            <!-- Full Width Column -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>create_materialized_markerview(refresh boolean)</h1><br />
+                </section>
+                <!-- Main content -->
+                <section class="content">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+                            <h3 id="Columns" class="box-title">Parameters</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table id="standard_table" class="table table-bordered table-striped dataTable" role="grid">
+                                <thead align='left'>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Type</th>
+                                    <th>Mode</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>refresh</td>
+                                    <td>boolean</td>
+                                    <td>IN</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-file-code-o"></i>
+                            <h3 id="RoutineDefinition" class="box-title">Definition</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <textarea id="sql-script-codemirror" name="sql-script-codemirror" rows="" style="display: none;">DECLARE&#10;&#9;&#9;maprow RECORD;&#10;&#9;&#9;querystr TEXT;&#10;&#9;&#9;queries TEXT[];&#10;&#9;&#9;emptyquery TEXT;&#10;&#9;&#9;matviewquery TEXT;&#10;&#9;BEGIN&#10;&#9;&#10;&#9;&#9;-- Remove exsiting materialized view, if it exists&#10;&#9;&#9;DROP MATERIALIZED VIEW IF EXISTS public.materialized_markerview;&#10;&#10;&#9;&#9;-- Get the unique species / reference genome combinations from the nd_protocolprop table&#10;&#9;&#9;FOR maprow IN (&#10;&#9;&#9;&#9;SELECT value-&gt;&gt;&#39;species_name&#39; AS species,&#10;&#9;&#9;&#9;&#9;concat(&#10;&#9;&#9;&#9;&#9;&#9;substring(split_part(value-&gt;&gt;&#39;species_name&#39;, &#39; &#39;, 1), 1, 1),&#10;&#9;&#9;&#9;&#9;&#9;substring(split_part(value-&gt;&gt;&#39;species_name&#39;, &#39; &#39;, 2), 1, 1)&#10;&#9;&#9;&#9;&#9;) AS species_abbreviation,&#10;&#9;&#9;&#9;&#9;value-&gt;&gt;&#39;reference_genome_name&#39; AS reference_genome,&#10;&#9;&#9;&#9;&#9;replace(replace(value-&gt;&gt;&#39;reference_genome_name&#39;, &#39;_&#39;, &#39;&#39;), &#39; &#39;, &#39;&#39;) AS reference_genome_cleaned&#10;&#9;&#9;&#9;FROM nd_protocolprop &#10;&#9;&#9;&#9;WHERE type_id &#61; (SELECT cvterm_id FROM public.cvterm WHERE name &#61; &#39;vcf_map_details&#39;)&#10;&#9;&#9;&#9;GROUP BY species, reference_genome&#10;&#9;&#9;)&#10;&#9;&#9;&#10;&#9;&#9;-- Loop through each unique combination of species / reference genome and build the marker query&#10;&#9;&#9;LOOP&#10;&#9;&#9;&#9;querystr :&#61; &#39;SELECT nd_protocolprop.nd_protocol_id, &#39;&#39;&#39; || maprow.species || &#39;&#39;&#39; AS species_name, &#39;&#39;&#39; || maprow.reference_genome || &#39;&#39;&#39; AS reference_genome_name, s.value-&gt;&gt;&#39;&#39;name&#39;&#39; AS marker_name, s.value-&gt;&gt;&#39;&#39;chrom&#39;&#39; AS chrom, cast(coalesce(nullif(s.value-&gt;&gt;&#39;&#39;pos&#39;&#39;,&#39;&#39;&#39;&#39;),NULL) as numeric) AS pos, s.value-&gt;&gt;&#39;&#39;ref&#39;&#39; AS ref, s.value-&gt;&gt;&#39;&#39;alt&#39;&#39; AS alt, CASE WHEN s.value-&gt;&gt;&#39;&#39;alt&#39;&#39; &lt; s.value-&gt;&gt;&#39;&#39;ref&#39;&#39; THEN concat(&#39;&#39;&#39; || maprow.species_abbreviation || &#39;&#39;&#39;, &#39;&#39;&#39; || maprow.reference_genome_cleaned || &#39;&#39;&#39;, &#39;&#39;_&#39;&#39;, REGEXP_REPLACE(s.value-&gt;&gt;&#39;&#39;chrom&#39;&#39;, &#39;&#39;^chr?&#39;&#39;, &#39;&#39;&#39;&#39;), &#39;&#39;_&#39;&#39;, s.value-&gt;&gt;&#39;&#39;pos&#39;&#39;, &#39;&#39;_&#39;&#39;, s.value-&gt;&gt;&#39;&#39;alt&#39;&#39;, &#39;&#39;_&#39;&#39;, s.value-&gt;&gt;&#39;&#39;ref&#39;&#39;) ELSE concat(&#39;&#39;&#39; || maprow.species_abbreviation || &#39;&#39;&#39;, &#39;&#39;&#39; || maprow.reference_genome_cleaned || &#39;&#39;&#39;, &#39;&#39;_&#39;&#39;, REGEXP_REPLACE(s.value-&gt;&gt;&#39;&#39;chrom&#39;&#39;, &#39;&#39;^chr?&#39;&#39;, &#39;&#39;&#39;&#39;), &#39;&#39;_&#39;&#39;, s.value-&gt;&gt;&#39;&#39;pos&#39;&#39;, &#39;&#39;_&#39;&#39;, s.value-&gt;&gt;&#39;&#39;ref&#39;&#39;, &#39;&#39;_&#39;&#39;, s.value-&gt;&gt;&#39;&#39;alt&#39;&#39;) END AS variant_name FROM nd_protocolprop, LATERAL jsonb_each(nd_protocolprop.value) s(key, value) WHERE type_id &#61; (SELECT cvterm_id FROM public.cvterm WHERE name &#61; &#39;&#39;vcf_map_details_markers&#39;&#39;) AND nd_protocol_id IN (SELECT nd_protocol_id FROM nd_protocolprop WHERE value-&gt;&gt;&#39;&#39;species_name&#39;&#39; &#61; &#39;&#39;&#39; || maprow.species || &#39;&#39;&#39; and value-&gt;&gt;&#39;&#39;reference_genome_name&#39;&#39; &#61; &#39;&#39;&#39; || maprow.reference_genome || &#39;&#39;&#39; AND type_id &#61; (SELECT cvterm_id FROM public.cvterm WHERE name &#61; &#39;&#39;vcf_map_details&#39;&#39;))&#39;;&#10;&#9;&#9;&#9;queries :&#61; array_append(queries, querystr);&#10;&#10;&#9;&#9;END LOOP;&#10;&#10;&#9;&#9;-- Add an empty query in case there is no existing marker data&#10;&#9;&#9;emptyquery :&#61; &#39;SELECT column1::int AS nd_protocol_id, column2::text AS species_name, column3::text AS reference_genome_name, column4::text AS marker_name, column5::text AS chrom, column6::numeric AS pos, column7::text AS ref, column8::text AS alt, column9::text AS variant_name FROM (values (null,null,null,null,null,null,null,null,null)) AS x WHERE false&#39;;&#10;&#9;&#9;queries :&#61; array_append(queries, emptyquery);&#10;&#9;&#9;&#10;&#9;&#9;-- Combine queries with a UNION&#10;&#9;&#9;matviewquery :&#61; array_to_string(queries, &#39; UNION &#39;);&#10;&#10;&#9;&#9;-- Build the materialized view&#10;&#9;&#9;EXECUTE &#39;CREATE MATERIALIZED VIEW public.materialized_markerview AS (&#39; || matviewquery || &#39;) WITH NO DATA&#39;;&#10;&#9;&#9;ALTER MATERIALIZED VIEW public.materialized_markerview OWNER TO web_usr;&#10;&#10;&#9;&#9;-- Add indexes&#10;&#9;&#9;CREATE INDEX materialized_markerview_idx1 ON public.materialized_markerview(nd_protocol_id);&#10;&#9;&#9;CREATE INDEX materialized_markerview_idx2 ON public.materialized_markerview(species_name);&#10;&#9;&#9;CREATE INDEX materialized_markerview_idx3 ON public.materialized_markerview(reference_genome_name);&#10;&#9;&#9;CREATE INDEX materialized_markerview_idx4 ON public.materialized_markerview(marker_name);&#10;&#9;&#9;CREATE INDEX materialized_markerview_idx5 ON public.materialized_markerview(UPPER(marker_name));&#10;&#9;&#9;CREATE INDEX materialized_markerview_idx6 ON public.materialized_markerview(chrom);&#10;&#9;&#9;CREATE INDEX materialized_markerview_idx7 ON public.materialized_markerview(pos);&#10;&#9;&#9;CREATE INDEX materialized_markerview_idx8 ON public.materialized_markerview(variant_name);&#10;&#9;&#9;CREATE INDEX materialized_markerview_idx9 ON public.materialized_markerview(UPPER(variant_name));&#10;&#9;&#9;CREATE INDEX materialized_markerview_idx10 ON public.materialized_markerview USING GIN(marker_name gin_trgm_ops);&#10;&#9;&#9;CREATE INDEX materialized_markerview_idx11 ON public.materialized_markerview USING GIN(variant_name gin_trgm_ops);&#10;&#10;&#9;&#9;-- Refresh materialzied view, if requested with function argument&#10;&#9;&#9;IF $1 THEN&#10;&#9;&#9;&#9;EXECUTE &#39;REFRESH MATERIALIZED VIEW public.materialized_markerview&#39;;&#10;&#9;&#9;END IF;&#10;&#10;&#9;&#9;-- Return true if the materialized view is refreshed&#10;&#9;&#9;RETURN $1;&#10;&#10;&#9;END</textarea>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <!-- /.content-wrapper -->
+            <footer class="main-footer">
+                <div>
+                    <div class="pull-right hidden-xs">
+                        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+                        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+                    </div>
+                    <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.2.4</a></strong>
+                </div>
+                <!-- /.container -->
+            </footer>
+        </div>
+        <!-- ./wrapper -->
+
+        <!-- jQuery 2.2.3 -->
+        <script src="../bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+        <script src="../bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+        <!-- Bootstrap 3.3.5 -->
+        <script src="../bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+        <!-- DataTables -->
+        <script src="../bower/datatables.net/jquery.dataTables.min.js"></script>
+        <script src="../bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+        <script src="../bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.html5.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.print.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+        <!-- SheetJS -->
+        <script src="../bower/js-xlsx/xlsx.full.min.js"></script>
+        <!-- pdfmake -->
+        <script src="../bower/pdfmake/pdfmake.min.js"></script>
+        <script src="../bower/pdfmake/vfs_fonts.js"></script>
+        <!-- SlimScroll -->
+        <script src="../bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+        <!-- FastClick -->
+        <script src="../bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+        <!-- Salvattore -->
+        <script src="../bower/salvattore/salvattore.min.js"></script>
+        <!-- AnchorJS -->
+        <script src="../bower/anchor-js/anchor.min.js"></script>
+        <!-- CodeMirror -->
+        <script src="../bower/codemirror/codemirror.js"></script>
+        <script src="../bower/codemirror/sql.js"></script>
+        <!-- AdminLTE App -->
+        <script src="../bower/admin-lte/dist/js/app.min.js"></script>
+        <script src="routine.js"></script>
+        <script src="../schemaSpy.js"></script>
+    </body>
+</html>

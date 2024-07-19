@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>locus_dbxref_evidence - cxgn_breedbase.phenome</title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <link rel="icon" type="image/png" sizes="16x16" href="../favicon.png">
+        <!-- Bootstrap 3.3.5 -->
+        <link rel="stylesheet" href="../bower/admin-lte/bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="../bower/font-awesome/css/font-awesome.min.css">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="../bower/ionicons/css/ionicons.min.css">
+        <!-- DataTables -->
+        <link rel="stylesheet" href="../bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" href="../bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+        <!-- Code Mirror -->
+        <link rel="stylesheet" href="../bower/codemirror/codemirror.css">
+        <!-- Fonts -->
+        <link href='../fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+        <link href='../fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+
+        <!-- Theme style -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/AdminLTE.min.css">
+        <!-- Salvattore -->
+        <link rel="stylesheet" href="../bower/salvattore/salvattore.css">
+        <!-- AdminLTE Skins. Choose a skin from the css/skins
+           folder instead of downloading all of them to reduce the load. -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/skins/_all-skins.min.css">
+        <!-- SchemaSpy -->
+        <link rel="stylesheet" href="../schemaSpy.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="../bower/html5shiv/html5shiv.min.js"></script>
+        <script src="../bower/respond/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+    <body class="hold-transition skin-blue layout-top-nav">
+        <div class="wrapper">
+            <header class="main-header">
+                <nav class="navbar navbar-static-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <a href="../index.html" class="navbar-brand"><b>cxgn_breedbase</b></a><span class="navbar-brand" style="padding-left: 0">.phenome</span>
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"><i class="fa fa-bars"></i></button>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a href="../index.html">Tables <span class="sr-only">(current)</span></a></li>
+                                <li><a href="../columns.html" title="All of the columns in the schema">Columns</a></li>
+                                <li><a href="../constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+                                <li><a href="../relationships.html" title="Diagram of table relationships">Relationships</a></li>
+                                <li><a href="../orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>
+                                <li><a href="../anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+                                <li><a href="../routines.html" title="Procedures and functions">Routines</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                        <!-- Navbar Right Menu -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </nav>
+            </header>
+            <!-- Main content -->
+            <!-- Full Width Column -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>locus_dbxref_evidence</h1><p><span id="recordNumber">0</span> rows</p><br />
+                </section>
+                <!-- Main content -->
+                <section class="content">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+                            <h3 id="Columns" class="box-title">Columns</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table
+                                    id="standard_table"
+                                    class="table table-bordered table-striped dataTable"
+                                    role="grid"
+                                    data-paging="true"
+                                    data-page-length="10"
+                                    data-length-change="false">
+                                <thead align='left'>
+                                <tr>
+                                    <th>Column</th>
+                                    <th>Type</th>
+                                    <th>Size</th>
+                                    <th title='Are nulls allowed?'>Nulls</th>
+                                    <th title='Is column automatically updated?'>Auto</th>
+                                    <th title='Default value'>Default</th>
+                                    <th title='Columns in tables that reference this column'>Children</th>
+                                    <th title='Columns in tables that are referenced by this column'>Parents</th>
+                                    <th title='Comments' class="toggle"><span>Comments</span></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="locus_dbxref_evidence_id">locus_dbxref_evidence_id</span></td>
+                                    <td>serial</td>
+                                    <td>10</td>
+                                    <td title=''></td>
+                                    <td title='Automatically updated by the database'>√</td>
+                                    <td>nextval(&#39;phenome.locus_dbxref_evidence_locus_dbxref_evidence_id_seq&#39;::regclass)</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="locus_dbxref_evidence_history.locus_dbxref_evidence_id references locus_dbxref_evidence.locus_dbxref_evidence_id via locus_dbxref_evidence_history_locus_dbxref_evidence_id_fkey"><a href='locus_dbxref_evidence_history.html'>locus_dbxref_evidence_history</a><span class='relatedKey'>.locus_dbxref_evidence_id</span></td>
+                                                <td class="constraint detail">locus_dbxref_evidence_history_locus_dbxref_evidence_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="locus_dbxref_id">locus_dbxref_id</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="locus_dbxref_evidence.locus_dbxref_id references locus_dbxref.locus_dbxref_id via locus_dbxref_evidence_locus_dbxref_id_fkey"><a href='locus_dbxref.html'>locus_dbxref</a><span class='relatedKey'>.locus_dbxref_id</span></td>
+                                                <td class="constraint detail">locus_dbxref_evidence_locus_dbxref_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="relationship_type_id">relationship_type_id</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="locus_dbxref_evidence.relationship_type_id references public.dbxref.dbxref_id via locus_dbxref_evidence_evidence_relationship_type_id_fkey"><a href='../../public/tables/dbxref.html'>dbxref</a><span class='relatedKey'>.dbxref_id</span></td>
+                                                <td class="constraint detail">locus_dbxref_evidence_evidence_relationship_type_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="evidence_code_id">evidence_code_id</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="locus_dbxref_evidence.evidence_code_id references public.dbxref.dbxref_id via locus_dbxref_evidence_evidence_code_id_fkey"><a href='../../public/tables/dbxref.html'>dbxref</a><span class='relatedKey'>.dbxref_id</span></td>
+                                                <td class="constraint detail">locus_dbxref_evidence_evidence_code_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="evidence_description_id">evidence_description_id</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="locus_dbxref_evidence.evidence_description_id references public.dbxref.dbxref_id via locus_dbxref_evidence_evidence_description_id_fkey"><a href='../../public/tables/dbxref.html'>dbxref</a><span class='relatedKey'>.dbxref_id</span></td>
+                                                <td class="constraint detail">locus_dbxref_evidence_evidence_description_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="evidence_with">evidence_with</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="locus_dbxref_evidence.evidence_with references public.dbxref.dbxref_id via locus_dbxref_evidence_evidence_with_fkey"><a href='../../public/tables/dbxref.html'>dbxref</a><span class='relatedKey'>.dbxref_id</span></td>
+                                                <td class="constraint detail">locus_dbxref_evidence_evidence_with_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="reference_id">reference_id</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="locus_dbxref_evidence.reference_id references public.dbxref.dbxref_id via locus_dbxref_evidence_reference_id_fkey"><a href='../../public/tables/dbxref.html'>dbxref</a><span class='relatedKey'>.dbxref_id</span></td>
+                                                <td class="constraint detail">locus_dbxref_evidence_reference_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="sp_person_id">sp_person_id</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="locus_dbxref_evidence.sp_person_id references sgn_people.sp_person.sp_person_id via locus_dbxref_evidence_sp_person_id_fkey"><a href='../../sgn_people/tables/sp_person.html'>sp_person</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">locus_dbxref_evidence_sp_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="updated_by">updated_by</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="locus_dbxref_evidence.updated_by references sgn_people.sp_person.sp_person_id via locus_dbxref_evidence_updated_by_fkey"><a href='../../sgn_people/tables/sp_person.html'>sp_person</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">locus_dbxref_evidence_updated_by_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="create_date">create_date</span></td>
+                                    <td>timestamptz</td>
+                                    <td>35,6</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>now()</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="modified_date">modified_date</span></td>
+                                    <td>timestamptz</td>
+                                    <td>35,6</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="obsolete">obsolete</span></td>
+                                    <td>bool</td>
+                                    <td>1</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>false</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-sitemap"></i>
+                            <h3 id="Indexes" class="box-title">Indexes</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table
+                                    id="indexes_table"
+                                    class="table table-bordered table-striped dataTable"
+                                    role="grid"
+                                    data-paging="true"
+                                    data-page-length="10"
+                                    data-length-change="false">
+                                <thead>
+                                <tr>
+                                    <th>Constraint Name</th>
+                                    <th>Type</th>
+                                    <th>Sort</th>
+                                    <th>Column(s)</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey'></i> locus_dbxref_evidence_pkey</td>
+                                    <td>Primary key</td>
+                                    <td><span title='Ascending'>Asc</span></td>
+                                    <td>locus_dbxref_evidence_id</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div><!-- /.box-body -->
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-code-fork"></i>
+                            <h3 id="Relationships" class="box-title">Relationships</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <div class="nav-tabs-custom"><!-- Tabs within a box -->
+                                <h5>Close relationships within degrees of separation</h5>
+                                <ul class="nav nav-tabs pull-left ui-sortable-handle">
+                                    <li class="active"><a href="#oneDegreeImg-chart" data-toggle="tab" aria-expanded="true">One</a></li>
+                                    <li class=""><a href="#twodegreesDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two degrees</a></li>
+                                </ul>
+                                <div class="tab-content no-padding">
+                                    <div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
+<area shape="rect" id="node1" href="locus_dbxref.html" target="_top" title="locus_dbxref" alt="" coords="321,467,509,672">
+<area shape="rect" id="node2" title="public.dbxref" alt="" coords="45,252,238,340">
+<area shape="rect" id="node3" title="sgn_people.sp_person" alt="" coords="5,691,277,779">
+<area shape="rect" id="node4" href="locus_dbxref_evidence.html" target="_top" title="locus_dbxref_evidence" alt="" coords="553,287,956,708">
+<area shape="rect" id="node5" href="locus_dbxref_evidence_history.html" target="_top" title="locus_dbxref_evidence_history" alt="" coords="1000,5,1348,387">
+</map>
+                                        <a name='diagram'><img id="oneDegreeImg" src="../diagrams/tables/locus_dbxref_evidence.1degree.png" usemap="#oneDegreeRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="twodegreesDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
+<area shape="rect" id="node1" href="allele.html" target="_top" title="allele" alt="" coords="701,972,827,1060">
+<area shape="rect" id="node2" href="locus.html" target="_top" title="locus" alt="" coords="387,1125,527,1213">
+<area shape="rect" id="node3" title="sgn_people.sp_person" alt="" coords="5,1479,277,1567">
+<area shape="rect" id="node4" href="allele_alias.html" target="_top" title="allele_alias" alt="" coords="1051,475,1224,563">
+<area shape="rect" id="node5" href="allele_dbxref.html" target="_top" title="allele_dbxref" alt="" coords="1043,1040,1232,1128">
+<area shape="rect" id="node6" title="public.dbxref" alt="" coords="360,2556,553,2644">
+<area shape="rect" id="node7" href="allele_history.html" target="_top" title="allele_history" alt="" coords="1040,816,1235,904">
+<area shape="rect" id="node8" href="genotype_experiment.html" target="_top" title="genotype_experiment" alt="" coords="321,1408,592,1496">
+<area shape="rect" id="node9" href="genotype_region.html" target="_top" title="genotype_region" alt="" coords="1444,772,1669,860">
+<area shape="rect" id="node10" href="phenome_genotype.html" target="_top" title="phenome_genotype" alt="" coords="1012,1363,1263,1451">
+<area shape="rect" id="node12" href="individual.html" target="_top" title="individual" alt="" coords="683,2033,845,2121">
+<area shape="rect" id="node11" href="germplasm.html" target="_top" title="germplasm" alt="" coords="1050,2196,1225,2284">
+<area shape="rect" id="node13" href="population.html" target="_top" title="population" alt="" coords="371,1799,542,1887">
+<area shape="rect" id="node14" href="individual_alias.html" target="_top" title="individual_alias" alt="" coords="1031,1880,1244,1968">
+<area shape="rect" id="node15" href="individual_allele.html" target="_top" title="individual_allele" alt="" coords="1027,1504,1247,1592">
+<area shape="rect" id="node16" href="individual_dbxref.html" target="_top" title="individual_dbxref" alt="" coords="1023,2301,1252,2389">
+<area shape="rect" id="node17" href="individual_dbxref_evidence.html" target="_top" title="individual_dbxref_evidence" alt="" coords="1397,2453,1716,2541">
+<area shape="rect" id="node18" href="individual_dbxref_evidence_history.html" target="_top" title="individual_dbxref_evidence_history" alt="" coords="1775,2553,2164,2641">
+<area shape="rect" id="node19" href="individual_history.html" target="_top" title="individual_history" alt="" coords="1020,1985,1255,2073">
+<area shape="rect" id="node20" href="individual_image.html" target="_top" title="individual_image" alt="" coords="1024,2091,1251,2179">
+<area shape="rect" id="node21" href="individual_locus.html" target="_top" title="individual_locus" alt="" coords="1029,1775,1246,1863">
+<area shape="rect" id="node22" href="is_public.html" target="_top" title="is_public" alt="" coords="688,1645,840,1733">
+<area shape="rect" id="node23" href="locus2locus.html" target="_top" title="locus2locus" alt="" coords="675,1751,853,1839">
+<area shape="rect" id="node24" href="locus_alias.html" target="_top" title="locus_alias" alt="" coords="679,445,849,533">
+<area shape="rect" id="node25" href="locus_dbxref.html" target="_top" title="locus_dbxref" alt="" coords="670,2759,858,2847">
+<area shape="rect" id="node26" href="locus_dbxref_evidence.html" target="_top" title="locus_dbxref_evidence" alt="" coords="936,2795,1339,3216">
+<area shape="rect" id="node27" href="locus_dbxref_evidence_history.html" target="_top" title="locus_dbxref_evidence_history" alt="" coords="1383,2659,1731,2747">
+<area shape="rect" id="node28" href="locus_history.html" target="_top" title="locus_history" alt="" coords="668,551,860,639">
+<area shape="rect" id="node29" href="locus_image.html" target="_top" title="locus_image" alt="" coords="672,656,856,744">
+<area shape="rect" id="node30" href="locus_marker.html" target="_top" title="locus_marker" alt="" coords="667,761,861,849">
+<area shape="rect" id="node31" href="locus_owner.html" target="_top" title="locus_owner" alt="" coords="671,867,857,955">
+<area shape="rect" id="node32" href="locus_registry.html" target="_top" title="locus_registry" alt="" coords="664,1221,864,1309">
+<area shape="rect" id="node33" href="registry.html" target="_top" title="registry" alt="" coords="384,1267,529,1355">
+<area shape="rect" id="node34" href="locus_unigene.html" target="_top" title="locus_unigene" alt="" coords="663,1327,865,1415">
+<area shape="rect" id="node35" href="locusgroup.html" target="_top" title="locusgroup" alt="" coords="369,1585,544,1673">
+<area shape="rect" id="node36" href="locusgroup_member.html" target="_top" title="locusgroup_member" alt="" coords="636,1540,892,1628">
+<area shape="rect" id="node37" href="polymorphic_fragment.html" target="_top" title="polymorphic_fragment" alt="" coords="1418,1397,1695,1485">
+<area shape="rect" id="node38" href="population_dbxref.html" target="_top" title="population_dbxref" alt="" coords="645,1856,883,1944">
+<area shape="rect" id="node39" href="project_owner.html" target="_top" title="project_owner" alt="" coords="356,5,557,93">
+<area shape="rect" id="node40" href="pub_curator.html" target="_top" title="pub_curator" alt="" coords="365,111,548,199">
+<area shape="rect" id="node41" href="stock_owner.html" target="_top" title="stock_owner" alt="" coords="363,216,550,304">
+<area shape="rect" id="node42" href="user_trait.html" target="_top" title="user_trait" alt="" coords="683,3044,845,3132">
+</map>
+                                        <a name='diagram'><img id="twodegreesDegreeImg" src="../diagrams/tables/locus_dbxref_evidence.2degrees.png" usemap="#twoDegreesRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- /.box-body -->
+                    </div>
+                </section>
+                <script>
+                    var config = {
+                        pagination: true
+                    }
+                </script>
+            </div>
+            <!-- /.content-wrapper -->
+            <footer class="main-footer">
+                <div>
+                    <div class="pull-right hidden-xs">
+                        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+                        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+                    </div>
+                    <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.2.4</a></strong>
+                </div>
+                <!-- /.container -->
+            </footer>
+        </div>
+        <!-- ./wrapper -->
+
+        <!-- jQuery 2.2.3 -->
+        <script src="../bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+        <script src="../bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+        <!-- Bootstrap 3.3.5 -->
+        <script src="../bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+        <!-- DataTables -->
+        <script src="../bower/datatables.net/jquery.dataTables.min.js"></script>
+        <script src="../bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+        <script src="../bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.html5.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.print.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+        <!-- SheetJS -->
+        <script src="../bower/js-xlsx/xlsx.full.min.js"></script>
+        <!-- pdfmake -->
+        <script src="../bower/pdfmake/pdfmake.min.js"></script>
+        <script src="../bower/pdfmake/vfs_fonts.js"></script>
+        <!-- SlimScroll -->
+        <script src="../bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+        <!-- FastClick -->
+        <script src="../bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+        <!-- Salvattore -->
+        <script src="../bower/salvattore/salvattore.min.js"></script>
+        <!-- AnchorJS -->
+        <script src="../bower/anchor-js/anchor.min.js"></script>
+        <!-- CodeMirror -->
+        <script src="../bower/codemirror/codemirror.js"></script>
+        <script src="../bower/codemirror/sql.js"></script>
+        <!-- AdminLTE App -->
+        <script src="../bower/admin-lte/dist/js/app.min.js"></script>
+        <script src="table.js"></script>
+        <script src="../schemaSpy.js"></script>
+    </body>
+</html>

@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>cxgn_breedbase.public</title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+        <!-- Bootstrap 3.3.5 -->
+        <link rel="stylesheet" href="bower/admin-lte/bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="bower/font-awesome/css/font-awesome.min.css">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="bower/ionicons/css/ionicons.min.css">
+        <!-- DataTables -->
+        <link rel="stylesheet" href="bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" href="bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+        <!-- Code Mirror -->
+        <link rel="stylesheet" href="bower/codemirror/codemirror.css">
+        <!-- Fonts -->
+        <link href='fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+        <link href='fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+
+        <!-- Theme style -->
+        <link rel="stylesheet" href="bower/admin-lte/dist/css/AdminLTE.min.css">
+        <!-- Salvattore -->
+        <link rel="stylesheet" href="bower/salvattore/salvattore.css">
+        <!-- AdminLTE Skins. Choose a skin from the css/skins
+           folder instead of downloading all of them to reduce the load. -->
+        <link rel="stylesheet" href="bower/admin-lte/dist/css/skins/_all-skins.min.css">
+        <!-- SchemaSpy -->
+        <link rel="stylesheet" href="schemaSpy.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="bower/html5shiv/html5shiv.min.js"></script>
+        <script src="bower/respond/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+    <body class="hold-transition skin-blue layout-top-nav">
+        <div class="wrapper">
+            <header class="main-header">
+                <nav class="navbar navbar-static-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <a href="index.html" class="navbar-brand"><b>cxgn_breedbase</b></a><span class="navbar-brand" style="padding-left: 0">.public</span>
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"><i class="fa fa-bars"></i></button>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a href="index.html">Tables <span class="sr-only">(current)</span></a></li>
+                                <li><a href="columns.html" title="All of the columns in the schema">Columns</a></li>
+                                <li><a href="constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+                                <li><a href="relationships.html" title="Diagram of table relationships">Relationships</a></li>
+                                <li><a href="orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>
+                                <li><a href="anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+                                <li><a href="routines.html" title="Procedures and functions">Routines</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                        <!-- Navbar Right Menu -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </nav>
+            </header>
+            <!-- Main content -->
+            <!-- Full Width Column -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>Routines</h1>
+                </section>
+                <!-- Main content -->
+                <section class="content">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-file-code-o" aria-hidden="true"></i>
+                            <h3 class="box-title">Routines</h3>
+                        </div>
+                        <div class="box-body">
+                            <table
+                                    id="routine_table"
+                                    class="table table-bordered table-striped dataTable"
+                                    role="grid"
+                                    data-paging="true"
+                                    data-page-length="50"
+                                    data-length-change="false">
+                                <thead align='left'>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Type</th>
+                                        <th>Language</th>
+                                        <th>Deterministic</th>
+                                        <th>Return Type</th>
+                                        <th>Security Restriction</th>
+                                        <th title='Comments' class="toggle"><span>Comments</span></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><a href="routines/store_genesynonym_character_var_25188d10.html">store_genesynonym(character varying)</a></td>
+                                        <td>FUNCTION</td>
+                                        <td>plpgsql</td>
+                                        <td>false</td>
+                                        <td>integer</td>
+                                        <td>INVOKER</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="routines/word_similarity_op_text__text__163738fb.html">word_similarity_op(text, text)</a></td>
+                                        <td>FUNCTION</td>
+                                        <td>c</td>
+                                        <td>false</td>
+                                        <td>boolean</td>
+                                        <td>INVOKER</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="routines/plpgsql_call_handler___1ec939ee.html">plpgsql_call_handler()</a></td>
+                                        <td>FUNCTION</td>
+                                        <td>c</td>
+                                        <td>false</td>
+                                        <td>language_handler</td>
+                                        <td>INVOKER</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="routines/gtrgm_union_internal__internal__73f8e0ee.html">gtrgm_union(internal, internal)</a></td>
+                                        <td>FUNCTION</td>
+                                        <td>c</td>
+                                        <td>true</td>
+                                        <td>gtrgm</td>
+                                        <td>INVOKER</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="routines/featureloc_slice_integer__integ_e34ad912.html">featureloc_slice(integer, integer)</a></td>
+                                        <td>FUNCTION</td>
+                                        <td>sql</td>
+                                        <td>false</td>
+                                        <td>SETOF featureloc</td>
+                                        <td>INVOKER</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="routines/refresh_materialized_stockprop__b215dcaf.html">refresh_materialized_stockprop_concurrently()</a></td>
+                                        <td>FUNCTION</td>
+                                        <td>sql</td>
+                                        <td>false</td>
+                                        <td>void</td>
+                                        <td>INVOKER</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="routines/create_point_integer__integer__13ae5c02.html">create_point(integer, integer)</a></td>
+                                        <td>FUNCTION</td>
+                                        <td>sql</td>
+                                        <td>false</td>
+                                        <td>point</td>
+                                        <td>INVOKER</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="routines/gin_extract_query_trgm_text__in_d6e582af.html">gin_extract_query_trgm(text, internal, smallint, internal, internal, internal, internal)</a></td>
+                                        <td>FUNCTION</td>
+                                        <td>c</td>
+                                        <td>true</td>
+                                        <td>internal</td>
+                                        <td>INVOKER</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="routines/gfffeatureatts_integer__84718fd2.html">gfffeatureatts(integer)</a></td>
+                                        <td>FUNCTION</td>
+                                        <td>sql</td>
+                                        <td>false</td>
+                                        <td>SETOF gffatts</td>
+                                        <td>INVOKER</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="routines/gtrgm_penalty_internal__interna_1d2889d7.html">gtrgm_penalty(internal, internal, internal)</a></td>
+                                        <td>FUNCTION</td>
+                                        <td>c</td>
+                                        <td>true</td>
+                                        <td>internal</td>
+                                        <td>INVOKER</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="routines/strict_word_similarity_dist_op__ef8992d0.html">strict_word_similarity_dist_op(text, text)</a></td>
+                                        <td>FUNCTION</td>
+                                        <td>c</td>
+                                        <td>true</td>
+                                        <td>real</td>
+                                        <td>INVOKER</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="routines/store_gene_genesynonym_integer__a2e04019.html">store_gene_genesynonym(integer, integer, integer)</a></td>
+                                        <td>FUNCTION</td>
+                                        <td>plpgsql</td>
+                                        <td>false</td>
+                                        <td>integer</td>
+                                        <td>INVOKER</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="routines/show_limit___606c82ba.html">show_limit()</a></td>
+                                        <td>FUNCTION</td>
+                                        <td>c</td>
+                                        <td>false</td>
+                                        <td>real</td>
+                                        <td>INVOKER</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="routines/gtrgm_consistent_internal__text_5b9f43fe.html">gtrgm_consistent(internal, text, smallint, oid, internal)</a></td>
+                                        <td>FUNCTION</td>
+                                        <td>c</td>
+                                        <td>true</td>
+                                        <td>boolean</td>
+                                        <td>INVOKER</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="routines/similarity_text__text__671bb316.html">similarity(text, text)</a></td>
+                                        <td>FUNCTION</td>
+                                        <td>c</td>
+                                        <td>true</td>
+                                        <td>real</td>
+                                        <td>INVOKER</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="routines/gtrgm_same_gtrgm__gtrgm__intern_179eee1e.html">gtrgm_same(gtrgm, gtrgm, internal)</a></td>
+                                        <td>FUNCTION</td>
+                                        <td>c</td>
+                                        <td>true</td>
+                                        <td>internal</td>
+                                        <td>INVOKER</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="routines/refresh_materialized_phenotype__a0def08f.html">refresh_materialized_phenotype_jsonb_table()</a></td>
+                                        <td>FUNCTION</td>
+                                        <td>sql</td>
+                                        <td>false</td>
+                                        <td>void</td>
+                                        <td>INVOKER</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="routines/show_trgm_text__b321dcda.html">show_trgm(text)</a></td>
+                                        <td>FUNCTION</td>
+                                        <td>c</td>
+                                        <td>true</td>
+                                        <td>text[]</td>
+                                        <td>INVOKER</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="routines/abstract_tsvector___eec21d40.html">abstract_tsvector()</a></td>
+                                        <td>FUNCTION</td>
+                                        <td>plpgsql</td>
+                                        <td>false</td>
+                                        <td>trigger</td>
+                                        <td>INVOKER</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="routines/gin_trgm_triconsistent_internal_fa180699.html">gin_trgm_triconsistent(internal, smallint, text, integer, internal, internal, internal)</a></td>
+                                        <td>FUNCTION</td>
+                                        <td>c</td>
+                                        <td>true</td>
+                                        <td>&quot;char&quot;</td>
+                                        <td>INVOKER</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="routines/make_all_rows_visible_in_schema_62c31724.html">make_all_rows_visible_in_schema(scm character varying)</a></td>
+                                        <td>FUNCTION</td>
+                                        <td>plpgsql</td>
+                                        <td>false</td>
+                                        <td>boolean</td>
+                                        <td>INVOKER</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="routines/gffattstring_integer__310414c8.html">gffattstring(integer)</a></td>
+                                        <td>FUNCTION</td>
+                                        <td>plpgsql</td>
+                                        <td>false</td>
+                                        <td>character varying</td>
+                                        <td>INVOKER</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="routines/store_featureprop_pub_integer___b5acea2e.html">store_featureprop_pub(integer, integer)</a></td>
+                                        <td>FUNCTION</td>
+                                        <td>plpgsql</td>
+                                        <td>false</td>
+                                        <td>integer</td>
+                                        <td>INVOKER</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="routines/feature_overlaps_integer__da1b7a3e.html">feature_overlaps(integer)</a></td>
+                                        <td>FUNCTION</td>
+                                        <td>sql</td>
+                                        <td>false</td>
+                                        <td>SETOF feature</td>
+                                        <td>INVOKER</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="routines/randstring_length_integer__f51e69f3.html">randstring(length integer)</a></td>
+                                        <td>FUNCTION</td>
+                                        <td>plpgsql</td>
+                                        <td>false</td>
+                                        <td>character varying</td>
+                                        <td>INVOKER</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="routines/plpgsql_validator_oid__d9e7e079.html">plpgsql_validator(oid)</a></td>
+                                        <td>FUNCTION</td>
+                                        <td>c</td>
+                                        <td>false</td>
+                                        <td>void</td>
+                                        <td>INVOKER</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="routines/word_similarity_text__text__af8b7feb.html">word_similarity(text, text)</a></td>
+                                        <td>FUNCTION</td>
+                                        <td>c</td>
+                                        <td>true</td>
+                                        <td>real</td>
+                                        <td>INVOKER</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="routines/boxquery_integer__integer__37b27d52.html">boxquery(integer, integer)</a></td>
+                                        <td>FUNCTION</td>
+                                        <td>sql</td>
+                                        <td>true</td>
+                                        <td>box</td>
+                                        <td>INVOKER</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="routines/store_featureprop_integer__inte_b7d6dbd9.html">store_featureprop(integer, integer, text, integer)</a></td>
+                                        <td>FUNCTION</td>
+                                        <td>plpgsql</td>
+                                        <td>false</td>
+                                        <td>integer</td>
+                                        <td>INVOKER</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="routines/gin_trgm_consistent_internal__s_c9fbc8c3.html">gin_trgm_consistent(internal, smallint, text, integer, internal, internal, internal, internal)</a></td>
+                                        <td>FUNCTION</td>
+                                        <td>c</td>
+                                        <td>true</td>
+                                        <td>boolean</td>
+                                        <td>INVOKER</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="routines/strict_word_similarity_commutat_b5dcea55.html">strict_word_similarity_commutator_op(text, text)</a></td>
+                                        <td>FUNCTION</td>
+                                        <td>c</td>
+                                        <td>false</td>
+                                        <td>boolean</td>
+                                        <td>INVOKER</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="routines/featureloc_slice_character_varyi_2e1027b.html">featureloc_slice(character varying, integer, integer)</a></td>
+                                        <td>FUNCTION</td>
+                                        <td>sql</td>
+                                        <td>false</td>
+                                        <td>SETOF featureloc</td>
+                                        <td>INVOKER</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="routines/store_gene_character_varying__3b960865.html">store_gene(character varying)</a></td>
+                                        <td>FUNCTION</td>
+                                        <td>plpgsql</td>
+                                        <td>false</td>
+                                        <td>integer</td>
+                                        <td>INVOKER</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="routines/gtrgm_distance_internal__text___218d08fb.html">gtrgm_distance(internal, text, smallint, oid, internal)</a></td>
+                                        <td>FUNCTION</td>
+                                        <td>c</td>
+                                        <td>true</td>
+                                        <td>double precision</td>
+                                        <td>INVOKER</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="routines/gtrgm_in_cstring__e710afa4.html">gtrgm_in(cstring)</a></td>
+                                        <td>FUNCTION</td>
+                                        <td>c</td>
+                                        <td>true</td>
+                                        <td>gtrgm</td>
+                                        <td>INVOKER</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="routines/gtrgm_compress_internal__96f1b2ba.html">gtrgm_compress(internal)</a></td>
+                                        <td>FUNCTION</td>
+                                        <td>c</td>
+                                        <td>true</td>
+                                        <td>internal</td>
+                                        <td>INVOKER</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="routines/create_materialized_markerview__729b13aa.html">create_materialized_markerview(refresh boolean)</a></td>
+                                        <td>FUNCTION</td>
+                                        <td>plpgsql</td>
+                                        <td>false</td>
+                                        <td>boolean</td>
+                                        <td>INVOKER</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="routines/featureloc_slice_integer__integ_25681556.html">featureloc_slice(integer, integer, integer)</a></td>
+                                        <td>FUNCTION</td>
+                                        <td>sql</td>
+                                        <td>false</td>
+                                        <td>SETOF featureloc</td>
+                                        <td>INVOKER</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="routines/word_similarity_dist_op_text__t_f9503946.html">word_similarity_dist_op(text, text)</a></td>
+                                        <td>FUNCTION</td>
+                                        <td>c</td>
+                                        <td>true</td>
+                                        <td>real</td>
+                                        <td>INVOKER</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="routines/strict_word_similarity_op_text__987a9131.html">strict_word_similarity_op(text, text)</a></td>
+                                        <td>FUNCTION</td>
+                                        <td>c</td>
+                                        <td>false</td>
+                                        <td>boolean</td>
+                                        <td>INVOKER</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="routines/gtrgm_out_gtrgm__47951fcc.html">gtrgm_out(gtrgm)</a></td>
+                                        <td>FUNCTION</td>
+                                        <td>c</td>
+                                        <td>true</td>
+                                        <td>cstring</td>
+                                        <td>INVOKER</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="routines/word_similarity_commutator_op_t_7fae604b.html">word_similarity_commutator_op(text, text)</a></td>
+                                        <td>FUNCTION</td>
+                                        <td>c</td>
+                                        <td>false</td>
+                                        <td>boolean</td>
+                                        <td>INVOKER</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="routines/store_feature_cvterm_integer__i_917b856d.html">store_feature_cvterm(integer, integer, integer)</a></td>
+                                        <td>FUNCTION</td>
+                                        <td>plpgsql</td>
+                                        <td>false</td>
+                                        <td>integer</td>
+                                        <td>INVOKER</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="routines/set_limit_real__6a809e41.html">set_limit(real)</a></td>
+                                        <td>FUNCTION</td>
+                                        <td>c</td>
+                                        <td>false</td>
+                                        <td>real</td>
+                                        <td>INVOKER</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="routines/store_feature_character_varying_94130260.html">store_feature(character varying)</a></td>
+                                        <td>FUNCTION</td>
+                                        <td>plpgsql</td>
+                                        <td>false</td>
+                                        <td>integer</td>
+                                        <td>INVOKER</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="routines/feature_disjoint_from_integer__7c141b8f.html">feature_disjoint_from(integer)</a></td>
+                                        <td>FUNCTION</td>
+                                        <td>sql</td>
+                                        <td>false</td>
+                                        <td>SETOF feature</td>
+                                        <td>INVOKER</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="routines/store_feature_relationship_integ_ee4f834.html">store_feature_relationship(integer, integer, integer)</a></td>
+                                        <td>FUNCTION</td>
+                                        <td>plpgsql</td>
+                                        <td>false</td>
+                                        <td>integer</td>
+                                        <td>INVOKER</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="routines/strict_word_similarity_dist_com_2868ff56.html">strict_word_similarity_dist_commutator_op(text, text)</a></td>
+                                        <td>FUNCTION</td>
+                                        <td>c</td>
+                                        <td>true</td>
+                                        <td>real</td>
+                                        <td>INVOKER</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="routines/similarity_dist_text__text__883c6b35.html">similarity_dist(text, text)</a></td>
+                                        <td>FUNCTION</td>
+                                        <td>c</td>
+                                        <td>true</td>
+                                        <td>real</td>
+                                        <td>INVOKER</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="routines/gtrgm_decompress_internal__f2bad3fb.html">gtrgm_decompress(internal)</a></td>
+                                        <td>FUNCTION</td>
+                                        <td>c</td>
+                                        <td>true</td>
+                                        <td>internal</td>
+                                        <td>INVOKER</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="routines/featureslice_integer__integer__64d02611.html">featureslice(integer, integer)</a></td>
+                                        <td>FUNCTION</td>
+                                        <td>sql</td>
+                                        <td>false</td>
+                                        <td>SETOF featureloc</td>
+                                        <td>INVOKER</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="routines/refresh_materialized_stockprop__dfaed616.html">refresh_materialized_stockprop()</a></td>
+                                        <td>FUNCTION</td>
+                                        <td>sql</td>
+                                        <td>false</td>
+                                        <td>void</td>
+                                        <td>INVOKER</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="routines/strict_word_similarity_text__te_bc140375.html">strict_word_similarity(text, text)</a></td>
+                                        <td>FUNCTION</td>
+                                        <td>c</td>
+                                        <td>true</td>
+                                        <td>real</td>
+                                        <td>INVOKER</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="routines/boxrange_integer__integer__6b8e4a87.html">boxrange(integer, integer)</a></td>
+                                        <td>FUNCTION</td>
+                                        <td>sql</td>
+                                        <td>true</td>
+                                        <td>box</td>
+                                        <td>INVOKER</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="routines/similarity_op_text__text__8be9b1f0.html">similarity_op(text, text)</a></td>
+                                        <td>FUNCTION</td>
+                                        <td>c</td>
+                                        <td>false</td>
+                                        <td>boolean</td>
+                                        <td>INVOKER</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="routines/gtrgm_picksplit_internal__inter_270b22b8.html">gtrgm_picksplit(internal, internal)</a></td>
+                                        <td>FUNCTION</td>
+                                        <td>c</td>
+                                        <td>true</td>
+                                        <td>internal</td>
+                                        <td>INVOKER</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="routines/gin_extract_value_trgm_text__in_939db366.html">gin_extract_value_trgm(text, internal)</a></td>
+                                        <td>FUNCTION</td>
+                                        <td>c</td>
+                                        <td>true</td>
+                                        <td>internal</td>
+                                        <td>INVOKER</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="routines/store_feature_character_varying_ea0fa779.html">store_feature(character varying, character varying, integer, integer, integer, text, integer, character, integer)</a></td>
+                                        <td>FUNCTION</td>
+                                        <td>plpgsql</td>
+                                        <td>false</td>
+                                        <td>integer</td>
+                                        <td>INVOKER</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="routines/store_gene_feature_integer__int_eaa2109f.html">store_gene_feature(integer, integer)</a></td>
+                                        <td>FUNCTION</td>
+                                        <td>plpgsql</td>
+                                        <td>false</td>
+                                        <td>integer</td>
+                                        <td>INVOKER</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="routines/word_similarity_dist_commutator_2400d320.html">word_similarity_dist_commutator_op(text, text)</a></td>
+                                        <td>FUNCTION</td>
+                                        <td>c</td>
+                                        <td>true</td>
+                                        <td>real</td>
+                                        <td>INVOKER</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="routines/refresh_materialized_phenotype__a7344ed6.html">refresh_materialized_phenotype_jsonb_table_concurrently()</a></td>
+                                        <td>FUNCTION</td>
+                                        <td>sql</td>
+                                        <td>false</td>
+                                        <td>void</td>
+                                        <td>INVOKER</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="routines/store_feature_dbxref_integer__9f42c7b3.html">store_feature_dbxref(integer)</a></td>
+                                        <td>FUNCTION</td>
+                                        <td>plpgsql</td>
+                                        <td>false</td>
+                                        <td>integer</td>
+                                        <td>INVOKER</td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+                <script>
+                    var config = {
+                        pagination: true
+                    }
+                </script>
+            </div>
+            <!-- /.content-wrapper -->
+            <footer class="main-footer">
+                <div>
+                    <div class="pull-right hidden-xs">
+                        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+                        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+                    </div>
+                    <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.2.4</a></strong>
+                </div>
+                <!-- /.container -->
+            </footer>
+        </div>
+        <!-- ./wrapper -->
+
+        <!-- jQuery 2.2.3 -->
+        <script src="bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+        <script src="bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+        <!-- Bootstrap 3.3.5 -->
+        <script src="bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+        <!-- DataTables -->
+        <script src="bower/datatables.net/jquery.dataTables.min.js"></script>
+        <script src="bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <script src="bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+        <script src="bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+        <script src="bower/datatables.net-buttons/buttons.html5.min.js"></script>
+        <script src="bower/datatables.net-buttons/buttons.print.min.js"></script>
+        <script src="bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+        <!-- SheetJS -->
+        <script src="bower/js-xlsx/xlsx.full.min.js"></script>
+        <!-- pdfmake -->
+        <script src="bower/pdfmake/pdfmake.min.js"></script>
+        <script src="bower/pdfmake/vfs_fonts.js"></script>
+        <!-- SlimScroll -->
+        <script src="bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+        <!-- FastClick -->
+        <script src="bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+        <!-- Salvattore -->
+        <script src="bower/salvattore/salvattore.min.js"></script>
+        <!-- AnchorJS -->
+        <script src="bower/anchor-js/anchor.min.js"></script>
+        <!-- CodeMirror -->
+        <script src="bower/codemirror/codemirror.js"></script>
+        <script src="bower/codemirror/sql.js"></script>
+        <!-- AdminLTE App -->
+        <script src="bower/admin-lte/dist/js/app.min.js"></script>
+        <script src="routines.js"></script>
+        <script src="schemaSpy.js"></script>
+    </body>
+</html>

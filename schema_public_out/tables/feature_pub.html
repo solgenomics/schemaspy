@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>feature_pub - cxgn_breedbase.public</title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <link rel="icon" type="image/png" sizes="16x16" href="../favicon.png">
+        <!-- Bootstrap 3.3.5 -->
+        <link rel="stylesheet" href="../bower/admin-lte/bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="../bower/font-awesome/css/font-awesome.min.css">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="../bower/ionicons/css/ionicons.min.css">
+        <!-- DataTables -->
+        <link rel="stylesheet" href="../bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" href="../bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+        <!-- Code Mirror -->
+        <link rel="stylesheet" href="../bower/codemirror/codemirror.css">
+        <!-- Fonts -->
+        <link href='../fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+        <link href='../fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+
+        <!-- Theme style -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/AdminLTE.min.css">
+        <!-- Salvattore -->
+        <link rel="stylesheet" href="../bower/salvattore/salvattore.css">
+        <!-- AdminLTE Skins. Choose a skin from the css/skins
+           folder instead of downloading all of them to reduce the load. -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/skins/_all-skins.min.css">
+        <!-- SchemaSpy -->
+        <link rel="stylesheet" href="../schemaSpy.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="../bower/html5shiv/html5shiv.min.js"></script>
+        <script src="../bower/respond/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+    <body class="hold-transition skin-blue layout-top-nav">
+        <div class="wrapper">
+            <header class="main-header">
+                <nav class="navbar navbar-static-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <a href="../index.html" class="navbar-brand"><b>cxgn_breedbase</b></a><span class="navbar-brand" style="padding-left: 0">.public</span>
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"><i class="fa fa-bars"></i></button>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a href="../index.html">Tables <span class="sr-only">(current)</span></a></li>
+                                <li><a href="../columns.html" title="All of the columns in the schema">Columns</a></li>
+                                <li><a href="../constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+                                <li><a href="../relationships.html" title="Diagram of table relationships">Relationships</a></li>
+                                <li><a href="../orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>
+                                <li><a href="../anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+                                <li><a href="../routines.html" title="Procedures and functions">Routines</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                        <!-- Navbar Right Menu -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </nav>
+            </header>
+            <!-- Main content -->
+            <!-- Full Width Column -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>feature_pub</h1><p><span id="recordNumber">0</span> rows</p><br />
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-file-text-o"></i>
+                            <h3 id="Description" class="box-title">Description</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div><!-- /.box-header -->
+                        <div class="box-body clearfix">
+                            <p>Provenance. Linking table between features and publications that mention them</p>
+                        </div><!-- /.box-body -->
+                    </div>
+                </section>
+                <!-- Main content -->
+                <section class="content">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+                            <h3 id="Columns" class="box-title">Columns</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table
+                                    id="standard_table"
+                                    class="table table-bordered table-striped dataTable"
+                                    role="grid"
+                                    data-paging="true"
+                                    data-page-length="10"
+                                    data-length-change="false">
+                                <thead align='left'>
+                                <tr>
+                                    <th>Column</th>
+                                    <th>Type</th>
+                                    <th>Size</th>
+                                    <th title='Are nulls allowed?'>Nulls</th>
+                                    <th title='Is column automatically updated?'>Auto</th>
+                                    <th title='Default value'>Default</th>
+                                    <th title='Columns in tables that reference this column'>Children</th>
+                                    <th title='Columns in tables that are referenced by this column'>Parents</th>
+                                    <th title='Comments' class="toggle"><span>Comments</span></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="feature_pub_id">feature_pub_id</span></td>
+                                    <td>serial</td>
+                                    <td>10</td>
+                                    <td title=''></td>
+                                    <td title='Automatically updated by the database'>√</td>
+                                    <td>nextval(&#39;feature_pub_feature_pub_id_seq&#39;::regclass)</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="feature_id">feature_id</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="feature_pub.feature_id references feature.feature_id via feature_pub_feature_id_fkey"><a href='feature.html'>feature</a><span class='relatedKey'>.feature_id</span></td>
+                                                <td class="constraint detail">feature_pub_feature_id_fkey</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="pub_id">pub_id</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="feature_pub.pub_id references pub.pub_id via feature_pub_pub_id_fkey"><a href='pub.html'>pub</a><span class='relatedKey'>.pub_id</span></td>
+                                                <td class="constraint detail">feature_pub_pub_id_fkey</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-sitemap"></i>
+                            <h3 id="Indexes" class="box-title">Indexes</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table
+                                    id="indexes_table"
+                                    class="table table-bordered table-striped dataTable"
+                                    role="grid"
+                                    data-paging="true"
+                                    data-page-length="10"
+                                    data-length-change="false">
+                                <thead>
+                                <tr>
+                                    <th>Constraint Name</th>
+                                    <th>Type</th>
+                                    <th>Sort</th>
+                                    <th>Column(s)</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey'></i> feature_pub_pkey</td>
+                                    <td>Primary key</td>
+                                    <td><span title='Ascending'>Asc</span></td>
+                                    <td>feature_pub_id</td>
+                                </tr>
+                                <tr>
+                                    <td class='uniqueKey' title='Unique Key'><i class='icon ion-key iconkey'></i> feature_pub_c1</td>
+                                    <td>Must be unique</td>
+                                    <td><span title='Ascending'>Asc</span>/<span title='Ascending'>Asc</span></td>
+                                    <td>feature_id + pub_id</td>
+                                </tr>
+                                <tr>
+                                    <td title='Indexed'>feature_pub_idx1</td>
+                                    <td>Performance</td>
+                                    <td><span title='Ascending'>Asc</span></td>
+                                    <td>feature_id</td>
+                                </tr>
+                                <tr>
+                                    <td title='Indexed'>feature_pub_idx2</td>
+                                    <td>Performance</td>
+                                    <td><span title='Ascending'>Asc</span></td>
+                                    <td>pub_id</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div><!-- /.box-body -->
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-code-fork"></i>
+                            <h3 id="Relationships" class="box-title">Relationships</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <div class="nav-tabs-custom"><!-- Tabs within a box -->
+                                <h5>Close relationships within degrees of separation</h5>
+                                <ul class="nav nav-tabs pull-left ui-sortable-handle">
+                                    <li class="active"><a href="#oneDegreeImg-chart" data-toggle="tab" aria-expanded="true">One</a></li>
+                                    <li class=""><a href="#twodegreesDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two degrees</a></li>
+                                    <li class=""><a href="#oneimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">One implied</a></li>
+                                    <li class=""><a href="#twoimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two implied</a></li>
+                                </ul>
+                                <div class="tab-content no-padding">
+                                    <div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
+<area shape="rect" id="node1" href="feature_pub.html" target="_top" title="feature_pub" alt="" coords="252,100,507,257">
+<area shape="rect" id="node2" href="feature.html" target="_top" title="feature" alt="" coords="5,5,208,269">
+<area shape="rect" id="node3" href="pub.html" target="_top" title="pub" alt="" coords="23,287,191,463">
+</map>
+                                        <a name='diagram'><img id="oneDegreeImg" src="../diagrams/tables/feature_pub.1degree.png" usemap="#oneDegreeRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="twodegreesDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
+<area shape="rect" id="node1" title="biosource.bs_protocol_pub" alt="" coords="732,2395,1047,2483">
+<area shape="rect" id="node2" href="pub.html" target="_top" title="pub" alt="" coords="455,1935,623,2111">
+<area shape="rect" id="node10" href="cvterm.html" target="_top" title="cvterm" alt="" coords="225,2785,393,2873">
+<area shape="rect" id="node3" title="biosource.bs_sample_pub" alt="" coords="737,673,1041,761">
+<area shape="rect" id="node4" title="biosource.bs_tool_pub" alt="" coords="752,779,1027,867">
+<area shape="rect" id="node5" title="gem.ge_experimental_design_pub" alt="" coords="699,884,1079,972">
+<area shape="rect" id="node6" title="gem.ge_platform_pub" alt="" coords="755,989,1024,1077">
+<area shape="rect" id="node7" title="genomic.clone_feature" alt="" coords="750,3803,1029,3891">
+<area shape="rect" id="node8" href="feature.html" target="_top" title="feature" alt="" coords="437,3695,640,3959">
+<area shape="rect" id="node15" href="dbxref.html" target="_top" title="dbxref" alt="" coords="5,3347,181,3435">
+<area shape="rect" id="node16" href="organism.html" target="_top" title="organism" alt="" coords="230,2980,389,3068">
+<area shape="rect" id="node9" title="phenome.cvterm_pub_ranking" alt="" coords="716,532,1063,620">
+<area shape="rect" id="node11" title="phenome.locus_pub_ranking" alt="" coords="725,1095,1054,1183">
+<area shape="rect" id="node12" title="phenome.locus_pub_ranking_validate" alt="" coords="684,1200,1095,1288">
+<area shape="rect" id="node13" title="phenome.pub_curator" alt="" coords="753,1305,1025,1393">
+<area shape="rect" id="node14" href="analysisfeature.html" target="_top" title="analysisfeature" alt="" coords="783,3908,996,3996">
+<area shape="rect" id="node17" href="feature_cvterm.html" target="_top" title="feature_cvterm" alt="" coords="783,3101,995,3189">
+<area shape="rect" id="node18" href="feature_cvterm_pub.html" target="_top" title="feature_cvterm_pub" alt="" coords="1189,2825,1443,2913">
+<area shape="rect" id="node19" href="feature_dbxref.html" target="_top" title="feature_dbxref" alt="" coords="786,4329,993,4417">
+<area shape="rect" id="node20" href="feature_genotype.html" target="_top" title="feature_genotype" alt="" coords="773,4119,1006,4207">
+<area shape="rect" id="node21" href="feature_pub.html" target="_top" title="feature_pub" alt="" coords="762,3312,1017,3469">
+<area shape="rect" id="node22" href="feature_relationship.html" target="_top" title="feature_relationship" alt="" coords="761,4224,1018,4312">
+<area shape="rect" id="node23" href="feature_relationship_pub.html" target="_top" title="feature_relationship_pub" alt="" coords="1167,4013,1465,4101">
+<area shape="rect" id="node24" href="feature_relationshipprop_pub.html" target="_top" title="feature_relationshipprop_pub" alt="" coords="719,1411,1060,1499">
+<area shape="rect" id="node25" href="feature_synonym.html" target="_top" title="feature_synonym" alt="" coords="775,3207,1004,3295">
+<area shape="rect" id="node26" href="featureloc.html" target="_top" title="featureloc" alt="" coords="806,3697,973,3785">
+<area shape="rect" id="node27" href="featureloc_pub.html" target="_top" title="featureloc_pub" alt="" coords="1212,3291,1420,3379">
+<area shape="rect" id="node28" href="featureprop.html" target="_top" title="featureprop" alt="" coords="798,2996,981,3084">
+<area shape="rect" id="node29" href="featureprop_json.html" target="_top" title="featureprop_json" alt="" coords="775,3592,1003,3680">
+<area shape="rect" id="node30" href="featureprop_pub.html" target="_top" title="featureprop_pub" alt="" coords="1204,2619,1428,2707">
+<area shape="rect" id="node31" href="nd_experiment_pub.html" target="_top" title="nd_experiment_pub" alt="" coords="764,1516,1015,1604">
+<area shape="rect" id="node32" href="phendesc.html" target="_top" title="phendesc" alt="" coords="809,5,969,93">
+<area shape="rect" id="node33" href="phenotype_comparison.html" target="_top" title="phenotype_comparison" alt="" coords="748,2500,1031,2588">
+<area shape="rect" id="node34" href="phenotype_comparison_cvterm.html" target="_top" title="phenotype_comparison_cvterm" alt="" coords="1139,2321,1493,2409">
+<area shape="rect" id="node35" href="phenstatement.html" target="_top" title="phenstatement" alt="" coords="783,111,995,199">
+<area shape="rect" id="node36" href="phylonode.html" target="_top" title="phylonode" alt="" coords="805,3487,973,3575">
+<area shape="rect" id="node37" href="phylonode_pub.html" target="_top" title="phylonode_pub" alt="" coords="1211,3133,1421,3221">
+<area shape="rect" id="node38" href="phylotree_pub.html" target="_top" title="phylotree_pub" alt="" coords="788,1621,991,1709">
+<area shape="rect" id="node39" href="project_pub.html" target="_top" title="project_pub" alt="" coords="799,1727,979,1815">
+<area shape="rect" id="node40" href="pub_dbxref.html" target="_top" title="pub_dbxref" alt="" coords="802,2891,977,2979">
+<area shape="rect" id="node41" href="pub_relationship.html" target="_top" title="pub_relationship" alt="" coords="777,2785,1002,2873">
+<area shape="rect" id="node42" href="pubabstract.html" target="_top" title="pubabstract" alt="" coords="797,1832,981,1920">
+<area shape="rect" id="node43" href="pubauthor.html" target="_top" title="pubauthor" alt="" coords="805,1937,973,2025">
+<area shape="rect" id="node44" href="pubprop.html" target="_top" title="pubprop" alt="" coords="814,216,965,304">
+<area shape="rect" id="node45" href="stock_cvterm.html" target="_top" title="stock_cvterm" alt="" coords="793,321,986,409">
+<area shape="rect" id="node46" href="stock_pub.html" target="_top" title="stock_pub" alt="" coords="807,2043,971,2131">
+<area shape="rect" id="node47" href="stock_relationship_cvterm.html" target="_top" title="stock_relationship_cvterm" alt="" coords="735,427,1044,515">
+<area shape="rect" id="node48" href="stock_relationship_pub.html" target="_top" title="stock_relationship_pub" alt="" coords="749,2148,1030,2236">
+<area shape="rect" id="node49" href="stockprop_pub.html" target="_top" title="stockprop_pub" alt="" coords="786,2253,993,2341">
+<area shape="rect" id="node50" title="sgn.cds" alt="" coords="818,4013,961,4101">
+</map>
+                                        <a name='diagram'><img id="twodegreesDegreeImg" src="../diagrams/tables/feature_pub.2degrees.png" usemap="#twoDegreesRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="oneimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="oneDegreeRelationshipsDiagramImplied" name="oneDegreeRelationshipsDiagramImplied">
+<area shape="rect" id="node1" href="feature_pub.html" target="_top" title="feature_pub" alt="" coords="252,100,507,257">
+<area shape="rect" id="node2" href="feature.html" target="_top" title="feature" alt="" coords="5,5,208,269">
+<area shape="rect" id="node3" href="pub.html" target="_top" title="pub" alt="" coords="23,287,191,463">
+</map>
+                                        <a name='diagram'><img id="oneimpliedDegreeImg" src="../diagrams/tables/feature_pub.implied1degrees.png" usemap="#oneDegreeRelationshipsDiagramImplied" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="twoimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="twoDegreesRelationshipsDiagramImplied" name="twoDegreesRelationshipsDiagramImplied">
+<area shape="rect" id="node1" title="biosource.bs_protocol_pub" alt="" coords="732,3728,1047,3816">
+<area shape="rect" id="node2" href="pub.html" target="_top" title="pub" alt="" coords="455,3127,623,3303">
+<area shape="rect" id="node10" href="cvterm.html" target="_top" title="cvterm" alt="" coords="225,1772,393,1860">
+<area shape="rect" id="node3" title="biosource.bs_sample_pub" alt="" coords="737,3869,1041,3957">
+<area shape="rect" id="node4" title="biosource.bs_tool_pub" alt="" coords="752,3975,1027,4063">
+<area shape="rect" id="node5" title="gem.ge_experimental_design_pub" alt="" coords="699,2181,1079,2269">
+<area shape="rect" id="node6" title="gem.ge_platform_pub" alt="" coords="755,2287,1024,2375">
+<area shape="rect" id="node7" title="genomic.clone_feature" alt="" coords="750,905,1029,993">
+<area shape="rect" id="node8" href="feature.html" target="_top" title="feature" alt="" coords="437,880,640,1144">
+<area shape="rect" id="node15" href="dbxref.html" target="_top" title="dbxref" alt="" coords="5,1381,181,1469">
+<area shape="rect" id="node16" href="organism.html" target="_top" title="organism" alt="" coords="230,1141,389,1229">
+<area shape="rect" id="node9" title="phenome.cvterm_pub_ranking" alt="" coords="716,4327,1063,4415">
+<area shape="rect" id="node11" title="phenome.locus_pub_ranking" alt="" coords="725,2392,1054,2480">
+<area shape="rect" id="node12" title="phenome.locus_pub_ranking_validate" alt="" coords="684,2497,1095,2585">
+<area shape="rect" id="node13" title="phenome.pub_curator" alt="" coords="753,2603,1025,2691">
+<area shape="rect" id="node14" href="analysisfeature.html" target="_top" title="analysisfeature" alt="" coords="783,427,996,515">
+<area shape="rect" id="node17" href="feature_cvterm.html" target="_top" title="feature_cvterm" alt="" coords="783,1688,995,1776">
+<area shape="rect" id="node18" href="feature_cvterm_pub.html" target="_top" title="feature_cvterm_pub" alt="" coords="1189,3136,1443,3224">
+<area shape="rect" id="node19" href="feature_dbxref.html" target="_top" title="feature_dbxref" alt="" coords="786,5,993,93">
+<area shape="rect" id="node20" href="feature_genotype.html" target="_top" title="feature_genotype" alt="" coords="773,321,1006,409">
+<area shape="rect" id="node21" href="feature_pub.html" target="_top" title="feature_pub" alt="" coords="762,1513,1017,1671">
+<area shape="rect" id="node22" href="feature_relationship.html" target="_top" title="feature_relationship" alt="" coords="761,1408,1018,1496">
+<area shape="rect" id="node23" href="feature_relationship_pub.html" target="_top" title="feature_relationship_pub" alt="" coords="1167,3763,1465,3851">
+<area shape="rect" id="node24" href="feature_relationshipprop_pub.html" target="_top" title="feature_relationshipprop_pub" alt="" coords="719,2919,1060,3007">
+<area shape="rect" id="node25" href="feature_synonym.html" target="_top" title="feature_synonym" alt="" coords="775,1793,1004,1881">
+<area shape="rect" id="node26" href="featureloc.html" target="_top" title="featureloc" alt="" coords="806,695,973,783">
+<area shape="rect" id="node27" href="featureloc_pub.html" target="_top" title="featureloc_pub" alt="" coords="1212,1121,1420,1209">
+<area shape="rect" id="node28" href="featureprop.html" target="_top" title="featureprop" alt="" coords="798,1303,981,1391">
+<area shape="rect" id="node29" href="featureprop_json.html" target="_top" title="featureprop_json" alt="" coords="775,111,1003,199">
+<area shape="rect" id="node30" href="featureprop_pub.html" target="_top" title="featureprop_pub" alt="" coords="1204,2487,1428,2575">
+<area shape="rect" id="node31" href="gff3atts.html" target="_top" title="gff3atts" alt="" coords="817,532,961,596">
+<area shape="rect" id="node32" href="gff3view.html" target="_top" title="gff3view" alt="" coords="815,1116,964,1180">
+<area shape="rect" id="node33" href="gffatts.html" target="_top" title="gffatts" alt="" coords="823,613,955,677">
+<area shape="rect" id="node34" href="nd_experiment_pub.html" target="_top" title="nd_experiment_pub" alt="" coords="764,3129,1015,3217">
+<area shape="rect" id="node35" href="nd_reagent.html" target="_top" title="nd_reagent" alt="" coords="801,216,977,304">
+<area shape="rect" id="node36" href="phendesc.html" target="_top" title="phendesc" alt="" coords="809,4432,969,4520">
+<area shape="rect" id="node37" href="phenotype_comparison.html" target="_top" title="phenotype_comparison" alt="" coords="748,4116,1031,4204">
+<area shape="rect" id="node38" href="phenotype_comparison_cvterm.html" target="_top" title="phenotype_comparison_cvterm" alt="" coords="1139,4116,1493,4204">
+<area shape="rect" id="node39" href="phenstatement.html" target="_top" title="phenstatement" alt="" coords="783,4537,995,4625">
+<area shape="rect" id="node40" href="phylonode.html" target="_top" title="phylonode" alt="" coords="805,1197,973,1285">
+<area shape="rect" id="node41" href="phylonode_pub.html" target="_top" title="phylonode_pub" alt="" coords="1211,1653,1421,1741">
+<area shape="rect" id="node42" href="phylotree_pub.html" target="_top" title="phylotree_pub" alt="" coords="788,3235,991,3323">
+<area shape="rect" id="node43" href="project_pub.html" target="_top" title="project_pub" alt="" coords="799,3340,979,3428">
+<area shape="rect" id="node44" href="pub_dbxref.html" target="_top" title="pub_dbxref" alt="" coords="802,4748,977,4836">
+<area shape="rect" id="node45" href="pub_relationship.html" target="_top" title="pub_relationship" alt="" coords="777,2004,1002,2092">
+<area shape="rect" id="node46" href="pubabstract.html" target="_top" title="pubabstract" alt="" coords="797,3481,981,3569">
+<area shape="rect" id="node47" href="pubauthor.html" target="_top" title="pubauthor" alt="" coords="805,3623,973,3711">
+<area shape="rect" id="node48" href="pubprop.html" target="_top" title="pubprop" alt="" coords="814,4643,965,4731">
+<area shape="rect" id="node49" href="stock_cvterm.html" target="_top" title="stock_cvterm" alt="" coords="793,1899,986,1987">
+<area shape="rect" id="node50" href="stock_pub.html" target="_top" title="stock_pub" alt="" coords="807,2708,971,2796">
+<area shape="rect" id="node51" href="stock_relationship_cvterm.html" target="_top" title="stock_relationship_cvterm" alt="" coords="735,4221,1044,4309">
+<area shape="rect" id="node52" href="stock_relationship_pub.html" target="_top" title="stock_relationship_pub" alt="" coords="749,2813,1030,2901">
+<area shape="rect" id="node53" href="stockprop_pub.html" target="_top" title="stockprop_pub" alt="" coords="786,3024,993,3112">
+<area shape="rect" id="node54" href="tmp_gff_load_cache.html" target="_top" title="tmp_gff_load_cache" alt="" coords="765,1011,1014,1099">
+<area shape="rect" id="node55" title="sgn.cds" alt="" coords="818,800,961,888">
+</map>
+                                        <a name='diagram'><img id="twoimpliedDegreeImg" src="../diagrams/tables/feature_pub.implied2degrees.png" usemap="#twoDegreesRelationshipsDiagramImplied" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- /.box-body -->
+                    </div>
+                </section>
+                <script>
+                    var config = {
+                        pagination: true
+                    }
+                </script>
+            </div>
+            <!-- /.content-wrapper -->
+            <footer class="main-footer">
+                <div>
+                    <div class="pull-right hidden-xs">
+                        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+                        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+                    </div>
+                    <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.2.4</a></strong>
+                </div>
+                <!-- /.container -->
+            </footer>
+        </div>
+        <!-- ./wrapper -->
+
+        <!-- jQuery 2.2.3 -->
+        <script src="../bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+        <script src="../bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+        <!-- Bootstrap 3.3.5 -->
+        <script src="../bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+        <!-- DataTables -->
+        <script src="../bower/datatables.net/jquery.dataTables.min.js"></script>
+        <script src="../bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+        <script src="../bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.html5.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.print.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+        <!-- SheetJS -->
+        <script src="../bower/js-xlsx/xlsx.full.min.js"></script>
+        <!-- pdfmake -->
+        <script src="../bower/pdfmake/pdfmake.min.js"></script>
+        <script src="../bower/pdfmake/vfs_fonts.js"></script>
+        <!-- SlimScroll -->
+        <script src="../bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+        <!-- FastClick -->
+        <script src="../bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+        <!-- Salvattore -->
+        <script src="../bower/salvattore/salvattore.min.js"></script>
+        <!-- AnchorJS -->
+        <script src="../bower/anchor-js/anchor.min.js"></script>
+        <!-- CodeMirror -->
+        <script src="../bower/codemirror/codemirror.js"></script>
+        <script src="../bower/codemirror/sql.js"></script>
+        <!-- AdminLTE App -->
+        <script src="../bower/admin-lte/dist/js/app.min.js"></script>
+        <script src="table.js"></script>
+        <script src="../schemaSpy.js"></script>
+    </body>
+</html>

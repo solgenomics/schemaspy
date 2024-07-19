@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>primer_unigene_match - cxgn_breedbase.sgn</title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <link rel="icon" type="image/png" sizes="16x16" href="../favicon.png">
+        <!-- Bootstrap 3.3.5 -->
+        <link rel="stylesheet" href="../bower/admin-lte/bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="../bower/font-awesome/css/font-awesome.min.css">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="../bower/ionicons/css/ionicons.min.css">
+        <!-- DataTables -->
+        <link rel="stylesheet" href="../bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" href="../bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+        <!-- Code Mirror -->
+        <link rel="stylesheet" href="../bower/codemirror/codemirror.css">
+        <!-- Fonts -->
+        <link href='../fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+        <link href='../fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+
+        <!-- Theme style -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/AdminLTE.min.css">
+        <!-- Salvattore -->
+        <link rel="stylesheet" href="../bower/salvattore/salvattore.css">
+        <!-- AdminLTE Skins. Choose a skin from the css/skins
+           folder instead of downloading all of them to reduce the load. -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/skins/_all-skins.min.css">
+        <!-- SchemaSpy -->
+        <link rel="stylesheet" href="../schemaSpy.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="../bower/html5shiv/html5shiv.min.js"></script>
+        <script src="../bower/respond/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+    <body class="hold-transition skin-blue layout-top-nav">
+        <div class="wrapper">
+            <header class="main-header">
+                <nav class="navbar navbar-static-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <a href="../index.html" class="navbar-brand"><b>cxgn_breedbase</b></a><span class="navbar-brand" style="padding-left: 0">.sgn</span>
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"><i class="fa fa-bars"></i></button>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a href="../index.html">Tables <span class="sr-only">(current)</span></a></li>
+                                <li><a href="../columns.html" title="All of the columns in the schema">Columns</a></li>
+                                <li><a href="../constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+                                <li><a href="../relationships.html" title="Diagram of table relationships">Relationships</a></li>
+                                <li><a href="../orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>
+                                <li><a href="../anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+                                <li><a href="../routines.html" title="Procedures and functions">Routines</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                        <!-- Navbar Right Menu -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </nav>
+            </header>
+            <!-- Main content -->
+            <!-- Full Width Column -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>primer_unigene_match</h1><p><span id="recordNumber">0</span> rows</p><br />
+                </section>
+                <!-- Main content -->
+                <section class="content">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+                            <h3 id="Columns" class="box-title">Columns</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table
+                                    id="standard_table"
+                                    class="table table-bordered table-striped dataTable"
+                                    role="grid"
+                                    data-paging="true"
+                                    data-page-length="10"
+                                    data-length-change="false">
+                                <thead align='left'>
+                                <tr>
+                                    <th>Column</th>
+                                    <th>Type</th>
+                                    <th>Size</th>
+                                    <th title='Are nulls allowed?'>Nulls</th>
+                                    <th title='Is column automatically updated?'>Auto</th>
+                                    <th title='Default value'>Default</th>
+                                    <th title='Columns in tables that reference this column'>Children</th>
+                                    <th title='Columns in tables that are referenced by this column'>Parents</th>
+                                    <th title='Comments' class="toggle"><span>Comments</span></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="primer_unigene_match_id">primer_unigene_match_id</span></td>
+                                    <td>serial</td>
+                                    <td>10</td>
+                                    <td title=''></td>
+                                    <td title='Automatically updated by the database'>√</td>
+                                    <td>nextval(&#39;sgn.primer_unigene_match_primer_unigene_match_id_seq&#39;::regclass)</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="marker_id">marker_id</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="primer_unigene_match.marker_id references marker.marker_id via marker_id_fk"><a href='marker.html'>marker</a><span class='relatedKey'>.marker_id</span></td>
+                                                <td class="constraint detail">marker_id_fk</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="unigene_id">unigene_id</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="primer_unigene_match.unigene_id references unigene.unigene_id via primer_unigene_match_unigene_id_fkey"><a href='unigene.html'>unigene</a><span class='relatedKey'>.unigene_id</span></td>
+                                                <td class="constraint detail">primer_unigene_match_unigene_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="primer_direction">primer_direction</span></td>
+                                    <td>int2</td>
+                                    <td>5</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="match_length">match_length</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="primer_match_start">primer_match_start</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="primer_match_end">primer_match_end</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="unigene_match_start">unigene_match_start</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="unigene_match_end">unigene_match_end</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="e_value">e_value</span></td>
+                                    <td>float8</td>
+                                    <td>17,17</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-sitemap"></i>
+                            <h3 id="Indexes" class="box-title">Indexes</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table
+                                    id="indexes_table"
+                                    class="table table-bordered table-striped dataTable"
+                                    role="grid"
+                                    data-paging="true"
+                                    data-page-length="10"
+                                    data-length-change="false">
+                                <thead>
+                                <tr>
+                                    <th>Constraint Name</th>
+                                    <th>Type</th>
+                                    <th>Sort</th>
+                                    <th>Column(s)</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey'></i> primer_unigene_match_pkey</td>
+                                    <td>Primary key</td>
+                                    <td><span title='Ascending'>Asc</span></td>
+                                    <td>primer_unigene_match_id</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div><!-- /.box-body -->
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-code-fork"></i>
+                            <h3 id="Relationships" class="box-title">Relationships</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <div class="nav-tabs-custom"><!-- Tabs within a box -->
+                                <h5>Close relationships within degrees of separation</h5>
+                                <ul class="nav nav-tabs pull-left ui-sortable-handle">
+                                    <li class="active"><a href="#oneDegreeImg-chart" data-toggle="tab" aria-expanded="true">One</a></li>
+                                    <li class=""><a href="#twodegreesDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two degrees</a></li>
+                                    <li class=""><a href="#oneimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">One implied</a></li>
+                                    <li class=""><a href="#twoimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two implied</a></li>
+                                </ul>
+                                <div class="tab-content no-padding">
+                                    <div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
+<area shape="rect" id="node1" href="primer_unigene_match.html" target="_top" title="primer_unigene_match" alt="" coords="249,27,621,389">
+<area shape="rect" id="node2" href="marker.html" target="_top" title="marker" alt="" coords="23,5,187,123">
+<area shape="rect" id="node3" href="unigene.html" target="_top" title="unigene" alt="" coords="5,140,205,404">
+</map>
+                                        <a name='diagram'><img id="oneDegreeImg" src="../diagrams/tables/primer_unigene_match.1degree.png" usemap="#oneDegreeRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="twodegreesDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
+<area shape="rect" id="node1" title="phenome.genotype_region" alt="" coords="571,920,886,1008">
+<area shape="rect" id="node2" href="marker.html" target="_top" title="marker" alt="" coords="301,1023,465,1140">
+<area shape="rect" id="node3" title="phenome.locus_marker" alt="" coords="587,1025,870,1113">
+<area shape="rect" id="node4" title="phenome.locus_unigene" alt="" coords="583,3163,875,3251">
+<area shape="rect" id="node5" href="unigene.html" target="_top" title="unigene" alt="" coords="283,2703,483,2967">
+<area shape="rect" id="node32" href="unigene_consensi.html" target="_top" title="unigene_consensi" alt="" coords="5,2803,239,2891">
+<area shape="rect" id="node33" href="unigene_build.html" target="_top" title="unigene_build" alt="" coords="22,2697,222,2785">
+<area shape="rect" id="node6" title="phenome.polymorphic_fragment" alt="" coords="545,1131,912,1219">
+<area shape="rect" id="node7" title="phenome.tomato_il_bin" alt="" coords="587,1236,871,1324">
+<area shape="rect" id="node8" title="physical.computational_associations" alt="" coords="527,1341,931,1429">
+<area shape="rect" id="node9" title="physical.manual_associations" alt="" coords="559,1447,899,1535">
+<area shape="rect" id="node10" title="physical.probe_markers" alt="" coords="584,1552,873,1640">
+<area shape="rect" id="node11" title="public.unigene_dbxref" alt="" coords="591,2459,866,2547">
+<area shape="rect" id="node12" title="public.unigene_relations" alt="" coords="581,2564,877,2652">
+<area shape="rect" id="node13" title="public.unigene_signalp" alt="" coords="1001,2861,1283,2949">
+<area shape="rect" id="node14" href="cds.html" target="_top" title="cds" alt="" coords="663,2705,795,2793">
+<area shape="rect" id="node15" href="blast_annotations.html" target="_top" title="blast_annotations" alt="" coords="611,2811,846,2899">
+<area shape="rect" id="node16" href="cos_markers.html" target="_top" title="cos_markers" alt="" coords="635,1657,822,1745">
+<area shape="rect" id="node17" href="cosii_ortholog.html" target="_top" title="cosii_ortholog" alt="" coords="629,1763,829,1851">
+<area shape="rect" id="node18" href="ests_mapped_by_clone.html" target="_top" title="ests_mapped_by_clone" alt="" coords="589,1868,868,1956">
+<area shape="rect" id="node19" href="marker_alias.html" target="_top" title="marker_alias" alt="" coords="634,1973,823,2061">
+<area shape="rect" id="node20" href="marker_collectible.html" target="_top" title="marker_collectible" alt="" coords="609,5,849,93">
+<area shape="rect" id="node21" href="marker_experiment.html" target="_top" title="marker_experiment" alt="" coords="1017,179,1267,267">
+<area shape="rect" id="node22" href="pcr_experiment.html" target="_top" title="pcr_experiment" alt="" coords="621,252,836,340">
+<area shape="rect" id="node23" href="rflp_markers.html" target="_top" title="rflp_markers" alt="" coords="635,111,823,199">
+<area shape="rect" id="node24" href="p_markers.html" target="_top" title="p_markers" alt="" coords="645,357,813,445">
+<area shape="rect" id="node25" href="primer_unigene_match.html" target="_top" title="primer_unigene_match" alt="" coords="543,2079,915,2441">
+<area shape="rect" id="node26" href="rflp_unigene_associations.html" target="_top" title="rflp_unigene_associations" alt="" coords="575,2916,882,3004">
+<area shape="rect" id="node27" href="snp.html" target="_top" title="snp" alt="" coords="663,604,795,692">
+<area shape="rect" id="node28" href="ssr.html" target="_top" title="ssr" alt="" coords="663,499,795,587">
+<area shape="rect" id="node29" href="ssr_primer_unigene_matches.html" target="_top" title="ssr_primer_unigene_matches" alt="" coords="975,1600,1309,1688">
+<area shape="rect" id="node30" href="ssr_repeats.html" target="_top" title="ssr_repeats" alt="" coords="1053,461,1231,549">
+<area shape="rect" id="node31" href="tm_markers.html" target="_top" title="tm_markers" alt="" coords="639,709,819,797">
+<area shape="rect" id="node34" href="unigene_member.html" target="_top" title="unigene_member" alt="" coords="614,3057,843,3145">
+<area shape="rect" id="node35" title="sgn_people.user_map_data" alt="" coords="570,815,887,903">
+</map>
+                                        <a name='diagram'><img id="twodegreesDegreeImg" src="../diagrams/tables/primer_unigene_match.2degrees.png" usemap="#twoDegreesRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="oneimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="oneDegreeRelationshipsDiagramImplied" name="oneDegreeRelationshipsDiagramImplied">
+<area shape="rect" id="node1" href="primer_unigene_match.html" target="_top" title="primer_unigene_match" alt="" coords="249,27,621,389">
+<area shape="rect" id="node2" href="marker.html" target="_top" title="marker" alt="" coords="23,5,187,123">
+<area shape="rect" id="node3" href="unigene.html" target="_top" title="unigene" alt="" coords="5,140,205,404">
+</map>
+                                        <a name='diagram'><img id="oneimpliedDegreeImg" src="../diagrams/tables/primer_unigene_match.implied1degrees.png" usemap="#oneDegreeRelationshipsDiagramImplied" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="twoimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="twoDegreesRelationshipsDiagramImplied" name="twoDegreesRelationshipsDiagramImplied">
+<area shape="rect" id="node1" title="phenome.genotype_region" alt="" coords="571,1131,886,1219">
+<area shape="rect" id="node2" href="marker.html" target="_top" title="marker" alt="" coords="301,1128,465,1245">
+<area shape="rect" id="node3" title="phenome.locus_marker" alt="" coords="587,1236,870,1324">
+<area shape="rect" id="node4" title="phenome.locus_unigene" alt="" coords="583,2883,875,2971">
+<area shape="rect" id="node5" href="unigene.html" target="_top" title="unigene" alt="" coords="283,2633,483,2897">
+<area shape="rect" id="node32" href="unigene_consensi.html" target="_top" title="unigene_consensi" alt="" coords="5,2733,239,2821">
+<area shape="rect" id="node33" href="unigene_build.html" target="_top" title="unigene_build" alt="" coords="22,2628,222,2716">
+<area shape="rect" id="node6" title="phenome.polymorphic_fragment" alt="" coords="545,1341,912,1429">
+<area shape="rect" id="node7" title="phenome.tomato_il_bin" alt="" coords="587,1447,871,1535">
+<area shape="rect" id="node8" title="physical.computational_associations" alt="" coords="527,1552,931,1640">
+<area shape="rect" id="node9" title="physical.manual_associations" alt="" coords="559,1657,899,1745">
+<area shape="rect" id="node10" title="physical.probe_markers" alt="" coords="584,1763,873,1851">
+<area shape="rect" id="node11" title="public.unigene_dbxref" alt="" coords="591,2988,866,3076">
+<area shape="rect" id="node12" title="public.unigene_relations" alt="" coords="581,3093,877,3181">
+<area shape="rect" id="node13" title="public.unigene_signalp" alt="" coords="1001,2636,1283,2724">
+<area shape="rect" id="node14" href="cds.html" target="_top" title="cds" alt="" coords="663,2672,795,2760">
+<area shape="rect" id="node15" href="blast_annotations.html" target="_top" title="blast_annotations" alt="" coords="1025,2163,1259,2251">
+<area shape="rect" id="node16" href="p_markers.html" target="_top" title="p_markers" alt="" coords="645,1868,813,1956">
+<area shape="rect" id="node17" href="cos_markers.html" target="_top" title="cos_markers" alt="" coords="635,5,822,93">
+<area shape="rect" id="node18" href="cosii_ortholog.html" target="_top" title="cosii_ortholog" alt="" coords="629,2353,829,2441">
+<area shape="rect" id="node19" href="ests_mapped_by_clone.html" target="_top" title="ests_mapped_by_clone" alt="" coords="589,111,868,199">
+<area shape="rect" id="node20" href="marker_alias.html" target="_top" title="marker_alias" alt="" coords="634,216,823,304">
+<area shape="rect" id="node21" href="marker_collectible.html" target="_top" title="marker_collectible" alt="" coords="609,321,849,409">
+<area shape="rect" id="node22" href="marker_experiment.html" target="_top" title="marker_experiment" alt="" coords="1017,532,1267,620">
+<area shape="rect" id="node23" href="pcr_experiment.html" target="_top" title="pcr_experiment" alt="" coords="621,427,836,515">
+<area shape="rect" id="node24" href="rflp_markers.html" target="_top" title="rflp_markers" alt="" coords="635,532,823,620">
+<area shape="rect" id="node25" href="primer_unigene_match.html" target="_top" title="primer_unigene_match" alt="" coords="543,1973,915,2336">
+<area shape="rect" id="node26" href="rflp_unigene_associations.html" target="_top" title="rflp_unigene_associations" alt="" coords="575,2531,882,2619">
+<area shape="rect" id="node27" href="snp.html" target="_top" title="snp" alt="" coords="663,673,795,761">
+<area shape="rect" id="node28" href="ssr.html" target="_top" title="ssr" alt="" coords="663,1025,795,1113">
+<area shape="rect" id="node29" href="ssr_primer_unigene_matches.html" target="_top" title="ssr_primer_unigene_matches" alt="" coords="975,1447,1309,1535">
+<area shape="rect" id="node30" href="ssr_repeats.html" target="_top" title="ssr_repeats" alt="" coords="1053,989,1231,1077">
+<area shape="rect" id="node31" href="tm_markers.html" target="_top" title="tm_markers" alt="" coords="639,779,819,867">
+<area shape="rect" id="node34" href="unigene_member.html" target="_top" title="unigene_member" alt="" coords="614,2777,843,2865">
+<area shape="rect" id="node35" title="sgn_people.user_map_data" alt="" coords="570,884,887,972">
+</map>
+                                        <a name='diagram'><img id="twoimpliedDegreeImg" src="../diagrams/tables/primer_unigene_match.implied2degrees.png" usemap="#twoDegreesRelationshipsDiagramImplied" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- /.box-body -->
+                    </div>
+                </section>
+                <script>
+                    var config = {
+                        pagination: true
+                    }
+                </script>
+            </div>
+            <!-- /.content-wrapper -->
+            <footer class="main-footer">
+                <div>
+                    <div class="pull-right hidden-xs">
+                        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+                        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+                    </div>
+                    <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.2.4</a></strong>
+                </div>
+                <!-- /.container -->
+            </footer>
+        </div>
+        <!-- ./wrapper -->
+
+        <!-- jQuery 2.2.3 -->
+        <script src="../bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+        <script src="../bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+        <!-- Bootstrap 3.3.5 -->
+        <script src="../bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+        <!-- DataTables -->
+        <script src="../bower/datatables.net/jquery.dataTables.min.js"></script>
+        <script src="../bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+        <script src="../bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.html5.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.print.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+        <!-- SheetJS -->
+        <script src="../bower/js-xlsx/xlsx.full.min.js"></script>
+        <!-- pdfmake -->
+        <script src="../bower/pdfmake/pdfmake.min.js"></script>
+        <script src="../bower/pdfmake/vfs_fonts.js"></script>
+        <!-- SlimScroll -->
+        <script src="../bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+        <!-- FastClick -->
+        <script src="../bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+        <!-- Salvattore -->
+        <script src="../bower/salvattore/salvattore.min.js"></script>
+        <!-- AnchorJS -->
+        <script src="../bower/anchor-js/anchor.min.js"></script>
+        <!-- CodeMirror -->
+        <script src="../bower/codemirror/codemirror.js"></script>
+        <script src="../bower/codemirror/sql.js"></script>
+        <!-- AdminLTE App -->
+        <script src="../bower/admin-lte/dist/js/app.min.js"></script>
+        <script src="table.js"></script>
+        <script src="../schemaSpy.js"></script>
+    </body>
+</html>

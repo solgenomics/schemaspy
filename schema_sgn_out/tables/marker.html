@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>marker - cxgn_breedbase.sgn</title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <link rel="icon" type="image/png" sizes="16x16" href="../favicon.png">
+        <!-- Bootstrap 3.3.5 -->
+        <link rel="stylesheet" href="../bower/admin-lte/bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="../bower/font-awesome/css/font-awesome.min.css">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="../bower/ionicons/css/ionicons.min.css">
+        <!-- DataTables -->
+        <link rel="stylesheet" href="../bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" href="../bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+        <!-- Code Mirror -->
+        <link rel="stylesheet" href="../bower/codemirror/codemirror.css">
+        <!-- Fonts -->
+        <link href='../fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+        <link href='../fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+
+        <!-- Theme style -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/AdminLTE.min.css">
+        <!-- Salvattore -->
+        <link rel="stylesheet" href="../bower/salvattore/salvattore.css">
+        <!-- AdminLTE Skins. Choose a skin from the css/skins
+           folder instead of downloading all of them to reduce the load. -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/skins/_all-skins.min.css">
+        <!-- SchemaSpy -->
+        <link rel="stylesheet" href="../schemaSpy.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="../bower/html5shiv/html5shiv.min.js"></script>
+        <script src="../bower/respond/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+    <body class="hold-transition skin-blue layout-top-nav">
+        <div class="wrapper">
+            <header class="main-header">
+                <nav class="navbar navbar-static-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <a href="../index.html" class="navbar-brand"><b>cxgn_breedbase</b></a><span class="navbar-brand" style="padding-left: 0">.sgn</span>
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"><i class="fa fa-bars"></i></button>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a href="../index.html">Tables <span class="sr-only">(current)</span></a></li>
+                                <li><a href="../columns.html" title="All of the columns in the schema">Columns</a></li>
+                                <li><a href="../constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+                                <li><a href="../relationships.html" title="Diagram of table relationships">Relationships</a></li>
+                                <li><a href="../orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>
+                                <li><a href="../anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+                                <li><a href="../routines.html" title="Procedures and functions">Routines</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                        <!-- Navbar Right Menu -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </nav>
+            </header>
+            <!-- Main content -->
+            <!-- Full Width Column -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>marker</h1><p><span id="recordNumber">567</span> rows</p><br />
+                </section>
+                <!-- Main content -->
+                <section class="content">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+                            <h3 id="Columns" class="box-title">Columns</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table
+                                    id="standard_table"
+                                    class="table table-bordered table-striped dataTable"
+                                    role="grid"
+                                    data-paging="true"
+                                    data-page-length="10"
+                                    data-length-change="false">
+                                <thead align='left'>
+                                <tr>
+                                    <th>Column</th>
+                                    <th>Type</th>
+                                    <th>Size</th>
+                                    <th title='Are nulls allowed?'>Nulls</th>
+                                    <th title='Is column automatically updated?'>Auto</th>
+                                    <th title='Default value'>Default</th>
+                                    <th title='Columns in tables that reference this column'>Children</th>
+                                    <th title='Columns in tables that are referenced by this column'>Parents</th>
+                                    <th title='Comments' class="toggle"><span>Comments</span></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="marker_id">marker_id</span></td>
+                                    <td>serial</td>
+                                    <td>10</td>
+                                    <td title=''></td>
+                                    <td title='Automatically updated by the database'>√</td>
+                                    <td>nextval(&#39;sgn.marker_marker_id_seq&#39;::regclass)</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="genotype_region.marker_id_nn references marker.marker_id via genotype_region_marker_id_nn_fkey"><a href='../../phenome/tables/genotype_region.html'>genotype_region</a><span class='relatedKey'>.marker_id_nn</span></td>
+                                                <td class="constraint detail">genotype_region_marker_id_nn_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="genotype_region.marker_id_ns references marker.marker_id via genotype_region_marker_id_ns_fkey"><a href='../../phenome/tables/genotype_region.html'>genotype_region</a><span class='relatedKey'>.marker_id_ns</span></td>
+                                                <td class="constraint detail">genotype_region_marker_id_ns_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="genotype_region.marker_id_sn references marker.marker_id via genotype_region_marker_id_sn_fkey"><a href='../../phenome/tables/genotype_region.html'>genotype_region</a><span class='relatedKey'>.marker_id_sn</span></td>
+                                                <td class="constraint detail">genotype_region_marker_id_sn_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="genotype_region.marker_id_ss references marker.marker_id via genotype_region_marker_id_ss_fkey"><a href='../../phenome/tables/genotype_region.html'>genotype_region</a><span class='relatedKey'>.marker_id_ss</span></td>
+                                                <td class="constraint detail">genotype_region_marker_id_ss_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="locus_marker.marker_id references marker.marker_id via locus_marker_marker_id_fkey"><a href='../../phenome/tables/locus_marker.html'>locus_marker</a><span class='relatedKey'>.marker_id</span></td>
+                                                <td class="constraint detail">locus_marker_marker_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="polymorphic_fragment.flanking_marker1_id references marker.marker_id via polymorphic_fragment_flanking_marker1_id_fkey"><a href='../../phenome/tables/polymorphic_fragment.html'>polymorphic_fragment</a><span class='relatedKey'>.flanking_marker1_id</span></td>
+                                                <td class="constraint detail">polymorphic_fragment_flanking_marker1_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="polymorphic_fragment.flanking_marker2_id references marker.marker_id via polymorphic_fragment_flanking_marker2_id_fkey"><a href='../../phenome/tables/polymorphic_fragment.html'>polymorphic_fragment</a><span class='relatedKey'>.flanking_marker2_id</span></td>
+                                                <td class="constraint detail">polymorphic_fragment_flanking_marker2_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="tomato_il_bin.n_marker_n references marker.marker_id via tomato_il_bin_n_marker_n_fkey"><a href='../../phenome/tables/tomato_il_bin.html'>tomato_il_bin</a><span class='relatedKey'>.n_marker_n</span></td>
+                                                <td class="constraint detail">tomato_il_bin_n_marker_n_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="tomato_il_bin.n_marker_s references marker.marker_id via tomato_il_bin_n_marker_s_fkey"><a href='../../phenome/tables/tomato_il_bin.html'>tomato_il_bin</a><span class='relatedKey'>.n_marker_s</span></td>
+                                                <td class="constraint detail">tomato_il_bin_n_marker_s_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="tomato_il_bin.s_marker_n references marker.marker_id via tomato_il_bin_s_marker_n_fkey"><a href='../../phenome/tables/tomato_il_bin.html'>tomato_il_bin</a><span class='relatedKey'>.s_marker_n</span></td>
+                                                <td class="constraint detail">tomato_il_bin_s_marker_n_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="tomato_il_bin.s_marker_s references marker.marker_id via tomato_il_bin_s_marker_s_fkey"><a href='../../phenome/tables/tomato_il_bin.html'>tomato_il_bin</a><span class='relatedKey'>.s_marker_s</span></td>
+                                                <td class="constraint detail">tomato_il_bin_s_marker_s_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="computational_associations.marker_id references marker.marker_id via computational_associations_marker_id_fkey1"><a href='../../physical/tables/computational_associations.html'>computational_associations</a><span class='relatedKey'>.marker_id</span></td>
+                                                <td class="constraint detail">computational_associations_marker_id_fkey1</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="manual_associations.marker_id references marker.marker_id via manual_associations_marker_id_fkey1"><a href='../../physical/tables/manual_associations.html'>manual_associations</a><span class='relatedKey'>.marker_id</span></td>
+                                                <td class="constraint detail">manual_associations_marker_id_fkey1</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="probe_markers.marker_id references marker.marker_id via marker_id_fk"><a href='../../physical/tables/probe_markers.html'>probe_markers</a><span class='relatedKey'>.marker_id</span></td>
+                                                <td class="constraint detail">marker_id_fk</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="cos_markers.marker_id references marker.marker_id via marker_id_fk"><a href='cos_markers.html'>cos_markers</a><span class='relatedKey'>.marker_id</span></td>
+                                                <td class="constraint detail">marker_id_fk</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="cosii_ortholog.marker_id references marker.marker_id via marker_id_fk"><a href='cosii_ortholog.html'>cosii_ortholog</a><span class='relatedKey'>.marker_id</span></td>
+                                                <td class="constraint detail">marker_id_fk</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="ests_mapped_by_clone.marker_id references marker.marker_id via marker_id_fk"><a href='ests_mapped_by_clone.html'>ests_mapped_by_clone</a><span class='relatedKey'>.marker_id</span></td>
+                                                <td class="constraint detail">marker_id_fk</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="marker_alias.marker_id references marker.marker_id via marker_alias_marker_id_fkey"><a href='marker_alias.html'>marker_alias</a><span class='relatedKey'>.marker_id</span></td>
+                                                <td class="constraint detail">marker_alias_marker_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="marker_collectible.marker_id references marker.marker_id via marker_collectible_marker_id_fkey"><a href='marker_collectible.html'>marker_collectible</a><span class='relatedKey'>.marker_id</span></td>
+                                                <td class="constraint detail">marker_collectible_marker_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="marker_experiment.marker_id references marker.marker_id via marker_experiment_marker_id_fkey"><a href='marker_experiment.html'>marker_experiment</a><span class='relatedKey'>.marker_id</span></td>
+                                                <td class="constraint detail">marker_experiment_marker_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="p_markers.marker_id references marker.marker_id via marker_id_fk"><a href='p_markers.html'>p_markers</a><span class='relatedKey'>.marker_id</span></td>
+                                                <td class="constraint detail">marker_id_fk</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="pcr_experiment.marker_id references marker.marker_id via marker_id_fk"><a href='pcr_experiment.html'>pcr_experiment</a><span class='relatedKey'>.marker_id</span></td>
+                                                <td class="constraint detail">marker_id_fk</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="primer_unigene_match.marker_id references marker.marker_id via marker_id_fk"><a href='primer_unigene_match.html'>primer_unigene_match</a><span class='relatedKey'>.marker_id</span></td>
+                                                <td class="constraint detail">marker_id_fk</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="rflp_markers.marker_id references marker.marker_id via marker_id_fk"><a href='rflp_markers.html'>rflp_markers</a><span class='relatedKey'>.marker_id</span></td>
+                                                <td class="constraint detail">marker_id_fk</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="snp.marker_id references marker.marker_id via snp_marker_id_fkey"><a href='snp.html'>snp</a><span class='relatedKey'>.marker_id</span></td>
+                                                <td class="constraint detail">snp_marker_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="ssr.marker_id references marker.marker_id via marker_id_fk"><a href='ssr.html'>ssr</a><span class='relatedKey'>.marker_id</span></td>
+                                                <td class="constraint detail">marker_id_fk</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="ssr_repeats.marker_id references marker.marker_id via marker_id_fk"><a href='ssr_repeats.html'>ssr_repeats</a><span class='relatedKey'>.marker_id</span></td>
+                                                <td class="constraint detail">marker_id_fk</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="tm_markers.marker_id references marker.marker_id via marker_id_fk"><a href='tm_markers.html'>tm_markers</a><span class='relatedKey'>.marker_id</span></td>
+                                                <td class="constraint detail">marker_id_fk</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="user_map_data.marker_id references marker.marker_id via user_map_data_marker_id_fkey"><a href='../../sgn_people/tables/user_map_data.html'>user_map_data</a><span class='relatedKey'>.marker_id</span></td>
+                                                <td class="constraint detail">user_map_data_marker_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="dummy_field">dummy_field</span></td>
+                                    <td>bool</td>
+                                    <td>1</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-sitemap"></i>
+                            <h3 id="Indexes" class="box-title">Indexes</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table
+                                    id="indexes_table"
+                                    class="table table-bordered table-striped dataTable"
+                                    role="grid"
+                                    data-paging="true"
+                                    data-page-length="10"
+                                    data-length-change="false">
+                                <thead>
+                                <tr>
+                                    <th>Constraint Name</th>
+                                    <th>Type</th>
+                                    <th>Sort</th>
+                                    <th>Column(s)</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey'></i> marker_pkey</td>
+                                    <td>Primary key</td>
+                                    <td><span title='Ascending'>Asc</span></td>
+                                    <td>marker_id</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div><!-- /.box-body -->
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-code-fork"></i>
+                            <h3 id="Relationships" class="box-title">Relationships</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <div class="nav-tabs-custom"><!-- Tabs within a box -->
+                                <h5>Close relationships within degrees of separation</h5>
+                                <ul class="nav nav-tabs pull-left ui-sortable-handle">
+                                    <li class="active"><a href="#oneDegreeImg-chart" data-toggle="tab" aria-expanded="true">One</a></li>
+                                    <li class=""><a href="#twodegreesDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two degrees</a></li>
+                                    <li class=""><a href="#oneimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">One implied</a></li>
+                                    <li class=""><a href="#twoimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two implied</a></li>
+                                </ul>
+                                <div class="tab-content no-padding">
+                                    <div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
+<area shape="rect" id="node1" title="phenome.genotype_region" alt="" coords="330,5,645,240">
+<area shape="rect" id="node2" href="marker.html" target="_top" title="marker" alt="" coords="5,1209,241,1337">
+<area shape="rect" id="node3" title="phenome.locus_marker" alt="" coords="346,257,629,375">
+<area shape="rect" id="node4" title="phenome.polymorphic_fragment" alt="" coords="304,392,671,539">
+<area shape="rect" id="node5" title="phenome.tomato_il_bin" alt="" coords="345,556,629,761">
+<area shape="rect" id="node6" title="physical.computational_associations" alt="" coords="285,779,689,896">
+<area shape="rect" id="node7" title="physical.manual_associations" alt="" coords="317,913,657,1031">
+<area shape="rect" id="node8" title="physical.probe_markers" alt="" coords="343,1048,632,1165">
+<area shape="rect" id="node9" href="cos_markers.html" target="_top" title="cos_markers" alt="" coords="367,1183,608,1359">
+<area shape="rect" id="node10" href="cosii_ortholog.html" target="_top" title="cosii_ortholog" alt="" coords="369,1376,605,1611">
+<area shape="rect" id="node11" href="ests_mapped_by_clone.html" target="_top" title="ests_mapped_by_clone" alt="" coords="348,1628,627,1780">
+<area shape="rect" id="node12" href="marker_alias.html" target="_top" title="marker_alias" alt="" coords="393,1797,582,1973">
+<area shape="rect" id="node13" href="marker_collectible.html" target="_top" title="marker_collectible" alt="" coords="331,1991,644,2143">
+<area shape="rect" id="node14" href="marker_experiment.html" target="_top" title="marker_experiment" alt="" coords="733,2137,984,2372">
+<area shape="rect" id="node15" href="pcr_experiment.html" target="_top" title="pcr_experiment" alt="" coords="374,2196,601,2489">
+<area shape="rect" id="node16" href="rflp_markers.html" target="_top" title="rflp_markers" alt="" coords="391,2507,583,2859">
+<area shape="rect" id="node17" href="p_markers.html" target="_top" title="p_markers" alt="" coords="403,2876,572,3057">
+<area shape="rect" id="node18" href="primer_unigene_match.html" target="_top" title="primer_unigene_match" alt="" coords="348,3075,627,3251">
+<area shape="rect" id="node19" href="snp.html" target="_top" title="snp" alt="" coords="368,3268,607,3561">
+<area shape="rect" id="node20" href="ssr.html" target="_top" title="ssr" alt="" coords="391,3579,584,3755">
+<area shape="rect" id="node21" href="ssr_repeats.html" target="_top" title="ssr_repeats" alt="" coords="770,3611,947,3787">
+<area shape="rect" id="node22" href="tm_markers.html" target="_top" title="tm_markers" alt="" coords="397,3808,577,4013">
+<area shape="rect" id="node23" title="sgn_people.user_map_data" alt="" coords="329,4031,646,4148">
+</map>
+                                        <a name='diagram'><img id="oneDegreeImg" src="../diagrams/tables/marker.1degree.png" usemap="#oneDegreeRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="twodegreesDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
+<area shape="rect" id="node1" title="phenome.genotype_region" alt="" coords="648,2549,963,2784">
+<area shape="rect" id="node2" href="linkage_group.html" target="_top" title="linkage_group" alt="" coords="314,2713,515,2801">
+<area shape="rect" id="node3" href="marker.html" target="_top" title="marker" alt="" coords="297,1779,533,1907">
+<area shape="rect" id="node15" href="marker_location.html" target="_top" title="marker_location" alt="" coords="7,2713,226,2801">
+<area shape="rect" id="node4" title="phenome.locus_marker" alt="" coords="664,2251,947,2368">
+<area shape="rect" id="node5" title="phenome.polymorphic_fragment" alt="" coords="622,2385,989,2532">
+<area shape="rect" id="node6" title="phenome.tomato_il_bin" alt="" coords="663,281,947,487">
+<area shape="rect" id="node7" title="physical.computational_associations" alt="" coords="603,5,1007,123">
+<area shape="rect" id="node8" href="deprecated_markers.html" target="_top" title="deprecated_markers" alt="" coords="285,8,544,96">
+<area shape="rect" id="node9" title="physical.manual_associations" alt="" coords="635,609,975,727">
+<area shape="rect" id="node10" title="physical.probe_markers" alt="" coords="661,849,950,967">
+<area shape="rect" id="node11" href="cos_markers.html" target="_top" title="cos_markers" alt="" coords="685,984,926,1160">
+<area shape="rect" id="node12" href="cosii_ortholog.html" target="_top" title="cosii_ortholog" alt="" coords="687,1177,923,1412">
+<area shape="rect" id="node13" href="ests_mapped_by_clone.html" target="_top" title="ests_mapped_by_clone" alt="" coords="666,2801,945,2953">
+<area shape="rect" id="node14" title="genomic.clone" alt="" coords="313,2863,517,2951">
+<area shape="rect" id="node16" href="map.html" target="_top" title="map" alt="" coords="349,3175,481,3263">
+<area shape="rect" id="node17" title="public.stock" alt="" coords="25,3243,208,3331">
+<area shape="rect" id="node18" href="marker_alias.html" target="_top" title="marker_alias" alt="" coords="711,1429,900,1605">
+<area shape="rect" id="node19" href="marker_collectible.html" target="_top" title="marker_collectible" alt="" coords="649,2971,962,3123">
+<area shape="rect" id="node20" href="marker_collection.html" target="_top" title="marker_collection" alt="" coords="297,3032,532,3120">
+<area shape="rect" id="node21" href="marker_experiment.html" target="_top" title="marker_experiment" alt="" coords="1093,2643,1344,2731">
+<area shape="rect" id="node22" href="pcr_experiment.html" target="_top" title="pcr_experiment" alt="" coords="698,3248,913,3336">
+<area shape="rect" id="node23" href="rflp_markers.html" target="_top" title="rflp_markers" alt="" coords="711,140,899,228">
+<area shape="rect" id="node26" href="experiment_type.html" target="_top" title="experiment_type" alt="" coords="302,3316,527,3404">
+<area shape="rect" id="node27" href="sequence.html" target="_top" title="sequence" alt="" coords="335,3457,495,3545">
+<area shape="rect" id="node31" href="rflp_sequences.html" target="_top" title="rflp_sequences" alt="" coords="310,137,519,225">
+<area shape="rect" id="node24" href="p_markers.html" target="_top" title="p_markers" alt="" coords="721,1623,890,1804">
+<area shape="rect" id="node25" href="pcr_exp_accession.html" target="_top" title="pcr_exp_accession" alt="" coords="1099,3245,1338,3333">
+<area shape="rect" id="node28" href="pcr_experiment_sequence.html" target="_top" title="pcr_experiment_sequence" alt="" coords="1065,3351,1373,3439">
+<area shape="rect" id="node29" href="primer_unigene_match.html" target="_top" title="primer_unigene_match" alt="" coords="1079,351,1358,527">
+<area shape="rect" id="node30" href="unigene.html" target="_top" title="unigene" alt="" coords="732,504,879,592">
+<area shape="rect" id="node32" href="snp.html" target="_top" title="snp" alt="" coords="686,3453,925,3747">
+<area shape="rect" id="node33" title="metadata.md_metadata" alt="" coords="270,3635,559,3723">
+<area shape="rect" id="node34" href="snp_file.html" target="_top" title="snp_file" alt="" coords="1147,3456,1290,3544">
+<area shape="rect" id="node35" href="snpprop.html" target="_top" title="snpprop" alt="" coords="1145,3561,1293,3649">
+<area shape="rect" id="node36" href="ssr.html" target="_top" title="ssr" alt="" coords="739,744,871,832">
+<area shape="rect" id="node37" href="ssr_primer_unigene_matches.html" target="_top" title="ssr_primer_unigene_matches" alt="" coords="1051,596,1386,684">
+<area shape="rect" id="node38" href="ssr_repeats.html" target="_top" title="ssr_repeats" alt="" coords="1130,1265,1307,1353">
+<area shape="rect" id="node39" href="tm_markers.html" target="_top" title="tm_markers" alt="" coords="715,1857,895,2063">
+<area shape="rect" id="node40" title="sgn_people.user_map_data" alt="" coords="647,2080,964,2197">
+</map>
+                                        <a name='diagram'><img id="twodegreesDegreeImg" src="../diagrams/tables/marker.2degrees.png" usemap="#twoDegreesRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="oneimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="oneDegreeRelationshipsDiagramImplied" name="oneDegreeRelationshipsDiagramImplied">
+<area shape="rect" id="node1" title="phenome.genotype_region" alt="" coords="330,5,645,240">
+<area shape="rect" id="node2" href="marker.html" target="_top" title="marker" alt="" coords="5,1209,241,1337">
+<area shape="rect" id="node3" title="phenome.locus_marker" alt="" coords="346,257,629,375">
+<area shape="rect" id="node4" title="phenome.polymorphic_fragment" alt="" coords="304,392,671,539">
+<area shape="rect" id="node5" title="phenome.tomato_il_bin" alt="" coords="345,556,629,761">
+<area shape="rect" id="node6" title="physical.computational_associations" alt="" coords="285,779,689,896">
+<area shape="rect" id="node7" title="physical.manual_associations" alt="" coords="317,913,657,1031">
+<area shape="rect" id="node8" title="physical.probe_markers" alt="" coords="343,1048,632,1165">
+<area shape="rect" id="node9" href="cos_markers.html" target="_top" title="cos_markers" alt="" coords="367,1183,608,1359">
+<area shape="rect" id="node10" href="cosii_ortholog.html" target="_top" title="cosii_ortholog" alt="" coords="369,1376,605,1611">
+<area shape="rect" id="node11" href="ests_mapped_by_clone.html" target="_top" title="ests_mapped_by_clone" alt="" coords="348,1628,627,1780">
+<area shape="rect" id="node12" href="marker_alias.html" target="_top" title="marker_alias" alt="" coords="393,1797,582,1973">
+<area shape="rect" id="node13" href="marker_collectible.html" target="_top" title="marker_collectible" alt="" coords="331,1991,644,2143">
+<area shape="rect" id="node14" href="marker_experiment.html" target="_top" title="marker_experiment" alt="" coords="733,2137,984,2372">
+<area shape="rect" id="node15" href="pcr_experiment.html" target="_top" title="pcr_experiment" alt="" coords="374,2196,601,2489">
+<area shape="rect" id="node16" href="rflp_markers.html" target="_top" title="rflp_markers" alt="" coords="391,2507,583,2859">
+<area shape="rect" id="node17" href="p_markers.html" target="_top" title="p_markers" alt="" coords="403,2876,572,3057">
+<area shape="rect" id="node18" href="primer_unigene_match.html" target="_top" title="primer_unigene_match" alt="" coords="348,3075,627,3251">
+<area shape="rect" id="node19" href="snp.html" target="_top" title="snp" alt="" coords="368,3268,607,3561">
+<area shape="rect" id="node20" href="ssr.html" target="_top" title="ssr" alt="" coords="391,3579,584,3755">
+<area shape="rect" id="node21" href="ssr_repeats.html" target="_top" title="ssr_repeats" alt="" coords="770,3611,947,3787">
+<area shape="rect" id="node22" href="tm_markers.html" target="_top" title="tm_markers" alt="" coords="397,3808,577,4013">
+<area shape="rect" id="node23" title="sgn_people.user_map_data" alt="" coords="329,4031,646,4148">
+</map>
+                                        <a name='diagram'><img id="oneimpliedDegreeImg" src="../diagrams/tables/marker.implied1degrees.png" usemap="#oneDegreeRelationshipsDiagramImplied" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="twoimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="twoDegreesRelationshipsDiagramImplied" name="twoDegreesRelationshipsDiagramImplied">
+<area shape="rect" id="node1" title="phenome.genotype_region" alt="" coords="648,140,963,375">
+<area shape="rect" id="node2" href="linkage_group.html" target="_top" title="linkage_group" alt="" coords="314,617,515,705">
+<area shape="rect" id="node3" href="marker.html" target="_top" title="marker" alt="" coords="297,1081,533,1209">
+<area shape="rect" id="node19" href="marker_location.html" target="_top" title="marker_location" alt="" coords="7,617,226,705">
+<area shape="rect" id="node4" title="phenome.locus_marker" alt="" coords="664,428,947,545">
+<area shape="rect" id="node5" title="phenome.polymorphic_fragment" alt="" coords="622,563,989,709">
+<area shape="rect" id="node6" title="phenome.tomato_il_bin" alt="" coords="663,727,947,932">
+<area shape="rect" id="node7" title="physical.computational_associations" alt="" coords="603,5,1007,123">
+<area shape="rect" id="node8" href="deprecated_markers.html" target="_top" title="deprecated_markers" alt="" coords="285,8,544,96">
+<area shape="rect" id="node9" title="physical.manual_associations" alt="" coords="635,949,975,1067">
+<area shape="rect" id="node10" title="physical.probe_markers" alt="" coords="661,1084,950,1201">
+<area shape="rect" id="node11" href="blast_annotations.html" target="_top" title="blast_annotations" alt="" coords="1101,2535,1336,2623">
+<area shape="rect" id="node12" href="unigene.html" target="_top" title="unigene" alt="" coords="341,2921,488,3009">
+<area shape="rect" id="node13" href="p_markers.html" target="_top" title="p_markers" alt="" coords="721,2068,890,2249">
+<area shape="rect" id="node14" href="cos_markers.html" target="_top" title="cos_markers" alt="" coords="685,1324,926,1500">
+<area shape="rect" id="node15" href="cosii_ortholog.html" target="_top" title="cosii_ortholog" alt="" coords="687,3012,923,3247">
+<area shape="rect" id="node16" href="sequence.html" target="_top" title="sequence" alt="" coords="335,3247,495,3335">
+<area shape="rect" id="node17" href="ests_mapped_by_clone.html" target="_top" title="ests_mapped_by_clone" alt="" coords="666,2303,945,2455">
+<area shape="rect" id="node18" title="genomic.clone" alt="" coords="313,2364,517,2452">
+<area shape="rect" id="node20" href="map.html" target="_top" title="map" alt="" coords="349,3493,481,3581">
+<area shape="rect" id="node21" title="public.stock" alt="" coords="25,3493,208,3581">
+<area shape="rect" id="node22" href="marker_alias.html" target="_top" title="marker_alias" alt="" coords="711,1517,900,1693">
+<area shape="rect" id="node23" href="marker_collectible.html" target="_top" title="marker_collectible" alt="" coords="649,2472,962,2624">
+<area shape="rect" id="node24" href="marker_collection.html" target="_top" title="marker_collection" alt="" coords="297,2533,532,2621">
+<area shape="rect" id="node25" href="marker_experiment.html" target="_top" title="marker_experiment" alt="" coords="1093,3101,1344,3189">
+<area shape="rect" id="node26" href="pcr_experiment.html" target="_top" title="pcr_experiment" alt="" coords="698,3336,913,3424">
+<area shape="rect" id="node27" href="rflp_markers.html" target="_top" title="rflp_markers" alt="" coords="711,2641,899,2729">
+<area shape="rect" id="node29" href="experiment_type.html" target="_top" title="experiment_type" alt="" coords="302,3352,527,3440">
+<area shape="rect" id="node32" href="rflp_sequences.html" target="_top" title="rflp_sequences" alt="" coords="310,2639,519,2727">
+<area shape="rect" id="node28" href="pcr_exp_accession.html" target="_top" title="pcr_exp_accession" alt="" coords="1099,3697,1338,3785">
+<area shape="rect" id="node30" href="pcr_experiment_sequence.html" target="_top" title="pcr_experiment_sequence" alt="" coords="1065,3299,1373,3387">
+<area shape="rect" id="node31" href="primer_unigene_match.html" target="_top" title="primer_unigene_match" alt="" coords="666,2747,945,2923">
+<area shape="rect" id="node33" href="snp.html" target="_top" title="snp" alt="" coords="686,3441,925,3735">
+<area shape="rect" id="node34" title="metadata.md_metadata" alt="" coords="270,3671,559,3759">
+<area shape="rect" id="node35" href="snp_file.html" target="_top" title="snp_file" alt="" coords="1147,3441,1290,3529">
+<area shape="rect" id="node36" href="snpprop.html" target="_top" title="snpprop" alt="" coords="1145,3547,1293,3635">
+<area shape="rect" id="node37" href="ssr.html" target="_top" title="ssr" alt="" coords="739,1219,871,1307">
+<area shape="rect" id="node38" href="ssr_primer_unigene_matches.html" target="_top" title="ssr_primer_unigene_matches" alt="" coords="1051,1621,1386,1709">
+<area shape="rect" id="node39" href="ssr_repeats.html" target="_top" title="ssr_repeats" alt="" coords="1130,788,1307,876">
+<area shape="rect" id="node40" href="tm_markers.html" target="_top" title="tm_markers" alt="" coords="715,1711,895,1916">
+<area shape="rect" id="node41" title="sgn_people.user_map_data" alt="" coords="647,1933,964,2051">
+</map>
+                                        <a name='diagram'><img id="twoimpliedDegreeImg" src="../diagrams/tables/marker.implied2degrees.png" usemap="#twoDegreesRelationshipsDiagramImplied" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- /.box-body -->
+                    </div>
+                </section>
+                <script>
+                    var config = {
+                        pagination: true
+                    }
+                </script>
+            </div>
+            <!-- /.content-wrapper -->
+            <footer class="main-footer">
+                <div>
+                    <div class="pull-right hidden-xs">
+                        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+                        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+                    </div>
+                    <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.2.4</a></strong>
+                </div>
+                <!-- /.container -->
+            </footer>
+        </div>
+        <!-- ./wrapper -->
+
+        <!-- jQuery 2.2.3 -->
+        <script src="../bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+        <script src="../bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+        <!-- Bootstrap 3.3.5 -->
+        <script src="../bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+        <!-- DataTables -->
+        <script src="../bower/datatables.net/jquery.dataTables.min.js"></script>
+        <script src="../bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+        <script src="../bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.html5.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.print.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+        <!-- SheetJS -->
+        <script src="../bower/js-xlsx/xlsx.full.min.js"></script>
+        <!-- pdfmake -->
+        <script src="../bower/pdfmake/pdfmake.min.js"></script>
+        <script src="../bower/pdfmake/vfs_fonts.js"></script>
+        <!-- SlimScroll -->
+        <script src="../bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+        <!-- FastClick -->
+        <script src="../bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+        <!-- Salvattore -->
+        <script src="../bower/salvattore/salvattore.min.js"></script>
+        <!-- AnchorJS -->
+        <script src="../bower/anchor-js/anchor.min.js"></script>
+        <!-- CodeMirror -->
+        <script src="../bower/codemirror/codemirror.js"></script>
+        <script src="../bower/codemirror/sql.js"></script>
+        <!-- AdminLTE App -->
+        <script src="../bower/admin-lte/dist/js/app.min.js"></script>
+        <script src="table.js"></script>
+        <script src="../schemaSpy.js"></script>
+    </body>
+</html>

@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>materialized_phenotype_jsonb_table - cxgn_breedbase.public</title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <link rel="icon" type="image/png" sizes="16x16" href="../favicon.png">
+        <!-- Bootstrap 3.3.5 -->
+        <link rel="stylesheet" href="../bower/admin-lte/bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="../bower/font-awesome/css/font-awesome.min.css">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="../bower/ionicons/css/ionicons.min.css">
+        <!-- DataTables -->
+        <link rel="stylesheet" href="../bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" href="../bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+        <!-- Code Mirror -->
+        <link rel="stylesheet" href="../bower/codemirror/codemirror.css">
+        <!-- Fonts -->
+        <link href='../fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+        <link href='../fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+
+        <!-- Theme style -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/AdminLTE.min.css">
+        <!-- Salvattore -->
+        <link rel="stylesheet" href="../bower/salvattore/salvattore.css">
+        <!-- AdminLTE Skins. Choose a skin from the css/skins
+           folder instead of downloading all of them to reduce the load. -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/skins/_all-skins.min.css">
+        <!-- SchemaSpy -->
+        <link rel="stylesheet" href="../schemaSpy.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="../bower/html5shiv/html5shiv.min.js"></script>
+        <script src="../bower/respond/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+    <body class="hold-transition skin-blue layout-top-nav">
+        <div class="wrapper">
+            <header class="main-header">
+                <nav class="navbar navbar-static-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <a href="../index.html" class="navbar-brand"><b>cxgn_breedbase</b></a><span class="navbar-brand" style="padding-left: 0">.public</span>
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"><i class="fa fa-bars"></i></button>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a href="../index.html">Tables <span class="sr-only">(current)</span></a></li>
+                                <li><a href="../columns.html" title="All of the columns in the schema">Columns</a></li>
+                                <li><a href="../constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+                                <li><a href="../relationships.html" title="Diagram of table relationships">Relationships</a></li>
+                                <li><a href="../orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>
+                                <li><a href="../anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+                                <li><a href="../routines.html" title="Procedures and functions">Routines</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                        <!-- Navbar Right Menu -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </nav>
+            </header>
+            <!-- Main content -->
+            <!-- Full Width Column -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>materialized_phenotype_jsonb_table</h1><p><span id="recordNumber">0</span> rows</p><br />
+                </section>
+                <!-- Main content -->
+                <section class="content">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+                            <h3 id="Columns" class="box-title">Columns</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table
+                                    id="standard_table"
+                                    class="table table-bordered table-striped dataTable"
+                                    role="grid"
+                                    data-paging="true"
+                                    data-page-length="10"
+                                    data-length-change="false">
+                                <thead align='left'>
+                                <tr>
+                                    <th>Column</th>
+                                    <th>Type</th>
+                                    <th>Size</th>
+                                    <th title='Are nulls allowed?'>Nulls</th>
+                                    <th title='Is column automatically updated?'>Auto</th>
+                                    <th title='Default value'>Default</th>
+                                    <th title='Columns in tables that reference this column'>Children</th>
+                                    <th title='Columns in tables that are referenced by this column'>Parents</th>
+                                    <th title='Comments' class="toggle"><span>Comments</span></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="observationunit_stock_id">observationunit_stock_id</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="materialized_phenotype_jsonb_table.observationunit_stock_id&#39;s name implies that it&#39;s a child of stock.stock_id, but it doesn&#39;t reference that column."><a href='stock.html'>stock</a><span class='relatedKey'>.stock_id</span></td>
+                                                <td class="constraint detail">Implied Constraint</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="observationunit_uniquename">observationunit_uniquename</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="observationunit_type_name">observationunit_type_name</span></td>
+                                    <td>varchar</td>
+                                    <td>1024</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="germplasm_uniquename">germplasm_uniquename</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="germplasm_stock_id">germplasm_stock_id</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="materialized_phenotype_jsonb_table.germplasm_stock_id&#39;s name implies that it&#39;s a child of stock.stock_id, but it doesn&#39;t reference that column."><a href='stock.html'>stock</a><span class='relatedKey'>.stock_id</span></td>
+                                                <td class="constraint detail">Implied Constraint</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="rep">rep</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="block">block</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="plot_number">plot_number</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="row_number">row_number</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="col_number">col_number</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="plant_number">plant_number</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="is_a_control">is_a_control</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="notes">notes</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="trial_id">trial_id</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="trial_name">trial_name</span></td>
+                                    <td>varchar</td>
+                                    <td>255</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="trial_description">trial_description</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="plot_width">plot_width</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="plot_length">plot_length</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="field_size">field_size</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="field_trial_is_planned_to_be_genotyped">field_trial_is_planned_to_be_genotyped</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="field_trial_is_planned_to_cross">field_trial_is_planned_to_cross</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="breeding_program_id">breeding_program_id</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="breeding_program_name">breeding_program_name</span></td>
+                                    <td>varchar</td>
+                                    <td>255</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="breeding_program_description">breeding_program_description</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="year">year</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="design">design</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="location_id">location_id</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="planting_date">planting_date</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="harvest_date">harvest_date</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="folder_id">folder_id</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="folder_name">folder_name</span></td>
+                                    <td>varchar</td>
+                                    <td>255</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="folder_description">folder_description</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="seedlot_transaction">seedlot_transaction</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="seedlot_stock_id">seedlot_stock_id</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="materialized_phenotype_jsonb_table.seedlot_stock_id&#39;s name implies that it&#39;s a child of stock.stock_id, but it doesn&#39;t reference that column."><a href='stock.html'>stock</a><span class='relatedKey'>.stock_id</span></td>
+                                                <td class="constraint detail">Implied Constraint</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="seedlot_uniquename">seedlot_uniquename</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="seedlot_current_weight_gram">seedlot_current_weight_gram</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="seedlot_current_count">seedlot_current_count</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="seedlot_box_name">seedlot_box_name</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="treatments">treatments</span></td>
+                                    <td>jsonb</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="observations">observations</span></td>
+                                    <td>jsonb</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="available_germplasm_seedlots">available_germplasm_seedlots</span></td>
+                                    <td>jsonb</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-code-fork"></i>
+                            <h3 id="Relationships" class="box-title">Relationships</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <div class="nav-tabs-custom"><!-- Tabs within a box -->
+                                <h5>Close relationships within degrees of separation</h5>
+                                <ul class="nav nav-tabs pull-left ui-sortable-handle">
+                                    <li class="active"><a href="#oneDegreeImg-chart" data-toggle="tab" aria-expanded="true">One</a></li>
+                                    <li class=""><a href="#oneimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">One implied</a></li>
+                                    <li class=""><a href="#twoimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two implied</a></li>
+                                </ul>
+                                <div class="tab-content no-padding">
+                                    <div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
+<area shape="rect" id="node1" href="materialized_phenotype_jsonb_table.html" target="_top" title="materialized_phenotype_jsonb_table" alt="" coords="5,5,541,1253">
+</map>
+                                        <a name='diagram'><img id="oneDegreeImg" src="../diagrams/tables/materialized_phenotype_jsonb_table.1degree.png" usemap="#oneDegreeRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="oneimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="oneDegreeRelationshipsDiagramImplied" name="oneDegreeRelationshipsDiagramImplied">
+<area shape="rect" id="node1" href="materialized_phenotype_jsonb_table.html" target="_top" title="materialized_phenotype_jsonb_table" alt="" coords="217,5,753,1253">
+<area shape="rect" id="node2" href="stock.html" target="_top" title="stock" alt="" coords="5,125,173,389">
+</map>
+                                        <a name='diagram'><img id="oneimpliedDegreeImg" src="../diagrams/tables/materialized_phenotype_jsonb_table.implied1degrees.png" usemap="#oneDegreeRelationshipsDiagramImplied" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="twoimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="twoDegreesRelationshipsDiagramImplied" name="twoDegreesRelationshipsDiagramImplied">
+<area shape="rect" id="node1" title="phenome.stock_allele" alt="" coords="783,427,1052,515">
+<area shape="rect" id="node2" href="stock.html" target="_top" title="stock" alt="" coords="437,1944,605,2208">
+<area shape="rect" id="node6" href="cvterm.html" target="_top" title="cvterm" alt="" coords="225,321,393,409">
+<area shape="rect" id="node7" href="dbxref.html" target="_top" title="dbxref" alt="" coords="5,321,181,409">
+<area shape="rect" id="node11" href="organism.html" target="_top" title="organism" alt="" coords="230,2457,389,2545">
+<area shape="rect" id="node3" title="phenome.stock_file" alt="" coords="793,532,1042,620">
+<area shape="rect" id="node4" title="phenome.stock_image" alt="" coords="780,637,1055,725">
+<area shape="rect" id="node5" title="phenome.stock_owner" alt="" coords="779,743,1055,831">
+<area shape="rect" id="node8" href="materialized_phenotype_jsonb_table.html" target="_top" title="materialized_phenotype_jsonb_table" alt="" coords="649,848,1185,2096">
+<area shape="rect" id="node9" href="materialized_phenoview.html" target="_top" title="materialized_phenoview" alt="" coords="773,2113,1062,2177">
+<area shape="rect" id="node10" href="materialized_stockprop.html" target="_top" title="materialized_stockprop" alt="" coords="776,3037,1059,3101">
+<area shape="rect" id="node12" href="nd_experiment_stock.html" target="_top" title="nd_experiment_stock" alt="" coords="785,111,1049,199">
+<area shape="rect" id="node13" href="stock_cvterm.html" target="_top" title="stock_cvterm" alt="" coords="821,216,1014,304">
+<area shape="rect" id="node14" href="stock_dbxref.html" target="_top" title="stock_dbxref" alt="" coords="823,5,1012,93">
+<area shape="rect" id="node15" href="stock_genotype.html" target="_top" title="stock_genotype" alt="" coords="809,2195,1025,2283">
+<area shape="rect" id="node16" href="stock_pub.html" target="_top" title="stock_pub" alt="" coords="835,2300,999,2388">
+<area shape="rect" id="node17" href="stock_relationship.html" target="_top" title="stock_relationship" alt="" coords="798,321,1037,409">
+<area shape="rect" id="node18" href="stockcollection_stock.html" target="_top" title="stockcollection_stock" alt="" coords="785,2405,1050,2493">
+<area shape="rect" id="node19" href="stockprop.html" target="_top" title="stockprop" alt="" coords="835,2932,999,3020">
+<area shape="rect" id="node20" title="sgn.map" alt="" coords="841,2511,993,2599">
+<area shape="rect" id="node21" title="sgn.pcr_exp_accession" alt="" coords="779,2616,1056,2704">
+<area shape="rect" id="node22" title="sgn.pcr_experiment" alt="" coords="791,2721,1044,2809">
+<area shape="rect" id="node23" title="sgn.snp" alt="" coords="845,2827,990,2915">
+</map>
+                                        <a name='diagram'><img id="twoimpliedDegreeImg" src="../diagrams/tables/materialized_phenotype_jsonb_table.implied2degrees.png" usemap="#twoDegreesRelationshipsDiagramImplied" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- /.box-body -->
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-file-code-o"></i>
+                            <h3 id="ViewDefinition" class="box-title">View Definition</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <textarea id="sql-script-codemirror" name="sql-script-codemirror" rows="" style="display: none;">SELECT observationunit.stock_id AS observationunit_stock_id,&#10;    observationunit.uniquename AS observationunit_uniquename,&#10;    observationunit_cvterm.name AS observationunit_type_name,&#10;    germplasm.uniquename AS germplasm_uniquename,&#10;    germplasm.stock_id AS germplasm_stock_id,&#10;    rep.value AS rep,&#10;    block_number.value AS block,&#10;    plot_number.value AS plot_number,&#10;    row_number.value AS row_number,&#10;    col_number.value AS col_number,&#10;    plant_number.value AS plant_number,&#10;    is_a_control.value AS is_a_control,&#10;    string_agg(DISTINCT notes.value, &#39;, &#39;::text) AS notes,&#10;    project.project_id AS trial_id,&#10;    project.name AS trial_name,&#10;    project.description AS trial_description,&#10;    plot_width.value AS plot_width,&#10;    plot_length.value AS plot_length,&#10;    field_size.value AS field_size,&#10;    field_trial_is_planned_to_be_genotyped.value AS field_trial_is_planned_to_be_genotyped,&#10;    field_trial_is_planned_to_cross.value AS field_trial_is_planned_to_cross,&#10;    breeding_program.project_id AS breeding_program_id,&#10;    breeding_program.name AS breeding_program_name,&#10;    breeding_program.description AS breeding_program_description,&#10;    year.value AS year,&#10;    design.value AS design,&#10;    location_id.value AS location_id,&#10;    planting_date.value AS planting_date,&#10;    harvest_date.value AS harvest_date,&#10;    folder.project_id AS folder_id,&#10;    folder.name AS folder_name,&#10;    folder.description AS folder_description,&#10;    seedplot_planted.value AS seedlot_transaction,&#10;    seedlot.stock_id AS seedlot_stock_id,&#10;    seedlot.uniquename AS seedlot_uniquename,&#10;    seedlot_current_weight.value AS seedlot_current_weight_gram,&#10;    seedlot_current_count.value AS seedlot_current_count,&#10;    seedlot_seedlot_box.value AS seedlot_box_name,&#10;    COALESCE(jsonb_object_agg(treatment.name, treatment.description) FILTER (WHERE (treatment.name IS NOT NULL)), &#39;{&quot;No ManagementFactor&quot;: null}&#39;::jsonb) AS treatments,&#10;    COALESCE(jsonb_agg(jsonb_build_object(&#39;trait_id&#39;, phenotype.cvalue_id, &#39;trait_name&#39;, (((((cvterm.name)::text || &#39;|&#39;::text) || (db.name)::text) || &#39;:&#39;::text) || (dbxref.accession)::text), &#39;value&#39;, phenotype.value, &#39;phenotype_id&#39;, phenotype.phenotype_id, &#39;outlier&#39;, outlier.value, &#39;create_date&#39;, phenotype.create_date, &#39;uniquename&#39;, phenotype.uniquename, &#39;phenotype_location_id&#39;, nd_geolocation.nd_geolocation_id, &#39;phenotype_location_name&#39;, nd_geolocation.description, &#39;collect_date&#39;, phenotype.collect_date, &#39;operator&#39;, phenotype.operator, &#39;associated_image_id&#39;, md_image.image_id, &#39;associated_image_type&#39;, project_md_image_type.name, &#39;associated_image_project_id&#39;, drone_image_project.project_id, &#39;associated_image_project_name&#39;, drone_image_project.name, &#39;associated_image_project_time_json&#39;, drone_image_project_time_json.value)) FILTER (WHERE (phenotype.value IS NOT NULL)), &#39;[]&#39;::jsonb) AS observations,&#10;    COALESCE(jsonb_agg(jsonb_build_object(&#39;stock_id&#39;, available_seelot.stock_id, &#39;stock_uniquename&#39;, available_seelot.uniquename, &#39;current_weight_gram&#39;, current_weight.value, &#39;current_count&#39;, current_count.value, &#39;box_name&#39;, seedlot_box.value)) FILTER (WHERE (available_seelot.stock_id IS NOT NULL)), &#39;[]&#39;::jsonb) AS available_germplasm_seedlots&#10;   FROM ((((((((((((((((((((((((((((((((((((((((((((((((((((((((stock observationunit&#10;     JOIN nd_experiment_stock ON ((observationunit.stock_id &#61; nd_experiment_stock.stock_id)))&#10;     JOIN nd_experiment ON ((nd_experiment_stock.nd_experiment_id &#61; nd_experiment.nd_experiment_id)))&#10;     JOIN nd_geolocation USING (nd_geolocation_id))&#10;     LEFT JOIN stock_relationship seedplot_planted ON (((seedplot_planted.subject_id &#61; observationunit.stock_id) AND (seedplot_planted.type_id &#61; 77562))))&#10;     LEFT JOIN stock seedlot ON (((seedplot_planted.object_id &#61; seedlot.stock_id) AND (seedlot.type_id &#61; 77563))))&#10;     LEFT JOIN stockprop seedlot_current_count ON (((seedlot.stock_id &#61; seedlot_current_count.stock_id) AND (seedlot_current_count.type_id &#61; 77580))))&#10;     LEFT JOIN stockprop seedlot_current_weight ON (((seedlot.stock_id &#61; seedlot_current_weight.stock_id) AND (seedlot_current_weight.type_id &#61; 77621))))&#10;     LEFT JOIN stockprop seedlot_seedlot_box ON (((seedlot.stock_id &#61; seedlot_seedlot_box.stock_id) AND (seedlot_seedlot_box.type_id &#61; 76520))))&#10;     LEFT JOIN nd_experiment_phenotype ON ((nd_experiment_phenotype.nd_experiment_id &#61; nd_experiment.nd_experiment_id)))&#10;     LEFT JOIN phenotype USING (phenotype_id))&#10;     JOIN cvterm observationunit_cvterm ON ((observationunit.type_id &#61; observationunit_cvterm.cvterm_id)))&#10;     JOIN stock_relationship ON (((observationunit.stock_id &#61; stock_relationship.subject_id) AND (stock_relationship.type_id &#61; ANY (ARRAY[76394, 76506, 77578, 78145])))))&#10;     JOIN stock germplasm ON (((stock_relationship.object_id &#61; germplasm.stock_id) AND (germplasm.type_id &#61; ANY (ARRAY[76392, 76446, 77647])))))&#10;     LEFT JOIN phenome.nd_experiment_md_images nd_experiment_md_images ON ((nd_experiment.nd_experiment_id &#61; nd_experiment_md_images.nd_experiment_id)))&#10;     LEFT JOIN metadata.md_image md_image ON ((nd_experiment_md_images.image_id &#61; md_image.image_id)))&#10;     LEFT JOIN phenome.project_md_image project_md_image ON ((md_image.image_id &#61; project_md_image.image_id)))&#10;     LEFT JOIN cvterm project_md_image_type ON ((project_md_image.type_id &#61; project_md_image_type.cvterm_id)))&#10;     LEFT JOIN project drone_image_project ON ((project_md_image.project_id &#61; drone_image_project.project_id)))&#10;     LEFT JOIN projectprop drone_image_project_time_json ON (((drone_image_project.project_id &#61; drone_image_project_time_json.project_id) AND (drone_image_project_time_json.type_id &#61; 78125))))&#10;     LEFT JOIN stock_relationship available_seedlot_rel ON (((available_seedlot_rel.subject_id &#61; germplasm.stock_id) AND (available_seedlot_rel.type_id &#61; 77561))))&#10;     LEFT JOIN stock available_seelot ON (((available_seedlot_rel.object_id &#61; available_seelot.stock_id) AND (seedlot.type_id &#61; 77563))))&#10;     LEFT JOIN stockprop current_count ON (((available_seelot.stock_id &#61; current_count.stock_id) AND (current_count.type_id &#61; 77580))))&#10;     LEFT JOIN stockprop current_weight ON (((available_seelot.stock_id &#61; current_weight.stock_id) AND (current_weight.type_id &#61; 77621))))&#10;     LEFT JOIN stockprop seedlot_box ON (((available_seelot.stock_id &#61; seedlot_box.stock_id) AND (seedlot_box.type_id &#61; 76520))))&#10;     LEFT JOIN stockprop rep ON (((observationunit.stock_id &#61; rep.stock_id) AND (rep.type_id &#61; 76459))))&#10;     LEFT JOIN stockprop block_number ON (((observationunit.stock_id &#61; block_number.stock_id) AND (block_number.type_id &#61; 76460))))&#10;     LEFT JOIN stockprop plot_number ON (((observationunit.stock_id &#61; plot_number.stock_id) AND (plot_number.type_id &#61; 76461))))&#10;     LEFT JOIN stockprop row_number ON (((observationunit.stock_id &#61; row_number.stock_id) AND (row_number.type_id &#61; 76523) AND (row_number.rank &#61; 0))))&#10;     LEFT JOIN stockprop col_number ON (((observationunit.stock_id &#61; col_number.stock_id) AND (col_number.type_id &#61; 76517) AND (col_number.rank &#61; 0))))&#10;     LEFT JOIN stockprop plant_number ON (((observationunit.stock_id &#61; plant_number.stock_id) AND (plant_number.type_id &#61; 77104))))&#10;     LEFT JOIN stockprop is_a_control ON (((observationunit.stock_id &#61; is_a_control.stock_id) AND (is_a_control.type_id &#61; 76519))))&#10;     LEFT JOIN stockprop notes ON (((observationunit.stock_id &#61; notes.stock_id) AND (notes.type_id &#61; 77600))))&#10;     LEFT JOIN phenotypeprop outlier ON (((phenotype.phenotype_id &#61; outlier.phenotype_id) AND (outlier.type_id &#61; 77605))))&#10;     LEFT JOIN cvterm ON ((phenotype.cvalue_id &#61; cvterm.cvterm_id)))&#10;     LEFT JOIN dbxref ON ((cvterm.dbxref_id &#61; dbxref.dbxref_id)))&#10;     LEFT JOIN db USING (db_id))&#10;     JOIN nd_experiment_project ON ((nd_experiment_project.nd_experiment_id &#61; nd_experiment.nd_experiment_id)))&#10;     JOIN project ON ((nd_experiment_project.project_id &#61; project.project_id)))&#10;     JOIN project_relationship ON (((project.project_id &#61; project_relationship.subject_project_id) AND (project_relationship.type_id &#61; 76448))))&#10;     JOIN project breeding_program ON ((breeding_program.project_id &#61; project_relationship.object_project_id)))&#10;     LEFT JOIN projectprop year ON (((project.project_id &#61; year.project_id) AND (year.type_id &#61; 76395))))&#10;     LEFT JOIN projectprop design ON (((project.project_id &#61; design.project_id) AND (design.type_id &#61; 76458))))&#10;     LEFT JOIN projectprop location_id ON (((project.project_id &#61; location_id.project_id) AND (location_id.type_id &#61; 76462))))&#10;     LEFT JOIN projectprop planting_date ON (((project.project_id &#61; planting_date.project_id) AND (planting_date.type_id &#61; 76496))))&#10;     LEFT JOIN projectprop harvest_date ON (((project.project_id &#61; harvest_date.project_id) AND (harvest_date.type_id &#61; 76495))))&#10;     LEFT JOIN projectprop plot_width ON (((project.project_id &#61; plot_width.project_id) AND (plot_width.type_id &#61; 77634))))&#10;     LEFT JOIN projectprop plot_length ON (((project.project_id &#61; plot_length.project_id) AND (plot_length.type_id &#61; 77635))))&#10;     LEFT JOIN projectprop field_size ON (((project.project_id &#61; field_size.project_id) AND (field_size.type_id &#61; 77636))))&#10;     LEFT JOIN projectprop field_trial_is_planned_to_be_genotyped ON (((project.project_id &#61; field_trial_is_planned_to_be_genotyped.project_id) AND (field_trial_is_planned_to_be_genotyped.type_id &#61; 77637))))&#10;     LEFT JOIN projectprop field_trial_is_planned_to_cross ON (((project.project_id &#61; field_trial_is_planned_to_cross.project_id) AND (field_trial_is_planned_to_cross.type_id &#61; 77638))))&#10;     LEFT JOIN nd_experiment_stock treatment_nds ON (((treatment_nds.type_id &#61; 77567) AND (treatment_nds.stock_id &#61; observationunit.stock_id))))&#10;     LEFT JOIN nd_experiment_project treatment_ndp ON ((treatment_ndp.nd_experiment_id &#61; treatment_nds.nd_experiment_id)))&#10;     LEFT JOIN project_relationship treatment_rel ON (((project.project_id &#61; treatment_rel.object_project_id) AND (treatment_rel.type_id &#61; 77568))))&#10;     LEFT JOIN project treatment ON (((treatment.project_id &#61; treatment_rel.subject_project_id) AND (treatment.project_id &#61; treatment_ndp.project_id))))&#10;     LEFT JOIN project_relationship folder_rel ON (((project.project_id &#61; folder_rel.subject_project_id) AND (folder_rel.type_id &#61; 76504))))&#10;     LEFT JOIN project folder ON ((folder.project_id &#61; folder_rel.object_project_id)))&#10;  WHERE ((nd_experiment.type_id &#61; ANY (ARRAY[76441, 76477, 76391, 78141])) AND (design.value &lt;&gt; &#39;genotype_data_project&#39;::text) AND (design.value &lt;&gt; &#39;treatment&#39;::text))&#10;  GROUP BY observationunit.stock_id, observationunit.uniquename, observationunit_cvterm.name, germplasm.uniquename, germplasm.stock_id, rep.value, block_number.value, plot_number.value, row_number.value, col_number.value, plant_number.value, is_a_control.value, project.project_id, project.name, project.description, breeding_program.project_id, breeding_program.name, breeding_program.description, year.value, design.value, location_id.value, planting_date.value, harvest_date.value, plot_width.value, plot_length.value, field_size.value, field_trial_is_planned_to_be_genotyped.value, field_trial_is_planned_to_cross.value, folder.project_id, folder.name, folder.description, seedplot_planted.value, seedlot.stock_id, seedlot.uniquename, seedlot_current_weight.value, seedlot_current_count.value, seedlot_seedlot_box.value&#10;  ORDER BY project.project_id, observationunit.uniquename;</textarea>
+                            <div style="padding-top: 5px;"><hr></div>
+                            <div class="box box-solid">
+                                <div class="box-header with-border">
+                                    <i class="fa fa-puzzle-piece"></i>
+                                    <h3 class="box-title">Possibly Referenced Tables/Views</h3>
+                                </div>
+                                <!-- /.box-header -->
+                                <div class="box-body">
+                                    <ul class="list-unstyled">
+                                        <li><a href="project.html">project</a></li>
+                                        <li><a href="phenotype.html">phenotype</a></li>
+                                        <li><a href="cvterm.html">cvterm</a></li>
+                                        <li><a href="db.html">db</a></li>
+                                        <li><a href="dbxref.html">dbxref</a></li>
+                                        <li><a href="nd_geolocation.html">nd_geolocation</a></li>
+                                        <li><a href="stock.html">stock</a></li>
+                                        <li><a href="nd_experiment_stock.html">nd_experiment_stock</a></li>
+                                        <li><a href="nd_experiment.html">nd_experiment</a></li>
+                                        <li><a href="stock_relationship.html">stock_relationship</a></li>
+                                        <li><a href="stockprop.html">stockprop</a></li>
+                                        <li><a href="nd_experiment_phenotype.html">nd_experiment_phenotype</a></li>
+                                        <li><a href="projectprop.html">projectprop</a></li>
+                                        <li><a href="phenotypeprop.html">phenotypeprop</a></li>
+                                        <li><a href="nd_experiment_project.html">nd_experiment_project</a></li>
+                                        <li><a href="project_relationship.html">project_relationship</a></li>
+                                    </ul>
+                                </div><!-- /.box-body -->
+                            </div>
+                        </div><!-- /.box-body -->
+                    </div>
+                </section>
+                <script>
+                    var config = {
+                        pagination: true
+                    }
+                </script>
+            </div>
+            <!-- /.content-wrapper -->
+            <footer class="main-footer">
+                <div>
+                    <div class="pull-right hidden-xs">
+                        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+                        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+                    </div>
+                    <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.2.4</a></strong>
+                </div>
+                <!-- /.container -->
+            </footer>
+        </div>
+        <!-- ./wrapper -->
+
+        <!-- jQuery 2.2.3 -->
+        <script src="../bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+        <script src="../bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+        <!-- Bootstrap 3.3.5 -->
+        <script src="../bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+        <!-- DataTables -->
+        <script src="../bower/datatables.net/jquery.dataTables.min.js"></script>
+        <script src="../bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+        <script src="../bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.html5.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.print.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+        <!-- SheetJS -->
+        <script src="../bower/js-xlsx/xlsx.full.min.js"></script>
+        <!-- pdfmake -->
+        <script src="../bower/pdfmake/pdfmake.min.js"></script>
+        <script src="../bower/pdfmake/vfs_fonts.js"></script>
+        <!-- SlimScroll -->
+        <script src="../bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+        <!-- FastClick -->
+        <script src="../bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+        <!-- Salvattore -->
+        <script src="../bower/salvattore/salvattore.min.js"></script>
+        <!-- AnchorJS -->
+        <script src="../bower/anchor-js/anchor.min.js"></script>
+        <!-- CodeMirror -->
+        <script src="../bower/codemirror/codemirror.js"></script>
+        <script src="../bower/codemirror/sql.js"></script>
+        <!-- AdminLTE App -->
+        <script src="../bower/admin-lte/dist/js/app.min.js"></script>
+        <script src="table.js"></script>
+        <script src="../schemaSpy.js"></script>
+    </body>
+</html>

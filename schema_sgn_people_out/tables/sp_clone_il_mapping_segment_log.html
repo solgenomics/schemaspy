@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>sp_clone_il_mapping_segment_log - cxgn_breedbase.sgn_people</title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <link rel="icon" type="image/png" sizes="16x16" href="../favicon.png">
+        <!-- Bootstrap 3.3.5 -->
+        <link rel="stylesheet" href="../bower/admin-lte/bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="../bower/font-awesome/css/font-awesome.min.css">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="../bower/ionicons/css/ionicons.min.css">
+        <!-- DataTables -->
+        <link rel="stylesheet" href="../bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" href="../bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+        <!-- Code Mirror -->
+        <link rel="stylesheet" href="../bower/codemirror/codemirror.css">
+        <!-- Fonts -->
+        <link href='../fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+        <link href='../fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+
+        <!-- Theme style -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/AdminLTE.min.css">
+        <!-- Salvattore -->
+        <link rel="stylesheet" href="../bower/salvattore/salvattore.css">
+        <!-- AdminLTE Skins. Choose a skin from the css/skins
+           folder instead of downloading all of them to reduce the load. -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/skins/_all-skins.min.css">
+        <!-- SchemaSpy -->
+        <link rel="stylesheet" href="../schemaSpy.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="../bower/html5shiv/html5shiv.min.js"></script>
+        <script src="../bower/respond/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+    <body class="hold-transition skin-blue layout-top-nav">
+        <div class="wrapper">
+            <header class="main-header">
+                <nav class="navbar navbar-static-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <a href="../index.html" class="navbar-brand"><b>cxgn_breedbase</b></a><span class="navbar-brand" style="padding-left: 0">.sgn_people</span>
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"><i class="fa fa-bars"></i></button>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a href="../index.html">Tables <span class="sr-only">(current)</span></a></li>
+                                <li><a href="../columns.html" title="All of the columns in the schema">Columns</a></li>
+                                <li><a href="../constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+                                <li><a href="../relationships.html" title="Diagram of table relationships">Relationships</a></li>
+                                <li><a href="../orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>
+                                <li><a href="../anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+                                <li><a href="../routines.html" title="Procedures and functions">Routines</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                        <!-- Navbar Right Menu -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </nav>
+            </header>
+            <!-- Main content -->
+            <!-- Full Width Column -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>sp_clone_il_mapping_segment_log</h1><p><span id="recordNumber">0</span> rows</p><br />
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-file-text-o"></i>
+                            <h3 id="Description" class="box-title">Description</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div><!-- /.box-header -->
+                        <div class="box-body clearfix">
+                            <p>linking table showing which phenome.individual IL line a given clone has been mapped to. also provides a modification history with is_current and created columns</p>
+                        </div><!-- /.box-body -->
+                    </div>
+                </section>
+                <!-- Main content -->
+                <section class="content">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+                            <h3 id="Columns" class="box-title">Columns</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table
+                                    id="standard_table"
+                                    class="table table-bordered table-striped dataTable"
+                                    role="grid"
+                                    data-paging="true"
+                                    data-page-length="10"
+                                    data-length-change="false">
+                                <thead align='left'>
+                                <tr>
+                                    <th>Column</th>
+                                    <th>Type</th>
+                                    <th>Size</th>
+                                    <th title='Are nulls allowed?'>Nulls</th>
+                                    <th title='Is column automatically updated?'>Auto</th>
+                                    <th title='Default value'>Default</th>
+                                    <th title='Columns in tables that reference this column'>Children</th>
+                                    <th title='Columns in tables that are referenced by this column'>Parents</th>
+                                    <th title='Comments' class="toggle"><span>Comments</span></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td><span id="sp_clone_il_mapping_segment_log_id">sp_clone_il_mapping_segment_log_id</span></td>
+                                    <td>serial</td>
+                                    <td>10</td>
+                                    <td title=''></td>
+                                    <td title='Automatically updated by the database'>√</td>
+                                    <td>nextval(&#39;sgn_people.sp_clone_il_mapping_segment_l_sp_clone_il_mapping_segment_l_seq&#39;::regclass)</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="individual_id">individual_id</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="sp_clone_il_mapping_segment_log.individual_id references phenome.individual.individual_id via sp_clone_il_mapping_segment_log_individual_id_fkey"><a href='../../phenome/tables/individual.html'>individual</a><span class='relatedKey'>.individual_id</span></td>
+                                                <td class="constraint detail">sp_clone_il_mapping_segment_log_individual_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="sp_person_id">sp_person_id</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="sp_clone_il_mapping_segment_log.sp_person_id references sp_person.sp_person_id via sp_clone_il_mapping_segment_log_sp_person_id_fkey"><a href='sp_person.html'>sp_person</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">sp_clone_il_mapping_segment_log_sp_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="clone_id">clone_id</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="sp_clone_il_mapping_segment_log.clone_id references genomic.clone.clone_id via sp_clone_il_mapping_segment_log_clone_id_fkey"><a href='../../genomic/tables/clone.html'>clone</a><span class='relatedKey'>.clone_id</span></td>
+                                                <td class="constraint detail">sp_clone_il_mapping_segment_log_clone_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="is_current">is_current</span></td>
+                                    <td>bool</td>
+                                    <td>1</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>true</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="created">created</span></td>
+                                    <td>timestamp</td>
+                                    <td>29,6</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>now()</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-code-fork"></i>
+                            <h3 id="Relationships" class="box-title">Relationships</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <div class="nav-tabs-custom"><!-- Tabs within a box -->
+                                <h5>Close relationships within degrees of separation</h5>
+                                <ul class="nav nav-tabs pull-left ui-sortable-handle">
+                                    <li class="active"><a href="#oneDegreeImg-chart" data-toggle="tab" aria-expanded="true">One</a></li>
+                                    <li class=""><a href="#twodegreesDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two degrees</a></li>
+                                </ul>
+                                <div class="tab-content no-padding">
+                                    <div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
+<area shape="rect" id="node1" title="phenome.individual" alt="" coords="277,5,529,152">
+<area shape="rect" id="node2" href="sp_person.html" target="_top" title="sp_person" alt="" coords="5,35,233,328">
+<area shape="rect" id="node3" href="sp_clone_il_mapping_segment_log.html" target="_top" title="sp_clone_il_mapping_segment_log" alt="" coords="573,68,1068,313">
+<area shape="rect" id="node4" title="genomic.clone" alt="" coords="301,205,505,293">
+</map>
+                                        <a name='diagram'><img id="oneDegreeImg" src="../diagrams/tables/sp_clone_il_mapping_segment_log.1degree.png" usemap="#oneDegreeRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="twodegreesDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
+<area shape="rect" id="node1" title="annotation.annotation" alt="" coords="355,463,632,551">
+<area shape="rect" id="node2" href="sp_person.html" target="_top" title="sp_person" alt="" coords="25,4557,190,4645">
+<area shape="rect" id="node3" title="annotation.comment" alt="" coords="362,568,625,656">
+<area shape="rect" id="node4" title="annotation.comp_analysis" alt="" coords="339,673,647,761">
+<area shape="rect" id="node5" title="annotation.feature_set" alt="" coords="353,779,634,867">
+<area shape="rect" id="node6" title="annotation.seq" alt="" coords="388,884,599,972">
+<area shape="rect" id="node7" title="biosource.bs_sample" alt="" coords="363,989,624,1077">
+<area shape="rect" id="node8" title="gem.ge_experiment" alt="" coords="367,1095,620,1183">
+<area shape="rect" id="node9" title="gem.ge_platform" alt="" coords="380,1200,607,1288">
+<area shape="rect" id="node10" title="insitu.experiment_image" alt="" coords="345,1305,642,1393">
+<area shape="rect" id="node11" title="insitu.experiment_tag" alt="" coords="357,1411,629,1499">
+<area shape="rect" id="node12" title="metadata.attribution_to" alt="" coords="348,1516,639,1604">
+<area shape="rect" id="node13" title="metadata.md_image" alt="" coords="364,1621,623,1709">
+<area shape="rect" id="node14" title="metadata.md_image_cvterm" alt="" coords="329,1727,658,1815">
+<area shape="rect" id="node15" title="metadata.md_image_organism" alt="" coords="318,1832,669,1920">
+<area shape="rect" id="node16" title="metadata.md_metadata" alt="" coords="349,1937,638,2025">
+<area shape="rect" id="node17" title="metadata.md_tag" alt="" coords="377,2043,610,2131">
+<area shape="rect" id="node18" title="metadata.md_tag_image" alt="" coords="345,2148,641,2236">
+<area shape="rect" id="node19" title="phenome.allele" alt="" coords="387,2253,599,2341">
+<area shape="rect" id="node20" title="phenome.allele_alias" alt="" coords="362,2359,625,2447">
+<area shape="rect" id="node21" title="phenome.allele_dbxref" alt="" coords="353,2464,633,2552">
+<area shape="rect" id="node22" title="phenome.allele_history" alt="" coords="351,2569,635,2657">
+<area shape="rect" id="node23" title="phenome.genotype_experiment" alt="" coords="313,2675,673,2763">
+<area shape="rect" id="node24" title="phenome.genotype_region" alt="" coords="336,7451,651,7539">
+<area shape="rect" id="node25" title="phenome.germplasm" alt="" coords="361,2816,625,2904">
+<area shape="rect" id="node26" title="phenome.individual" alt="" coords="367,8751,619,8839">
+<area shape="rect" id="node27" title="phenome.individual_alias" alt="" coords="342,2921,645,3009">
+<area shape="rect" id="node28" title="phenome.individual_allele" alt="" coords="339,3027,648,3115">
+<area shape="rect" id="node29" title="phenome.individual_dbxref" alt="" coords="333,3132,653,3220">
+<area shape="rect" id="node30" title="phenome.individual_dbxref_evidence" alt="" coords="289,3237,697,3325">
+<area shape="rect" id="node31" title="phenome.individual_dbxref_evidence_history" alt="" coords="253,3343,733,3431">
+<area shape="rect" id="node32" title="phenome.individual_history" alt="" coords="331,3448,655,3536">
+<area shape="rect" id="node33" title="phenome.individual_image" alt="" coords="335,3553,651,3641">
+<area shape="rect" id="node34" title="phenome.individual_locus" alt="" coords="339,3659,647,3747">
+<area shape="rect" id="node35" title="phenome.is_public" alt="" coords="373,3764,614,3852">
+<area shape="rect" id="node36" title="phenome.locus" alt="" coords="388,3869,599,3957">
+<area shape="rect" id="node37" title="phenome.locus2locus" alt="" coords="359,3975,627,4063">
+<area shape="rect" id="node38" title="phenome.locus_alias" alt="" coords="363,4080,623,4168">
+<area shape="rect" id="node39" title="phenome.locus_dbxref" alt="" coords="355,4185,632,4273">
+<area shape="rect" id="node40" title="phenome.locus_dbxref_evidence" alt="" coords="310,4291,677,4379">
+<area shape="rect" id="node41" title="phenome.locus_dbxref_evidence_history" alt="" coords="275,4396,712,4484">
+<area shape="rect" id="node42" title="phenome.locus_history" alt="" coords="353,4501,634,4589">
+<area shape="rect" id="node43" title="phenome.locus_image" alt="" coords="357,4607,630,4695">
+<area shape="rect" id="node44" title="phenome.locus_marker" alt="" coords="352,4712,635,4800">
+<area shape="rect" id="node45" title="phenome.locus_owner" alt="" coords="356,4817,631,4905">
+<area shape="rect" id="node46" title="phenome.locus_registry" alt="" coords="349,4923,638,5011">
+<area shape="rect" id="node47" title="phenome.locus_unigene" alt="" coords="347,5028,639,5116">
+<area shape="rect" id="node48" title="phenome.locusgroup" alt="" coords="361,5133,625,5221">
+<area shape="rect" id="node49" title="phenome.locusgroup_member" alt="" coords="320,5239,667,5327">
+<area shape="rect" id="node50" title="phenome.phenome_genotype" alt="" coords="323,5344,663,5432">
+<area shape="rect" id="node51" title="phenome.polymorphic_fragment" alt="" coords="310,5449,677,5537">
+<area shape="rect" id="node52" title="phenome.population" alt="" coords="363,5555,624,5643">
+<area shape="rect" id="node53" title="phenome.population_dbxref" alt="" coords="329,5660,657,5748">
+<area shape="rect" id="node54" title="phenome.project_owner" alt="" coords="347,5765,639,5853">
+<area shape="rect" id="node55" title="phenome.pub_curator" alt="" coords="357,5871,629,5959">
+<area shape="rect" id="node56" title="phenome.registry" alt="" coords="376,5976,611,6064">
+<area shape="rect" id="node57" title="phenome.stock_owner" alt="" coords="355,6081,631,6169">
+<area shape="rect" id="node58" title="phenome.user_trait" alt="" coords="368,6187,619,6275">
+<area shape="rect" id="node59" title="physical.manual_associations" alt="" coords="323,6292,663,6380">
+<area shape="rect" id="node60" title="public.blastwatch_queries" alt="" coords="339,6397,648,6485">
+<area shape="rect" id="node61" title="public.bug" alt="" coords="409,6503,578,6591">
+<area shape="rect" id="node62" title="public.phenotype" alt="" coords="378,6608,609,6696">
+<area shape="rect" id="node63" title="sgn.facility" alt="" coords="406,6713,581,6801">
+<area shape="rect" id="node64" title="sgn.library" alt="" coords="407,6819,579,6907">
+<area shape="rect" id="node65" title="sgn.manual_annotations" alt="" coords="346,6924,641,7012">
+<area shape="rect" id="node66" title="sgn.metadata" alt="" coords="394,7029,593,7117">
+<area shape="rect" id="node67" title="sgn.submit_user" alt="" coords="382,7135,605,7223">
+<area shape="rect" id="node68" href="bac_status.html" target="_top" title="bac_status" alt="" coords="408,7240,579,7328">
+<area shape="rect" id="node69" href="bac_status_log.html" target="_top" title="bac_status_log" alt="" coords="390,7345,597,7433">
+<area shape="rect" id="node70" href="clone_il_mapping_bin_log.html" target="_top" title="clone_il_mapping_bin_log" alt="" coords="875,7451,1175,7539">
+<area shape="rect" id="node71" title="genomic.clone" alt="" coords="5,9105,209,9193">
+<area shape="rect" id="node72" href="clone_validation_log.html" target="_top" title="clone_validation_log" alt="" coords="365,9103,621,9191">
+<area shape="rect" id="node73" href="clone_verification_log.html" target="_top" title="clone_verification_log" alt="" coords="359,8892,628,8980">
+<area shape="rect" id="node74" href="forum_post.html" target="_top" title="forum_post" alt="" coords="937,7643,1113,7731">
+<area shape="rect" id="node75" href="forum_topic.html" target="_top" title="forum_topic" alt="" coords="403,7556,584,7644">
+<area shape="rect" id="node76" href="list.html" target="_top" title="list" alt="" coords="423,7661,563,7749">
+<area shape="rect" id="node77" href="sp_clone_il_mapping_segment_log.html" target="_top" title="sp_clone_il_mapping_segment_log" alt="" coords="777,8755,1272,9000">
+<area shape="rect" id="node78" href="sp_dataset.html" target="_top" title="sp_dataset" alt="" coords="407,7803,579,7891">
+<area shape="rect" id="node79" href="sp_group_member.html" target="_top" title="sp_group_member" alt="" coords="374,7908,613,7996">
+<area shape="rect" id="node80" href="sp_order.html" target="_top" title="sp_order" alt="" coords="417,8013,569,8101">
+<area shape="rect" id="node81" href="sp_organization_person.html" target="_top" title="sp_organization_person" alt="" coords="350,8119,637,8207">
+<area shape="rect" id="node82" href="sp_papers.html" target="_top" title="sp_papers" alt="" coords="411,8224,576,8312">
+<area shape="rect" id="node83" href="sp_person_organisms.html" target="_top" title="sp_person_organisms" alt="" coords="360,8329,627,8417">
+<area shape="rect" id="node84" href="sp_person_roles.html" target="_top" title="sp_person_roles" alt="" coords="385,8435,602,8523">
+<area shape="rect" id="node85" href="sp_project_il_mapping_clone_log.html" target="_top" title="sp_project_il_mapping_clone_log" alt="" coords="311,8997,675,9085">
+<area shape="rect" id="node86" href="sp_project_person.html" target="_top" title="sp_project_person" alt="" coords="375,8540,612,8628">
+<area shape="rect" id="node87" href="sp_token.html" target="_top" title="sp_token" alt="" coords="416,8645,571,8733">
+<area shape="rect" id="node88" href="user_map.html" target="_top" title="user_map" alt="" coords="413,321,573,409">
+<area shape="rect" id="node89" href="user_map_data.html" target="_top" title="user_map_data" alt="" coords="920,356,1129,444">
+<area shape="rect" id="node90" title="sgn_submit.facility" alt="" coords="371,5,615,93">
+<area shape="rect" id="node91" title="sgn_submit.library" alt="" coords="372,111,615,199">
+<area shape="rect" id="node92" title="sgn_submit.submit_user" alt="" coords="347,216,639,304">
+</map>
+                                        <a name='diagram'><img id="twodegreesDegreeImg" src="../diagrams/tables/sp_clone_il_mapping_segment_log.2degrees.png" usemap="#twoDegreesRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- /.box-body -->
+                    </div>
+                </section>
+                <script>
+                    var config = {
+                        pagination: true
+                    }
+                </script>
+            </div>
+            <!-- /.content-wrapper -->
+            <footer class="main-footer">
+                <div>
+                    <div class="pull-right hidden-xs">
+                        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+                        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+                    </div>
+                    <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.2.4</a></strong>
+                </div>
+                <!-- /.container -->
+            </footer>
+        </div>
+        <!-- ./wrapper -->
+
+        <!-- jQuery 2.2.3 -->
+        <script src="../bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+        <script src="../bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+        <!-- Bootstrap 3.3.5 -->
+        <script src="../bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+        <!-- DataTables -->
+        <script src="../bower/datatables.net/jquery.dataTables.min.js"></script>
+        <script src="../bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+        <script src="../bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.html5.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.print.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+        <!-- SheetJS -->
+        <script src="../bower/js-xlsx/xlsx.full.min.js"></script>
+        <!-- pdfmake -->
+        <script src="../bower/pdfmake/pdfmake.min.js"></script>
+        <script src="../bower/pdfmake/vfs_fonts.js"></script>
+        <!-- SlimScroll -->
+        <script src="../bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+        <!-- FastClick -->
+        <script src="../bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+        <!-- Salvattore -->
+        <script src="../bower/salvattore/salvattore.min.js"></script>
+        <!-- AnchorJS -->
+        <script src="../bower/anchor-js/anchor.min.js"></script>
+        <!-- CodeMirror -->
+        <script src="../bower/codemirror/codemirror.js"></script>
+        <script src="../bower/codemirror/sql.js"></script>
+        <!-- AdminLTE App -->
+        <script src="../bower/admin-lte/dist/js/app.min.js"></script>
+        <script src="table.js"></script>
+        <script src="../schemaSpy.js"></script>
+    </body>
+</html>

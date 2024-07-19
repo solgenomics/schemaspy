@@ -1,0 +1,732 @@
+<?xml version="1.0" encoding="UTF-8"?><database name="cxgn_breedbase" schema="sgn_people" type="PostgreSQL - 11.22 (Debian 11.22-0+deb10u2)">
+   <sequences>
+      <sequence increment="1" name="bac_status_bac_status_id_seq" startValue="1"/>
+      <sequence increment="1" name="bac_status_log_bac_status_log_id_seq" startValue="1"/>
+      <sequence increment="1" name="clone_il_mapping_bin_log_sp_clone_il_mapping_bin_log_id_seq" startValue="1"/>
+      <sequence increment="1" name="clone_validation_log_clone_validation_log_id_seq" startValue="1"/>
+      <sequence increment="1" name="clone_verification_log_clone_verification_log_id_seq" startValue="1"/>
+      <sequence increment="1" name="forum_post_forum_post_id_seq" startValue="1"/>
+      <sequence increment="1" name="forum_topic_forum_topic_id_seq" startValue="1"/>
+      <sequence increment="1" name="list_dbxref_list_dbxref_id_seq" startValue="1"/>
+      <sequence increment="1" name="list_item_list_item_id_seq" startValue="1"/>
+      <sequence increment="1" name="list_list_id_seq" startValue="1"/>
+      <sequence increment="1" name="listprop_listprop_id_seq" startValue="1"/>
+      <sequence increment="1" name="sp_clone_il_mapping_segment_l_sp_clone_il_mapping_segment_l_seq" startValue="1"/>
+      <sequence increment="1" name="sp_dataset_sp_dataset_id_seq" startValue="1"/>
+      <sequence increment="1" name="sp_group_sp_group_id_seq" startValue="1"/>
+      <sequence increment="1" name="sp_login_old_sp_login_id_seq" startValue="1"/>
+      <sequence increment="1" name="sp_order_sp_order_id_seq" startValue="1"/>
+      <sequence increment="1" name="sp_orderprop_sp_orderprop_id_seq" startValue="1"/>
+      <sequence increment="1" name="sp_organisms_organism_id_seq" startValue="1"/>
+      <sequence increment="1" name="sp_organization_person_sp_organization_person_id_seq" startValue="1"/>
+      <sequence increment="1" name="sp_organization_sp_organization_id_seq" startValue="1"/>
+      <sequence increment="1" name="sp_papers_sp_paper_id_seq" startValue="1"/>
+      <sequence increment="1" name="sp_person_organisms_sp_person_organisms_id_seq" startValue="1"/>
+      <sequence increment="1" name="sp_person_roles_sp_person_role_id_seq" startValue="1"/>
+      <sequence increment="1" name="sp_person_sp_person_id_seq" startValue="1"/>
+      <sequence increment="1" name="sp_project_il_mapping_clone_l_sp_project_il_mapping_clone_l_seq" startValue="1"/>
+      <sequence increment="1" name="sp_project_organization_sp_project_organization_id_seq" startValue="1"/>
+      <sequence increment="1" name="sp_project_person_sp_project_person_id_seq" startValue="1"/>
+      <sequence increment="1" name="sp_project_sp_project_id_seq" startValue="1"/>
+      <sequence increment="1" name="sp_roles_sp_role_id_seq" startValue="1"/>
+      <sequence increment="1" name="sp_token_sp_token_id_seq" startValue="1"/>
+      <sequence increment="1" name="user_map_data_user_map_data_id_seq" startValue="1"/>
+      <sequence increment="1" name="user_map_user_map_id_seq" startValue="1"/>
+   </sequences>
+   <tables>
+      <table name="bac_status" numRows="0" remarks="" schema="sgn_people" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('sgn_people.bac_status_bac_status_id_seq'::regclass)" digits="0" id="0" name="bac_status_id" nullable="false" remarks="" size="19" type="bigserial" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="bac_id" nullable="true" remarks="" size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="person_id" nullable="true" remarks="" size="19" type="int8" typeCode="-5">
+            <parent column="sp_person_id" foreignKey="person_id_fk" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="status" nullable="true" remarks="" size="13" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="genbank_status" nullable="true" remarks="" size="5" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="('now'::text)::timestamp(6) with time zone" digits="6" id="5" name="timestamp" nullable="false" remarks="" size="29" type="timestamp" typeCode="93"/>
+         <primaryKey column="bac_status_id" sequenceNumberInPK="1"/>
+         <index name="bac_status_pkey" unique="true">
+            <column ascending="true" name="bac_status_id"/>
+         </index>
+         <index name="bac_id_key" unique="true">
+            <column ascending="true" name="bac_id"/>
+         </index>
+         <index name="bac_status_idx" unique="false">
+            <column ascending="true" name="bac_id"/>
+            <column ascending="true" name="status"/>
+         </index>
+         <index name="status_idx" unique="false">
+            <column ascending="true" name="status"/>
+         </index>
+         <checkConstraint constraint="((((genbank_status)::text = 'htgs1'::text) OR ((genbank_status)::text = 'htgs2'::text) OR ((genbank_status)::text = 'htgs3'::text) OR ((genbank_status)::text = 'htgs4'::text) OR ((genbank_status)::text = ''::text) OR (genbank_status IS NULL)))" name="chk_bac_status_genbank_status"/>
+         <checkConstraint constraint="((((status)::text = 'not_sequenced'::text) OR ((status)::text = 'in_progress'::text) OR ((status)::text = 'complete'::text) OR ((status)::text = ''::text) OR (status IS NULL)))" name="chk_bac_status_status"/>
+      </table>
+      <table name="bac_status_log" numRows="0" remarks="" schema="sgn_people" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('sgn_people.bac_status_log_bac_status_log_id_seq'::regclass)" digits="0" id="0" name="bac_status_log_id" nullable="false" remarks="" size="19" type="bigserial" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="bac_id" nullable="true" remarks="" size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="person_id" nullable="true" remarks="" size="19" type="int8" typeCode="-5">
+            <parent column="sp_person_id" foreignKey="person_id_fk" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="status" nullable="true" remarks="" size="13" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="genbank_status" nullable="true" remarks="" size="5" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="('now'::text)::timestamp(6) with time zone" digits="6" id="5" name="timestamp" nullable="false" remarks="" size="29" type="timestamp" typeCode="93"/>
+         <primaryKey column="bac_status_log_id" sequenceNumberInPK="1"/>
+         <index name="bac_status_log_id_key" unique="true">
+            <column ascending="true" name="bac_status_log_id"/>
+         </index>
+         <checkConstraint constraint="((((genbank_status)::text = 'htgs1'::text) OR ((genbank_status)::text = 'htgs2'::text) OR ((genbank_status)::text = 'htgs3'::text) OR ((genbank_status)::text = 'htgs4'::text) OR ((genbank_status)::text = ''::text) OR (genbank_status IS NULL)))" name="chk_bac_status_log_genbank_status"/>
+         <checkConstraint constraint="((((status)::text = 'not_sequenced'::text) OR ((status)::text = 'in_progress'::text) OR ((status)::text = 'complete'::text) OR ((status)::text = ''::text) OR (status IS NULL)))" name="chk_bac_status_log_status"/>
+      </table>
+      <table name="clone_il_mapping_bin_log" numRows="0" remarks="linking table showing which phenome.genotype_region a given clone has been mapped to. also provides a modification history with its is_current and created columns" schema="sgn_people" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('sgn_people.clone_il_mapping_bin_log_sp_clone_il_mapping_bin_log_id_seq'::regclass)" digits="0" id="0" name="sp_clone_il_mapping_bin_log_id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="genotype_region_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="genotype_region_id" foreignKey="clone_il_mapping_bin_log_genotype_region_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="genotype_region"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="sp_person_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="sp_person_id" foreignKey="clone_il_mapping_bin_log_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="clone_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="clone_id" foreignKey="clone_il_mapping_bin_log_clone_id_fkey" implied="false" onDeleteCascade="false" schema="genomic" table="clone"/>
+         </column>
+         <column autoUpdated="false" defaultValue="true" digits="0" id="4" name="is_current" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="5" name="created" nullable="true" remarks="" size="29" type="timestamp" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="chromosome" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="notes" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <primaryKey column="sp_clone_il_mapping_bin_log_id" sequenceNumberInPK="1"/>
+         <index name="clone_il_mapping_bin_log_pkey" unique="true">
+            <column ascending="true" name="sp_clone_il_mapping_bin_log_id"/>
+         </index>
+      </table>
+      <table name="clone_validation_log" numRows="0" remarks="table showing which clones have been validated by a variety of methods.  columns may be added to this without warning.  details about each validation experiment should be written into the comment field on the detail page for the clone" schema="sgn_people" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('sgn_people.clone_validation_log_clone_validation_log_id_seq'::regclass)" digits="0" id="0" name="clone_validation_log_id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="sp_person_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="sp_person_id" foreignKey="clone_validation_log_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="clone_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="clone_id" foreignKey="clone_validation_log_clone_id_fkey" implied="false" onDeleteCascade="false" schema="genomic" table="clone"/>
+         </column>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="3" name="val_overgo" nullable="false" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="4" name="val_bac_ends" nullable="false" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="true" digits="0" id="5" name="is_current" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="6" name="created" nullable="true" remarks="" size="29" type="timestamp" typeCode="93"/>
+      </table>
+      <table name="clone_verification_log" numRows="0" remarks="table showing which clones have been validated by a variety of methods.  columns may be added to this without warning.  details about each validation experiment should be written into the comment field on the detail page for the clone" schema="sgn_people" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('sgn_people.clone_verification_log_clone_verification_log_id_seq'::regclass)" digits="0" id="0" name="clone_verification_log_id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="sp_person_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="sp_person_id" foreignKey="clone_verification_log_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="clone_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="clone_id" foreignKey="clone_verification_log_clone_id_fkey" implied="false" onDeleteCascade="false" schema="genomic" table="clone"/>
+         </column>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="3" name="ver_int_read" nullable="false" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="4" name="ver_bac_end" nullable="false" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="true" digits="0" id="5" name="is_current" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="6" name="created" nullable="true" remarks="" size="29" type="timestamp" typeCode="93"/>
+      </table>
+      <table name="forum_post" numRows="0" remarks="" schema="sgn_people" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('sgn_people.forum_post_forum_post_id_seq'::regclass)" digits="0" id="0" name="forum_post_id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="person_id" nullable="true" remarks="" size="19" type="int8" typeCode="-5">
+            <parent column="sp_person_id" foreignKey="person_id_fk" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="post_text" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="parent_post_id" nullable="true" remarks="" size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="forum_topic_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="forum_topic_id" foreignKey="forum_topic_id_fk" implied="false" onDeleteCascade="false" schema="sgn_people" table="forum_topic"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="subject" nullable="true" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="('now'::text)::timestamp(6) with time zone" digits="0" id="6" name="post_time" nullable="false" remarks="" size="22" type="timestamp" typeCode="93"/>
+         <primaryKey column="forum_post_id" sequenceNumberInPK="1"/>
+         <index name="forum_post_pkey" unique="true">
+            <column ascending="true" name="forum_post_id"/>
+         </index>
+      </table>
+      <table name="forum_topic" numRows="0" remarks="" schema="sgn_people" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('sgn_people.forum_topic_forum_topic_id_seq'::regclass)" digits="0" id="0" name="forum_topic_id" nullable="false" remarks="" size="10" type="serial" typeCode="4">
+            <child column="forum_topic_id" foreignKey="forum_topic_id_fk" implied="false" onDeleteCascade="false" schema="sgn_people" table="forum_post"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="person_id" nullable="true" remarks="" size="19" type="int8" typeCode="-5">
+            <parent column="sp_person_id" foreignKey="person_id_fk" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="topic_name" nullable="true" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="parent_topic" nullable="true" remarks="" size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="topic_class" nullable="true" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="page_type" nullable="true" remarks="" size="10" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="page_object_id" nullable="true" remarks="" size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="topic_description" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="8" name="sort_order" nullable="true" remarks="" size="10" type="varchar" typeCode="12"/>
+         <primaryKey column="forum_topic_id" sequenceNumberInPK="1"/>
+         <index name="forum_topic_pkey" unique="true">
+            <column ascending="true" name="forum_topic_id"/>
+         </index>
+         <checkConstraint constraint="((person_id IS NOT NULL))" name="person_id_check"/>
+      </table>
+      <table name="list" numRows="36" remarks="" schema="sgn_people" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('sgn_people.list_list_id_seq'::regclass)" digits="0" id="0" name="list_id" nullable="false" remarks="" size="19" type="bigserial" typeCode="-5">
+            <child column="list_id" foreignKey="list_dbxref_list_id_fkey" implied="false" onDeleteCascade="true" schema="sgn_people" table="list_dbxref"/>
+            <child column="list_id" foreignKey="list_item_list_id_fkey" implied="false" onDeleteCascade="true" schema="sgn_people" table="list_item"/>
+            <child column="list_id" foreignKey="listprop_list_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="listprop"/>
+         </column>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="1" name="is_hotlist" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="sent_by" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="name" nullable="true" remarks="" size="128" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="description" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="owner" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="sp_person_id" foreignKey="list_owner_fkey" implied="false" onDeleteCascade="true" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="type_id" nullable="true" remarks="" size="19" type="int8" typeCode="-5">
+            <parent column="cvterm_id" foreignKey="list_type_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="cvterm"/>
+         </column>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="7" name="is_public" nullable="false" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="8" name="create_date" nullable="true" remarks="" size="29" type="timestamp" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="9" name="modified_date" nullable="true" remarks="" size="29" type="timestamp" typeCode="93"/>
+         <primaryKey column="list_id" sequenceNumberInPK="1"/>
+         <index name="list_pkey" unique="true">
+            <column ascending="true" name="list_id"/>
+         </index>
+         <index name="list_id_unique" unique="true">
+            <column ascending="true" name="list_id"/>
+         </index>
+      </table>
+      <table name="list_dbxref" numRows="0" remarks="" schema="sgn_people" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('sgn_people.list_dbxref_list_dbxref_id_seq'::regclass)" digits="0" id="0" name="list_dbxref_id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="list_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="list_id" foreignKey="list_dbxref_list_id_fkey" implied="false" onDeleteCascade="true" schema="sgn_people" table="list"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="dbxref_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="dbxref_id" foreignKey="list_dbxref_dbxref_id_fkey" implied="false" onDeleteCascade="true" schema="public" table="dbxref"/>
+         </column>
+         <column autoUpdated="false" defaultValue="true" digits="0" id="3" name="is_current" nullable="false" remarks="" size="1" type="bool" typeCode="-7"/>
+         <primaryKey column="list_dbxref_id" sequenceNumberInPK="1"/>
+         <index name="list_dbxref_pkey" unique="true">
+            <column ascending="true" name="list_dbxref_id"/>
+         </index>
+         <index name="list_dbxref_c1" unique="true">
+            <column ascending="true" name="list_id"/>
+            <column ascending="true" name="dbxref_id"/>
+         </index>
+         <index name="list_dbxref_idx1" unique="false">
+            <column ascending="true" name="list_id"/>
+         </index>
+         <index name="list_dbxref_idx2" unique="false">
+            <column ascending="true" name="dbxref_id"/>
+         </index>
+      </table>
+      <table name="list_item" numRows="1480" remarks="" schema="sgn_people" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('sgn_people.list_item_list_item_id_seq'::regclass)" digits="0" id="0" name="list_item_id" nullable="false" remarks="" size="19" type="bigserial" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="content" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="list_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="list_id" foreignKey="list_item_list_id_fkey" implied="false" onDeleteCascade="true" schema="sgn_people" table="list"/>
+         </column>
+         <primaryKey column="list_item_id" sequenceNumberInPK="1"/>
+         <index name="list_item_pkey" unique="true">
+            <column ascending="true" name="list_item_id"/>
+         </index>
+      </table>
+      <table name="listprop" numRows="0" remarks="" schema="sgn_people" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('sgn_people.listprop_listprop_id_seq'::regclass)" digits="0" id="0" name="listprop_id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="list_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="list_id" foreignKey="listprop_list_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="list"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="type_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="cvterm_id" foreignKey="listprop_type_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="cvterm"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="value" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="4" name="rank" nullable="false" remarks="" size="10" type="int4" typeCode="4"/>
+         <primaryKey column="listprop_id" sequenceNumberInPK="1"/>
+         <index name="listprop_pkey" unique="true">
+            <column ascending="true" name="listprop_id"/>
+         </index>
+      </table>
+      <table name="sp_clone_il_mapping_segment_log" numRows="0" remarks="linking table showing which phenome.individual IL line a given clone has been mapped to. also provides a modification history with is_current and created columns" schema="sgn_people" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('sgn_people.sp_clone_il_mapping_segment_l_sp_clone_il_mapping_segment_l_seq'::regclass)" digits="0" id="0" name="sp_clone_il_mapping_segment_log_id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="individual_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="individual_id" foreignKey="sp_clone_il_mapping_segment_log_individual_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="individual"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="sp_person_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="sp_person_id" foreignKey="sp_clone_il_mapping_segment_log_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="clone_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="clone_id" foreignKey="sp_clone_il_mapping_segment_log_clone_id_fkey" implied="false" onDeleteCascade="false" schema="genomic" table="clone"/>
+         </column>
+         <column autoUpdated="false" defaultValue="true" digits="0" id="4" name="is_current" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="5" name="created" nullable="true" remarks="" size="29" type="timestamp" typeCode="93"/>
+      </table>
+      <table name="sp_dataset" numRows="0" remarks="" schema="sgn_people" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('sgn_people.sp_dataset_sp_dataset_id_seq'::regclass)" digits="0" id="0" name="sp_dataset_id" nullable="false" remarks="" size="19" type="bigserial" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="sp_person_id" nullable="true" remarks="" size="19" type="int8" typeCode="-5">
+            <parent column="sp_person_id" foreignKey="sp_dataset_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="name" nullable="true" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="description" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="dataset" nullable="true" remarks="" size="2147483647" type="jsonb" typeCode="1111"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="is_live" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="is_public" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <primaryKey column="sp_dataset_id" sequenceNumberInPK="1"/>
+         <index name="sp_dataset_pkey" unique="true">
+            <column ascending="true" name="sp_dataset_id"/>
+         </index>
+      </table>
+      <table name="sp_group" numRows="0" remarks="" schema="sgn_people" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('sgn_people.sp_group_sp_group_id_seq'::regclass)" digits="0" id="0" name="sp_group_id" nullable="false" remarks="" size="10" type="serial" typeCode="4">
+            <child column="sp_group_id" foreignKey="sp_group_member_sp_group_id_fkey" implied="false" onDeleteCascade="true" schema="sgn_people" table="sp_group_member"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="name" nullable="false" remarks="" size="2147483647" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="description" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <primaryKey column="sp_group_id" sequenceNumberInPK="1"/>
+         <index name="sp_group_pkey" unique="true">
+            <column ascending="true" name="sp_group_id"/>
+         </index>
+         <index name="sp_group_name_key" unique="true">
+            <column ascending="true" name="name"/>
+         </index>
+      </table>
+      <table name="sp_group_member" numRows="0" remarks="" schema="sgn_people" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="sp_person_id" nullable="true" remarks="" size="19" type="int8" typeCode="-5">
+            <parent column="sp_person_id" foreignKey="sp_group_member_sp_person_id_fkey" implied="false" onDeleteCascade="true" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="sp_group_id" nullable="true" remarks="" size="19" type="int8" typeCode="-5">
+            <parent column="sp_group_id" foreignKey="sp_group_member_sp_group_id_fkey" implied="false" onDeleteCascade="true" schema="sgn_people" table="sp_group"/>
+         </column>
+         <column autoUpdated="false" defaultValue="'active'::character varying" digits="0" id="2" name="status" nullable="false" remarks="" size="2147483647" type="varchar" typeCode="12"/>
+      </table>
+      <table name="sp_login_old" numRows="0" remarks="" schema="sgn_people" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('sgn_people.sp_login_old_sp_login_id_seq'::regclass)" digits="0" id="0" name="sp_login_id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="username" nullable="true" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="private_email" nullable="true" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="pending_email" nullable="true" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="password" nullable="true" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="confirm_code" nullable="true" remarks="" size="20" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="disabled" nullable="true" remarks="" size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="'user'::character varying" digits="0" id="7" name="user_type" nullable="true" remarks="" size="9" type="varchar" typeCode="12"/>
+         <primaryKey column="sp_login_id" sequenceNumberInPK="1"/>
+         <index name="sp_login_pkey" unique="true">
+            <column ascending="true" name="sp_login_id"/>
+         </index>
+         <index name="private_email_idx" unique="false">
+            <column ascending="true" name="private_email"/>
+         </index>
+         <index name="username_unique" unique="true">
+            <column ascending="true" name="username"/>
+         </index>
+         <checkConstraint constraint="((((user_type)::text = 'user'::text) OR ((user_type)::text = 'submitter'::text) OR ((user_type)::text = 'curator'::text) OR ((user_type)::text = 'sequencer'::text) OR ((user_type)::text = ''::text) OR (user_type IS NULL)))" name="chk_sp_login_user_type"/>
+      </table>
+      <table name="sp_order" numRows="0" remarks="" schema="sgn_people" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('sgn_people.sp_order_sp_order_id_seq'::regclass)" digits="0" id="0" name="sp_order_id" nullable="false" remarks="" size="10" type="serial" typeCode="4">
+            <child column="sp_order_id" foreignKey="sp_orderprop_sp_order_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_orderprop"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="order_from_id" nullable="true" remarks="" size="19" type="int8" typeCode="-5">
+            <parent column="sp_person_id" foreignKey="sp_order_order_from_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="order_to_id" nullable="true" remarks="" size="19" type="int8" typeCode="-5">
+            <parent column="sp_person_id" foreignKey="sp_order_order_to_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="order_status" nullable="true" remarks="" size="100" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="comments" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="create_date" nullable="true" remarks="" size="100" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="completion_date" nullable="true" remarks="" size="100" type="varchar" typeCode="12"/>
+         <primaryKey column="sp_order_id" sequenceNumberInPK="1"/>
+         <index name="sp_order_pkey" unique="true">
+            <column ascending="true" name="sp_order_id"/>
+         </index>
+      </table>
+      <table name="sp_orderprop" numRows="0" remarks="" schema="sgn_people" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('sgn_people.sp_orderprop_sp_orderprop_id_seq'::regclass)" digits="0" id="0" name="sp_orderprop_id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="sp_order_id" nullable="true" remarks="" size="19" type="int8" typeCode="-5">
+            <parent column="sp_order_id" foreignKey="sp_orderprop_sp_order_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_order"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="type_id" nullable="true" remarks="" size="19" type="int8" typeCode="-5">
+            <parent column="cvterm_id" foreignKey="sp_orderprop_type_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="cvterm"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="value" nullable="true" remarks="" size="2147483647" type="jsonb" typeCode="1111"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="rank" nullable="false" remarks="" size="10" type="int4" typeCode="4"/>
+         <primaryKey column="sp_orderprop_id" sequenceNumberInPK="1"/>
+         <index name="sp_orderprop_pkey" unique="true">
+            <column ascending="true" name="sp_orderprop_id"/>
+         </index>
+      </table>
+      <table name="sp_organisms" numRows="0" remarks="" schema="sgn_people" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('sgn_people.sp_organisms_organism_id_seq'::regclass)" digits="0" id="0" name="organism_id" nullable="false" remarks="" size="10" type="serial" typeCode="4">
+            <child column="organism_id" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" schema="sgn_people" table="sp_person_organisms"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="organism_name" nullable="true" remarks="" size="255" type="varchar" typeCode="12"/>
+         <primaryKey column="organism_id" sequenceNumberInPK="1"/>
+         <index name="sp_organisms_pkey" unique="true">
+            <column ascending="true" name="organism_id"/>
+         </index>
+      </table>
+      <table name="sp_organization" numRows="0" remarks="" schema="sgn_people" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('sgn_people.sp_organization_sp_organization_id_seq'::regclass)" digits="0" id="0" name="sp_organization_id" nullable="false" remarks="" size="10" type="serial" typeCode="4">
+            <child column="organization_id" foreignKey="organization_id_fk" implied="false" onDeleteCascade="false" schema="metadata" table="attribution_to"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="name" nullable="false" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="department" nullable="true" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="unit" nullable="true" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="address" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="country" nullable="true" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="phone_number" nullable="true" remarks="" size="40" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="fax" nullable="true" remarks="" size="40" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="8" name="contact_email" nullable="true" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="9" name="webpage" nullable="true" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="10" name="description" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="11" name="upload_account_name" nullable="true" remarks="" size="40" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="12" name="shortname" nullable="false" remarks="" size="20" type="varchar" typeCode="12"/>
+         <primaryKey column="sp_organization_id" sequenceNumberInPK="1"/>
+         <index name="sp_organization_pkey" unique="true">
+            <column ascending="true" name="sp_organization_id"/>
+         </index>
+         <checkConstraint constraint="(((shortname IS NULL) OR (lower((shortname)::text) = (shortname)::text)))" name="sp_organization_shortname_check"/>
+      </table>
+      <table name="sp_organization_person" numRows="0" remarks="" schema="sgn_people" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('sgn_people.sp_organization_person_sp_organization_person_id_seq'::regclass)" digits="0" id="0" name="sp_organization_person_id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="sp_organization_id" nullable="true" remarks="" size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="sp_person_id" nullable="true" remarks="" size="19" type="int8" typeCode="-5">
+            <parent column="sp_person_id" foreignKey="person_id_fk" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <primaryKey column="sp_organization_person_id" sequenceNumberInPK="1"/>
+         <index name="sp_organization_person_pkey" unique="true">
+            <column ascending="true" name="sp_organization_person_id"/>
+         </index>
+      </table>
+      <table name="sp_papers" numRows="0" remarks="" schema="sgn_people" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('sgn_people.sp_papers_sp_paper_id_seq'::regclass)" digits="0" id="0" name="sp_paper_id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="1" name="person_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="sp_person_id" foreignKey="person_id_fk" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="title" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="author_list" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="journal" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="volume" nullable="true" remarks="" size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="pages" nullable="true" remarks="" size="16" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="keywords" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <primaryKey column="sp_paper_id" sequenceNumberInPK="1"/>
+         <index name="sp_papers_pkey" unique="true">
+            <column ascending="true" name="sp_paper_id"/>
+         </index>
+         <index name="sp_user_id_idx" unique="false">
+            <column ascending="true" name="person_id"/>
+         </index>
+      </table>
+      <table name="sp_person" numRows="164" remarks="" schema="sgn_people" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('sgn_people.sp_person_sp_person_id_seq'::regclass)" digits="0" id="0" name="sp_person_id" nullable="false" remarks="" size="10" type="serial" typeCode="4">
+            <child column="person_id" foreignKey="person_id_fk" implied="false" onDeleteCascade="false" schema="annotation" table="annotation"/>
+            <child column="person_id" foreignKey="person_id_fk" implied="false" onDeleteCascade="false" schema="annotation" table="comment"/>
+            <child column="person_id" foreignKey="person_id_fk" implied="false" onDeleteCascade="false" schema="annotation" table="comp_analysis"/>
+            <child column="person_id" foreignKey="person_id_fk" implied="false" onDeleteCascade="false" schema="annotation" table="feature_set"/>
+            <child column="person_id" foreignKey="person_id_fk" implied="false" onDeleteCascade="false" schema="annotation" table="seq"/>
+            <child column="contact_id" foreignKey="bs_sample_contact_id_order_fkey" implied="false" onDeleteCascade="false" schema="biosource" table="bs_sample"/>
+            <child column="contact_id" foreignKey="ge_experiment_contact_id_fkey" implied="false" onDeleteCascade="false" schema="gem" table="ge_experiment"/>
+            <child column="contact_id" foreignKey="ge_platform_contact_id_fkey" implied="false" onDeleteCascade="false" schema="gem" table="ge_platform"/>
+            <child column="sp_person_id" foreignKey="experiment_image_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="insitu" table="experiment_image"/>
+            <child column="sp_person_id" foreignKey="experiment_tag_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="insitu" table="experiment_tag"/>
+            <child column="person_id" foreignKey="person_id_fk" implied="false" onDeleteCascade="false" schema="metadata" table="attribution_to"/>
+            <child column="sp_person_id" foreignKey="md_image_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="metadata" table="md_image"/>
+            <child column="sp_person_id" foreignKey="md_image_cvterm_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="metadata" table="md_image_cvterm"/>
+            <child column="sp_person_id" foreignKey="md_image_organism_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="metadata" table="md_image_organism"/>
+            <child column="create_person_id" foreignKey="md_metadata_create_person_id_fkey" implied="false" onDeleteCascade="false" schema="metadata" table="md_metadata"/>
+            <child column="modified_person_id" foreignKey="md_metadata_modified_person_id_fkey" implied="false" onDeleteCascade="false" schema="metadata" table="md_metadata"/>
+            <child column="sp_person_id" foreignKey="md_tag_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="metadata" table="md_tag"/>
+            <child column="sp_person_id" foreignKey="md_tag_image_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="metadata" table="md_tag_image"/>
+            <child column="sp_person_id" foreignKey="allele_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="allele"/>
+            <child column="updated_by" foreignKey="allele_updated_by_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="allele"/>
+            <child column="sp_person_id" foreignKey="allele_alias_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="allele_alias"/>
+            <child column="sp_person_id" foreignKey="allele_dbxref_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="allele_dbxref"/>
+            <child column="sp_person_id" foreignKey="allele_history_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="allele_history"/>
+            <child column="updated_by" foreignKey="allele_history_updated_by_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="allele_history"/>
+            <child column="sp_person_id" foreignKey="genotype_experiment_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="genotype_experiment"/>
+            <child column="sp_person_id" foreignKey="genotype_region_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="genotype_region"/>
+            <child column="sp_person_id" foreignKey="germplasm_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="germplasm"/>
+            <child column="sp_person_id" foreignKey="individual_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="individual"/>
+            <child column="updated_by" foreignKey="individual_updated_by_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="individual"/>
+            <child column="sp_person_id" foreignKey="individual_alias_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="individual_alias"/>
+            <child column="sp_person_id" foreignKey="individual_allele_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="individual_allele"/>
+            <child column="sp_person_id" foreignKey="individual_dbxref_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="individual_dbxref"/>
+            <child column="sp_person_id" foreignKey="individual_dbxref_evidence_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="individual_dbxref_evidence"/>
+            <child column="updated_by" foreignKey="individual_dbxref_evidence_updated_by_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="individual_dbxref_evidence"/>
+            <child column="sp_person_id" foreignKey="individual_dbxref_evidence_history_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="individual_dbxref_evidence_history"/>
+            <child column="updated_by" foreignKey="individual_dbxref_evidence_history_updated_by_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="individual_dbxref_evidence_history"/>
+            <child column="sp_person_id" foreignKey="individual_history_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="individual_history"/>
+            <child column="updated_by" foreignKey="individual_history_updated_by_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="individual_history"/>
+            <child column="sp_person_id" foreignKey="individual_image_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="individual_image"/>
+            <child column="sp_person_id" foreignKey="individual_locus_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="individual_locus"/>
+            <child column="owner_id" foreignKey="is_public_owner_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="is_public"/>
+            <child column="sp_person_id" foreignKey="locus_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="locus"/>
+            <child column="updated_by" foreignKey="locus_updated_by_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="locus"/>
+            <child column="sp_person_id" foreignKey="locus2locus_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="locus2locus"/>
+            <child column="sp_person_id" foreignKey="locus_alias_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="locus_alias"/>
+            <child column="sp_person_id" foreignKey="locus_dbxref_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="locus_dbxref"/>
+            <child column="sp_person_id" foreignKey="locus_dbxref_evidence_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="locus_dbxref_evidence"/>
+            <child column="updated_by" foreignKey="locus_dbxref_evidence_updated_by_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="locus_dbxref_evidence"/>
+            <child column="sp_person_id" foreignKey="locus_dbxref_evidence_history_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="locus_dbxref_evidence_history"/>
+            <child column="updated_by" foreignKey="locus_dbxref_evidence_history_updated_by_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="locus_dbxref_evidence_history"/>
+            <child column="sp_person_id" foreignKey="locus_history_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="locus_history"/>
+            <child column="updated_by" foreignKey="locus_history_updated_by_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="locus_history"/>
+            <child column="sp_person_id" foreignKey="locus_image_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="locus_image"/>
+            <child column="sp_person_id" foreignKey="locus_marker_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="locus_marker"/>
+            <child column="granted_by" foreignKey="locus_owner_granted_by_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="locus_owner"/>
+            <child column="sp_person_id" foreignKey="locus_owner_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="locus_owner"/>
+            <child column="sp_person_id" foreignKey="locus_registry_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="locus_registry"/>
+            <child column="sp_person_id" foreignKey="locus_unigene_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="locus_unigene"/>
+            <child column="sp_person_id" foreignKey="locusgroup_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="locusgroup"/>
+            <child column="sp_person_id" foreignKey="locusgroup_member_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="locusgroup_member"/>
+            <child column="sp_person_id" foreignKey="genotype_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="phenome_genotype"/>
+            <child column="sp_person_id" foreignKey="polymorphic_fragment_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="polymorphic_fragment"/>
+            <child column="person_id" foreignKey="population_person_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="population"/>
+            <child column="sp_person_id" foreignKey="population_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="population"/>
+            <child column="sp_person_id" foreignKey="population_dbxref_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="population_dbxref"/>
+            <child column="sp_person_id" foreignKey="project_owner_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="project_owner"/>
+            <child column="assigned_to" foreignKey="pub_curator_assigned_to_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="pub_curator"/>
+            <child column="curated_by" foreignKey="pub_curator_curated_by_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="pub_curator"/>
+            <child column="sp_person_id" foreignKey="pub_curator_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="pub_curator"/>
+            <child column="sp_person_id" foreignKey="registry_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="registry"/>
+            <child column="updated_by" foreignKey="registry_updated_by_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="registry"/>
+            <child column="sp_person_id" foreignKey="stock_owner_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="stock_owner"/>
+            <child column="sp_person_id" foreignKey="user_trait_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="user_trait"/>
+            <child column="sp_person_id" foreignKey="manual_associations_sp_person_id_fkey1" implied="false" onDeleteCascade="false" schema="physical" table="manual_associations"/>
+            <child column="sp_person_id" foreignKey="blastwatch_queries_sp_person_id_fkey" implied="false" onDeleteCascade="true" schema="public" table="blastwatch_queries"/>
+            <child column="created_by" foreignKey="bug_created_by_fkey" implied="false" onDeleteCascade="false" schema="public" table="bug"/>
+            <child column="sp_person_id" foreignKey="bug_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="bug"/>
+            <child column="updated_by" foreignKey="bug_updated_by_fkey" implied="false" onDeleteCascade="false" schema="public" table="bug"/>
+            <child column="sp_person_id" foreignKey="phenotype_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="phenotype"/>
+            <child column="sp_person_id" foreignKey="foriegn" implied="false" onDeleteCascade="false" schema="sgn" table="facility"/>
+            <child column="sp_person_id" foreignKey="library_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="sgn" table="library"/>
+            <child column="author_id" foreignKey="author_id_fk" implied="false" onDeleteCascade="false" schema="sgn" table="manual_annotations"/>
+            <child column="create_person_id" foreignKey="metadata_create_person_id_fkey" implied="false" onDeleteCascade="false" schema="sgn" table="metadata"/>
+            <child column="modified_person_id" foreignKey="metadata_modified_person_id_fkey" implied="false" onDeleteCascade="false" schema="sgn" table="metadata"/>
+            <child column="sp_person_id" foreignKey="foriegn" implied="false" onDeleteCascade="false" schema="sgn" table="submit_user"/>
+            <child column="person_id" foreignKey="person_id_fk" implied="false" onDeleteCascade="false" schema="sgn_people" table="bac_status"/>
+            <child column="person_id" foreignKey="person_id_fk" implied="false" onDeleteCascade="false" schema="sgn_people" table="bac_status_log"/>
+            <child column="sp_person_id" foreignKey="clone_il_mapping_bin_log_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="clone_il_mapping_bin_log"/>
+            <child column="sp_person_id" foreignKey="clone_validation_log_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="clone_validation_log"/>
+            <child column="sp_person_id" foreignKey="clone_verification_log_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="clone_verification_log"/>
+            <child column="person_id" foreignKey="person_id_fk" implied="false" onDeleteCascade="false" schema="sgn_people" table="forum_post"/>
+            <child column="person_id" foreignKey="person_id_fk" implied="false" onDeleteCascade="false" schema="sgn_people" table="forum_topic"/>
+            <child column="owner" foreignKey="list_owner_fkey" implied="false" onDeleteCascade="true" schema="sgn_people" table="list"/>
+            <child column="sp_person_id" foreignKey="sp_clone_il_mapping_segment_log_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_clone_il_mapping_segment_log"/>
+            <child column="sp_person_id" foreignKey="sp_dataset_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_dataset"/>
+            <child column="sp_person_id" foreignKey="sp_group_member_sp_person_id_fkey" implied="false" onDeleteCascade="true" schema="sgn_people" table="sp_group_member"/>
+            <child column="order_from_id" foreignKey="sp_order_order_from_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_order"/>
+            <child column="order_to_id" foreignKey="sp_order_order_to_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_order"/>
+            <child column="sp_person_id" foreignKey="person_id_fk" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_organization_person"/>
+            <child column="person_id" foreignKey="person_id_fk" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_papers"/>
+            <child column="sp_person_id" foreignKey="person_id_fk" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person_organisms"/>
+            <child column="sp_person_id" foreignKey="sp_person_roles_sp_person_id_fkey" implied="false" onDeleteCascade="true" schema="sgn_people" table="sp_person_roles"/>
+            <child column="sp_person_id" foreignKey="sp_project_il_mapping_clone_log_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_project_il_mapping_clone_log"/>
+            <child column="sp_person_id" foreignKey="person_id_fk" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_project_person"/>
+            <child column="sp_person_id" foreignKey="sp_token_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_token"/>
+            <child column="sp_person_id" foreignKey="user_map_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="user_map"/>
+            <child column="sp_person_id" foreignKey="user_map_data_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="user_map_data"/>
+            <child column="sp_person_id" foreignKey="foriegn" implied="false" onDeleteCascade="false" schema="sgn_submit" table="facility"/>
+            <child column="sp_person_id" foreignKey="foriegn" implied="false" onDeleteCascade="false" schema="sgn_submit" table="library"/>
+            <child column="sp_person_id" foreignKey="foriegn" implied="false" onDeleteCascade="false" schema="sgn_submit" table="submit_user"/>
+         </column>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="1" name="censor" nullable="true" remarks="" size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="salutation" nullable="true" remarks="" size="8" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="last_name" nullable="true" remarks="" size="63" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="first_name" nullable="true" remarks="" size="63" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="organization" nullable="true" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="address" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="country" nullable="true" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="8" name="phone_number" nullable="true" remarks="" size="40" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="9" name="fax" nullable="true" remarks="" size="40" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="10" name="contact_email" nullable="true" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="11" name="webpage" nullable="true" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="12" name="research_keywords" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="13" name="user_format" nullable="true" remarks="" size="8" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="14" name="research_interests" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="15" name="formatted_interests" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="16" name="contact_update" nullable="true" remarks="" size="13" type="date" typeCode="91"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="17" name="research_update" nullable="true" remarks="" size="13" type="date" typeCode="91"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="18" name="sp_login_id" nullable="true" remarks="" size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="19" name="username" nullable="true" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="20" name="private_email" nullable="true" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="21" name="pending_email" nullable="true" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="22" name="password" nullable="true" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="23" name="confirm_code" nullable="true" remarks="" size="20" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="24" name="disabled" nullable="true" remarks="" size="20" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="'user'::character varying" digits="0" id="25" name="user_type" nullable="true" remarks="" size="20" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="26" name="cookie_string" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="27" name="last_access_time" nullable="true" remarks="" size="29" type="timestamp" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="28" name="user_prefs" nullable="true" remarks="" size="4096" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="29" name="developer_settings" nullable="true" remarks="" size="4096" type="varchar" typeCode="12"/>
+         <primaryKey column="sp_person_id" sequenceNumberInPK="1"/>
+         <index name="sp_person_pkey" unique="true">
+            <column ascending="true" name="sp_person_id"/>
+         </index>
+         <index name="cookie_string_unique" unique="true">
+            <column ascending="true" name="cookie_string"/>
+         </index>
+         <index name="cookie_unique" unique="true">
+            <column ascending="true" name="cookie_string"/>
+         </index>
+         <index name="country_idx" unique="false">
+            <column ascending="true" name="country"/>
+         </index>
+         <index name="name_idx" unique="false">
+            <column ascending="true" name="last_name"/>
+            <column ascending="true" name="first_name"/>
+         </index>
+         <index name="organization_idx" unique="false">
+            <column ascending="true" name="organization"/>
+         </index>
+         <index name="sp_person_username_key" unique="true">
+            <column ascending="true" name="username"/>
+         </index>
+         <checkConstraint constraint="((first_name IS NOT NULL))" name="first_name_check"/>
+         <checkConstraint constraint="((((disabled IS NOT NULL) AND (cookie_string IS NULL)) OR (disabled IS NULL)))" name="if_disabled_no_cookie_for_you"/>
+         <checkConstraint constraint="((last_name IS NOT NULL))" name="last_name_check"/>
+      </table>
+      <table name="sp_person_organisms" numRows="0" remarks="" schema="sgn_people" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('sgn_people.sp_person_organisms_sp_person_organisms_id_seq'::regclass)" digits="0" id="0" name="sp_person_organisms_id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="sp_person_id" nullable="true" remarks="" size="19" type="int8" typeCode="-5">
+            <parent column="sp_person_id" foreignKey="person_id_fk" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="2" name="organism_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="organism_id" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" schema="sgn_people" table="sp_organisms"/>
+         </column>
+         <primaryKey column="sp_person_organisms_id" sequenceNumberInPK="1"/>
+         <index name="sp_person_organisms_pkey" unique="true">
+            <column ascending="true" name="sp_person_organisms_id"/>
+         </index>
+         <index name="sp_user_id_idx2" unique="false">
+            <column ascending="true" name="sp_person_id"/>
+         </index>
+      </table>
+      <table name="sp_person_roles" numRows="234" remarks="" schema="sgn_people" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('sgn_people.sp_person_roles_sp_person_role_id_seq'::regclass)" digits="0" id="0" name="sp_person_role_id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="sp_person_id" nullable="true" remarks="" size="19" type="int8" typeCode="-5">
+            <parent column="sp_person_id" foreignKey="sp_person_roles_sp_person_id_fkey" implied="false" onDeleteCascade="true" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="sp_role_id" nullable="true" remarks="" size="19" type="int8" typeCode="-5">
+            <parent column="sp_role_id" foreignKey="sp_person_roles_sp_role_id_fkey" implied="false" onDeleteCascade="true" schema="sgn_people" table="sp_roles"/>
+         </column>
+         <primaryKey column="sp_person_role_id" sequenceNumberInPK="1"/>
+         <index name="sp_person_roles_pkey" unique="true">
+            <column ascending="true" name="sp_person_role_id"/>
+         </index>
+      </table>
+      <table name="sp_project" numRows="0" remarks="" schema="sgn_people" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('sgn_people.sp_project_sp_project_id_seq'::regclass)" digits="0" id="0" name="sp_project_id" nullable="false" remarks="" size="10" type="serial" typeCode="4">
+            <child column="project_id" foreignKey="project_id_fk" implied="false" onDeleteCascade="false" schema="metadata" table="attribution_to"/>
+            <child column="sp_project_id" foreignKey="sp_project_il_mapping_clone_log_sp_project_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_project_il_mapping_clone_log"/>
+            <child column="sp_project_id" foreignKey="sp_project_person_sp_project_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_project_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="name" nullable="true" remarks="" size="80" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="description" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <primaryKey column="sp_project_id" sequenceNumberInPK="1"/>
+         <index name="sp_project_pkey" unique="true">
+            <column ascending="true" name="sp_project_id"/>
+         </index>
+      </table>
+      <table name="sp_project_il_mapping_clone_log" numRows="0" remarks="linking table showing which sp_project is currently assigned to map a given clone to the zamir IL lines.  also provides a modification history with is_current and created columns" schema="sgn_people" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('sgn_people.sp_project_il_mapping_clone_l_sp_project_il_mapping_clone_l_seq'::regclass)" digits="0" id="0" name="sp_project_il_mapping_clone_log_id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="sp_project_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="sp_project_id" foreignKey="sp_project_il_mapping_clone_log_sp_project_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_project"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="sp_person_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="sp_person_id" foreignKey="sp_project_il_mapping_clone_log_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="clone_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="clone_id" foreignKey="sp_project_il_mapping_clone_log_clone_id_fkey" implied="false" onDeleteCascade="false" schema="genomic" table="clone"/>
+         </column>
+         <column autoUpdated="false" defaultValue="true" digits="0" id="4" name="is_current" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="5" name="created" nullable="true" remarks="" size="29" type="timestamp" typeCode="93"/>
+      </table>
+      <table name="sp_project_organization" numRows="0" remarks="" schema="sgn_people" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('sgn_people.sp_project_organization_sp_project_organization_id_seq'::regclass)" digits="0" id="0" name="sp_project_organization_id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="sp_project_id" nullable="true" remarks="" size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="sp_organization_id" nullable="true" remarks="" size="19" type="int8" typeCode="-5"/>
+         <primaryKey column="sp_project_organization_id" sequenceNumberInPK="1"/>
+         <index name="sp_project_organization_pkey" unique="true">
+            <column ascending="true" name="sp_project_organization_id"/>
+         </index>
+      </table>
+      <table name="sp_project_person" numRows="0" remarks="" schema="sgn_people" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('sgn_people.sp_project_person_sp_project_person_id_seq'::regclass)" digits="0" id="0" name="sp_project_person_id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="sp_project_id" nullable="true" remarks="" size="19" type="int8" typeCode="-5">
+            <parent column="sp_project_id" foreignKey="sp_project_person_sp_project_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_project"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="sp_person_id" nullable="true" remarks="" size="19" type="int8" typeCode="-5">
+            <parent column="sp_person_id" foreignKey="person_id_fk" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="type" nullable="true" remarks="" size="6" type="varchar" typeCode="12"/>
+         <primaryKey column="sp_project_person_id" sequenceNumberInPK="1"/>
+         <index name="sp_project_person_pkey" unique="true">
+            <column ascending="true" name="sp_project_person_id"/>
+         </index>
+         <checkConstraint constraint="((((type)::text = 'PI'::text) OR ((type)::text = 'co-PI'::text) OR ((type)::text = 'Member'::text) OR ((type)::text = ''::text) OR (type IS NULL)))" name="chk_sp_project_person_type"/>
+      </table>
+      <table name="sp_roles" numRows="7" remarks="" schema="sgn_people" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('sgn_people.sp_roles_sp_role_id_seq'::regclass)" digits="0" id="0" name="sp_role_id" nullable="false" remarks="" size="10" type="serial" typeCode="4">
+            <child column="sp_role_id" foreignKey="sp_person_roles_sp_role_id_fkey" implied="false" onDeleteCascade="true" schema="sgn_people" table="sp_person_roles"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="name" nullable="true" remarks="" size="255" type="varchar" typeCode="12"/>
+         <primaryKey column="sp_role_id" sequenceNumberInPK="1"/>
+         <index name="sp_roles_pkey" unique="true">
+            <column ascending="true" name="sp_role_id"/>
+         </index>
+      </table>
+      <table name="sp_token" numRows="138" remarks="" schema="sgn_people" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('sgn_people.sp_token_sp_token_id_seq'::regclass)" digits="0" id="0" name="sp_token_id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="cookie_string" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="2" name="last_access_time" nullable="true" remarks="" size="29" type="timestamp" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="source_ip_address" nullable="true" remarks="" size="64" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="sp_person_id" nullable="true" remarks="" size="19" type="int8" typeCode="-5">
+            <parent column="sp_person_id" foreignKey="sp_token_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <primaryKey column="sp_token_id" sequenceNumberInPK="1"/>
+         <index name="sp_token_pkey" unique="true">
+            <column ascending="true" name="sp_token_id"/>
+         </index>
+      </table>
+      <table name="user_map" numRows="0" remarks="" schema="sgn_people" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('sgn_people.user_map_user_map_id_seq'::regclass)" digits="0" id="0" name="user_map_id" nullable="false" remarks="" size="10" type="serial" typeCode="4">
+            <child column="user_map_id" foreignKey="user_map_data_user_map_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="user_map_data"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="short_name" nullable="true" remarks="" size="40" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="long_name" nullable="true" remarks="" size="100" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="abstract" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="is_public" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="parent1_accession_id" nullable="true" remarks="" size="19" type="int8" typeCode="-5">
+            <parent column="accession_id" foreignKey="user_map_parent1_accession_id_fkey" implied="false" onDeleteCascade="false" schema="sgn" table="accession"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="parent1" nullable="true" remarks="" size="100" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="parent2_accession_id" nullable="true" remarks="" size="19" type="int8" typeCode="-5">
+            <parent column="accession_id" foreignKey="user_map_parent2_accession_id_fkey" implied="false" onDeleteCascade="false" schema="sgn" table="accession"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="8" name="parent2" nullable="true" remarks="" size="100" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="9" name="sp_person_id" nullable="true" remarks="" size="19" type="int8" typeCode="-5">
+            <parent column="sp_person_id" foreignKey="user_map_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="10" name="obsolete" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="11" name="modified_date" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="12" name="create_date" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <primaryKey column="user_map_id" sequenceNumberInPK="1"/>
+         <index name="user_map_pkey" unique="true">
+            <column ascending="true" name="user_map_id"/>
+         </index>
+      </table>
+      <table name="user_map_data" numRows="0" remarks="" schema="sgn_people" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('sgn_people.user_map_data_user_map_data_id_seq'::regclass)" digits="0" id="0" name="user_map_data_id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="user_map_id" nullable="true" remarks="" size="19" type="int8" typeCode="-5">
+            <parent column="user_map_id" foreignKey="user_map_data_user_map_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="user_map"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="marker_name" nullable="true" remarks="" size="50" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="protocol" nullable="true" remarks="" size="50" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="marker_id" nullable="true" remarks="" size="19" type="int8" typeCode="-5">
+            <parent column="marker_id" foreignKey="user_map_data_marker_id_fkey" implied="false" onDeleteCascade="false" schema="sgn" table="marker"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="linkage_group" nullable="true" remarks="" size="20" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="4" id="6" name="position" nullable="true" remarks="" size="20" type="numeric" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="confidence" nullable="true" remarks="" size="20" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="8" name="sp_person_id" nullable="true" remarks="" size="19" type="int8" typeCode="-5">
+            <parent column="sp_person_id" foreignKey="user_map_data_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="9" name="obsolete" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="10" name="modified_date" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="11" name="create_date" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <primaryKey column="user_map_data_id" sequenceNumberInPK="1"/>
+         <index name="user_map_data_pkey" unique="true">
+            <column ascending="true" name="user_map_data_id"/>
+         </index>
+      </table>
+   </tables>
+</database>

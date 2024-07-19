@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>individual_image - cxgn_breedbase.phenome</title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <link rel="icon" type="image/png" sizes="16x16" href="../favicon.png">
+        <!-- Bootstrap 3.3.5 -->
+        <link rel="stylesheet" href="../bower/admin-lte/bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="../bower/font-awesome/css/font-awesome.min.css">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="../bower/ionicons/css/ionicons.min.css">
+        <!-- DataTables -->
+        <link rel="stylesheet" href="../bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" href="../bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+        <!-- Code Mirror -->
+        <link rel="stylesheet" href="../bower/codemirror/codemirror.css">
+        <!-- Fonts -->
+        <link href='../fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+        <link href='../fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+
+        <!-- Theme style -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/AdminLTE.min.css">
+        <!-- Salvattore -->
+        <link rel="stylesheet" href="../bower/salvattore/salvattore.css">
+        <!-- AdminLTE Skins. Choose a skin from the css/skins
+           folder instead of downloading all of them to reduce the load. -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/skins/_all-skins.min.css">
+        <!-- SchemaSpy -->
+        <link rel="stylesheet" href="../schemaSpy.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="../bower/html5shiv/html5shiv.min.js"></script>
+        <script src="../bower/respond/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+    <body class="hold-transition skin-blue layout-top-nav">
+        <div class="wrapper">
+            <header class="main-header">
+                <nav class="navbar navbar-static-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <a href="../index.html" class="navbar-brand"><b>cxgn_breedbase</b></a><span class="navbar-brand" style="padding-left: 0">.phenome</span>
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"><i class="fa fa-bars"></i></button>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a href="../index.html">Tables <span class="sr-only">(current)</span></a></li>
+                                <li><a href="../columns.html" title="All of the columns in the schema">Columns</a></li>
+                                <li><a href="../constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+                                <li><a href="../relationships.html" title="Diagram of table relationships">Relationships</a></li>
+                                <li><a href="../orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>
+                                <li><a href="../anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+                                <li><a href="../routines.html" title="Procedures and functions">Routines</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                        <!-- Navbar Right Menu -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </nav>
+            </header>
+            <!-- Main content -->
+            <!-- Full Width Column -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>individual_image</h1><p><span id="recordNumber">0</span> rows</p><br />
+                </section>
+                <!-- Main content -->
+                <section class="content">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+                            <h3 id="Columns" class="box-title">Columns</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table
+                                    id="standard_table"
+                                    class="table table-bordered table-striped dataTable"
+                                    role="grid"
+                                    data-paging="true"
+                                    data-page-length="10"
+                                    data-length-change="false">
+                                <thead align='left'>
+                                <tr>
+                                    <th>Column</th>
+                                    <th>Type</th>
+                                    <th>Size</th>
+                                    <th title='Are nulls allowed?'>Nulls</th>
+                                    <th title='Is column automatically updated?'>Auto</th>
+                                    <th title='Default value'>Default</th>
+                                    <th title='Columns in tables that reference this column'>Children</th>
+                                    <th title='Columns in tables that are referenced by this column'>Parents</th>
+                                    <th title='Comments' class="toggle"><span>Comments</span></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="individual_image_id">individual_image_id</span></td>
+                                    <td>serial</td>
+                                    <td>10</td>
+                                    <td title=''></td>
+                                    <td title='Automatically updated by the database'>√</td>
+                                    <td>nextval(&#39;phenome.individual_image_individual_image_id_seq&#39;::regclass)</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="image_id">image_id</span></td>
+                                    <td>int8</td>
+                                    <td>19</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="individual_image.image_id references metadata.md_image.image_id via individual_image_image_id_fkey"><a href='../../metadata/tables/md_image.html'>md_image</a><span class='relatedKey'>.image_id</span></td>
+                                                <td class="constraint detail">individual_image_image_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="individual_id">individual_id</span></td>
+                                    <td>int8</td>
+                                    <td>19</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="individual_image.individual_id references individual.individual_id via individual_image_individual_id_fkey"><a href='individual.html'>individual</a><span class='relatedKey'>.individual_id</span></td>
+                                                <td class="constraint detail">individual_image_individual_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="obsolete">obsolete</span></td>
+                                    <td>bool</td>
+                                    <td>1</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>false</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="sp_person_id">sp_person_id</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="individual_image.sp_person_id references sgn_people.sp_person.sp_person_id via individual_image_sp_person_id_fkey"><a href='../../sgn_people/tables/sp_person.html'>sp_person</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">individual_image_sp_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="create_date">create_date</span></td>
+                                    <td>timestamptz</td>
+                                    <td>35,6</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>now()</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="modified_date">modified_date</span></td>
+                                    <td>timestamptz</td>
+                                    <td>35,6</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-sitemap"></i>
+                            <h3 id="Indexes" class="box-title">Indexes</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table
+                                    id="indexes_table"
+                                    class="table table-bordered table-striped dataTable"
+                                    role="grid"
+                                    data-paging="true"
+                                    data-page-length="10"
+                                    data-length-change="false">
+                                <thead>
+                                <tr>
+                                    <th>Constraint Name</th>
+                                    <th>Type</th>
+                                    <th>Sort</th>
+                                    <th>Column(s)</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey'></i> individual_image_pkey</td>
+                                    <td>Primary key</td>
+                                    <td><span title='Ascending'>Asc</span></td>
+                                    <td>individual_image_id</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div><!-- /.box-body -->
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-code-fork"></i>
+                            <h3 id="Relationships" class="box-title">Relationships</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <div class="nav-tabs-custom"><!-- Tabs within a box -->
+                                <h5>Close relationships within degrees of separation</h5>
+                                <ul class="nav nav-tabs pull-left ui-sortable-handle">
+                                    <li class="active"><a href="#oneDegreeImg-chart" data-toggle="tab" aria-expanded="true">One</a></li>
+                                    <li class=""><a href="#twodegreesDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two degrees</a></li>
+                                </ul>
+                                <div class="tab-content no-padding">
+                                    <div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
+<area shape="rect" id="node1" href="individual.html" target="_top" title="individual" alt="" coords="347,111,555,404">
+<area shape="rect" id="node2" title="sgn_people.sp_person" alt="" coords="5,233,277,321">
+<area shape="rect" id="node3" href="individual_image.html" target="_top" title="individual_image" alt="" coords="624,49,976,324">
+<area shape="rect" id="node4" title="metadata.md_image" alt="" coords="321,5,580,93">
+</map>
+                                        <a name='diagram'><img id="oneDegreeImg" src="../diagrams/tables/individual_image.1degree.png" usemap="#oneDegreeRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="twodegreesDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
+<area shape="rect" id="node1" href="allele.html" target="_top" title="allele" alt="" coords="732,688,857,776">
+<area shape="rect" id="node2" href="locus.html" target="_top" title="locus" alt="" coords="387,1548,527,1636">
+<area shape="rect" id="node3" title="sgn_people.sp_person" alt="" coords="5,1292,277,1380">
+<area shape="rect" id="node13" title="sgn.common_name" alt="" coords="18,2505,265,2593">
+<area shape="rect" id="node4" href="allele_alias.html" target="_top" title="allele_alias" alt="" coords="1154,389,1327,477">
+<area shape="rect" id="node5" href="allele_dbxref.html" target="_top" title="allele_dbxref" alt="" coords="1146,636,1335,724">
+<area shape="rect" id="node6" href="allele_history.html" target="_top" title="allele_history" alt="" coords="1143,764,1338,852">
+<area shape="rect" id="node7" href="genotype_experiment.html" target="_top" title="genotype_experiment" alt="" coords="321,2716,592,2804">
+<area shape="rect" id="node8" title="sgn.accession" alt="" coords="41,2611,241,2699">
+<area shape="rect" id="node9" href="genotype_region.html" target="_top" title="genotype_region" alt="" coords="1589,2131,1815,2219">
+<area shape="rect" id="node10" href="phenome_genotype.html" target="_top" title="phenome_genotype" alt="" coords="1115,2712,1366,2800">
+<area shape="rect" id="node12" href="individual.html" target="_top" title="individual" alt="" coords="713,2661,876,2749">
+<area shape="rect" id="node11" href="germplasm.html" target="_top" title="germplasm" alt="" coords="1153,2149,1328,2237">
+<area shape="rect" id="node14" href="population.html" target="_top" title="population" alt="" coords="371,2611,542,2699">
+<area shape="rect" id="node15" href="individual_alias.html" target="_top" title="individual_alias" alt="" coords="1134,2291,1347,2379">
+<area shape="rect" id="node16" href="individual_allele.html" target="_top" title="individual_allele" alt="" coords="1131,1055,1351,1143">
+<area shape="rect" id="node17" href="individual_dbxref.html" target="_top" title="individual_dbxref" alt="" coords="1126,1196,1355,1284">
+<area shape="rect" id="node18" href="individual_dbxref_evidence.html" target="_top" title="individual_dbxref_evidence" alt="" coords="1543,91,1861,179">
+<area shape="rect" id="node19" href="individual_dbxref_evidence_history.html" target="_top" title="individual_dbxref_evidence_history" alt="" coords="1920,167,2309,255">
+<area shape="rect" id="node20" href="individual_history.html" target="_top" title="individual_history" alt="" coords="1123,2396,1358,2484">
+<area shape="rect" id="node21" href="individual_image.html" target="_top" title="individual_image" alt="" coords="1065,2817,1417,3092">
+<area shape="rect" id="node22" title="metadata.md_image" alt="" coords="327,2932,586,3020">
+<area shape="rect" id="node23" href="individual_locus.html" target="_top" title="individual_locus" alt="" coords="1132,2044,1349,2132">
+<area shape="rect" id="node24" href="is_public.html" target="_top" title="is_public" alt="" coords="719,2451,871,2539">
+<area shape="rect" id="node25" href="locus2locus.html" target="_top" title="locus2locus" alt="" coords="705,1548,884,1636">
+<area shape="rect" id="node26" href="locus_alias.html" target="_top" title="locus_alias" alt="" coords="709,1127,880,1215">
+<area shape="rect" id="node27" href="locus_dbxref.html" target="_top" title="locus_dbxref" alt="" coords="701,1232,889,1320">
+<area shape="rect" id="node28" href="locus_dbxref_evidence.html" target="_top" title="locus_dbxref_evidence" alt="" coords="1103,897,1379,985">
+<area shape="rect" id="node29" href="locus_dbxref_evidence_history.html" target="_top" title="locus_dbxref_evidence_history" alt="" coords="1528,973,1876,1061">
+<area shape="rect" id="node30" href="locus_history.html" target="_top" title="locus_history" alt="" coords="699,1337,891,1425">
+<area shape="rect" id="node31" href="locus_image.html" target="_top" title="locus_image" alt="" coords="703,2149,887,2237">
+<area shape="rect" id="node32" href="locus_marker.html" target="_top" title="locus_marker" alt="" coords="698,1725,891,1813">
+<area shape="rect" id="node33" href="locus_owner.html" target="_top" title="locus_owner" alt="" coords="702,1831,887,1919">
+<area shape="rect" id="node34" href="locus_registry.html" target="_top" title="locus_registry" alt="" coords="695,845,895,933">
+<area shape="rect" id="node35" href="registry.html" target="_top" title="registry" alt="" coords="384,881,529,969">
+<area shape="rect" id="node36" href="locus_unigene.html" target="_top" title="locus_unigene" alt="" coords="694,1936,895,2024">
+<area shape="rect" id="node37" href="locusgroup.html" target="_top" title="locusgroup" alt="" coords="369,1371,544,1459">
+<area shape="rect" id="node38" href="locusgroup_member.html" target="_top" title="locusgroup_member" alt="" coords="667,1443,923,1531">
+<area shape="rect" id="node39" href="nd_experiment_md_images.html" target="_top" title="nd_experiment_md_images" alt="" coords="636,2929,953,3017">
+<area shape="rect" id="node40" href="polymorphic_fragment.html" target="_top" title="polymorphic_fragment" alt="" coords="1563,2553,1841,2641">
+<area shape="rect" id="node41" href="population_dbxref.html" target="_top" title="population_dbxref" alt="" coords="675,2556,914,2644">
+<area shape="rect" id="node42" href="project_md_image.html" target="_top" title="project_md_image" alt="" coords="676,3035,913,3123">
+<area shape="rect" id="node43" href="project_owner.html" target="_top" title="project_owner" alt="" coords="356,284,557,372">
+<area shape="rect" id="node44" href="pub_curator.html" target="_top" title="pub_curator" alt="" coords="365,389,548,477">
+<area shape="rect" id="node45" href="stock_image.html" target="_top" title="stock_image" alt="" coords="702,3140,887,3228">
+<area shape="rect" id="node46" href="stock_owner.html" target="_top" title="stock_owner" alt="" coords="363,495,550,583">
+<area shape="rect" id="node47" href="user_trait.html" target="_top" title="user_trait" alt="" coords="376,600,537,688">
+<area shape="rect" id="node48" title="public.phenotype" alt="" coords="1125,2501,1356,2589">
+<area shape="rect" id="node49" title="sgn_people.sp_clone_il_mapping_segment_log" alt="" coords="997,2607,1484,2695">
+</map>
+                                        <a name='diagram'><img id="twodegreesDegreeImg" src="../diagrams/tables/individual_image.2degrees.png" usemap="#twoDegreesRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- /.box-body -->
+                    </div>
+                </section>
+                <script>
+                    var config = {
+                        pagination: true
+                    }
+                </script>
+            </div>
+            <!-- /.content-wrapper -->
+            <footer class="main-footer">
+                <div>
+                    <div class="pull-right hidden-xs">
+                        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+                        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+                    </div>
+                    <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.2.4</a></strong>
+                </div>
+                <!-- /.container -->
+            </footer>
+        </div>
+        <!-- ./wrapper -->
+
+        <!-- jQuery 2.2.3 -->
+        <script src="../bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+        <script src="../bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+        <!-- Bootstrap 3.3.5 -->
+        <script src="../bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+        <!-- DataTables -->
+        <script src="../bower/datatables.net/jquery.dataTables.min.js"></script>
+        <script src="../bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+        <script src="../bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.html5.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.print.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+        <!-- SheetJS -->
+        <script src="../bower/js-xlsx/xlsx.full.min.js"></script>
+        <!-- pdfmake -->
+        <script src="../bower/pdfmake/pdfmake.min.js"></script>
+        <script src="../bower/pdfmake/vfs_fonts.js"></script>
+        <!-- SlimScroll -->
+        <script src="../bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+        <!-- FastClick -->
+        <script src="../bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+        <!-- Salvattore -->
+        <script src="../bower/salvattore/salvattore.min.js"></script>
+        <!-- AnchorJS -->
+        <script src="../bower/anchor-js/anchor.min.js"></script>
+        <!-- CodeMirror -->
+        <script src="../bower/codemirror/codemirror.js"></script>
+        <script src="../bower/codemirror/sql.js"></script>
+        <!-- AdminLTE App -->
+        <script src="../bower/admin-lte/dist/js/app.min.js"></script>
+        <script src="table.js"></script>
+        <script src="../schemaSpy.js"></script>
+    </body>
+</html>

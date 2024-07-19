@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>pub - cxgn_breedbase.public</title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <link rel="icon" type="image/png" sizes="16x16" href="../favicon.png">
+        <!-- Bootstrap 3.3.5 -->
+        <link rel="stylesheet" href="../bower/admin-lte/bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="../bower/font-awesome/css/font-awesome.min.css">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="../bower/ionicons/css/ionicons.min.css">
+        <!-- DataTables -->
+        <link rel="stylesheet" href="../bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" href="../bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+        <!-- Code Mirror -->
+        <link rel="stylesheet" href="../bower/codemirror/codemirror.css">
+        <!-- Fonts -->
+        <link href='../fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+        <link href='../fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+
+        <!-- Theme style -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/AdminLTE.min.css">
+        <!-- Salvattore -->
+        <link rel="stylesheet" href="../bower/salvattore/salvattore.css">
+        <!-- AdminLTE Skins. Choose a skin from the css/skins
+           folder instead of downloading all of them to reduce the load. -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/skins/_all-skins.min.css">
+        <!-- SchemaSpy -->
+        <link rel="stylesheet" href="../schemaSpy.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="../bower/html5shiv/html5shiv.min.js"></script>
+        <script src="../bower/respond/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+    <body class="hold-transition skin-blue layout-top-nav">
+        <div class="wrapper">
+            <header class="main-header">
+                <nav class="navbar navbar-static-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <a href="../index.html" class="navbar-brand"><b>cxgn_breedbase</b></a><span class="navbar-brand" style="padding-left: 0">.public</span>
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"><i class="fa fa-bars"></i></button>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a href="../index.html">Tables <span class="sr-only">(current)</span></a></li>
+                                <li><a href="../columns.html" title="All of the columns in the schema">Columns</a></li>
+                                <li><a href="../constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+                                <li><a href="../relationships.html" title="Diagram of table relationships">Relationships</a></li>
+                                <li><a href="../orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>
+                                <li><a href="../anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+                                <li><a href="../routines.html" title="Procedures and functions">Routines</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                        <!-- Navbar Right Menu -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </nav>
+            </header>
+            <!-- Main content -->
+            <!-- Full Width Column -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>pub</h1><p><span id="recordNumber">1</span> rows</p><br />
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-file-text-o"></i>
+                            <h3 id="Description" class="box-title">Description</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div><!-- /.box-header -->
+                        <div class="box-body clearfix">
+                            <p>A documented provenance artefact - publications, documents, personal communication</p>
+                        </div><!-- /.box-body -->
+                    </div>
+                </section>
+                <!-- Main content -->
+                <section class="content">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+                            <h3 id="Columns" class="box-title">Columns</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table
+                                    id="standard_table"
+                                    class="table table-bordered table-striped dataTable"
+                                    role="grid"
+                                    data-paging="true"
+                                    data-page-length="10"
+                                    data-length-change="false">
+                                <thead align='left'>
+                                <tr>
+                                    <th>Column</th>
+                                    <th>Type</th>
+                                    <th>Size</th>
+                                    <th title='Are nulls allowed?'>Nulls</th>
+                                    <th title='Is column automatically updated?'>Auto</th>
+                                    <th title='Default value'>Default</th>
+                                    <th title='Columns in tables that reference this column'>Children</th>
+                                    <th title='Columns in tables that are referenced by this column'>Parents</th>
+                                    <th title='Comments' class="toggle"><span>Comments</span></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="pub_id">pub_id</span></td>
+                                    <td>serial</td>
+                                    <td>10</td>
+                                    <td title=''></td>
+                                    <td title='Automatically updated by the database'>√</td>
+                                    <td>nextval(&#39;pub_pub_id_seq&#39;::regclass)</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="bs_protocol_pub.pub_id references pub.pub_id via bs_protocol_pub_pub_id_fkey"><a href='../../biosource/tables/bs_protocol_pub.html'>bs_protocol_pub</a><span class='relatedKey'>.pub_id</span></td>
+                                                <td class="constraint detail">bs_protocol_pub_pub_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="bs_sample_pub.pub_id references pub.pub_id via bs_sample_pub_pub_id_fkey"><a href='../../biosource/tables/bs_sample_pub.html'>bs_sample_pub</a><span class='relatedKey'>.pub_id</span></td>
+                                                <td class="constraint detail">bs_sample_pub_pub_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="bs_tool_pub.pub_id references pub.pub_id via bs_tool_pub_pub_id_fkey"><a href='../../biosource/tables/bs_tool_pub.html'>bs_tool_pub</a><span class='relatedKey'>.pub_id</span></td>
+                                                <td class="constraint detail">bs_tool_pub_pub_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="ge_experimental_design_pub.pub_id references pub.pub_id via ge_experimental_design_pub_pub_id_fkey"><a href='../../gem/tables/ge_experimental_design_pub.html'>ge_experimental_design_pub</a><span class='relatedKey'>.pub_id</span></td>
+                                                <td class="constraint detail">ge_experimental_design_pub_pub_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="ge_platform_pub.pub_id references pub.pub_id via ge_platform_pub_pub_id_fkey"><a href='../../gem/tables/ge_platform_pub.html'>ge_platform_pub</a><span class='relatedKey'>.pub_id</span></td>
+                                                <td class="constraint detail">ge_platform_pub_pub_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="cvterm_pub_ranking.pub_id references pub.pub_id via cvterm_pub_ranking_pub_id_fkey"><a href='../../phenome/tables/cvterm_pub_ranking.html'>cvterm_pub_ranking</a><span class='relatedKey'>.pub_id</span></td>
+                                                <td class="constraint detail">cvterm_pub_ranking_pub_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="locus_pub_ranking.pub_id references pub.pub_id via locus_pub_ranking_pub_id_fkey"><a href='../../phenome/tables/locus_pub_ranking.html'>locus_pub_ranking</a><span class='relatedKey'>.pub_id</span></td>
+                                                <td class="constraint detail">locus_pub_ranking_pub_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="locus_pub_ranking_validate.pub_id references pub.pub_id via locus_pub_ranking_validate_pub_id_fkey"><a href='../../phenome/tables/locus_pub_ranking_validate.html'>locus_pub_ranking_validate</a><span class='relatedKey'>.pub_id</span></td>
+                                                <td class="constraint detail">locus_pub_ranking_validate_pub_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="pub_curator.pub_id references pub.pub_id via pub_curator_pub_id_fkey"><a href='../../phenome/tables/pub_curator.html'>pub_curator</a><span class='relatedKey'>.pub_id</span></td>
+                                                <td class="constraint detail">pub_curator_pub_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="feature_cvterm.pub_id references pub.pub_id via feature_cvterm_pub_id_fkey"><a href='feature_cvterm.html'>feature_cvterm</a><span class='relatedKey'>.pub_id</span></td>
+                                                <td class="constraint detail">feature_cvterm_pub_id_fkey</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="feature_cvterm_pub.pub_id references pub.pub_id via feature_cvterm_pub_pub_id_fkey"><a href='feature_cvterm_pub.html'>feature_cvterm_pub</a><span class='relatedKey'>.pub_id</span></td>
+                                                <td class="constraint detail">feature_cvterm_pub_pub_id_fkey</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="feature_pub.pub_id references pub.pub_id via feature_pub_pub_id_fkey"><a href='feature_pub.html'>feature_pub</a><span class='relatedKey'>.pub_id</span></td>
+                                                <td class="constraint detail">feature_pub_pub_id_fkey</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="feature_relationship_pub.pub_id references pub.pub_id via feature_relationship_pub_pub_id_fkey"><a href='feature_relationship_pub.html'>feature_relationship_pub</a><span class='relatedKey'>.pub_id</span></td>
+                                                <td class="constraint detail">feature_relationship_pub_pub_id_fkey</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="feature_relationshipprop_pub.pub_id references pub.pub_id via feature_relationshipprop_pub_pub_id_fkey"><a href='feature_relationshipprop_pub.html'>feature_relationshipprop_pub</a><span class='relatedKey'>.pub_id</span></td>
+                                                <td class="constraint detail">feature_relationshipprop_pub_pub_id_fkey</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="feature_synonym.pub_id references pub.pub_id via feature_synonym_pub_id_fkey"><a href='feature_synonym.html'>feature_synonym</a><span class='relatedKey'>.pub_id</span></td>
+                                                <td class="constraint detail">feature_synonym_pub_id_fkey</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="featureloc_pub.pub_id references pub.pub_id via featureloc_pub_pub_id_fkey"><a href='featureloc_pub.html'>featureloc_pub</a><span class='relatedKey'>.pub_id</span></td>
+                                                <td class="constraint detail">featureloc_pub_pub_id_fkey</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="featureprop_pub.pub_id references pub.pub_id via featureprop_pub_pub_id_fkey"><a href='featureprop_pub.html'>featureprop_pub</a><span class='relatedKey'>.pub_id</span></td>
+                                                <td class="constraint detail">featureprop_pub_pub_id_fkey</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="nd_experiment_pub.pub_id references pub.pub_id via nd_experiment_pub_pub_id_fkey"><a href='nd_experiment_pub.html'>nd_experiment_pub</a><span class='relatedKey'>.pub_id</span></td>
+                                                <td class="constraint detail">nd_experiment_pub_pub_id_fkey</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="phendesc.pub_id references pub.pub_id via phendesc_pub_id_fkey"><a href='phendesc.html'>phendesc</a><span class='relatedKey'>.pub_id</span></td>
+                                                <td class="constraint detail">phendesc_pub_id_fkey</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="phenotype_comparison.pub_id references pub.pub_id via phenotype_comparison_pub_id_fkey"><a href='phenotype_comparison.html'>phenotype_comparison</a><span class='relatedKey'>.pub_id</span></td>
+                                                <td class="constraint detail">phenotype_comparison_pub_id_fkey</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="phenotype_comparison_cvterm.pub_id references pub.pub_id via phenotype_comparison_cvterm_pub_id_fkey"><a href='phenotype_comparison_cvterm.html'>phenotype_comparison_cvterm</a><span class='relatedKey'>.pub_id</span></td>
+                                                <td class="constraint detail">phenotype_comparison_cvterm_pub_id_fkey</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="phenstatement.pub_id references pub.pub_id via phenstatement_pub_id_fkey"><a href='phenstatement.html'>phenstatement</a><span class='relatedKey'>.pub_id</span></td>
+                                                <td class="constraint detail">phenstatement_pub_id_fkey</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="phylonode_pub.pub_id references pub.pub_id via phylonode_pub_pub_id_fkey"><a href='phylonode_pub.html'>phylonode_pub</a><span class='relatedKey'>.pub_id</span></td>
+                                                <td class="constraint detail">phylonode_pub_pub_id_fkey</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="phylotree_pub.pub_id references pub.pub_id via phylotree_pub_pub_id_fkey"><a href='phylotree_pub.html'>phylotree_pub</a><span class='relatedKey'>.pub_id</span></td>
+                                                <td class="constraint detail">phylotree_pub_pub_id_fkey</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="project_pub.pub_id references pub.pub_id via project_pub_pub_id_fkey"><a href='project_pub.html'>project_pub</a><span class='relatedKey'>.pub_id</span></td>
+                                                <td class="constraint detail">project_pub_pub_id_fkey</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="pub_dbxref.pub_id references pub.pub_id via pub_dbxref_pub_id_fkey"><a href='pub_dbxref.html'>pub_dbxref</a><span class='relatedKey'>.pub_id</span></td>
+                                                <td class="constraint detail">pub_dbxref_pub_id_fkey</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="pub_relationship.object_id references pub.pub_id via pub_relationship_object_id_fkey"><a href='pub_relationship.html'>pub_relationship</a><span class='relatedKey'>.object_id</span></td>
+                                                <td class="constraint detail">pub_relationship_object_id_fkey</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="pub_relationship.subject_id references pub.pub_id via pub_relationship_subject_id_fkey"><a href='pub_relationship.html'>pub_relationship</a><span class='relatedKey'>.subject_id</span></td>
+                                                <td class="constraint detail">pub_relationship_subject_id_fkey</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="pubabstract.pub_id references pub.pub_id via pubabstract_pub_id_fkey"><a href='pubabstract.html'>pubabstract</a><span class='relatedKey'>.pub_id</span></td>
+                                                <td class="constraint detail">pubabstract_pub_id_fkey</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="pubauthor.pub_id references pub.pub_id via pubauthor_pub_id_fkey"><a href='pubauthor.html'>pubauthor</a><span class='relatedKey'>.pub_id</span></td>
+                                                <td class="constraint detail">pubauthor_pub_id_fkey</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="pubprop.pub_id references pub.pub_id via pubprop_pub_id_fkey"><a href='pubprop.html'>pubprop</a><span class='relatedKey'>.pub_id</span></td>
+                                                <td class="constraint detail">pubprop_pub_id_fkey</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="stock_cvterm.pub_id references pub.pub_id via stock_cvterm_pub_id_fkey"><a href='stock_cvterm.html'>stock_cvterm</a><span class='relatedKey'>.pub_id</span></td>
+                                                <td class="constraint detail">stock_cvterm_pub_id_fkey</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="stock_pub.pub_id references pub.pub_id via stock_pub_pub_id_fkey"><a href='stock_pub.html'>stock_pub</a><span class='relatedKey'>.pub_id</span></td>
+                                                <td class="constraint detail">stock_pub_pub_id_fkey</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="stock_relationship_cvterm.pub_id references pub.pub_id via stock_relationship_cvterm_pub_id_fkey"><a href='stock_relationship_cvterm.html'>stock_relationship_cvterm</a><span class='relatedKey'>.pub_id</span></td>
+                                                <td class="constraint detail">stock_relationship_cvterm_pub_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="stock_relationship_pub.pub_id references pub.pub_id via stock_relationship_pub_pub_id_fkey"><a href='stock_relationship_pub.html'>stock_relationship_pub</a><span class='relatedKey'>.pub_id</span></td>
+                                                <td class="constraint detail">stock_relationship_pub_pub_id_fkey</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="stockprop_pub.pub_id references pub.pub_id via stockprop_pub_pub_id_fkey"><a href='stockprop_pub.html'>stockprop_pub</a><span class='relatedKey'>.pub_id</span></td>
+                                                <td class="constraint detail">stockprop_pub_pub_id_fkey</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="title">title</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>descriptive general heading</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="volumetitle">volumetitle</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>title of part if one of a series</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="volume">volume</span></td>
+                                    <td>varchar</td>
+                                    <td>255</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="series_name">series_name</span></td>
+                                    <td>varchar</td>
+                                    <td>255</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>full name of (journal) series</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="issue">issue</span></td>
+                                    <td>varchar</td>
+                                    <td>255</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="pyear">pyear</span></td>
+                                    <td>varchar</td>
+                                    <td>255</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="pages">pages</span></td>
+                                    <td>varchar</td>
+                                    <td>255</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>page number range<a href="./../null">s</a>, eg, 457&ndash;459, viii + 664pp, lv&ndash;lvii</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="miniref">miniref</span></td>
+                                    <td>varchar</td>
+                                    <td>255</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='indexedColumn' title='Indexed'><i class='fa fa-sitemap fa-rotate-120' style='padding-right: 5px;'></i><span id="uniquename">uniquename</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="type_id">type_id</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="pub.type_id references cvterm.cvterm_id via pub_type_id_fkey"><a href='cvterm.html'>cvterm</a><span class='relatedKey'>.cvterm_id</span></td>
+                                                <td class="constraint detail">pub_type_id_fkey</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td><p>the type of the publication (book, journal, poem, graffiti, etc). Uses pub cv</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="is_obsolete">is_obsolete</span></td>
+                                    <td>bool</td>
+                                    <td>1</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>false</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="publisher">publisher</span></td>
+                                    <td>varchar</td>
+                                    <td>255</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="pubplace">pubplace</span></td>
+                                    <td>varchar</td>
+                                    <td>255</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="title_tsvector">title_tsvector</span></td>
+                                    <td>tsvector</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-sitemap"></i>
+                            <h3 id="Indexes" class="box-title">Indexes</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table
+                                    id="indexes_table"
+                                    class="table table-bordered table-striped dataTable"
+                                    role="grid"
+                                    data-paging="true"
+                                    data-page-length="10"
+                                    data-length-change="false">
+                                <thead>
+                                <tr>
+                                    <th>Constraint Name</th>
+                                    <th>Type</th>
+                                    <th>Sort</th>
+                                    <th>Column(s)</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey'></i> pub_pkey</td>
+                                    <td>Primary key</td>
+                                    <td><span title='Ascending'>Asc</span></td>
+                                    <td>pub_id</td>
+                                </tr>
+                                <tr>
+                                    <td class='uniqueKey' title='Unique Key'><i class='icon ion-key iconkey'></i> pub_c1</td>
+                                    <td>Must be unique</td>
+                                    <td><span title='Ascending'>Asc</span></td>
+                                    <td>uniquename</td>
+                                </tr>
+                                <tr>
+                                    <td title='Indexed'>pub_idx1</td>
+                                    <td>Performance</td>
+                                    <td><span title='Ascending'>Asc</span></td>
+                                    <td>type_id</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div><!-- /.box-body -->
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-code-fork"></i>
+                            <h3 id="Relationships" class="box-title">Relationships</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <div class="nav-tabs-custom"><!-- Tabs within a box -->
+                                <h5>Close relationships within degrees of separation</h5>
+                                <ul class="nav nav-tabs pull-left ui-sortable-handle">
+                                    <li class="active"><a href="#oneDegreeImg-chart" data-toggle="tab" aria-expanded="true">One</a></li>
+                                    <li class=""><a href="#twodegreesDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two degrees</a></li>
+                                    <li class=""><a href="#oneimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">One implied</a></li>
+                                    <li class=""><a href="#twoimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two implied</a></li>
+                                </ul>
+                                <div class="tab-content no-padding">
+                                    <div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
+<area shape="rect" id="node1" title="biosource.bs_protocol_pub" alt="" coords="681,5021,996,5139">
+<area shape="rect" id="node2" href="pub.html" target="_top" title="pub" alt="" coords="269,2751,589,3260">
+<area shape="rect" id="node8" href="cvterm.html" target="_top" title="cvterm" alt="" coords="5,917,225,1152">
+<area shape="rect" id="node3" title="biosource.bs_sample_pub" alt="" coords="687,1547,991,1664">
+<area shape="rect" id="node4" title="biosource.bs_tool_pub" alt="" coords="701,1681,976,1799">
+<area shape="rect" id="node5" title="gem.ge_experimental_design_pub" alt="" coords="649,1816,1029,1933">
+<area shape="rect" id="node6" title="gem.ge_platform_pub" alt="" coords="704,1951,973,2068">
+<area shape="rect" id="node7" title="phenome.cvterm_pub_ranking" alt="" coords="665,293,1012,440">
+<area shape="rect" id="node9" title="phenome.locus_pub_ranking" alt="" coords="674,2085,1003,2203">
+<area shape="rect" id="node10" title="phenome.locus_pub_ranking_validate" alt="" coords="633,2220,1044,2337">
+<area shape="rect" id="node11" title="phenome.pub_curator" alt="" coords="703,2391,975,2508">
+<area shape="rect" id="node12" href="feature_cvterm.html" target="_top" title="feature_cvterm" alt="" coords="733,5,945,240">
+<area shape="rect" id="node13" href="feature_cvterm_pub.html" target="_top" title="feature_cvterm_pub" alt="" coords="1139,489,1392,641">
+<area shape="rect" id="node14" href="feature_pub.html" target="_top" title="feature_pub" alt="" coords="747,2525,930,2677">
+<area shape="rect" id="node15" href="feature_relationship_pub.html" target="_top" title="feature_relationship_pub" alt="" coords="689,2695,988,2847">
+<area shape="rect" id="node16" href="feature_relationshipprop_pub.html" target="_top" title="feature_relationshipprop_pub" alt="" coords="668,2864,1009,3016">
+<area shape="rect" id="node17" href="feature_synonym.html" target="_top" title="feature_synonym" alt="" coords="724,3033,953,3239">
+<area shape="rect" id="node18" href="featureloc_pub.html" target="_top" title="featureloc_pub" alt="" coords="735,3256,943,3408">
+<area shape="rect" id="node19" href="featureprop_pub.html" target="_top" title="featureprop_pub" alt="" coords="727,3425,951,3577">
+<area shape="rect" id="node20" href="nd_experiment_pub.html" target="_top" title="nd_experiment_pub" alt="" coords="713,3595,964,3747">
+<area shape="rect" id="node21" href="phendesc.html" target="_top" title="phendesc" alt="" coords="745,457,933,692">
+<area shape="rect" id="node22" href="phenotype_comparison.html" target="_top" title="phenotype_comparison" alt="" coords="697,1201,980,1529">
+<area shape="rect" id="node23" href="phenotype_comparison_cvterm.html" target="_top" title="phenotype_comparison_cvterm" alt="" coords="1088,1172,1443,1377">
+<area shape="rect" id="node24" href="phenstatement.html" target="_top" title="phenstatement" alt="" coords="733,709,945,949">
+<area shape="rect" id="node25" href="phylonode_pub.html" target="_top" title="phylonode_pub" alt="" coords="733,3764,944,3916">
+<area shape="rect" id="node26" href="phylotree_pub.html" target="_top" title="phylotree_pub" alt="" coords="737,3933,940,4085">
+<area shape="rect" id="node27" href="project_pub.html" target="_top" title="project_pub" alt="" coords="749,4103,929,4255">
+<area shape="rect" id="node28" href="pub_dbxref.html" target="_top" title="pub_dbxref" alt="" coords="751,4272,926,4448">
+<area shape="rect" id="node29" href="pub_relationship.html" target="_top" title="pub_relationship" alt="" coords="726,967,951,1148">
+<area shape="rect" id="node30" href="pubabstract.html" target="_top" title="pubabstract" alt="" coords="735,4465,942,4641">
+<area shape="rect" id="node31" href="pubauthor.html" target="_top" title="pubauthor" alt="" coords="755,4659,923,4835">
+<area shape="rect" id="node32" href="pubprop.html" target="_top" title="pubprop" alt="" coords="763,5495,914,5700">
+<area shape="rect" id="node33" href="stock_cvterm.html" target="_top" title="stock_cvterm" alt="" coords="742,5717,935,5952">
+<area shape="rect" id="node34" href="stock_pub.html" target="_top" title="stock_pub" alt="" coords="757,4852,921,5004">
+<area shape="rect" id="node35" href="stock_relationship_cvterm.html" target="_top" title="stock_relationship_cvterm" alt="" coords="684,5969,993,6151">
+<area shape="rect" id="node36" href="stock_relationship_pub.html" target="_top" title="stock_relationship_pub" alt="" coords="698,5156,979,5308">
+<area shape="rect" id="node37" href="stockprop_pub.html" target="_top" title="stockprop_pub" alt="" coords="735,5325,942,5477">
+</map>
+                                        <a name='diagram'><img id="oneDegreeImg" src="../diagrams/tables/pub.1degree.png" usemap="#oneDegreeRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="twodegreesDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
+<area shape="rect" id="node1" title="biosource.bs_protocol_pub" alt="" coords="944,2678,1259,2796">
+<area shape="rect" id="node2" href="pub.html" target="_top" title="pub" alt="" coords="485,3206,805,3716">
+<area shape="rect" id="node5" href="cvterm.html" target="_top" title="cvterm" alt="" coords="225,4144,393,4232">
+<area shape="rect" id="node3" title="biosource.bs_sample" alt="" coords="514,6608,775,6696">
+<area shape="rect" id="node4" href="organism.html" target="_top" title="organism" alt="" coords="230,6818,389,6906">
+<area shape="rect" id="node19" href="dbxref.html" target="_top" title="dbxref" alt="" coords="5,377,181,465">
+<area shape="rect" id="node27" href="cv.html" target="_top" title="cv" alt="" coords="29,6397,157,6485">
+<area shape="rect" id="node6" title="biosource.bs_sample_cvterm" alt="" coords="478,1505,811,1593">
+<area shape="rect" id="node7" title="biosource.bs_sample_element_cvterm" alt="" coords="437,1610,852,1698">
+<area shape="rect" id="node8" title="biosource.bs_sample_pub" alt="" coords="949,2813,1253,2930">
+<area shape="rect" id="node9" title="biosource.bs_sample_relationship" alt="" coords="455,1716,834,1804">
+<area shape="rect" id="node10" title="biosource.bs_tool_pub" alt="" coords="964,2948,1239,3065">
+<area shape="rect" id="node11" title="gem.ge_experimental_design_pub" alt="" coords="911,3082,1291,3200">
+<area shape="rect" id="node12" title="gem.ge_platform_pub" alt="" coords="967,3217,1236,3334">
+<area shape="rect" id="node13" title="metadata.md_image_cvterm" alt="" coords="480,1821,809,1909">
+<area shape="rect" id="node14" title="phenome.cvterm_pub_ranking" alt="" coords="928,674,1275,762">
+<area shape="rect" id="node15" title="phenome.locus_pub_ranking" alt="" coords="937,3352,1266,3469">
+<area shape="rect" id="node16" title="phenome.locus_pub_ranking_validate" alt="" coords="896,1701,1307,1818">
+<area shape="rect" id="node17" title="phenome.locusgroup" alt="" coords="513,1962,777,2050">
+<area shape="rect" id="node18" title="phenome.locusgroup_member" alt="" coords="471,272,818,360">
+<area shape="rect" id="node20" title="phenome.project_md_image" alt="" coords="938,4010,1265,4098">
+<area shape="rect" id="node21" href="project.html" target="_top" title="project" alt="" coords="575,4108,715,4196">
+<area shape="rect" id="node22" title="phenome.pub_curator" alt="" coords="965,1836,1237,1953">
+<area shape="rect" id="node23" href="analysisprop.html" target="_top" title="analysisprop" alt="" coords="550,2140,739,2228">
+<area shape="rect" id="node24" href="contact.html" target="_top" title="contact" alt="" coords="574,4429,715,4517">
+<area shape="rect" id="node25" href="contact_relationship.html" target="_top" title="contact_relationship" alt="" coords="973,4812,1230,4900">
+<area shape="rect" id="node26" href="cvprop.html" target="_top" title="cvprop" alt="" coords="577,6502,713,6590">
+<area shape="rect" id="node28" href="cvterm_dbxref.html" target="_top" title="cvterm_dbxref" alt="" coords="543,377,747,465">
+<area shape="rect" id="node29" href="cvterm_relationship.html" target="_top" title="cvterm_relationship" alt="" coords="518,2317,771,2405">
+<area shape="rect" id="node30" href="cvtermpath.html" target="_top" title="cvtermpath" alt="" coords="555,6397,734,6485">
+<area shape="rect" id="node31" href="cvtermprop.html" target="_top" title="cvtermprop" alt="" coords="555,2854,734,2942">
+<area shape="rect" id="node32" href="cvtermsynonym.html" target="_top" title="cvtermsynonym" alt="" coords="536,2996,753,3084">
+<area shape="rect" id="node33" href="dbxrefprop.html" target="_top" title="dbxrefprop" alt="" coords="557,482,732,570">
+<area shape="rect" id="node34" href="environment_cvterm.html" target="_top" title="environment_cvterm" alt="" coords="971,4706,1231,4794">
+<area shape="rect" id="node35" href="environment.html" target="_top" title="environment" alt="" coords="550,4536,739,4624">
+<area shape="rect" id="node36" href="feature.html" target="_top" title="feature" alt="" coords="575,2422,715,2510">
+<area shape="rect" id="node37" href="feature_cvterm.html" target="_top" title="feature_cvterm" alt="" coords="995,780,1207,868">
+<area shape="rect" id="node38" href="feature_cvterm_dbxref.html" target="_top" title="feature_cvterm_dbxref" alt="" coords="1389,74,1667,162">
+<area shape="rect" id="node39" href="feature_cvterm_pub.html" target="_top" title="feature_cvterm_pub" alt="" coords="1401,1040,1655,1128">
+<area shape="rect" id="node40" href="feature_cvtermprop.html" target="_top" title="feature_cvtermprop" alt="" coords="1401,733,1655,821">
+<area shape="rect" id="node41" href="feature_genotype.html" target="_top" title="feature_genotype" alt="" coords="985,2042,1218,2130">
+<area shape="rect" id="node42" href="genotype.html" target="_top" title="genotype" alt="" coords="565,4885,724,4973">
+<area shape="rect" id="node43" href="feature_pub.html" target="_top" title="feature_pub" alt="" coords="1010,1273,1193,1425">
+<area shape="rect" id="node44" href="feature_relationship.html" target="_top" title="feature_relationship" alt="" coords="973,921,1230,1009">
+<area shape="rect" id="node45" href="feature_relationship_pub.html" target="_top" title="feature_relationship_pub" alt="" coords="1379,1160,1677,1312">
+<area shape="rect" id="node46" href="feature_relationshipprop.html" target="_top" title="feature_relationshipprop" alt="" coords="1379,921,1677,1009">
+<area shape="rect" id="node47" href="feature_relationshipprop_pub.html" target="_top" title="feature_relationshipprop_pub" alt="" coords="1749,1488,2091,1640">
+<area shape="rect" id="node48" href="feature_synonym.html" target="_top" title="feature_synonym" alt="" coords="987,1442,1216,1648">
+<area shape="rect" id="node49" href="synonym.html" target="_top" title="synonym" alt="" coords="567,3101,722,3189">
+<area shape="rect" id="node50" href="featureloc.html" target="_top" title="featureloc" alt="" coords="1018,1168,1185,1256">
+<area shape="rect" id="node51" href="featureloc_pub.html" target="_top" title="featureloc_pub" alt="" coords="1424,1796,1632,1948">
+<area shape="rect" id="node52" href="featureprop.html" target="_top" title="featureprop" alt="" coords="1010,1062,1193,1150">
+<area shape="rect" id="node53" href="featureprop_json.html" target="_top" title="featureprop_json" alt="" coords="987,6176,1215,6264">
+<area shape="rect" id="node54" href="nd_protocol.html" target="_top" title="nd_protocol" alt="" coords="555,5901,735,5989">
+<area shape="rect" id="node55" href="featureprop_pub.html" target="_top" title="featureprop_pub" alt="" coords="1416,1517,1640,1669">
+<area shape="rect" id="node56" href="genotypeprop.html" target="_top" title="genotypeprop" alt="" coords="1001,5402,1202,5490">
+<area shape="rect" id="node57" href="nd_experiment.html" target="_top" title="nd_experiment" alt="" coords="541,4990,749,5078">
+<area shape="rect" id="node58" href="nd_experiment_pub.html" target="_top" title="nd_experiment_pub" alt="" coords="976,4537,1227,4689">
+<area shape="rect" id="node59" href="nd_experiment_stock.html" target="_top" title="nd_experiment_stock" alt="" coords="969,5022,1233,5110">
+<area shape="rect" id="node60" href="stock.html" target="_top" title="stock" alt="" coords="561,5544,729,5632">
+<area shape="rect" id="node61" href="nd_experiment_stockprop.html" target="_top" title="nd_experiment_stockprop" alt="" coords="1375,1357,1681,1445">
+<area shape="rect" id="node62" href="nd_experimentprop.html" target="_top" title="nd_experimentprop" alt="" coords="976,5754,1227,5842">
+<area shape="rect" id="node63" href="nd_geolocationprop.html" target="_top" title="nd_geolocationprop" alt="" coords="519,4677,771,4765">
+<area shape="rect" id="node64" href="nd_protocol_reagent.html" target="_top" title="nd_protocol_reagent" alt="" coords="972,6422,1231,6510">
+<area shape="rect" id="node65" href="nd_reagent.html" target="_top" title="nd_reagent" alt="" coords="557,6256,733,6344">
+<area shape="rect" id="node66" href="nd_protocolprop.html" target="_top" title="nd_protocolprop" alt="" coords="991,6281,1212,6369">
+<area shape="rect" id="node67" href="nd_reagent_relationship.html" target="_top" title="nd_reagent_relationship" alt="" coords="955,6564,1247,6652">
+<area shape="rect" id="node68" href="nd_reagentprop.html" target="_top" title="nd_reagentprop" alt="" coords="993,6669,1210,6757">
+<area shape="rect" id="node69" href="organism_relationship.html" target="_top" title="organism_relationship" alt="" coords="507,6924,782,7012">
+<area shape="rect" id="node70" href="organismpath.html" target="_top" title="organismpath" alt="" coords="545,6818,745,6906">
+<area shape="rect" id="node71" href="organismprop.html" target="_top" title="organismprop" alt="" coords="545,6713,745,6801">
+<area shape="rect" id="node72" href="phendesc.html" target="_top" title="phendesc" alt="" coords="1021,4432,1181,4520">
+<area shape="rect" id="node73" href="phenotype.html" target="_top" title="phenotype" alt="" coords="559,5096,730,5184">
+<area shape="rect" id="node74" href="phenotype_comparison.html" target="_top" title="phenotype_comparison" alt="" coords="960,5297,1243,5385">
+<area shape="rect" id="node75" href="phenotype_comparison_cvterm.html" target="_top" title="phenotype_comparison_cvterm" alt="" coords="1351,5285,1705,5373">
+<area shape="rect" id="node76" href="phenotype_cvterm.html" target="_top" title="phenotype_cvterm" alt="" coords="981,5860,1222,5948">
+<area shape="rect" id="node77" href="phenotypeprop.html" target="_top" title="phenotypeprop" alt="" coords="995,5965,1207,6053">
+<area shape="rect" id="node78" href="phenstatement.html" target="_top" title="phenstatement" alt="" coords="995,4917,1207,5005">
+<area shape="rect" id="node79" href="phylonode.html" target="_top" title="phylonode" alt="" coords="1017,328,1185,416">
+<area shape="rect" id="node80" href="phylotree.html" target="_top" title="phylotree" alt="" coords="564,166,725,254">
+<area shape="rect" id="node81" href="phylonode_pub.html" target="_top" title="phylonode_pub" alt="" coords="1423,510,1633,662">
+<area shape="rect" id="node82" href="phylonode_relationship.html" target="_top" title="phylonode_relationship" alt="" coords="1385,264,1671,352">
+<area shape="rect" id="node83" href="phylonodeprop.html" target="_top" title="phylonodeprop" alt="" coords="1423,378,1633,466">
+<area shape="rect" id="node84" href="phylotree_pub.html" target="_top" title="phylotree_pub" alt="" coords="1000,469,1203,621">
+<area shape="rect" id="node85" href="project_pub.html" target="_top" title="project_pub" alt="" coords="1011,3841,1191,3993">
+<area shape="rect" id="node86" href="project_relationship.html" target="_top" title="project_relationship" alt="" coords="974,4116,1229,4204">
+<area shape="rect" id="node87" href="projectprop.html" target="_top" title="projectprop" alt="" coords="1011,4221,1191,4309">
+<area shape="rect" id="node88" href="pub_dbxref.html" target="_top" title="pub_dbxref" alt="" coords="1014,98,1189,274">
+<area shape="rect" id="node89" href="pub_relationship.html" target="_top" title="pub_relationship" alt="" coords="989,3594,1214,3682">
+<area shape="rect" id="node90" href="pubabstract.html" target="_top" title="pubabstract" alt="" coords="998,2220,1205,2396">
+<area shape="rect" id="node91" href="pubauthor.html" target="_top" title="pubauthor" alt="" coords="1017,2413,1185,2589">
+<area shape="rect" id="node92" href="pubprop.html" target="_top" title="pubprop" alt="" coords="1026,3700,1177,3788">
+<area shape="rect" id="node93" href="stock_cvterm.html" target="_top" title="stock_cvterm" alt="" coords="1005,5649,1198,5737">
+<area shape="rect" id="node94" href="stock_cvtermprop.html" target="_top" title="stock_cvtermprop" alt="" coords="1411,6084,1645,6172">
+<area shape="rect" id="node95" href="stock_dbxrefprop.html" target="_top" title="stock_dbxrefprop" alt="" coords="529,6114,760,6202">
+<area shape="rect" id="node96" href="stock_pub.html" target="_top" title="stock_pub" alt="" coords="1019,5128,1183,5280">
+<area shape="rect" id="node97" href="stock_relationship.html" target="_top" title="stock_relationship" alt="" coords="982,5544,1221,5632">
+<area shape="rect" id="node98" href="stock_relationship_cvterm.html" target="_top" title="stock_relationship_cvterm" alt="" coords="1373,5560,1683,5648">
+<area shape="rect" id="node99" href="stock_relationship_pub.html" target="_top" title="stock_relationship_pub" alt="" coords="1387,4628,1669,4780">
+<area shape="rect" id="node100" href="stockcollection.html" target="_top" title="stockcollection" alt="" coords="997,4326,1206,4414">
+<area shape="rect" id="node101" href="stockcollectionprop.html" target="_top" title="stockcollectionprop" alt="" coords="1402,4046,1654,4134">
+<area shape="rect" id="node102" href="stockprop.html" target="_top" title="stockprop" alt="" coords="1019,6070,1183,6158">
+<area shape="rect" id="node103" href="stockprop_pub.html" target="_top" title="stockprop_pub" alt="" coords="1425,5390,1631,5542">
+<area shape="rect" id="node104" title="sgn.chadoprop" alt="" coords="541,696,749,784">
+<area shape="rect" id="node105" title="sgn.common_nameprop" alt="" coords="501,801,789,889">
+<area shape="rect" id="node106" title="sgn.pcr_experiment_sequence" alt="" coords="471,906,818,994">
+<area shape="rect" id="node107" title="sgn.snpprop" alt="" coords="551,1012,738,1100">
+<area shape="rect" id="node108" title="sgn_people.list" alt="" coords="540,1117,749,1205">
+<area shape="rect" id="node109" title="sgn_people.listprop" alt="" coords="519,1222,771,1310">
+<area shape="rect" id="node110" title="sgn_people.sp_orderprop" alt="" coords="494,1328,795,1416">
+</map>
+                                        <a name='diagram'><img id="twodegreesDegreeImg" src="../diagrams/tables/pub.2degrees.png" usemap="#twoDegreesRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="oneimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="oneDegreeRelationshipsDiagramImplied" name="oneDegreeRelationshipsDiagramImplied">
+<area shape="rect" id="node1" title="biosource.bs_protocol_pub" alt="" coords="681,5021,996,5139">
+<area shape="rect" id="node2" href="pub.html" target="_top" title="pub" alt="" coords="269,2751,589,3260">
+<area shape="rect" id="node8" href="cvterm.html" target="_top" title="cvterm" alt="" coords="5,917,225,1152">
+<area shape="rect" id="node3" title="biosource.bs_sample_pub" alt="" coords="687,1547,991,1664">
+<area shape="rect" id="node4" title="biosource.bs_tool_pub" alt="" coords="701,1681,976,1799">
+<area shape="rect" id="node5" title="gem.ge_experimental_design_pub" alt="" coords="649,1816,1029,1933">
+<area shape="rect" id="node6" title="gem.ge_platform_pub" alt="" coords="704,1951,973,2068">
+<area shape="rect" id="node7" title="phenome.cvterm_pub_ranking" alt="" coords="665,293,1012,440">
+<area shape="rect" id="node9" title="phenome.locus_pub_ranking" alt="" coords="674,2085,1003,2203">
+<area shape="rect" id="node10" title="phenome.locus_pub_ranking_validate" alt="" coords="633,2220,1044,2337">
+<area shape="rect" id="node11" title="phenome.pub_curator" alt="" coords="703,2391,975,2508">
+<area shape="rect" id="node12" href="feature_cvterm.html" target="_top" title="feature_cvterm" alt="" coords="733,5,945,240">
+<area shape="rect" id="node13" href="feature_cvterm_pub.html" target="_top" title="feature_cvterm_pub" alt="" coords="1139,489,1392,641">
+<area shape="rect" id="node14" href="feature_pub.html" target="_top" title="feature_pub" alt="" coords="747,2525,930,2677">
+<area shape="rect" id="node15" href="feature_relationship_pub.html" target="_top" title="feature_relationship_pub" alt="" coords="689,2695,988,2847">
+<area shape="rect" id="node16" href="feature_relationshipprop_pub.html" target="_top" title="feature_relationshipprop_pub" alt="" coords="668,2864,1009,3016">
+<area shape="rect" id="node17" href="feature_synonym.html" target="_top" title="feature_synonym" alt="" coords="724,3033,953,3239">
+<area shape="rect" id="node18" href="featureloc_pub.html" target="_top" title="featureloc_pub" alt="" coords="735,3256,943,3408">
+<area shape="rect" id="node19" href="featureprop_pub.html" target="_top" title="featureprop_pub" alt="" coords="727,3425,951,3577">
+<area shape="rect" id="node20" href="nd_experiment_pub.html" target="_top" title="nd_experiment_pub" alt="" coords="713,3595,964,3747">
+<area shape="rect" id="node21" href="phendesc.html" target="_top" title="phendesc" alt="" coords="745,457,933,692">
+<area shape="rect" id="node22" href="phenotype_comparison.html" target="_top" title="phenotype_comparison" alt="" coords="697,1201,980,1529">
+<area shape="rect" id="node23" href="phenotype_comparison_cvterm.html" target="_top" title="phenotype_comparison_cvterm" alt="" coords="1088,1172,1443,1377">
+<area shape="rect" id="node24" href="phenstatement.html" target="_top" title="phenstatement" alt="" coords="733,709,945,949">
+<area shape="rect" id="node25" href="phylonode_pub.html" target="_top" title="phylonode_pub" alt="" coords="733,3764,944,3916">
+<area shape="rect" id="node26" href="phylotree_pub.html" target="_top" title="phylotree_pub" alt="" coords="737,3933,940,4085">
+<area shape="rect" id="node27" href="project_pub.html" target="_top" title="project_pub" alt="" coords="749,4103,929,4255">
+<area shape="rect" id="node28" href="pub_dbxref.html" target="_top" title="pub_dbxref" alt="" coords="751,4272,926,4448">
+<area shape="rect" id="node29" href="pub_relationship.html" target="_top" title="pub_relationship" alt="" coords="726,967,951,1148">
+<area shape="rect" id="node30" href="pubabstract.html" target="_top" title="pubabstract" alt="" coords="735,4465,942,4641">
+<area shape="rect" id="node31" href="pubauthor.html" target="_top" title="pubauthor" alt="" coords="755,4659,923,4835">
+<area shape="rect" id="node32" href="pubprop.html" target="_top" title="pubprop" alt="" coords="763,5495,914,5700">
+<area shape="rect" id="node33" href="stock_cvterm.html" target="_top" title="stock_cvterm" alt="" coords="742,5717,935,5952">
+<area shape="rect" id="node34" href="stock_pub.html" target="_top" title="stock_pub" alt="" coords="757,4852,921,5004">
+<area shape="rect" id="node35" href="stock_relationship_cvterm.html" target="_top" title="stock_relationship_cvterm" alt="" coords="684,5969,993,6151">
+<area shape="rect" id="node36" href="stock_relationship_pub.html" target="_top" title="stock_relationship_pub" alt="" coords="698,5156,979,5308">
+<area shape="rect" id="node37" href="stockprop_pub.html" target="_top" title="stockprop_pub" alt="" coords="735,5325,942,5477">
+</map>
+                                        <a name='diagram'><img id="oneimpliedDegreeImg" src="../diagrams/tables/pub.implied1degrees.png" usemap="#oneDegreeRelationshipsDiagramImplied" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="twoimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="twoDegreesRelationshipsDiagramImplied" name="twoDegreesRelationshipsDiagramImplied">
+<area shape="rect" id="node1" title="biosource.bs_protocol_pub" alt="" coords="944,3540,1259,3657">
+<area shape="rect" id="node2" href="pub.html" target="_top" title="pub" alt="" coords="485,3968,805,4477">
+<area shape="rect" id="node5" href="cvterm.html" target="_top" title="cvterm" alt="" coords="225,3477,393,3565">
+<area shape="rect" id="node3" title="biosource.bs_sample" alt="" coords="514,6667,775,6755">
+<area shape="rect" id="node4" href="organism.html" target="_top" title="organism" alt="" coords="230,6772,389,6860">
+<area shape="rect" id="node19" href="dbxref.html" target="_top" title="dbxref" alt="" coords="5,728,181,816">
+<area shape="rect" id="node28" href="cv.html" target="_top" title="cv" alt="" coords="29,6456,157,6544">
+<area shape="rect" id="node6" title="biosource.bs_sample_cvterm" alt="" coords="478,2512,811,2600">
+<area shape="rect" id="node7" title="biosource.bs_sample_element_cvterm" alt="" coords="437,2617,852,2705">
+<area shape="rect" id="node8" title="biosource.bs_sample_pub" alt="" coords="949,3675,1253,3792">
+<area shape="rect" id="node9" title="biosource.bs_sample_relationship" alt="" coords="455,2723,834,2811">
+<area shape="rect" id="node10" title="biosource.bs_tool_pub" alt="" coords="964,3809,1239,3927">
+<area shape="rect" id="node11" title="gem.ge_experimental_design_pub" alt="" coords="911,3944,1291,4061">
+<area shape="rect" id="node12" title="gem.ge_platform_pub" alt="" coords="967,4115,1236,4232">
+<area shape="rect" id="node13" title="metadata.md_image_cvterm" alt="" coords="480,2828,809,2916">
+<area shape="rect" id="node14" title="phenome.cvterm_pub_ranking" alt="" coords="928,1772,1275,1860">
+<area shape="rect" id="node15" title="phenome.locus_pub_ranking" alt="" coords="937,4249,1266,4367">
+<area shape="rect" id="node16" title="phenome.locus_pub_ranking_validate" alt="" coords="896,4384,1307,4501">
+<area shape="rect" id="node17" title="phenome.locusgroup" alt="" coords="513,2969,777,3057">
+<area shape="rect" id="node18" title="phenome.locusgroup_member" alt="" coords="471,111,818,199">
+<area shape="rect" id="node20" title="phenome.project_md_image" alt="" coords="938,6605,1265,6693">
+<area shape="rect" id="node21" href="project.html" target="_top" title="project" alt="" coords="575,6243,715,6331">
+<area shape="rect" id="node22" title="phenome.pub_curator" alt="" coords="965,4519,1237,4636">
+<area shape="rect" id="node23" href="all_gs_traits.html" target="_top" title="all_gs_traits" alt="" coords="555,3216,734,3280">
+<area shape="rect" id="node24" href="analysisprop.html" target="_top" title="analysisprop" alt="" coords="550,3333,739,3421">
+<area shape="rect" id="node25" href="contact.html" target="_top" title="contact" alt="" coords="574,393,715,481">
+<area shape="rect" id="node26" href="contact_relationship.html" target="_top" title="contact_relationship" alt="" coords="973,312,1230,400">
+<area shape="rect" id="node27" href="cvprop.html" target="_top" title="cvprop" alt="" coords="577,6561,713,6649">
+<area shape="rect" id="node29" href="cvterm_dbxref.html" target="_top" title="cvterm_dbxref" alt="" coords="543,216,747,304">
+<area shape="rect" id="node30" href="cvterm_relationship.html" target="_top" title="cvterm_relationship" alt="" coords="518,3475,771,3563">
+<area shape="rect" id="node31" href="cvtermpath.html" target="_top" title="cvtermpath" alt="" coords="555,6456,734,6544">
+<area shape="rect" id="node32" href="cvtermprop.html" target="_top" title="cvtermprop" alt="" coords="555,3721,734,3809">
+<area shape="rect" id="node33" href="cvtermsynonym.html" target="_top" title="cvtermsynonym" alt="" coords="536,3827,753,3915">
+<area shape="rect" id="node34" href="dbxrefprop.html" target="_top" title="dbxrefprop" alt="" coords="557,5,732,93">
+<area shape="rect" id="node35" href="environment_cvterm.html" target="_top" title="environment_cvterm" alt="" coords="971,5804,1231,5892">
+<area shape="rect" id="node36" href="environment.html" target="_top" title="environment" alt="" coords="550,5747,739,5835">
+<area shape="rect" id="node37" href="feature.html" target="_top" title="feature" alt="" coords="575,3111,715,3199">
+<area shape="rect" id="node38" href="feature_cvterm.html" target="_top" title="feature_cvterm" alt="" coords="995,1667,1207,1755">
+<area shape="rect" id="node39" href="feature_cvterm_dbxref.html" target="_top" title="feature_cvterm_dbxref" alt="" coords="1389,469,1667,557">
+<area shape="rect" id="node40" href="feature_cvterm_pub.html" target="_top" title="feature_cvterm_pub" alt="" coords="1401,2476,1655,2564">
+<area shape="rect" id="node41" href="feature_cvtermprop.html" target="_top" title="feature_cvtermprop" alt="" coords="1401,1840,1655,1928">
+<area shape="rect" id="node42" href="feature_genotype.html" target="_top" title="feature_genotype" alt="" coords="985,2160,1218,2248">
+<area shape="rect" id="node43" href="genotype.html" target="_top" title="genotype" alt="" coords="565,5852,724,5940">
+<area shape="rect" id="node44" href="feature_pub.html" target="_top" title="feature_pub" alt="" coords="1010,2371,1193,2523">
+<area shape="rect" id="node45" href="feature_relationship.html" target="_top" title="feature_relationship" alt="" coords="973,1949,1230,2037">
+<area shape="rect" id="node46" href="feature_relationship_pub.html" target="_top" title="feature_relationship_pub" alt="" coords="1379,2160,1677,2312">
+<area shape="rect" id="node47" href="feature_relationshipprop.html" target="_top" title="feature_relationshipprop" alt="" coords="1379,1735,1677,1823">
+<area shape="rect" id="node48" href="feature_relationshipprop_pub.html" target="_top" title="feature_relationshipprop_pub" alt="" coords="1749,2343,2091,2495">
+<area shape="rect" id="node49" href="feature_synonym.html" target="_top" title="feature_synonym" alt="" coords="987,2540,1216,2745">
+<area shape="rect" id="node50" href="synonym.html" target="_top" title="synonym" alt="" coords="567,3580,722,3668">
+<area shape="rect" id="node51" href="featureloc.html" target="_top" title="featureloc" alt="" coords="1018,2055,1185,2143">
+<area shape="rect" id="node52" href="featureloc_pub.html" target="_top" title="featureloc_pub" alt="" coords="1424,3261,1632,3413">
+<area shape="rect" id="node53" href="featureprop.html" target="_top" title="featureprop" alt="" coords="1010,2265,1193,2353">
+<area shape="rect" id="node54" href="featureprop_json.html" target="_top" title="featureprop_json" alt="" coords="987,1312,1215,1400">
+<area shape="rect" id="node55" href="nd_protocol.html" target="_top" title="nd_protocol" alt="" coords="555,1203,735,1291">
+<area shape="rect" id="node56" href="featureprop_pub.html" target="_top" title="featureprop_pub" alt="" coords="1416,2875,1640,3027">
+<area shape="rect" id="node57" href="genotypeprop.html" target="_top" title="genotypeprop" alt="" coords="1001,6395,1202,6483">
+<area shape="rect" id="node58" href="nd_experiment.html" target="_top" title="nd_experiment" alt="" coords="541,5324,749,5412">
+<area shape="rect" id="node59" href="nd_experiment_pub.html" target="_top" title="nd_experiment_pub" alt="" coords="976,5247,1227,5399">
+<area shape="rect" id="node60" href="nd_experiment_stock.html" target="_top" title="nd_experiment_stock" alt="" coords="969,5416,1233,5504">
+<area shape="rect" id="node61" href="stock.html" target="_top" title="stock" alt="" coords="561,5109,729,5197">
+<area shape="rect" id="node62" href="nd_experiment_stockprop.html" target="_top" title="nd_experiment_stockprop" alt="" coords="1375,4844,1681,4932">
+<area shape="rect" id="node63" href="nd_experimentprop.html" target="_top" title="nd_experimentprop" alt="" coords="976,5699,1227,5787">
+<area shape="rect" id="node64" href="nd_geolocationprop.html" target="_top" title="nd_geolocationprop" alt="" coords="519,5569,771,5657">
+<area shape="rect" id="node65" href="nd_protocol_reagent.html" target="_top" title="nd_protocol_reagent" alt="" coords="1399,1239,1657,1327">
+<area shape="rect" id="node66" href="nd_reagent.html" target="_top" title="nd_reagent" alt="" coords="1013,1489,1189,1577">
+<area shape="rect" id="node67" href="nd_protocolprop.html" target="_top" title="nd_protocolprop" alt="" coords="991,1135,1212,1223">
+<area shape="rect" id="node68" href="nd_reagent_relationship.html" target="_top" title="nd_reagent_relationship" alt="" coords="1382,1452,1674,1540">
+<area shape="rect" id="node69" href="nd_reagentprop.html" target="_top" title="nd_reagentprop" alt="" coords="1419,1557,1637,1645">
+<area shape="rect" id="node70" href="organism_relationship.html" target="_top" title="organism_relationship" alt="" coords="507,6877,782,6965">
+<area shape="rect" id="node71" href="organismpath.html" target="_top" title="organismpath" alt="" coords="545,6983,745,7071">
+<area shape="rect" id="node72" href="organismprop.html" target="_top" title="organismprop" alt="" coords="545,6772,745,6860">
+<area shape="rect" id="node73" href="phendesc.html" target="_top" title="phendesc" alt="" coords="1021,6015,1181,6103">
+<area shape="rect" id="node74" href="phenotype.html" target="_top" title="phenotype" alt="" coords="559,5957,730,6045">
+<area shape="rect" id="node75" href="phenotype_comparison.html" target="_top" title="phenotype_comparison" alt="" coords="960,5909,1243,5997">
+<area shape="rect" id="node76" href="phenotype_comparison_cvterm.html" target="_top" title="phenotype_comparison_cvterm" alt="" coords="1351,5487,1705,5575">
+<area shape="rect" id="node77" href="phenotype_cvterm.html" target="_top" title="phenotype_cvterm" alt="" coords="981,6500,1222,6588">
+<area shape="rect" id="node78" href="phenotypeprop.html" target="_top" title="phenotypeprop" alt="" coords="995,2940,1207,3028">
+<area shape="rect" id="node79" href="phenstatement.html" target="_top" title="phenstatement" alt="" coords="995,6120,1207,6208">
+<area shape="rect" id="node80" href="phylonode.html" target="_top" title="phylonode" alt="" coords="1017,860,1185,948">
+<area shape="rect" id="node81" href="phylotree.html" target="_top" title="phylotree" alt="" coords="564,860,725,948">
+<area shape="rect" id="node82" href="phylonode_pub.html" target="_top" title="phylonode_pub" alt="" coords="1423,948,1633,1100">
+<area shape="rect" id="node83" href="phylonode_relationship.html" target="_top" title="phylonode_relationship" alt="" coords="1385,364,1671,452">
+<area shape="rect" id="node84" href="phylonodeprop.html" target="_top" title="phylonodeprop" alt="" coords="1423,753,1633,841">
+<area shape="rect" id="node85" href="phylotree_pub.html" target="_top" title="phylotree_pub" alt="" coords="1000,965,1203,1117">
+<area shape="rect" id="node86" href="project_pub.html" target="_top" title="project_pub" alt="" coords="1011,6225,1191,6377">
+<area shape="rect" id="node87" href="project_relationship.html" target="_top" title="project_relationship" alt="" coords="974,6711,1229,6799">
+<area shape="rect" id="node88" href="projectprop.html" target="_top" title="projectprop" alt="" coords="1011,6816,1191,6904">
+<area shape="rect" id="node89" href="pub_dbxref.html" target="_top" title="pub_dbxref" alt="" coords="1014,667,1189,843">
+<area shape="rect" id="node90" href="pub_relationship.html" target="_top" title="pub_relationship" alt="" coords="989,4867,1214,4955">
+<area shape="rect" id="node91" href="pubabstract.html" target="_top" title="pubabstract" alt="" coords="998,3117,1205,3293">
+<area shape="rect" id="node92" href="pubauthor.html" target="_top" title="pubauthor" alt="" coords="1017,3311,1185,3487">
+<area shape="rect" id="node93" href="pubprop.html" target="_top" title="pubprop" alt="" coords="1026,4972,1177,5060">
+<area shape="rect" id="node94" href="stock_cvterm.html" target="_top" title="stock_cvterm" alt="" coords="1005,2763,1198,2851">
+<area shape="rect" id="node95" href="stock_cvtermprop.html" target="_top" title="stock_cvtermprop" alt="" coords="1411,1981,1645,2069">
+<area shape="rect" id="node96" href="stock_dbxrefprop.html" target="_top" title="stock_dbxrefprop" alt="" coords="529,1453,760,1541">
+<area shape="rect" id="node97" href="stock_pub.html" target="_top" title="stock_pub" alt="" coords="1019,5077,1183,5229">
+<area shape="rect" id="node98" href="stock_relationship.html" target="_top" title="stock_relationship" alt="" coords="982,5593,1221,5681">
+<area shape="rect" id="node99" href="stock_relationship_cvterm.html" target="_top" title="stock_relationship_cvterm" alt="" coords="1373,5596,1683,5684">
+<area shape="rect" id="node100" href="stock_relationship_pub.html" target="_top" title="stock_relationship_pub" alt="" coords="1387,5195,1669,5347">
+<area shape="rect" id="node101" href="stockcollection.html" target="_top" title="stockcollection" alt="" coords="997,489,1206,577">
+<area shape="rect" id="node102" href="stockcollectionprop.html" target="_top" title="stockcollectionprop" alt="" coords="1402,575,1654,663">
+<area shape="rect" id="node103" href="stockprop.html" target="_top" title="stockprop" alt="" coords="1019,4653,1183,4741">
+<area shape="rect" id="node104" href="stockprop_pub.html" target="_top" title="stockprop_pub" alt="" coords="1425,4265,1631,4417">
+<area shape="rect" id="node105" title="sgn.chadoprop" alt="" coords="541,1703,749,1791">
+<area shape="rect" id="node106" title="sgn.common_nameprop" alt="" coords="501,1808,789,1896">
+<area shape="rect" id="node107" title="sgn.pcr_experiment_sequence" alt="" coords="471,1913,818,2001">
+<area shape="rect" id="node108" title="sgn.snpprop" alt="" coords="551,2019,738,2107">
+<area shape="rect" id="node109" title="sgn_people.list" alt="" coords="540,2124,749,2212">
+<area shape="rect" id="node110" title="sgn_people.listprop" alt="" coords="519,2229,771,2317">
+<area shape="rect" id="node111" title="sgn_people.sp_orderprop" alt="" coords="494,2335,795,2423">
+</map>
+                                        <a name='diagram'><img id="twoimpliedDegreeImg" src="../diagrams/tables/pub.implied2degrees.png" usemap="#twoDegreesRelationshipsDiagramImplied" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- /.box-body -->
+                    </div>
+                </section>
+                <script>
+                    var config = {
+                        pagination: true
+                    }
+                </script>
+            </div>
+            <!-- /.content-wrapper -->
+            <footer class="main-footer">
+                <div>
+                    <div class="pull-right hidden-xs">
+                        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+                        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+                    </div>
+                    <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.2.4</a></strong>
+                </div>
+                <!-- /.container -->
+            </footer>
+        </div>
+        <!-- ./wrapper -->
+
+        <!-- jQuery 2.2.3 -->
+        <script src="../bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+        <script src="../bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+        <!-- Bootstrap 3.3.5 -->
+        <script src="../bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+        <!-- DataTables -->
+        <script src="../bower/datatables.net/jquery.dataTables.min.js"></script>
+        <script src="../bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+        <script src="../bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.html5.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.print.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+        <!-- SheetJS -->
+        <script src="../bower/js-xlsx/xlsx.full.min.js"></script>
+        <!-- pdfmake -->
+        <script src="../bower/pdfmake/pdfmake.min.js"></script>
+        <script src="../bower/pdfmake/vfs_fonts.js"></script>
+        <!-- SlimScroll -->
+        <script src="../bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+        <!-- FastClick -->
+        <script src="../bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+        <!-- Salvattore -->
+        <script src="../bower/salvattore/salvattore.min.js"></script>
+        <!-- AnchorJS -->
+        <script src="../bower/anchor-js/anchor.min.js"></script>
+        <!-- CodeMirror -->
+        <script src="../bower/codemirror/codemirror.js"></script>
+        <script src="../bower/codemirror/sql.js"></script>
+        <!-- AdminLTE App -->
+        <script src="../bower/admin-lte/dist/js/app.min.js"></script>
+        <script src="table.js"></script>
+        <script src="../schemaSpy.js"></script>
+    </body>
+</html>

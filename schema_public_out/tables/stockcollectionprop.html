@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>stockcollectionprop - cxgn_breedbase.public</title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <link rel="icon" type="image/png" sizes="16x16" href="../favicon.png">
+        <!-- Bootstrap 3.3.5 -->
+        <link rel="stylesheet" href="../bower/admin-lte/bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="../bower/font-awesome/css/font-awesome.min.css">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="../bower/ionicons/css/ionicons.min.css">
+        <!-- DataTables -->
+        <link rel="stylesheet" href="../bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" href="../bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+        <!-- Code Mirror -->
+        <link rel="stylesheet" href="../bower/codemirror/codemirror.css">
+        <!-- Fonts -->
+        <link href='../fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+        <link href='../fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+
+        <!-- Theme style -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/AdminLTE.min.css">
+        <!-- Salvattore -->
+        <link rel="stylesheet" href="../bower/salvattore/salvattore.css">
+        <!-- AdminLTE Skins. Choose a skin from the css/skins
+           folder instead of downloading all of them to reduce the load. -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/skins/_all-skins.min.css">
+        <!-- SchemaSpy -->
+        <link rel="stylesheet" href="../schemaSpy.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="../bower/html5shiv/html5shiv.min.js"></script>
+        <script src="../bower/respond/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+    <body class="hold-transition skin-blue layout-top-nav">
+        <div class="wrapper">
+            <header class="main-header">
+                <nav class="navbar navbar-static-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <a href="../index.html" class="navbar-brand"><b>cxgn_breedbase</b></a><span class="navbar-brand" style="padding-left: 0">.public</span>
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"><i class="fa fa-bars"></i></button>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a href="../index.html">Tables <span class="sr-only">(current)</span></a></li>
+                                <li><a href="../columns.html" title="All of the columns in the schema">Columns</a></li>
+                                <li><a href="../constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+                                <li><a href="../relationships.html" title="Diagram of table relationships">Relationships</a></li>
+                                <li><a href="../orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>
+                                <li><a href="../anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+                                <li><a href="../routines.html" title="Procedures and functions">Routines</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                        <!-- Navbar Right Menu -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </nav>
+            </header>
+            <!-- Main content -->
+            <!-- Full Width Column -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>stockcollectionprop</h1><p><span id="recordNumber">0</span> rows</p><br />
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-file-text-o"></i>
+                            <h3 id="Description" class="box-title">Description</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div><!-- /.box-header -->
+                        <div class="box-body clearfix">
+                            <p>The table stockcollectionprop contains the value of the stock collection such as website/email URLs; the value of the stock collection order URLs.</p>
+                        </div><!-- /.box-body -->
+                    </div>
+                </section>
+                <!-- Main content -->
+                <section class="content">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+                            <h3 id="Columns" class="box-title">Columns</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table
+                                    id="standard_table"
+                                    class="table table-bordered table-striped dataTable"
+                                    role="grid"
+                                    data-paging="true"
+                                    data-page-length="10"
+                                    data-length-change="false">
+                                <thead align='left'>
+                                <tr>
+                                    <th>Column</th>
+                                    <th>Type</th>
+                                    <th>Size</th>
+                                    <th title='Are nulls allowed?'>Nulls</th>
+                                    <th title='Is column automatically updated?'>Auto</th>
+                                    <th title='Default value'>Default</th>
+                                    <th title='Columns in tables that reference this column'>Children</th>
+                                    <th title='Columns in tables that are referenced by this column'>Parents</th>
+                                    <th title='Comments' class="toggle"><span>Comments</span></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="stockcollectionprop_id">stockcollectionprop_id</span></td>
+                                    <td>serial</td>
+                                    <td>10</td>
+                                    <td title=''></td>
+                                    <td title='Automatically updated by the database'>√</td>
+                                    <td>nextval(&#39;stockcollectionprop_stockcollectionprop_id_seq&#39;::regclass)</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="stockcollection_id">stockcollection_id</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="stockcollectionprop.stockcollection_id references stockcollection.stockcollection_id via stockcollectionprop_stockcollection_id_fkey"><a href='stockcollection.html'>stockcollection</a><span class='relatedKey'>.stockcollection_id</span></td>
+                                                <td class="constraint detail">stockcollectionprop_stockcollection_id_fkey</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="type_id">type_id</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="stockcollectionprop.type_id references cvterm.cvterm_id via stockcollectionprop_type_id_fkey"><a href='cvterm.html'>cvterm</a><span class='relatedKey'>.cvterm_id</span></td>
+                                                <td class="constraint detail">stockcollectionprop_type_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td><p>The cv for the type_id is &ldquo;stockcollection property type&rdquo;.</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="value">value</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='indexedColumn' title='Indexed'><i class='fa fa-sitemap fa-rotate-120' style='padding-right: 5px;'></i><span id="rank">rank</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>0</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-sitemap"></i>
+                            <h3 id="Indexes" class="box-title">Indexes</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table
+                                    id="indexes_table"
+                                    class="table table-bordered table-striped dataTable"
+                                    role="grid"
+                                    data-paging="true"
+                                    data-page-length="10"
+                                    data-length-change="false">
+                                <thead>
+                                <tr>
+                                    <th>Constraint Name</th>
+                                    <th>Type</th>
+                                    <th>Sort</th>
+                                    <th>Column(s)</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey'></i> stockcollectionprop_pkey</td>
+                                    <td>Primary key</td>
+                                    <td><span title='Ascending'>Asc</span></td>
+                                    <td>stockcollectionprop_id</td>
+                                </tr>
+                                <tr>
+                                    <td class='uniqueKey' title='Unique Key'><i class='icon ion-key iconkey'></i> stockcollectionprop_c1</td>
+                                    <td>Must be unique</td>
+                                    <td><span title='Ascending'>Asc</span>/<span title='Ascending'>Asc</span>/<span title='Ascending'>Asc</span></td>
+                                    <td>stockcollection_id + type_id + rank</td>
+                                </tr>
+                                <tr>
+                                    <td title='Indexed'>stockcollectionprop_idx1</td>
+                                    <td>Performance</td>
+                                    <td><span title='Ascending'>Asc</span></td>
+                                    <td>stockcollection_id</td>
+                                </tr>
+                                <tr>
+                                    <td title='Indexed'>stockcollectionprop_idx2</td>
+                                    <td>Performance</td>
+                                    <td><span title='Ascending'>Asc</span></td>
+                                    <td>type_id</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div><!-- /.box-body -->
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-code-fork"></i>
+                            <h3 id="Relationships" class="box-title">Relationships</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <div class="nav-tabs-custom"><!-- Tabs within a box -->
+                                <h5>Close relationships within degrees of separation</h5>
+                                <ul class="nav nav-tabs pull-left ui-sortable-handle">
+                                    <li class="active"><a href="#oneDegreeImg-chart" data-toggle="tab" aria-expanded="true">One</a></li>
+                                    <li class=""><a href="#twodegreesDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two degrees</a></li>
+                                    <li class=""><a href="#oneimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">One implied</a></li>
+                                    <li class=""><a href="#twoimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two implied</a></li>
+                                </ul>
+                                <div class="tab-content no-padding">
+                                    <div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
+<area shape="rect" id="node1" href="stockcollection.html" target="_top" title="stockcollection" alt="" coords="269,5,479,216">
+<area shape="rect" id="node2" href="cvterm.html" target="_top" title="cvterm" alt="" coords="5,115,225,349">
+<area shape="rect" id="node3" href="stockcollectionprop.html" target="_top" title="stockcollectionprop" alt="" coords="523,53,899,269">
+</map>
+                                        <a name='diagram'><img id="oneDegreeImg" src="../diagrams/tables/stockcollectionprop.1degree.png" usemap="#oneDegreeRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="twodegreesDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
+<area shape="rect" id="node1" title="biosource.bs_sample" alt="" coords="514,2048,775,2136">
+<area shape="rect" id="node2" href="cvterm.html" target="_top" title="cvterm" alt="" coords="225,2865,393,2953">
+<area shape="rect" id="node11" href="dbxref.html" target="_top" title="dbxref" alt="" coords="5,321,181,409">
+<area shape="rect" id="node18" href="cv.html" target="_top" title="cv" alt="" coords="29,5340,157,5428">
+<area shape="rect" id="node3" title="biosource.bs_sample_cvterm" alt="" coords="478,4389,811,4477">
+<area shape="rect" id="node4" title="biosource.bs_sample_element_cvterm" alt="" coords="437,4495,852,4583">
+<area shape="rect" id="node5" title="biosource.bs_sample_relationship" alt="" coords="455,4600,834,4688">
+<area shape="rect" id="node6" title="metadata.md_image_cvterm" alt="" coords="480,4705,809,4793">
+<area shape="rect" id="node7" title="phenome.cvterm_pub_ranking" alt="" coords="900,2624,1247,2712">
+<area shape="rect" id="node8" href="pub.html" target="_top" title="pub" alt="" coords="578,2899,711,2987">
+<area shape="rect" id="node9" title="phenome.locusgroup" alt="" coords="513,4811,777,4899">
+<area shape="rect" id="node10" title="phenome.locusgroup_member" alt="" coords="471,111,818,199">
+<area shape="rect" id="node12" title="phenome.project_md_image" alt="" coords="910,4879,1237,4967">
+<area shape="rect" id="node13" href="project.html" target="_top" title="project" alt="" coords="575,4988,715,5076">
+<area shape="rect" id="node14" href="analysisprop.html" target="_top" title="analysisprop" alt="" coords="550,5129,739,5217">
+<area shape="rect" id="node15" href="contact.html" target="_top" title="contact" alt="" coords="574,3361,715,3449">
+<area shape="rect" id="node16" href="contact_relationship.html" target="_top" title="contact_relationship" alt="" coords="945,3469,1202,3557">
+<area shape="rect" id="node17" href="cvprop.html" target="_top" title="cvprop" alt="" coords="577,5445,713,5533">
+<area shape="rect" id="node19" href="cvterm_dbxref.html" target="_top" title="cvterm_dbxref" alt="" coords="543,216,747,304">
+<area shape="rect" id="node20" href="cvterm_relationship.html" target="_top" title="cvterm_relationship" alt="" coords="518,5235,771,5323">
+<area shape="rect" id="node21" href="cvtermpath.html" target="_top" title="cvtermpath" alt="" coords="555,5340,734,5428">
+<area shape="rect" id="node22" href="cvtermprop.html" target="_top" title="cvtermprop" alt="" coords="555,499,734,587">
+<area shape="rect" id="node23" href="cvtermsynonym.html" target="_top" title="cvtermsynonym" alt="" coords="536,604,753,692">
+<area shape="rect" id="node24" href="dbxrefprop.html" target="_top" title="dbxrefprop" alt="" coords="557,321,732,409">
+<area shape="rect" id="node25" href="environment_cvterm.html" target="_top" title="environment_cvterm" alt="" coords="515,709,775,797">
+<area shape="rect" id="node26" href="feature.html" target="_top" title="feature" alt="" coords="575,1416,715,1504">
+<area shape="rect" id="node27" href="feature_cvterm.html" target="_top" title="feature_cvterm" alt="" coords="967,2976,1179,3064">
+<area shape="rect" id="node28" href="feature_cvtermprop.html" target="_top" title="feature_cvtermprop" alt="" coords="1356,3403,1609,3491">
+<area shape="rect" id="node29" href="feature_genotype.html" target="_top" title="feature_genotype" alt="" coords="957,1481,1190,1569">
+<area shape="rect" id="node30" href="genotype.html" target="_top" title="genotype" alt="" coords="565,2331,724,2419">
+<area shape="rect" id="node31" href="feature_relationship.html" target="_top" title="feature_relationship" alt="" coords="945,1771,1202,1859">
+<area shape="rect" id="node32" href="feature_relationshipprop.html" target="_top" title="feature_relationshipprop" alt="" coords="1333,1935,1632,2023">
+<area shape="rect" id="node33" href="featureprop.html" target="_top" title="featureprop" alt="" coords="982,1376,1165,1464">
+<area shape="rect" id="node34" href="featureprop_json.html" target="_top" title="featureprop_json" alt="" coords="959,3857,1187,3945">
+<area shape="rect" id="node35" href="nd_protocol.html" target="_top" title="nd_protocol" alt="" coords="555,3893,735,3981">
+<area shape="rect" id="node36" href="genotypeprop.html" target="_top" title="genotypeprop" alt="" coords="973,2097,1174,2185">
+<area shape="rect" id="node37" href="nd_experiment.html" target="_top" title="nd_experiment" alt="" coords="541,3644,749,3732">
+<area shape="rect" id="node38" href="nd_experiment_stock.html" target="_top" title="nd_experiment_stock" alt="" coords="941,3680,1205,3768">
+<area shape="rect" id="node39" href="stock.html" target="_top" title="stock" alt="" coords="561,1203,729,1291">
+<area shape="rect" id="node40" href="nd_experiment_stockprop.html" target="_top" title="nd_experiment_stockprop" alt="" coords="1329,3777,1636,3865">
+<area shape="rect" id="node41" href="nd_experimentprop.html" target="_top" title="nd_experimentprop" alt="" coords="948,3575,1199,3663">
+<area shape="rect" id="node42" href="nd_geolocationprop.html" target="_top" title="nd_geolocationprop" alt="" coords="519,815,771,903">
+<area shape="rect" id="node43" href="nd_protocol_reagent.html" target="_top" title="nd_protocol_reagent" alt="" coords="944,4068,1203,4156">
+<area shape="rect" id="node44" href="nd_reagent.html" target="_top" title="nd_reagent" alt="" coords="557,4107,733,4195">
+<area shape="rect" id="node45" href="nd_protocolprop.html" target="_top" title="nd_protocolprop" alt="" coords="963,3963,1184,4051">
+<area shape="rect" id="node46" href="nd_reagent_relationship.html" target="_top" title="nd_reagent_relationship" alt="" coords="927,4173,1219,4261">
+<area shape="rect" id="node47" href="nd_reagentprop.html" target="_top" title="nd_reagentprop" alt="" coords="965,4279,1182,4367">
+<area shape="rect" id="node48" href="organism_relationship.html" target="_top" title="organism_relationship" alt="" coords="507,920,782,1008">
+<area shape="rect" id="node49" href="organismpath.html" target="_top" title="organismpath" alt="" coords="545,1061,745,1149">
+<area shape="rect" id="node50" href="organismprop.html" target="_top" title="organismprop" alt="" coords="545,2153,745,2241">
+<area shape="rect" id="node51" href="phendesc.html" target="_top" title="phendesc" alt="" coords="993,2203,1153,2291">
+<area shape="rect" id="node52" href="phenotype.html" target="_top" title="phenotype" alt="" coords="559,2685,730,2773">
+<area shape="rect" id="node53" href="phenotype_comparison_cvterm.html" target="_top" title="phenotype_comparison_cvterm" alt="" coords="896,2729,1251,2817">
+<area shape="rect" id="node54" href="phenotype_cvterm.html" target="_top" title="phenotype_cvterm" alt="" coords="953,2413,1194,2501">
+<area shape="rect" id="node55" href="phenotypeprop.html" target="_top" title="phenotypeprop" alt="" coords="967,2519,1179,2607">
+<area shape="rect" id="node56" href="phenstatement.html" target="_top" title="phenstatement" alt="" coords="967,2308,1179,2396">
+<area shape="rect" id="node57" href="phylonode.html" target="_top" title="phylonode" alt="" coords="989,687,1157,775">
+<area shape="rect" id="node58" href="phylotree.html" target="_top" title="phylotree" alt="" coords="564,5,725,93">
+<area shape="rect" id="node59" href="phylonode_relationship.html" target="_top" title="phylonode_relationship" alt="" coords="1340,577,1625,665">
+<area shape="rect" id="node60" href="phylonodeprop.html" target="_top" title="phylonodeprop" alt="" coords="1377,796,1588,884">
+<area shape="rect" id="node61" href="project_relationship.html" target="_top" title="project_relationship" alt="" coords="946,4984,1201,5072">
+<area shape="rect" id="node62" href="projectprop.html" target="_top" title="projectprop" alt="" coords="983,5089,1163,5177">
+<area shape="rect" id="node63" href="pub_relationship.html" target="_top" title="pub_relationship" alt="" coords="961,3081,1186,3169">
+<area shape="rect" id="node64" href="pubprop.html" target="_top" title="pubprop" alt="" coords="998,3187,1149,3275">
+<area shape="rect" id="node65" href="stock_cvterm.html" target="_top" title="stock_cvterm" alt="" coords="977,2871,1170,2959">
+<area shape="rect" id="node66" href="stock_cvtermprop.html" target="_top" title="stock_cvtermprop" alt="" coords="1365,3127,1600,3215">
+<area shape="rect" id="node67" href="stock_dbxrefprop.html" target="_top" title="stock_dbxrefprop" alt="" coords="529,2436,760,2524">
+<area shape="rect" id="node68" href="stock_relationship.html" target="_top" title="stock_relationship" alt="" coords="954,1129,1193,1217">
+<area shape="rect" id="node69" href="stock_relationship_cvterm.html" target="_top" title="stock_relationship_cvterm" alt="" coords="1328,1129,1637,1217">
+<area shape="rect" id="node70" href="stockcollection.html" target="_top" title="stockcollection" alt="" coords="969,3364,1178,3452">
+<area shape="rect" id="node71" href="stockcollection_stock.html" target="_top" title="stockcollection_stock" alt="" coords="1350,2695,1615,2783">
+<area shape="rect" id="node72" href="stockcollectionprop.html" target="_top" title="stockcollectionprop" alt="" coords="1295,3532,1671,3748">
+<area shape="rect" id="node73" href="stockprop.html" target="_top" title="stockprop" alt="" coords="991,1271,1155,1359">
+<area shape="rect" id="node74" href="synonym.html" target="_top" title="synonym" alt="" coords="567,1521,722,1609">
+<area shape="rect" id="node75" title="sgn.chadoprop" alt="" coords="541,1627,749,1715">
+<area shape="rect" id="node76" title="sgn.common_nameprop" alt="" coords="501,1732,789,1820">
+<area shape="rect" id="node77" title="sgn.pcr_experiment_sequence" alt="" coords="471,1837,818,1925">
+<area shape="rect" id="node78" title="sgn.snpprop" alt="" coords="551,1943,738,2031">
+<area shape="rect" id="node79" title="sgn_people.list" alt="" coords="540,3076,749,3164">
+<area shape="rect" id="node80" title="sgn_people.listprop" alt="" coords="519,3503,771,3591">
+<area shape="rect" id="node81" title="sgn_people.sp_orderprop" alt="" coords="494,4212,795,4300">
+</map>
+                                        <a name='diagram'><img id="twodegreesDegreeImg" src="../diagrams/tables/stockcollectionprop.2degrees.png" usemap="#twoDegreesRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="oneimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="oneDegreeRelationshipsDiagramImplied" name="oneDegreeRelationshipsDiagramImplied">
+<area shape="rect" id="node1" href="stockcollection.html" target="_top" title="stockcollection" alt="" coords="269,5,479,216">
+<area shape="rect" id="node2" href="cvterm.html" target="_top" title="cvterm" alt="" coords="5,115,225,349">
+<area shape="rect" id="node3" href="stockcollectionprop.html" target="_top" title="stockcollectionprop" alt="" coords="523,53,899,269">
+</map>
+                                        <a name='diagram'><img id="oneimpliedDegreeImg" src="../diagrams/tables/stockcollectionprop.implied1degrees.png" usemap="#oneDegreeRelationshipsDiagramImplied" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="twoimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="twoDegreesRelationshipsDiagramImplied" name="twoDegreesRelationshipsDiagramImplied">
+<area shape="rect" id="node1" title="biosource.bs_sample" alt="" coords="514,347,775,435">
+<area shape="rect" id="node2" href="cvterm.html" target="_top" title="cvterm" alt="" coords="225,2473,393,2561">
+<area shape="rect" id="node11" href="dbxref.html" target="_top" title="dbxref" alt="" coords="5,1449,181,1537">
+<area shape="rect" id="node19" href="cv.html" target="_top" title="cv" alt="" coords="29,5583,157,5671">
+<area shape="rect" id="node3" title="biosource.bs_sample_cvterm" alt="" coords="478,2865,811,2953">
+<area shape="rect" id="node4" title="biosource.bs_sample_element_cvterm" alt="" coords="437,2971,852,3059">
+<area shape="rect" id="node5" title="biosource.bs_sample_relationship" alt="" coords="455,3076,834,3164">
+<area shape="rect" id="node6" title="metadata.md_image_cvterm" alt="" coords="480,3181,809,3269">
+<area shape="rect" id="node7" title="phenome.cvterm_pub_ranking" alt="" coords="900,5,1247,93">
+<area shape="rect" id="node8" href="pub.html" target="_top" title="pub" alt="" coords="578,951,711,1039">
+<area shape="rect" id="node9" title="phenome.locusgroup" alt="" coords="513,3287,777,3375">
+<area shape="rect" id="node10" title="phenome.locusgroup_member" alt="" coords="471,31,818,119">
+<area shape="rect" id="node12" title="phenome.project_md_image" alt="" coords="910,3323,1237,3411">
+<area shape="rect" id="node13" href="project.html" target="_top" title="project" alt="" coords="575,3428,715,3516">
+<area shape="rect" id="node14" href="all_gs_traits.html" target="_top" title="all_gs_traits" alt="" coords="555,3605,734,3669">
+<area shape="rect" id="node15" href="analysisprop.html" target="_top" title="analysisprop" alt="" coords="550,3687,739,3775">
+<area shape="rect" id="node16" href="contact.html" target="_top" title="contact" alt="" coords="574,1591,715,1679">
+<area shape="rect" id="node17" href="contact_relationship.html" target="_top" title="contact_relationship" alt="" coords="945,1624,1202,1712">
+<area shape="rect" id="node18" href="cvprop.html" target="_top" title="cvprop" alt="" coords="577,5688,713,5776">
+<area shape="rect" id="node20" href="cvterm_dbxref.html" target="_top" title="cvterm_dbxref" alt="" coords="543,136,747,224">
+<area shape="rect" id="node21" href="cvterm_relationship.html" target="_top" title="cvterm_relationship" alt="" coords="518,3792,771,3880">
+<area shape="rect" id="node22" href="cvtermpath.html" target="_top" title="cvtermpath" alt="" coords="555,5583,734,5671">
+<area shape="rect" id="node23" href="cvtermprop.html" target="_top" title="cvtermprop" alt="" coords="555,3897,734,3985">
+<area shape="rect" id="node24" href="cvtermsynonym.html" target="_top" title="cvtermsynonym" alt="" coords="536,4003,753,4091">
+<area shape="rect" id="node25" href="dbxrefprop.html" target="_top" title="dbxrefprop" alt="" coords="557,241,732,329">
+<area shape="rect" id="node26" href="environment_cvterm.html" target="_top" title="environment_cvterm" alt="" coords="515,4108,775,4196">
+<area shape="rect" id="node27" href="feature.html" target="_top" title="feature" alt="" coords="575,2117,715,2205">
+<area shape="rect" id="node28" href="feature_cvterm.html" target="_top" title="feature_cvterm" alt="" coords="967,2012,1179,2100">
+<area shape="rect" id="node29" href="feature_cvtermprop.html" target="_top" title="feature_cvtermprop" alt="" coords="1356,2045,1609,2133">
+<area shape="rect" id="node30" href="feature_genotype.html" target="_top" title="feature_genotype" alt="" coords="957,427,1190,515">
+<area shape="rect" id="node31" href="genotype.html" target="_top" title="genotype" alt="" coords="565,560,724,648">
+<area shape="rect" id="node32" href="feature_relationship.html" target="_top" title="feature_relationship" alt="" coords="945,2153,1202,2241">
+<area shape="rect" id="node33" href="feature_relationshipprop.html" target="_top" title="feature_relationshipprop" alt="" coords="1333,2187,1632,2275">
+<area shape="rect" id="node34" href="featureprop.html" target="_top" title="featureprop" alt="" coords="982,2295,1165,2383">
+<area shape="rect" id="node35" href="featureprop_json.html" target="_top" title="featureprop_json" alt="" coords="959,2400,1187,2488">
+<area shape="rect" id="node36" href="nd_protocol.html" target="_top" title="nd_protocol" alt="" coords="555,2367,735,2455">
+<area shape="rect" id="node37" href="genotypeprop.html" target="_top" title="genotypeprop" alt="" coords="973,111,1174,199">
+<area shape="rect" id="node38" href="nd_experiment.html" target="_top" title="nd_experiment" alt="" coords="541,1164,749,1252">
+<area shape="rect" id="node39" href="nd_experiment_stock.html" target="_top" title="nd_experiment_stock" alt="" coords="941,1236,1205,1324">
+<area shape="rect" id="node40" href="stock.html" target="_top" title="stock" alt="" coords="561,1449,729,1537">
+<area shape="rect" id="node41" href="nd_experiment_stockprop.html" target="_top" title="nd_experiment_stockprop" alt="" coords="1329,1163,1636,1251">
+<area shape="rect" id="node42" href="nd_experimentprop.html" target="_top" title="nd_experimentprop" alt="" coords="948,1059,1199,1147">
+<area shape="rect" id="node43" href="nd_geolocationprop.html" target="_top" title="nd_geolocationprop" alt="" coords="519,4213,771,4301">
+<area shape="rect" id="node44" href="nd_protocol_reagent.html" target="_top" title="nd_protocol_reagent" alt="" coords="1353,2472,1612,2560">
+<area shape="rect" id="node45" href="nd_reagent.html" target="_top" title="nd_reagent" alt="" coords="985,2577,1161,2665">
+<area shape="rect" id="node46" href="nd_protocolprop.html" target="_top" title="nd_protocolprop" alt="" coords="963,2755,1184,2843">
+<area shape="rect" id="node47" href="nd_reagent_relationship.html" target="_top" title="nd_reagent_relationship" alt="" coords="1337,2577,1629,2665">
+<area shape="rect" id="node48" href="nd_reagentprop.html" target="_top" title="nd_reagentprop" alt="" coords="1374,2683,1591,2771">
+<area shape="rect" id="node49" href="organism_relationship.html" target="_top" title="organism_relationship" alt="" coords="507,4319,782,4407">
+<area shape="rect" id="node50" href="organismpath.html" target="_top" title="organismpath" alt="" coords="545,4424,745,4512">
+<area shape="rect" id="node51" href="organismprop.html" target="_top" title="organismprop" alt="" coords="545,4529,745,4617">
+<area shape="rect" id="node52" href="phendesc.html" target="_top" title="phendesc" alt="" coords="993,216,1153,304">
+<area shape="rect" id="node53" href="phenotype.html" target="_top" title="phenotype" alt="" coords="559,737,730,825">
+<area shape="rect" id="node54" href="phenotype_comparison_cvterm.html" target="_top" title="phenotype_comparison_cvterm" alt="" coords="896,743,1251,831">
+<area shape="rect" id="node55" href="phenotype_cvterm.html" target="_top" title="phenotype_cvterm" alt="" coords="953,532,1194,620">
+<area shape="rect" id="node56" href="phenotypeprop.html" target="_top" title="phenotypeprop" alt="" coords="967,637,1179,725">
+<area shape="rect" id="node57" href="phenstatement.html" target="_top" title="phenstatement" alt="" coords="967,321,1179,409">
+<area shape="rect" id="node58" href="phylonode.html" target="_top" title="phylonode" alt="" coords="989,2896,1157,2984">
+<area shape="rect" id="node59" href="phylotree.html" target="_top" title="phylotree" alt="" coords="564,2724,725,2812">
+<area shape="rect" id="node60" href="phylonode_relationship.html" target="_top" title="phylonode_relationship" alt="" coords="1340,2895,1625,2983">
+<area shape="rect" id="node61" href="phylonodeprop.html" target="_top" title="phylonodeprop" alt="" coords="1377,3000,1588,3088">
+<area shape="rect" id="node62" href="project_relationship.html" target="_top" title="project_relationship" alt="" coords="946,3428,1201,3516">
+<area shape="rect" id="node63" href="projectprop.html" target="_top" title="projectprop" alt="" coords="983,3533,1163,3621">
+<area shape="rect" id="node64" href="pub_relationship.html" target="_top" title="pub_relationship" alt="" coords="961,848,1186,936">
+<area shape="rect" id="node65" href="pubprop.html" target="_top" title="pubprop" alt="" coords="998,953,1149,1041">
+<area shape="rect" id="node66" href="stock_cvterm.html" target="_top" title="stock_cvterm" alt="" coords="977,1765,1170,1853">
+<area shape="rect" id="node67" href="stock_cvtermprop.html" target="_top" title="stock_cvtermprop" alt="" coords="1365,1919,1600,2007">
+<area shape="rect" id="node68" href="stock_dbxrefprop.html" target="_top" title="stock_dbxrefprop" alt="" coords="529,4635,760,4723">
+<area shape="rect" id="node69" href="stock_relationship.html" target="_top" title="stock_relationship" alt="" coords="954,1377,1193,1465">
+<area shape="rect" id="node70" href="stock_relationship_cvterm.html" target="_top" title="stock_relationship_cvterm" alt="" coords="1328,1304,1637,1392">
+<area shape="rect" id="node71" href="stockcollection.html" target="_top" title="stockcollection" alt="" coords="969,1519,1178,1607">
+<area shape="rect" id="node72" href="stockcollection_stock.html" target="_top" title="stockcollection_stock" alt="" coords="1350,1464,1615,1552">
+<area shape="rect" id="node73" href="stockcollectionprop.html" target="_top" title="stockcollectionprop" alt="" coords="1295,1608,1671,1824">
+<area shape="rect" id="node74" href="stockprop.html" target="_top" title="stockprop" alt="" coords="991,1871,1155,1959">
+<area shape="rect" id="node75" href="synonym.html" target="_top" title="synonym" alt="" coords="567,4740,722,4828">
+<area shape="rect" id="node76" title="sgn.chadoprop" alt="" coords="541,4845,749,4933">
+<area shape="rect" id="node77" title="sgn.common_nameprop" alt="" coords="501,4951,789,5039">
+<area shape="rect" id="node78" title="sgn.pcr_experiment_sequence" alt="" coords="471,5056,818,5144">
+<area shape="rect" id="node79" title="sgn.snpprop" alt="" coords="551,5161,738,5249">
+<area shape="rect" id="node80" title="sgn_people.list" alt="" coords="540,5267,749,5355">
+<area shape="rect" id="node81" title="sgn_people.listprop" alt="" coords="519,5372,771,5460">
+<area shape="rect" id="node82" title="sgn_people.sp_orderprop" alt="" coords="494,5477,795,5565">
+</map>
+                                        <a name='diagram'><img id="twoimpliedDegreeImg" src="../diagrams/tables/stockcollectionprop.implied2degrees.png" usemap="#twoDegreesRelationshipsDiagramImplied" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- /.box-body -->
+                    </div>
+                </section>
+                <script>
+                    var config = {
+                        pagination: true
+                    }
+                </script>
+            </div>
+            <!-- /.content-wrapper -->
+            <footer class="main-footer">
+                <div>
+                    <div class="pull-right hidden-xs">
+                        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+                        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+                    </div>
+                    <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.2.4</a></strong>
+                </div>
+                <!-- /.container -->
+            </footer>
+        </div>
+        <!-- ./wrapper -->
+
+        <!-- jQuery 2.2.3 -->
+        <script src="../bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+        <script src="../bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+        <!-- Bootstrap 3.3.5 -->
+        <script src="../bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+        <!-- DataTables -->
+        <script src="../bower/datatables.net/jquery.dataTables.min.js"></script>
+        <script src="../bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+        <script src="../bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.html5.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.print.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+        <!-- SheetJS -->
+        <script src="../bower/js-xlsx/xlsx.full.min.js"></script>
+        <!-- pdfmake -->
+        <script src="../bower/pdfmake/pdfmake.min.js"></script>
+        <script src="../bower/pdfmake/vfs_fonts.js"></script>
+        <!-- SlimScroll -->
+        <script src="../bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+        <!-- FastClick -->
+        <script src="../bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+        <!-- Salvattore -->
+        <script src="../bower/salvattore/salvattore.min.js"></script>
+        <!-- AnchorJS -->
+        <script src="../bower/anchor-js/anchor.min.js"></script>
+        <!-- CodeMirror -->
+        <script src="../bower/codemirror/codemirror.js"></script>
+        <script src="../bower/codemirror/sql.js"></script>
+        <!-- AdminLTE App -->
+        <script src="../bower/admin-lte/dist/js/app.min.js"></script>
+        <script src="table.js"></script>
+        <script src="../schemaSpy.js"></script>
+    </body>
+</html>

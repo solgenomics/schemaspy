@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>population - cxgn_breedbase.phenome</title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <link rel="icon" type="image/png" sizes="16x16" href="../favicon.png">
+        <!-- Bootstrap 3.3.5 -->
+        <link rel="stylesheet" href="../bower/admin-lte/bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="../bower/font-awesome/css/font-awesome.min.css">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="../bower/ionicons/css/ionicons.min.css">
+        <!-- DataTables -->
+        <link rel="stylesheet" href="../bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" href="../bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+        <!-- Code Mirror -->
+        <link rel="stylesheet" href="../bower/codemirror/codemirror.css">
+        <!-- Fonts -->
+        <link href='../fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+        <link href='../fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+
+        <!-- Theme style -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/AdminLTE.min.css">
+        <!-- Salvattore -->
+        <link rel="stylesheet" href="../bower/salvattore/salvattore.css">
+        <!-- AdminLTE Skins. Choose a skin from the css/skins
+           folder instead of downloading all of them to reduce the load. -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/skins/_all-skins.min.css">
+        <!-- SchemaSpy -->
+        <link rel="stylesheet" href="../schemaSpy.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="../bower/html5shiv/html5shiv.min.js"></script>
+        <script src="../bower/respond/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+    <body class="hold-transition skin-blue layout-top-nav">
+        <div class="wrapper">
+            <header class="main-header">
+                <nav class="navbar navbar-static-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <a href="../index.html" class="navbar-brand"><b>cxgn_breedbase</b></a><span class="navbar-brand" style="padding-left: 0">.phenome</span>
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"><i class="fa fa-bars"></i></button>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a href="../index.html">Tables <span class="sr-only">(current)</span></a></li>
+                                <li><a href="../columns.html" title="All of the columns in the schema">Columns</a></li>
+                                <li><a href="../constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+                                <li><a href="../relationships.html" title="Diagram of table relationships">Relationships</a></li>
+                                <li><a href="../orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>
+                                <li><a href="../anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+                                <li><a href="../routines.html" title="Procedures and functions">Routines</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                        <!-- Navbar Right Menu -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </nav>
+            </header>
+            <!-- Main content -->
+            <!-- Full Width Column -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>population</h1><p><span id="recordNumber">0</span> rows</p><br />
+                </section>
+                <!-- Main content -->
+                <section class="content">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+                            <h3 id="Columns" class="box-title">Columns</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table
+                                    id="standard_table"
+                                    class="table table-bordered table-striped dataTable"
+                                    role="grid"
+                                    data-paging="true"
+                                    data-page-length="10"
+                                    data-length-change="false">
+                                <thead align='left'>
+                                <tr>
+                                    <th>Column</th>
+                                    <th>Type</th>
+                                    <th>Size</th>
+                                    <th title='Are nulls allowed?'>Nulls</th>
+                                    <th title='Is column automatically updated?'>Auto</th>
+                                    <th title='Default value'>Default</th>
+                                    <th title='Columns in tables that reference this column'>Children</th>
+                                    <th title='Columns in tables that are referenced by this column'>Parents</th>
+                                    <th title='Comments' class="toggle"><span>Comments</span></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="population_id">population_id</span></td>
+                                    <td>serial</td>
+                                    <td>10</td>
+                                    <td title=''></td>
+                                    <td title='Automatically updated by the database'>√</td>
+                                    <td>nextval(&#39;phenome.population_population_id_seq&#39;::regclass)</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="individual.population_id references population.population_id via individual_population_id_fkey"><a href='individual.html'>individual</a><span class='relatedKey'>.population_id</span></td>
+                                                <td class="constraint detail">individual_population_id_fkey</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="individual_history.population_id&#39;s name implies that it&#39;s a child of population.population_id, but it doesn&#39;t reference that column."><a href='individual_history.html'>individual_history</a><span class='relatedKey'>.population_id</span></td>
+                                                <td class="constraint detail">Implied Constraint</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="is_public.population_id references population.population_id via is_public_population_id_fkey"><a href='is_public.html'>is_public</a><span class='relatedKey'>.population_id</span></td>
+                                                <td class="constraint detail">is_public_population_id_fkey</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="population_dbxref.population_id references population.population_id via population_dbxref_population_id_fkey"><a href='population_dbxref.html'>population_dbxref</a><span class='relatedKey'>.population_id</span></td>
+                                                <td class="constraint detail">population_dbxref_population_id_fkey</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="user_trait_unit.population_id references population.population_id via user_trait_unit_population_id_fkey"><a href='user_trait_unit.html'>user_trait_unit</a><span class='relatedKey'>.population_id</span></td>
+                                                <td class="constraint detail">user_trait_unit_population_id_fkey</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="map.population_id references population.population_id via map_population_id_fkey"><a href='../../sgn/tables/map.html'>map</a><span class='relatedKey'>.population_id</span></td>
+                                                <td class="constraint detail">map_population_id_fkey</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='indexedColumn' title='Indexed'><i class='fa fa-sitemap fa-rotate-120' style='padding-right: 5px;'></i><span id="name">name</span></td>
+                                    <td>varchar</td>
+                                    <td>100</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="description">description</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="person_id">person_id</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="population.person_id references sgn_people.sp_person.sp_person_id via population_person_id_fkey"><a href='../../sgn_people/tables/sp_person.html'>sp_person</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">population_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="sp_person_id">sp_person_id</span></td>
+                                    <td>int8</td>
+                                    <td>19</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="population.sp_person_id references sgn_people.sp_person.sp_person_id via population_sp_person_id_fkey"><a href='../../sgn_people/tables/sp_person.html'>sp_person</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">population_sp_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="create_date">create_date</span></td>
+                                    <td>timestamptz</td>
+                                    <td>35,6</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>now()</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="modified_date">modified_date</span></td>
+                                    <td>timestamptz</td>
+                                    <td>35,6</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="background_accession_id">background_accession_id</span></td>
+                                    <td>int8</td>
+                                    <td>19</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="population.background_accession_id references sgn.accession.accession_id via population_background_accession_id_fkey"><a href='../../sgn/tables/accession.html'>accession</a><span class='relatedKey'>.accession_id</span></td>
+                                                <td class="constraint detail">population_background_accession_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="obsolete">obsolete</span></td>
+                                    <td>bool</td>
+                                    <td>1</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>false</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="cross_type_id">cross_type_id</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="population.cross_type_id references cross_type.cross_type_id via population_cross_type_id_fkey"><a href='cross_type.html'>cross_type</a><span class='relatedKey'>.cross_type_id</span></td>
+                                                <td class="constraint detail">population_cross_type_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="female_parent_id">female_parent_id</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="population.female_parent_id references sgn.accession.accession_id via population_female_parent_id_fkey"><a href='../../sgn/tables/accession.html'>accession</a><span class='relatedKey'>.accession_id</span></td>
+                                                <td class="constraint detail">population_female_parent_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="male_parent_id">male_parent_id</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="population.male_parent_id references sgn.accession.accession_id via population_male_parent_id_fkey"><a href='../../sgn/tables/accession.html'>accession</a><span class='relatedKey'>.accession_id</span></td>
+                                                <td class="constraint detail">population_male_parent_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="recurrent_parent_id">recurrent_parent_id</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="population.recurrent_parent_id references sgn.accession.accession_id via population_recurrent_parent_id_fkey"><a href='../../sgn/tables/accession.html'>accession</a><span class='relatedKey'>.accession_id</span></td>
+                                                <td class="constraint detail">population_recurrent_parent_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="donor_parent_id">donor_parent_id</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="population.donor_parent_id references sgn.accession.accession_id via population_donor_parent_id_fkey"><a href='../../sgn/tables/accession.html'>accession</a><span class='relatedKey'>.accession_id</span></td>
+                                                <td class="constraint detail">population_donor_parent_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="comment">comment</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="web_uploaded">web_uploaded</span></td>
+                                    <td>bool</td>
+                                    <td>1</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="common_name_id">common_name_id</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="population.common_name_id references sgn.common_name.common_name_id via population_common_name_id_fkey"><a href='../../sgn/tables/common_name.html'>common_name</a><span class='relatedKey'>.common_name_id</span></td>
+                                                <td class="constraint detail">population_common_name_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="stock_id">stock_id</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-sitemap"></i>
+                            <h3 id="Indexes" class="box-title">Indexes</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table
+                                    id="indexes_table"
+                                    class="table table-bordered table-striped dataTable"
+                                    role="grid"
+                                    data-paging="true"
+                                    data-page-length="10"
+                                    data-length-change="false">
+                                <thead>
+                                <tr>
+                                    <th>Constraint Name</th>
+                                    <th>Type</th>
+                                    <th>Sort</th>
+                                    <th>Column(s)</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey'></i> population_pkey</td>
+                                    <td>Primary key</td>
+                                    <td><span title='Ascending'>Asc</span></td>
+                                    <td>population_id</td>
+                                </tr>
+                                <tr>
+                                    <td class='uniqueKey' title='Unique Key'><i class='icon ion-key iconkey'></i> population_name_key</td>
+                                    <td>Must be unique</td>
+                                    <td><span title='Ascending'>Asc</span></td>
+                                    <td>name</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div><!-- /.box-body -->
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-code-fork"></i>
+                            <h3 id="Relationships" class="box-title">Relationships</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <div class="nav-tabs-custom"><!-- Tabs within a box -->
+                                <h5>Close relationships within degrees of separation</h5>
+                                <ul class="nav nav-tabs pull-left ui-sortable-handle">
+                                    <li class="active"><a href="#oneDegreeImg-chart" data-toggle="tab" aria-expanded="true">One</a></li>
+                                    <li class=""><a href="#twodegreesDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two degrees</a></li>
+                                    <li class=""><a href="#oneimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">One implied</a></li>
+                                    <li class=""><a href="#twoimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two implied</a></li>
+                                </ul>
+                                <div class="tab-content no-padding">
+                                    <div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
+<area shape="rect" id="node1" href="individual.html" target="_top" title="individual" alt="" coords="783,421,991,715">
+<area shape="rect" id="node2" title="sgn.accession" alt="" coords="41,795,241,883">
+<area shape="rect" id="node3" title="sgn.common_name" alt="" coords="18,964,265,1052">
+<area shape="rect" id="node4" href="population.html" target="_top" title="population" alt="" coords="321,435,724,1032">
+<area shape="rect" id="node5" title="sgn_people.sp_person" alt="" coords="5,347,277,435">
+<area shape="rect" id="node7" href="cross_type.html" target="_top" title="cross_type" alt="" coords="57,655,226,777">
+<area shape="rect" id="node6" href="is_public.html" target="_top" title="is_public" alt="" coords="802,5,973,181">
+<area shape="rect" id="node8" href="population_dbxref.html" target="_top" title="population_dbxref" alt="" coords="768,199,1007,404">
+<area shape="rect" id="node9" href="user_trait_unit.html" target="_top" title="user_trait_unit" alt="" coords="785,732,990,913">
+<area shape="rect" id="node10" title="sgn.map" alt="" coords="774,931,1001,1048">
+</map>
+                                        <a name='diagram'><img id="oneDegreeImg" src="../diagrams/tables/population.1degree.png" usemap="#oneDegreeRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="twodegreesDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
+<area shape="rect" id="node1" href="allele.html" target="_top" title="allele" alt="" coords="833,1448,959,1536">
+<area shape="rect" id="node2" href="locus.html" target="_top" title="locus" alt="" coords="453,1863,593,1951">
+<area shape="rect" id="node3" title="sgn_people.sp_person" alt="" coords="5,1724,277,1812">
+<area shape="rect" id="node15" title="sgn.common_name" alt="" coords="18,2819,265,2907">
+<area shape="rect" id="node4" href="allele_alias.html" target="_top" title="allele_alias" alt="" coords="1225,1640,1398,1728">
+<area shape="rect" id="node5" href="allele_dbxref.html" target="_top" title="allele_dbxref" alt="" coords="1217,1324,1406,1412">
+<area shape="rect" id="node6" title="public.dbxref" alt="" coords="426,393,619,481">
+<area shape="rect" id="node7" href="allele_history.html" target="_top" title="allele_history" alt="" coords="1214,1535,1409,1623">
+<area shape="rect" id="node8" href="genotype_experiment.html" target="_top" title="genotype_experiment" alt="" coords="1176,3373,1447,3461">
+<area shape="rect" id="node9" title="sgn.accession" alt="" coords="41,3279,241,3367">
+<area shape="rect" id="node10" title="sgn.map" alt="" coords="783,3165,1009,3283">
+<area shape="rect" id="node16" href="population.html" target="_top" title="population" alt="" coords="321,2889,724,3487">
+<area shape="rect" id="node11" href="genotype_region.html" target="_top" title="genotype_region" alt="" coords="2073,2196,2298,2284">
+<area shape="rect" id="node12" href="phenome_genotype.html" target="_top" title="phenome_genotype" alt="" coords="1647,3177,1898,3265">
+<area shape="rect" id="node14" href="individual.html" target="_top" title="individual" alt="" coords="815,2839,977,2927">
+<area shape="rect" id="node13" href="germplasm.html" target="_top" title="germplasm" alt="" coords="1224,1429,1399,1517">
+<area shape="rect" id="node41" href="cross_type.html" target="_top" title="cross_type" alt="" coords="57,3139,226,3261">
+<area shape="rect" id="node17" href="individual_alias.html" target="_top" title="individual_alias" alt="" coords="1205,3047,1418,3135">
+<area shape="rect" id="node18" href="individual_allele.html" target="_top" title="individual_allele" alt="" coords="1201,1799,1421,1887">
+<area shape="rect" id="node19" href="individual_dbxref.html" target="_top" title="individual_dbxref" alt="" coords="1197,924,1426,1012">
+<area shape="rect" id="node20" href="individual_dbxref_evidence.html" target="_top" title="individual_dbxref_evidence" alt="" coords="1613,89,1932,177">
+<area shape="rect" id="node21" href="individual_dbxref_evidence_history.html" target="_top" title="individual_dbxref_evidence_history" alt="" coords="1991,189,2380,277">
+<area shape="rect" id="node22" href="individual_history.html" target="_top" title="individual_history" alt="" coords="1194,1904,1429,1992">
+<area shape="rect" id="node23" href="individual_image.html" target="_top" title="individual_image" alt="" coords="1198,2941,1425,3029">
+<area shape="rect" id="node24" href="individual_locus.html" target="_top" title="individual_locus" alt="" coords="1203,2589,1420,2677">
+<area shape="rect" id="node25" href="is_public.html" target="_top" title="is_public" alt="" coords="820,2733,972,2821">
+<area shape="rect" id="node26" href="locus2locus.html" target="_top" title="locus2locus" alt="" coords="807,1023,985,1111">
+<area shape="rect" id="node27" href="locus_alias.html" target="_top" title="locus_alias" alt="" coords="811,2171,981,2259">
+<area shape="rect" id="node28" href="locus_dbxref.html" target="_top" title="locus_dbxref" alt="" coords="802,547,990,635">
+<area shape="rect" id="node29" href="locus_dbxref_evidence.html" target="_top" title="locus_dbxref_evidence" alt="" coords="1173,341,1449,429">
+<area shape="rect" id="node30" href="locus_dbxref_evidence_history.html" target="_top" title="locus_dbxref_evidence_history" alt="" coords="1599,441,1947,529">
+<area shape="rect" id="node31" href="locus_history.html" target="_top" title="locus_history" alt="" coords="800,2381,992,2469">
+<area shape="rect" id="node32" href="locus_image.html" target="_top" title="locus_image" alt="" coords="804,2487,988,2575">
+<area shape="rect" id="node33" href="locus_marker.html" target="_top" title="locus_marker" alt="" coords="799,2592,993,2680">
+<area shape="rect" id="node34" href="locus_owner.html" target="_top" title="locus_owner" alt="" coords="803,1641,989,1729">
+<area shape="rect" id="node35" href="locus_registry.html" target="_top" title="locus_registry" alt="" coords="796,1747,996,1835">
+<area shape="rect" id="node36" href="registry.html" target="_top" title="registry" alt="" coords="450,1721,595,1809">
+<area shape="rect" id="node37" href="locus_unigene.html" target="_top" title="locus_unigene" alt="" coords="795,2065,997,2153">
+<area shape="rect" id="node38" href="locusgroup.html" target="_top" title="locusgroup" alt="" coords="435,1968,610,2056">
+<area shape="rect" id="node39" href="locusgroup_member.html" target="_top" title="locusgroup_member" alt="" coords="768,1960,1024,2048">
+<area shape="rect" id="node40" href="polymorphic_fragment.html" target="_top" title="polymorphic_fragment" alt="" coords="2047,3359,2324,3447">
+<area shape="rect" id="node42" href="population_dbxref.html" target="_top" title="population_dbxref" alt="" coords="777,2276,1015,2364">
+<area shape="rect" id="node43" href="project_owner.html" target="_top" title="project_owner" alt="" coords="422,2535,623,2623">
+<area shape="rect" id="node44" href="pub_curator.html" target="_top" title="pub_curator" alt="" coords="431,2640,614,2728">
+<area shape="rect" id="node45" href="stock_owner.html" target="_top" title="stock_owner" alt="" coords="429,2305,616,2393">
+<area shape="rect" id="node46" href="user_trait.html" target="_top" title="user_trait" alt="" coords="815,704,977,792">
+<area shape="rect" id="node47" href="user_trait_unit.html" target="_top" title="user_trait_unit" alt="" coords="1209,725,1414,907">
+<area shape="rect" id="node48" href="unit.html" target="_top" title="unit" alt="" coords="836,809,956,897">
+<area shape="rect" id="node49" title="public.phenotype" alt="" coords="1196,2731,1427,2819">
+<area shape="rect" id="node50" title="sgn_people.sp_clone_il_mapping_segment_log" alt="" coords="1068,2836,1555,2924">
+</map>
+                                        <a name='diagram'><img id="twodegreesDegreeImg" src="../diagrams/tables/population.2degrees.png" usemap="#twoDegreesRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="oneimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="oneDegreeRelationshipsDiagramImplied" name="oneDegreeRelationshipsDiagramImplied">
+<area shape="rect" id="node1" href="individual.html" target="_top" title="individual" alt="" coords="783,384,991,677">
+<area shape="rect" id="node2" title="sgn.accession" alt="" coords="41,584,241,672">
+<area shape="rect" id="node3" title="sgn.common_name" alt="" coords="18,763,265,851">
+<area shape="rect" id="node4" href="population.html" target="_top" title="population" alt="" coords="321,224,724,821">
+<area shape="rect" id="node5" title="sgn_people.sp_person" alt="" coords="5,929,277,1017">
+<area shape="rect" id="node8" href="cross_type.html" target="_top" title="cross_type" alt="" coords="57,444,226,567">
+<area shape="rect" id="node6" href="individual_history.html" target="_top" title="individual_history" alt="" coords="1051,669,1285,904">
+<area shape="rect" id="node7" href="is_public.html" target="_top" title="is_public" alt="" coords="802,917,973,1093">
+<area shape="rect" id="node9" href="population_dbxref.html" target="_top" title="population_dbxref" alt="" coords="768,695,1007,900">
+<area shape="rect" id="node10" href="user_trait_unit.html" target="_top" title="user_trait_unit" alt="" coords="785,140,990,321">
+<area shape="rect" id="node11" title="sgn.map" alt="" coords="774,5,1001,123">
+</map>
+                                        <a name='diagram'><img id="oneimpliedDegreeImg" src="../diagrams/tables/population.implied1degrees.png" usemap="#oneDegreeRelationshipsDiagramImplied" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="twoimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="twoDegreesRelationshipsDiagramImplied" name="twoDegreesRelationshipsDiagramImplied">
+<area shape="rect" id="node1" href="allele.html" target="_top" title="allele" alt="" coords="833,2377,959,2465">
+<area shape="rect" id="node2" href="locus.html" target="_top" title="locus" alt="" coords="453,1837,593,1925">
+<area shape="rect" id="node3" title="sgn_people.sp_person" alt="" coords="5,1916,277,2004">
+<area shape="rect" id="node15" title="sgn.common_name" alt="" coords="18,930,265,1018">
+<area shape="rect" id="node4" href="allele_alias.html" target="_top" title="allele_alias" alt="" coords="1225,2377,1398,2465">
+<area shape="rect" id="node5" href="allele_dbxref.html" target="_top" title="allele_dbxref" alt="" coords="1217,3236,1406,3324">
+<area shape="rect" id="node6" title="public.dbxref" alt="" coords="426,2842,619,2930">
+<area shape="rect" id="node7" href="allele_history.html" target="_top" title="allele_history" alt="" coords="1214,2482,1409,2570">
+<area shape="rect" id="node8" href="genotype_experiment.html" target="_top" title="genotype_experiment" alt="" coords="1176,265,1447,353">
+<area shape="rect" id="node9" title="sgn.accession" alt="" coords="41,449,241,537">
+<area shape="rect" id="node10" title="sgn.map" alt="" coords="783,180,1009,297">
+<area shape="rect" id="node16" href="population.html" target="_top" title="population" alt="" coords="321,118,724,716">
+<area shape="rect" id="node11" href="genotype_region.html" target="_top" title="genotype_region" alt="" coords="2073,716,2298,804">
+<area shape="rect" id="node12" href="phenome_genotype.html" target="_top" title="phenome_genotype" alt="" coords="1647,265,1898,353">
+<area shape="rect" id="node14" href="individual.html" target="_top" title="individual" alt="" coords="815,1036,977,1124">
+<area shape="rect" id="node13" href="germplasm.html" target="_top" title="germplasm" alt="" coords="1224,2588,1399,2676">
+<area shape="rect" id="node41" href="cross_type.html" target="_top" title="cross_type" alt="" coords="57,309,226,432">
+<area shape="rect" id="node17" href="individual_alias.html" target="_top" title="individual_alias" alt="" coords="1205,1177,1418,1265">
+<area shape="rect" id="node18" href="individual_allele.html" target="_top" title="individual_allele" alt="" coords="1201,2166,1421,2254">
+<area shape="rect" id="node19" href="individual_dbxref.html" target="_top" title="individual_dbxref" alt="" coords="1197,2061,1426,2149">
+<area shape="rect" id="node20" href="individual_dbxref_evidence.html" target="_top" title="individual_dbxref_evidence" alt="" coords="1613,2848,1932,2936">
+<area shape="rect" id="node21" href="individual_dbxref_evidence_history.html" target="_top" title="individual_dbxref_evidence_history" alt="" coords="1991,2742,2380,2830">
+<area shape="rect" id="node22" href="individual_history.html" target="_top" title="individual_history" alt="" coords="1194,521,1429,609">
+<area shape="rect" id="node23" href="individual_image.html" target="_top" title="individual_image" alt="" coords="1198,2272,1425,2360">
+<area shape="rect" id="node24" href="individual_locus.html" target="_top" title="individual_locus" alt="" coords="1203,626,1420,714">
+<area shape="rect" id="node25" href="is_public.html" target="_top" title="is_public" alt="" coords="820,498,972,586">
+<area shape="rect" id="node26" href="locus2locus.html" target="_top" title="locus2locus" alt="" coords="807,2606,985,2694">
+<area shape="rect" id="node27" href="locus_alias.html" target="_top" title="locus_alias" alt="" coords="811,1460,981,1548">
+<area shape="rect" id="node28" href="locus_dbxref.html" target="_top" title="locus_dbxref" alt="" coords="802,3148,990,3236">
+<area shape="rect" id="node29" href="locus_dbxref_evidence.html" target="_top" title="locus_dbxref_evidence" alt="" coords="1173,3048,1449,3136">
+<area shape="rect" id="node30" href="locus_dbxref_evidence_history.html" target="_top" title="locus_dbxref_evidence_history" alt="" coords="1599,2953,1947,3041">
+<area shape="rect" id="node31" href="locus_history.html" target="_top" title="locus_history" alt="" coords="800,1812,992,1900">
+<area shape="rect" id="node32" href="locus_image.html" target="_top" title="locus_image" alt="" coords="804,1917,988,2005">
+<area shape="rect" id="node33" href="locus_marker.html" target="_top" title="locus_marker" alt="" coords="799,2022,993,2110">
+<area shape="rect" id="node34" href="locus_owner.html" target="_top" title="locus_owner" alt="" coords="803,1177,989,1265">
+<area shape="rect" id="node35" href="locus_registry.html" target="_top" title="locus_registry" alt="" coords="796,1670,996,1758">
+<area shape="rect" id="node36" href="registry.html" target="_top" title="registry" alt="" coords="450,1732,595,1820">
+<area shape="rect" id="node37" href="locus_unigene.html" target="_top" title="locus_unigene" alt="" coords="795,1354,997,1442">
+<area shape="rect" id="node38" href="locusgroup.html" target="_top" title="locusgroup" alt="" coords="435,1554,610,1642">
+<area shape="rect" id="node39" href="locusgroup_member.html" target="_top" title="locusgroup_member" alt="" coords="768,1565,1024,1653">
+<area shape="rect" id="node40" href="polymorphic_fragment.html" target="_top" title="polymorphic_fragment" alt="" coords="2047,156,2324,244">
+<area shape="rect" id="node42" href="population_dbxref.html" target="_top" title="population_dbxref" alt="" coords="777,2236,1015,2324">
+<area shape="rect" id="node43" href="project_owner.html" target="_top" title="project_owner" alt="" coords="422,2174,623,2262">
+<area shape="rect" id="node44" href="pub_curator.html" target="_top" title="pub_curator" alt="" coords="431,2316,614,2404">
+<area shape="rect" id="node45" href="stock_owner.html" target="_top" title="stock_owner" alt="" coords="429,1037,616,1125">
+<area shape="rect" id="node46" href="user_trait.html" target="_top" title="user_trait" alt="" coords="815,789,977,877">
+<area shape="rect" id="node47" href="user_trait_unit.html" target="_top" title="user_trait_unit" alt="" coords="1209,732,1414,913">
+<area shape="rect" id="node48" href="unit.html" target="_top" title="unit" alt="" coords="836,894,956,982">
+<area shape="rect" id="node49" title="public.phenotype" alt="" coords="1196,930,1427,1018">
+<area shape="rect" id="node50" title="sgn_people.sp_clone_il_mapping_segment_log" alt="" coords="1068,1036,1555,1124">
+</map>
+                                        <a name='diagram'><img id="twoimpliedDegreeImg" src="../diagrams/tables/population.implied2degrees.png" usemap="#twoDegreesRelationshipsDiagramImplied" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- /.box-body -->
+                    </div>
+                </section>
+                <script>
+                    var config = {
+                        pagination: true
+                    }
+                </script>
+            </div>
+            <!-- /.content-wrapper -->
+            <footer class="main-footer">
+                <div>
+                    <div class="pull-right hidden-xs">
+                        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+                        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+                    </div>
+                    <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.2.4</a></strong>
+                </div>
+                <!-- /.container -->
+            </footer>
+        </div>
+        <!-- ./wrapper -->
+
+        <!-- jQuery 2.2.3 -->
+        <script src="../bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+        <script src="../bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+        <!-- Bootstrap 3.3.5 -->
+        <script src="../bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+        <!-- DataTables -->
+        <script src="../bower/datatables.net/jquery.dataTables.min.js"></script>
+        <script src="../bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+        <script src="../bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.html5.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.print.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+        <!-- SheetJS -->
+        <script src="../bower/js-xlsx/xlsx.full.min.js"></script>
+        <!-- pdfmake -->
+        <script src="../bower/pdfmake/pdfmake.min.js"></script>
+        <script src="../bower/pdfmake/vfs_fonts.js"></script>
+        <!-- SlimScroll -->
+        <script src="../bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+        <!-- FastClick -->
+        <script src="../bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+        <!-- Salvattore -->
+        <script src="../bower/salvattore/salvattore.min.js"></script>
+        <!-- AnchorJS -->
+        <script src="../bower/anchor-js/anchor.min.js"></script>
+        <!-- CodeMirror -->
+        <script src="../bower/codemirror/codemirror.js"></script>
+        <script src="../bower/codemirror/sql.js"></script>
+        <!-- AdminLTE App -->
+        <script src="../bower/admin-lte/dist/js/app.min.js"></script>
+        <script src="table.js"></script>
+        <script src="../schemaSpy.js"></script>
+    </body>
+</html>

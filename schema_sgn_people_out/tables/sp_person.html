@@ -1,0 +1,1774 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>sp_person - cxgn_breedbase.sgn_people</title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <link rel="icon" type="image/png" sizes="16x16" href="../favicon.png">
+        <!-- Bootstrap 3.3.5 -->
+        <link rel="stylesheet" href="../bower/admin-lte/bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="../bower/font-awesome/css/font-awesome.min.css">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="../bower/ionicons/css/ionicons.min.css">
+        <!-- DataTables -->
+        <link rel="stylesheet" href="../bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" href="../bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+        <!-- Code Mirror -->
+        <link rel="stylesheet" href="../bower/codemirror/codemirror.css">
+        <!-- Fonts -->
+        <link href='../fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+        <link href='../fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+
+        <!-- Theme style -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/AdminLTE.min.css">
+        <!-- Salvattore -->
+        <link rel="stylesheet" href="../bower/salvattore/salvattore.css">
+        <!-- AdminLTE Skins. Choose a skin from the css/skins
+           folder instead of downloading all of them to reduce the load. -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/skins/_all-skins.min.css">
+        <!-- SchemaSpy -->
+        <link rel="stylesheet" href="../schemaSpy.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="../bower/html5shiv/html5shiv.min.js"></script>
+        <script src="../bower/respond/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+    <body class="hold-transition skin-blue layout-top-nav">
+        <div class="wrapper">
+            <header class="main-header">
+                <nav class="navbar navbar-static-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <a href="../index.html" class="navbar-brand"><b>cxgn_breedbase</b></a><span class="navbar-brand" style="padding-left: 0">.sgn_people</span>
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"><i class="fa fa-bars"></i></button>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a href="../index.html">Tables <span class="sr-only">(current)</span></a></li>
+                                <li><a href="../columns.html" title="All of the columns in the schema">Columns</a></li>
+                                <li><a href="../constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+                                <li><a href="../relationships.html" title="Diagram of table relationships">Relationships</a></li>
+                                <li><a href="../orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>
+                                <li><a href="../anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+                                <li><a href="../routines.html" title="Procedures and functions">Routines</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                        <!-- Navbar Right Menu -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </nav>
+            </header>
+            <!-- Main content -->
+            <!-- Full Width Column -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>sp_person</h1><p><span id="recordNumber">164</span> rows</p><br />
+                </section>
+                <!-- Main content -->
+                <section class="content">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+                            <h3 id="Columns" class="box-title">Columns</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table
+                                    id="standard_table"
+                                    class="table table-bordered table-striped dataTable"
+                                    role="grid"
+                                    data-paging="true"
+                                    data-page-length="10"
+                                    data-length-change="false">
+                                <thead align='left'>
+                                <tr>
+                                    <th>Column</th>
+                                    <th>Type</th>
+                                    <th>Size</th>
+                                    <th title='Are nulls allowed?'>Nulls</th>
+                                    <th title='Is column automatically updated?'>Auto</th>
+                                    <th title='Default value'>Default</th>
+                                    <th title='Columns in tables that reference this column'>Children</th>
+                                    <th title='Columns in tables that are referenced by this column'>Parents</th>
+                                    <th title='Comments' class="toggle"><span>Comments</span></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="sp_person_id">sp_person_id</span></td>
+                                    <td>serial</td>
+                                    <td>10</td>
+                                    <td title=''></td>
+                                    <td title='Automatically updated by the database'>√</td>
+                                    <td>nextval(&#39;sgn_people.sp_person_sp_person_id_seq&#39;::regclass)</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="annotation.person_id references sp_person.sp_person_id via person_id_fk"><a href='../../annotation/tables/annotation.html'>annotation</a><span class='relatedKey'>.person_id</span></td>
+                                                <td class="constraint detail">person_id_fk</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="comment.person_id references sp_person.sp_person_id via person_id_fk"><a href='../../annotation/tables/comment.html'>comment</a><span class='relatedKey'>.person_id</span></td>
+                                                <td class="constraint detail">person_id_fk</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="comp_analysis.person_id references sp_person.sp_person_id via person_id_fk"><a href='../../annotation/tables/comp_analysis.html'>comp_analysis</a><span class='relatedKey'>.person_id</span></td>
+                                                <td class="constraint detail">person_id_fk</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="feature_set.person_id references sp_person.sp_person_id via person_id_fk"><a href='../../annotation/tables/feature_set.html'>feature_set</a><span class='relatedKey'>.person_id</span></td>
+                                                <td class="constraint detail">person_id_fk</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="seq.person_id references sp_person.sp_person_id via person_id_fk"><a href='../../annotation/tables/seq.html'>seq</a><span class='relatedKey'>.person_id</span></td>
+                                                <td class="constraint detail">person_id_fk</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="bs_sample.contact_id references sp_person.sp_person_id via bs_sample_contact_id_order_fkey"><a href='../../biosource/tables/bs_sample.html'>bs_sample</a><span class='relatedKey'>.contact_id</span></td>
+                                                <td class="constraint detail">bs_sample_contact_id_order_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="ge_experiment.contact_id references sp_person.sp_person_id via ge_experiment_contact_id_fkey"><a href='../../gem/tables/ge_experiment.html'>ge_experiment</a><span class='relatedKey'>.contact_id</span></td>
+                                                <td class="constraint detail">ge_experiment_contact_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="ge_platform.contact_id references sp_person.sp_person_id via ge_platform_contact_id_fkey"><a href='../../gem/tables/ge_platform.html'>ge_platform</a><span class='relatedKey'>.contact_id</span></td>
+                                                <td class="constraint detail">ge_platform_contact_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="experiment_image.sp_person_id references sp_person.sp_person_id via experiment_image_sp_person_id_fkey"><a href='../../insitu/tables/experiment_image.html'>experiment_image</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">experiment_image_sp_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="experiment_tag.sp_person_id references sp_person.sp_person_id via experiment_tag_sp_person_id_fkey"><a href='../../insitu/tables/experiment_tag.html'>experiment_tag</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">experiment_tag_sp_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="attribution_to.person_id references sp_person.sp_person_id via person_id_fk"><a href='../../metadata/tables/attribution_to.html'>attribution_to</a><span class='relatedKey'>.person_id</span></td>
+                                                <td class="constraint detail">person_id_fk</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="md_image.sp_person_id references sp_person.sp_person_id via md_image_sp_person_id_fkey"><a href='../../metadata/tables/md_image.html'>md_image</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">md_image_sp_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="md_image_cvterm.sp_person_id references sp_person.sp_person_id via md_image_cvterm_sp_person_id_fkey"><a href='../../metadata/tables/md_image_cvterm.html'>md_image_cvterm</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">md_image_cvterm_sp_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="md_image_organism.sp_person_id references sp_person.sp_person_id via md_image_organism_sp_person_id_fkey"><a href='../../metadata/tables/md_image_organism.html'>md_image_organism</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">md_image_organism_sp_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="md_metadata.create_person_id references sp_person.sp_person_id via md_metadata_create_person_id_fkey"><a href='../../metadata/tables/md_metadata.html'>md_metadata</a><span class='relatedKey'>.create_person_id</span></td>
+                                                <td class="constraint detail">md_metadata_create_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="md_metadata.modified_person_id references sp_person.sp_person_id via md_metadata_modified_person_id_fkey"><a href='../../metadata/tables/md_metadata.html'>md_metadata</a><span class='relatedKey'>.modified_person_id</span></td>
+                                                <td class="constraint detail">md_metadata_modified_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="md_tag.sp_person_id references sp_person.sp_person_id via md_tag_sp_person_id_fkey"><a href='../../metadata/tables/md_tag.html'>md_tag</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">md_tag_sp_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="md_tag_image.sp_person_id references sp_person.sp_person_id via md_tag_image_sp_person_id_fkey"><a href='../../metadata/tables/md_tag_image.html'>md_tag_image</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">md_tag_image_sp_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="allele.sp_person_id references sp_person.sp_person_id via allele_sp_person_id_fkey"><a href='../../phenome/tables/allele.html'>allele</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">allele_sp_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="allele.updated_by references sp_person.sp_person_id via allele_updated_by_fkey"><a href='../../phenome/tables/allele.html'>allele</a><span class='relatedKey'>.updated_by</span></td>
+                                                <td class="constraint detail">allele_updated_by_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="allele_alias.sp_person_id references sp_person.sp_person_id via allele_alias_sp_person_id_fkey"><a href='../../phenome/tables/allele_alias.html'>allele_alias</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">allele_alias_sp_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="allele_dbxref.sp_person_id references sp_person.sp_person_id via allele_dbxref_sp_person_id_fkey"><a href='../../phenome/tables/allele_dbxref.html'>allele_dbxref</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">allele_dbxref_sp_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="allele_history.sp_person_id references sp_person.sp_person_id via allele_history_sp_person_id_fkey"><a href='../../phenome/tables/allele_history.html'>allele_history</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">allele_history_sp_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="allele_history.updated_by references sp_person.sp_person_id via allele_history_updated_by_fkey"><a href='../../phenome/tables/allele_history.html'>allele_history</a><span class='relatedKey'>.updated_by</span></td>
+                                                <td class="constraint detail">allele_history_updated_by_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="genotype_experiment.sp_person_id references sp_person.sp_person_id via genotype_experiment_sp_person_id_fkey"><a href='../../phenome/tables/genotype_experiment.html'>genotype_experiment</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">genotype_experiment_sp_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="genotype_region.sp_person_id references sp_person.sp_person_id via genotype_region_sp_person_id_fkey"><a href='../../phenome/tables/genotype_region.html'>genotype_region</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">genotype_region_sp_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="germplasm.sp_person_id references sp_person.sp_person_id via germplasm_sp_person_id_fkey"><a href='../../phenome/tables/germplasm.html'>germplasm</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">germplasm_sp_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="individual.sp_person_id references sp_person.sp_person_id via individual_sp_person_id_fkey"><a href='../../phenome/tables/individual.html'>individual</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">individual_sp_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="individual.updated_by references sp_person.sp_person_id via individual_updated_by_fkey"><a href='../../phenome/tables/individual.html'>individual</a><span class='relatedKey'>.updated_by</span></td>
+                                                <td class="constraint detail">individual_updated_by_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="individual_alias.sp_person_id references sp_person.sp_person_id via individual_alias_sp_person_id_fkey"><a href='../../phenome/tables/individual_alias.html'>individual_alias</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">individual_alias_sp_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="individual_allele.sp_person_id references sp_person.sp_person_id via individual_allele_sp_person_id_fkey"><a href='../../phenome/tables/individual_allele.html'>individual_allele</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">individual_allele_sp_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="individual_dbxref.sp_person_id references sp_person.sp_person_id via individual_dbxref_sp_person_id_fkey"><a href='../../phenome/tables/individual_dbxref.html'>individual_dbxref</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">individual_dbxref_sp_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="individual_dbxref_evidence.sp_person_id references sp_person.sp_person_id via individual_dbxref_evidence_sp_person_id_fkey"><a href='../../phenome/tables/individual_dbxref_evidence.html'>individual_dbxref_evidence</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">individual_dbxref_evidence_sp_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="individual_dbxref_evidence.updated_by references sp_person.sp_person_id via individual_dbxref_evidence_updated_by_fkey"><a href='../../phenome/tables/individual_dbxref_evidence.html'>individual_dbxref_evidence</a><span class='relatedKey'>.updated_by</span></td>
+                                                <td class="constraint detail">individual_dbxref_evidence_updated_by_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="individual_dbxref_evidence_history.sp_person_id references sp_person.sp_person_id via individual_dbxref_evidence_history_sp_person_id_fkey"><a href='../../phenome/tables/individual_dbxref_evidence_history.html'>individual_dbxref_evidence_history</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">individual_dbxref_evidence_history_sp_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="individual_dbxref_evidence_history.updated_by references sp_person.sp_person_id via individual_dbxref_evidence_history_updated_by_fkey"><a href='../../phenome/tables/individual_dbxref_evidence_history.html'>individual_dbxref_evidence_history</a><span class='relatedKey'>.updated_by</span></td>
+                                                <td class="constraint detail">individual_dbxref_evidence_history_updated_by_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="individual_history.sp_person_id references sp_person.sp_person_id via individual_history_sp_person_id_fkey"><a href='../../phenome/tables/individual_history.html'>individual_history</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">individual_history_sp_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="individual_history.updated_by references sp_person.sp_person_id via individual_history_updated_by_fkey"><a href='../../phenome/tables/individual_history.html'>individual_history</a><span class='relatedKey'>.updated_by</span></td>
+                                                <td class="constraint detail">individual_history_updated_by_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="individual_image.sp_person_id references sp_person.sp_person_id via individual_image_sp_person_id_fkey"><a href='../../phenome/tables/individual_image.html'>individual_image</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">individual_image_sp_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="individual_locus.sp_person_id references sp_person.sp_person_id via individual_locus_sp_person_id_fkey"><a href='../../phenome/tables/individual_locus.html'>individual_locus</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">individual_locus_sp_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="is_public.owner_id references sp_person.sp_person_id via is_public_owner_id_fkey"><a href='../../phenome/tables/is_public.html'>is_public</a><span class='relatedKey'>.owner_id</span></td>
+                                                <td class="constraint detail">is_public_owner_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="locus.sp_person_id references sp_person.sp_person_id via locus_sp_person_id_fkey"><a href='../../phenome/tables/locus.html'>locus</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">locus_sp_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="locus.updated_by references sp_person.sp_person_id via locus_updated_by_fkey"><a href='../../phenome/tables/locus.html'>locus</a><span class='relatedKey'>.updated_by</span></td>
+                                                <td class="constraint detail">locus_updated_by_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="locus2locus.sp_person_id references sp_person.sp_person_id via locus2locus_sp_person_id_fkey"><a href='../../phenome/tables/locus2locus.html'>locus2locus</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">locus2locus_sp_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="locus_alias.sp_person_id references sp_person.sp_person_id via locus_alias_sp_person_id_fkey"><a href='../../phenome/tables/locus_alias.html'>locus_alias</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">locus_alias_sp_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="locus_dbxref.sp_person_id references sp_person.sp_person_id via locus_dbxref_sp_person_id_fkey"><a href='../../phenome/tables/locus_dbxref.html'>locus_dbxref</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">locus_dbxref_sp_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="locus_dbxref_evidence.sp_person_id references sp_person.sp_person_id via locus_dbxref_evidence_sp_person_id_fkey"><a href='../../phenome/tables/locus_dbxref_evidence.html'>locus_dbxref_evidence</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">locus_dbxref_evidence_sp_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="locus_dbxref_evidence.updated_by references sp_person.sp_person_id via locus_dbxref_evidence_updated_by_fkey"><a href='../../phenome/tables/locus_dbxref_evidence.html'>locus_dbxref_evidence</a><span class='relatedKey'>.updated_by</span></td>
+                                                <td class="constraint detail">locus_dbxref_evidence_updated_by_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="locus_dbxref_evidence_history.sp_person_id references sp_person.sp_person_id via locus_dbxref_evidence_history_sp_person_id_fkey"><a href='../../phenome/tables/locus_dbxref_evidence_history.html'>locus_dbxref_evidence_history</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">locus_dbxref_evidence_history_sp_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="locus_dbxref_evidence_history.updated_by references sp_person.sp_person_id via locus_dbxref_evidence_history_updated_by_fkey"><a href='../../phenome/tables/locus_dbxref_evidence_history.html'>locus_dbxref_evidence_history</a><span class='relatedKey'>.updated_by</span></td>
+                                                <td class="constraint detail">locus_dbxref_evidence_history_updated_by_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="locus_history.sp_person_id references sp_person.sp_person_id via locus_history_sp_person_id_fkey"><a href='../../phenome/tables/locus_history.html'>locus_history</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">locus_history_sp_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="locus_history.updated_by references sp_person.sp_person_id via locus_history_updated_by_fkey"><a href='../../phenome/tables/locus_history.html'>locus_history</a><span class='relatedKey'>.updated_by</span></td>
+                                                <td class="constraint detail">locus_history_updated_by_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="locus_image.sp_person_id references sp_person.sp_person_id via locus_image_sp_person_id_fkey"><a href='../../phenome/tables/locus_image.html'>locus_image</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">locus_image_sp_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="locus_marker.sp_person_id references sp_person.sp_person_id via locus_marker_sp_person_id_fkey"><a href='../../phenome/tables/locus_marker.html'>locus_marker</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">locus_marker_sp_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="locus_owner.granted_by references sp_person.sp_person_id via locus_owner_granted_by_fkey"><a href='../../phenome/tables/locus_owner.html'>locus_owner</a><span class='relatedKey'>.granted_by</span></td>
+                                                <td class="constraint detail">locus_owner_granted_by_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="locus_owner.sp_person_id references sp_person.sp_person_id via locus_owner_sp_person_id_fkey"><a href='../../phenome/tables/locus_owner.html'>locus_owner</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">locus_owner_sp_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="locus_registry.sp_person_id references sp_person.sp_person_id via locus_registry_sp_person_id_fkey"><a href='../../phenome/tables/locus_registry.html'>locus_registry</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">locus_registry_sp_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="locus_unigene.sp_person_id references sp_person.sp_person_id via locus_unigene_sp_person_id_fkey"><a href='../../phenome/tables/locus_unigene.html'>locus_unigene</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">locus_unigene_sp_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="locusgroup.sp_person_id references sp_person.sp_person_id via locusgroup_sp_person_id_fkey"><a href='../../phenome/tables/locusgroup.html'>locusgroup</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">locusgroup_sp_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="locusgroup_member.sp_person_id references sp_person.sp_person_id via locusgroup_member_sp_person_id_fkey"><a href='../../phenome/tables/locusgroup_member.html'>locusgroup_member</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">locusgroup_member_sp_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="phenome_genotype.sp_person_id references sp_person.sp_person_id via genotype_sp_person_id_fkey"><a href='../../phenome/tables/phenome_genotype.html'>phenome_genotype</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">genotype_sp_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="polymorphic_fragment.sp_person_id references sp_person.sp_person_id via polymorphic_fragment_sp_person_id_fkey"><a href='../../phenome/tables/polymorphic_fragment.html'>polymorphic_fragment</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">polymorphic_fragment_sp_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="population.person_id references sp_person.sp_person_id via population_person_id_fkey"><a href='../../phenome/tables/population.html'>population</a><span class='relatedKey'>.person_id</span></td>
+                                                <td class="constraint detail">population_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="population.sp_person_id references sp_person.sp_person_id via population_sp_person_id_fkey"><a href='../../phenome/tables/population.html'>population</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">population_sp_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="population_dbxref.sp_person_id references sp_person.sp_person_id via population_dbxref_sp_person_id_fkey"><a href='../../phenome/tables/population_dbxref.html'>population_dbxref</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">population_dbxref_sp_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Null on delete:&#10;Foreign key to parent set to NULL when parent deleted'>N</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="project_owner.sp_person_id references sp_person.sp_person_id via project_owner_sp_person_id_fkey"><a href='../../phenome/tables/project_owner.html'>project_owner</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">project_owner_sp_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="pub_curator.assigned_to references sp_person.sp_person_id via pub_curator_assigned_to_fkey"><a href='../../phenome/tables/pub_curator.html'>pub_curator</a><span class='relatedKey'>.assigned_to</span></td>
+                                                <td class="constraint detail">pub_curator_assigned_to_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="pub_curator.curated_by references sp_person.sp_person_id via pub_curator_curated_by_fkey"><a href='../../phenome/tables/pub_curator.html'>pub_curator</a><span class='relatedKey'>.curated_by</span></td>
+                                                <td class="constraint detail">pub_curator_curated_by_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="pub_curator.sp_person_id references sp_person.sp_person_id via pub_curator_sp_person_id_fkey"><a href='../../phenome/tables/pub_curator.html'>pub_curator</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">pub_curator_sp_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="registry.sp_person_id references sp_person.sp_person_id via registry_sp_person_id_fkey"><a href='../../phenome/tables/registry.html'>registry</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">registry_sp_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="registry.updated_by references sp_person.sp_person_id via registry_updated_by_fkey"><a href='../../phenome/tables/registry.html'>registry</a><span class='relatedKey'>.updated_by</span></td>
+                                                <td class="constraint detail">registry_updated_by_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="stock_owner.sp_person_id references sp_person.sp_person_id via stock_owner_sp_person_id_fkey"><a href='../../phenome/tables/stock_owner.html'>stock_owner</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">stock_owner_sp_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="user_trait.sp_person_id references sp_person.sp_person_id via user_trait_sp_person_id_fkey"><a href='../../phenome/tables/user_trait.html'>user_trait</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">user_trait_sp_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="manual_associations.sp_person_id references sp_person.sp_person_id via manual_associations_sp_person_id_fkey1"><a href='../../physical/tables/manual_associations.html'>manual_associations</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">manual_associations_sp_person_id_fkey1</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="blastwatch_queries.sp_person_id references sp_person.sp_person_id via blastwatch_queries_sp_person_id_fkey"><a href='../../public/tables/blastwatch_queries.html'>blastwatch_queries</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">blastwatch_queries_sp_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="bug.created_by references sp_person.sp_person_id via bug_created_by_fkey"><a href='../../public/tables/bug.html'>bug</a><span class='relatedKey'>.created_by</span></td>
+                                                <td class="constraint detail">bug_created_by_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="bug.sp_person_id references sp_person.sp_person_id via bug_sp_person_id_fkey"><a href='../../public/tables/bug.html'>bug</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">bug_sp_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="bug.updated_by references sp_person.sp_person_id via bug_updated_by_fkey"><a href='../../public/tables/bug.html'>bug</a><span class='relatedKey'>.updated_by</span></td>
+                                                <td class="constraint detail">bug_updated_by_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="phenotype.sp_person_id references sp_person.sp_person_id via phenotype_sp_person_id_fkey"><a href='../../public/tables/phenotype.html'>phenotype</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">phenotype_sp_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Null on delete:&#10;Foreign key to parent set to NULL when parent deleted'>N</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="facility.sp_person_id references sp_person.sp_person_id via foriegn"><a href='../../sgn/tables/facility.html'>facility</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">foriegn</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="library.sp_person_id references sp_person.sp_person_id via library_sp_person_id_fkey"><a href='../../sgn/tables/library.html'>library</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">library_sp_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="manual_annotations.author_id references sp_person.sp_person_id via author_id_fk"><a href='../../sgn/tables/manual_annotations.html'>manual_annotations</a><span class='relatedKey'>.author_id</span></td>
+                                                <td class="constraint detail">author_id_fk</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="metadata.create_person_id references sp_person.sp_person_id via metadata_create_person_id_fkey"><a href='../../sgn/tables/metadata.html'>metadata</a><span class='relatedKey'>.create_person_id</span></td>
+                                                <td class="constraint detail">metadata_create_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="metadata.modified_person_id references sp_person.sp_person_id via metadata_modified_person_id_fkey"><a href='../../sgn/tables/metadata.html'>metadata</a><span class='relatedKey'>.modified_person_id</span></td>
+                                                <td class="constraint detail">metadata_modified_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="submit_user.sp_person_id references sp_person.sp_person_id via foriegn"><a href='../../sgn/tables/submit_user.html'>submit_user</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">foriegn</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="bac_status.person_id references sp_person.sp_person_id via person_id_fk"><a href='bac_status.html'>bac_status</a><span class='relatedKey'>.person_id</span></td>
+                                                <td class="constraint detail">person_id_fk</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="bac_status_log.person_id references sp_person.sp_person_id via person_id_fk"><a href='bac_status_log.html'>bac_status_log</a><span class='relatedKey'>.person_id</span></td>
+                                                <td class="constraint detail">person_id_fk</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="clone_il_mapping_bin_log.sp_person_id references sp_person.sp_person_id via clone_il_mapping_bin_log_sp_person_id_fkey"><a href='clone_il_mapping_bin_log.html'>clone_il_mapping_bin_log</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">clone_il_mapping_bin_log_sp_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="clone_validation_log.sp_person_id references sp_person.sp_person_id via clone_validation_log_sp_person_id_fkey"><a href='clone_validation_log.html'>clone_validation_log</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">clone_validation_log_sp_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="clone_verification_log.sp_person_id references sp_person.sp_person_id via clone_verification_log_sp_person_id_fkey"><a href='clone_verification_log.html'>clone_verification_log</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">clone_verification_log_sp_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="forum_post.person_id references sp_person.sp_person_id via person_id_fk"><a href='forum_post.html'>forum_post</a><span class='relatedKey'>.person_id</span></td>
+                                                <td class="constraint detail">person_id_fk</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="forum_topic.person_id references sp_person.sp_person_id via person_id_fk"><a href='forum_topic.html'>forum_topic</a><span class='relatedKey'>.person_id</span></td>
+                                                <td class="constraint detail">person_id_fk</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="list.owner references sp_person.sp_person_id via list_owner_fkey"><a href='list.html'>list</a><span class='relatedKey'>.owner</span></td>
+                                                <td class="constraint detail">list_owner_fkey</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="sp_clone_il_mapping_segment_log.sp_person_id references sp_person.sp_person_id via sp_clone_il_mapping_segment_log_sp_person_id_fkey"><a href='sp_clone_il_mapping_segment_log.html'>sp_clone_il_mapping_segment_log</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">sp_clone_il_mapping_segment_log_sp_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="sp_dataset.sp_person_id references sp_person.sp_person_id via sp_dataset_sp_person_id_fkey"><a href='sp_dataset.html'>sp_dataset</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">sp_dataset_sp_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="sp_group_member.sp_person_id references sp_person.sp_person_id via sp_group_member_sp_person_id_fkey"><a href='sp_group_member.html'>sp_group_member</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">sp_group_member_sp_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="sp_order.order_from_id references sp_person.sp_person_id via sp_order_order_from_id_fkey"><a href='sp_order.html'>sp_order</a><span class='relatedKey'>.order_from_id</span></td>
+                                                <td class="constraint detail">sp_order_order_from_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="sp_order.order_to_id references sp_person.sp_person_id via sp_order_order_to_id_fkey"><a href='sp_order.html'>sp_order</a><span class='relatedKey'>.order_to_id</span></td>
+                                                <td class="constraint detail">sp_order_order_to_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="sp_organization_person.sp_person_id references sp_person.sp_person_id via person_id_fk"><a href='sp_organization_person.html'>sp_organization_person</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">person_id_fk</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="sp_papers.person_id references sp_person.sp_person_id via person_id_fk"><a href='sp_papers.html'>sp_papers</a><span class='relatedKey'>.person_id</span></td>
+                                                <td class="constraint detail">person_id_fk</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="sp_person_organisms.sp_person_id references sp_person.sp_person_id via person_id_fk"><a href='sp_person_organisms.html'>sp_person_organisms</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">person_id_fk</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="sp_person_roles.sp_person_id references sp_person.sp_person_id via sp_person_roles_sp_person_id_fkey"><a href='sp_person_roles.html'>sp_person_roles</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">sp_person_roles_sp_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="sp_project_il_mapping_clone_log.sp_person_id references sp_person.sp_person_id via sp_project_il_mapping_clone_log_sp_person_id_fkey"><a href='sp_project_il_mapping_clone_log.html'>sp_project_il_mapping_clone_log</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">sp_project_il_mapping_clone_log_sp_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="sp_project_person.sp_person_id references sp_person.sp_person_id via person_id_fk"><a href='sp_project_person.html'>sp_project_person</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">person_id_fk</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="sp_token.sp_person_id references sp_person.sp_person_id via sp_token_sp_person_id_fkey"><a href='sp_token.html'>sp_token</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">sp_token_sp_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="user_map.sp_person_id references sp_person.sp_person_id via user_map_sp_person_id_fkey"><a href='user_map.html'>user_map</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">user_map_sp_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="user_map_data.sp_person_id references sp_person.sp_person_id via user_map_data_sp_person_id_fkey"><a href='user_map_data.html'>user_map_data</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">user_map_data_sp_person_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="facility.sp_person_id references sp_person.sp_person_id via foriegn"><a href='../../sgn_submit/tables/facility.html'>facility</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">foriegn</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="library.sp_person_id references sp_person.sp_person_id via foriegn"><a href='../../sgn_submit/tables/library.html'>library</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">foriegn</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="submit_user.sp_person_id references sp_person.sp_person_id via foriegn"><a href='../../sgn_submit/tables/submit_user.html'>submit_user</a><span class='relatedKey'>.sp_person_id</span></td>
+                                                <td class="constraint detail">foriegn</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="censor">censor</span></td>
+                                    <td>int8</td>
+                                    <td>19</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>0</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="salutation">salutation</span></td>
+                                    <td>varchar</td>
+                                    <td>8</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='indexedColumn' title='Indexed'><i class='fa fa-sitemap fa-rotate-120' style='padding-right: 5px;'></i><span id="last_name">last_name</span></td>
+                                    <td>varchar</td>
+                                    <td>63</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='indexedColumn' title='Indexed'><i class='fa fa-sitemap fa-rotate-120' style='padding-right: 5px;'></i><span id="first_name">first_name</span></td>
+                                    <td>varchar</td>
+                                    <td>63</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='indexedColumn' title='Indexed'><i class='fa fa-sitemap fa-rotate-120' style='padding-right: 5px;'></i><span id="organization">organization</span></td>
+                                    <td>varchar</td>
+                                    <td>255</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="address">address</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='indexedColumn' title='Indexed'><i class='fa fa-sitemap fa-rotate-120' style='padding-right: 5px;'></i><span id="country">country</span></td>
+                                    <td>varchar</td>
+                                    <td>255</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="phone_number">phone_number</span></td>
+                                    <td>varchar</td>
+                                    <td>40</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="fax">fax</span></td>
+                                    <td>varchar</td>
+                                    <td>40</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="contact_email">contact_email</span></td>
+                                    <td>varchar</td>
+                                    <td>255</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="webpage">webpage</span></td>
+                                    <td>varchar</td>
+                                    <td>255</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="research_keywords">research_keywords</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="user_format">user_format</span></td>
+                                    <td>varchar</td>
+                                    <td>8</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="research_interests">research_interests</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="formatted_interests">formatted_interests</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="contact_update">contact_update</span></td>
+                                    <td>date</td>
+                                    <td>13</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="research_update">research_update</span></td>
+                                    <td>date</td>
+                                    <td>13</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="sp_login_id">sp_login_id</span></td>
+                                    <td>int8</td>
+                                    <td>19</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='indexedColumn' title='Indexed'><i class='fa fa-sitemap fa-rotate-120' style='padding-right: 5px;'></i><span id="username">username</span></td>
+                                    <td>varchar</td>
+                                    <td>255</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="private_email">private_email</span></td>
+                                    <td>varchar</td>
+                                    <td>255</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="pending_email">pending_email</span></td>
+                                    <td>varchar</td>
+                                    <td>255</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="password">password</span></td>
+                                    <td>varchar</td>
+                                    <td>255</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="confirm_code">confirm_code</span></td>
+                                    <td>varchar</td>
+                                    <td>20</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="disabled">disabled</span></td>
+                                    <td>varchar</td>
+                                    <td>20</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="user_type">user_type</span></td>
+                                    <td>varchar</td>
+                                    <td>20</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>&#39;user&#39;::character varying</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='indexedColumn' title='Indexed'><i class='fa fa-sitemap fa-rotate-120' style='padding-right: 5px;'></i><span id="cookie_string">cookie_string</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="last_access_time">last_access_time</span></td>
+                                    <td>timestamp</td>
+                                    <td>29,6</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>now()</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="user_prefs">user_prefs</span></td>
+                                    <td>varchar</td>
+                                    <td>4096</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="developer_settings">developer_settings</span></td>
+                                    <td>varchar</td>
+                                    <td>4096</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-sitemap"></i>
+                            <h3 id="Indexes" class="box-title">Indexes</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table
+                                    id="indexes_table"
+                                    class="table table-bordered table-striped dataTable"
+                                    role="grid"
+                                    data-paging="true"
+                                    data-page-length="10"
+                                    data-length-change="false">
+                                <thead>
+                                <tr>
+                                    <th>Constraint Name</th>
+                                    <th>Type</th>
+                                    <th>Sort</th>
+                                    <th>Column(s)</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey'></i> sp_person_pkey</td>
+                                    <td>Primary key</td>
+                                    <td><span title='Ascending'>Asc</span></td>
+                                    <td>sp_person_id</td>
+                                </tr>
+                                <tr>
+                                    <td class='uniqueKey' title='Unique Key'><i class='icon ion-key iconkey'></i> cookie_string_unique</td>
+                                    <td>Must be unique</td>
+                                    <td><span title='Ascending'>Asc</span></td>
+                                    <td>cookie_string</td>
+                                </tr>
+                                <tr>
+                                    <td class='uniqueKey' title='Unique Key'><i class='icon ion-key iconkey'></i> cookie_unique</td>
+                                    <td>Must be unique</td>
+                                    <td><span title='Ascending'>Asc</span></td>
+                                    <td>cookie_string</td>
+                                </tr>
+                                <tr>
+                                    <td title='Indexed'>country_idx</td>
+                                    <td>Performance</td>
+                                    <td><span title='Ascending'>Asc</span></td>
+                                    <td>country</td>
+                                </tr>
+                                <tr>
+                                    <td title='Indexed'>name_idx</td>
+                                    <td>Performance</td>
+                                    <td><span title='Ascending'>Asc</span>/<span title='Ascending'>Asc</span></td>
+                                    <td>last_name + first_name</td>
+                                </tr>
+                                <tr>
+                                    <td title='Indexed'>organization_idx</td>
+                                    <td>Performance</td>
+                                    <td><span title='Ascending'>Asc</span></td>
+                                    <td>organization</td>
+                                </tr>
+                                <tr>
+                                    <td class='uniqueKey' title='Unique Key'><i class='icon ion-key iconkey'></i> sp_person_username_key</td>
+                                    <td>Must be unique</td>
+                                    <td><span title='Ascending'>Asc</span></td>
+                                    <td>username</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div><!-- /.box-body -->
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-sitemap"></i>
+                            <h3 class="box-title">Check Constraints</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table
+                                    id="check_table"
+                                    class="table table-bordered table-striped dataTable"
+                                    role="grid"
+                                    data-paging="true"
+                                    data-page-length="10"
+                                    data-length-change="false">
+                                <thead align='left'>
+                                <tr>
+                                    <th>Constraint Name</th>
+                                    <th>Constraint</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>first_name_check</td>
+                                    <td>((first_name IS NOT NULL))</td>
+                                </tr>
+                                <tr>
+                                    <td>last_name_check</td>
+                                    <td>((last_name IS NOT NULL))</td>
+                                </tr>
+                                <tr>
+                                    <td>if_disabled_no_cookie_for_you</td>
+                                    <td>((((disabled IS NOT NULL) AND (cookie_string IS NULL)) OR (disabled IS NULL)))</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-code-fork"></i>
+                            <h3 id="Relationships" class="box-title">Relationships</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <div class="nav-tabs-custom"><!-- Tabs within a box -->
+                                <h5>Close relationships within degrees of separation</h5>
+                                <ul class="nav nav-tabs pull-left ui-sortable-handle">
+                                    <li class="active"><a href="#oneDegreeImg-chart" data-toggle="tab" aria-expanded="true">One</a></li>
+                                    <li class=""><a href="#twodegreesDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two degrees</a></li>
+                                    <li class=""><a href="#oneimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">One implied</a></li>
+                                    <li class=""><a href="#twoimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two implied</a></li>
+                                </ul>
+                                <div class="tab-content no-padding">
+                                    <div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
+<area shape="rect" id="node1" title="annotation.annotation" alt="" coords="504,5,781,123">
+<area shape="rect" id="node2" href="sp_person.html" target="_top" title="sp_person" alt="" coords="5,6045,359,6995">
+<area shape="rect" id="node3" title="annotation.comment" alt="" coords="511,140,774,257">
+<area shape="rect" id="node4" title="annotation.comp_analysis" alt="" coords="489,275,797,392">
+<area shape="rect" id="node5" title="annotation.feature_set" alt="" coords="502,409,783,527">
+<area shape="rect" id="node6" title="annotation.seq" alt="" coords="537,544,748,661">
+<area shape="rect" id="node7" title="biosource.bs_sample" alt="" coords="512,679,773,796">
+<area shape="rect" id="node8" title="gem.ge_experiment" alt="" coords="512,813,773,931">
+<area shape="rect" id="node9" title="gem.ge_platform" alt="" coords="529,948,756,1065">
+<area shape="rect" id="node10" title="insitu.experiment_image" alt="" coords="494,1083,791,1200">
+<area shape="rect" id="node11" title="insitu.experiment_tag" alt="" coords="507,1217,779,1335">
+<area shape="rect" id="node12" title="metadata.attribution_to" alt="" coords="497,1352,788,1528">
+<area shape="rect" id="node13" title="metadata.md_image" alt="" coords="513,1545,772,1663">
+<area shape="rect" id="node14" title="metadata.md_image_cvterm" alt="" coords="478,1680,807,1797">
+<area shape="rect" id="node15" title="metadata.md_image_organism" alt="" coords="467,1815,818,1932">
+<area shape="rect" id="node16" title="metadata.md_metadata" alt="" coords="498,1949,787,2096">
+<area shape="rect" id="node17" title="metadata.md_tag" alt="" coords="526,2113,759,2231">
+<area shape="rect" id="node18" title="metadata.md_tag_image" alt="" coords="495,2248,791,2365">
+<area shape="rect" id="node19" title="phenome.allele" alt="" coords="525,2383,760,2529">
+<area shape="rect" id="node20" title="phenome.allele_alias" alt="" coords="511,2547,774,2664">
+<area shape="rect" id="node21" title="phenome.allele_dbxref" alt="" coords="503,2681,783,2799">
+<area shape="rect" id="node22" title="phenome.allele_history" alt="" coords="501,2816,785,2963">
+<area shape="rect" id="node23" title="phenome.genotype_experiment" alt="" coords="463,2980,823,3097">
+<area shape="rect" id="node24" title="phenome.genotype_region" alt="" coords="485,3115,800,3232">
+<area shape="rect" id="node25" title="phenome.germplasm" alt="" coords="511,3285,775,3403">
+<area shape="rect" id="node26" title="phenome.individual" alt="" coords="517,3420,769,3567">
+<area shape="rect" id="node27" title="phenome.individual_alias" alt="" coords="491,3620,794,3737">
+<area shape="rect" id="node28" title="phenome.individual_allele" alt="" coords="488,3755,797,3872">
+<area shape="rect" id="node29" title="phenome.individual_dbxref" alt="" coords="483,3889,803,4007">
+<area shape="rect" id="node30" title="phenome.individual_dbxref_evidence" alt="" coords="439,4024,847,4171">
+<area shape="rect" id="node31" title="phenome.individual_dbxref_evidence_history" alt="" coords="403,4188,883,4335">
+<area shape="rect" id="node32" title="phenome.individual_history" alt="" coords="481,4352,805,4499">
+<area shape="rect" id="node33" title="phenome.individual_image" alt="" coords="485,4516,801,4633">
+<area shape="rect" id="node34" title="phenome.individual_locus" alt="" coords="489,4651,797,4768">
+<area shape="rect" id="node35" title="phenome.is_public" alt="" coords="522,4785,763,4903">
+<area shape="rect" id="node36" title="phenome.locus" alt="" coords="537,4920,748,5067">
+<area shape="rect" id="node37" title="phenome.locus2locus" alt="" coords="509,5084,777,5201">
+<area shape="rect" id="node38" title="phenome.locus_alias" alt="" coords="513,5219,773,5336">
+<area shape="rect" id="node39" title="phenome.locus_dbxref" alt="" coords="504,5353,781,5471">
+<area shape="rect" id="node40" title="phenome.locus_dbxref_evidence" alt="" coords="459,5488,826,5635">
+<area shape="rect" id="node41" title="phenome.locus_dbxref_evidence_history" alt="" coords="424,5652,861,5799">
+<area shape="rect" id="node42" title="phenome.locus_history" alt="" coords="502,5816,783,5963">
+<area shape="rect" id="node43" title="phenome.locus_image" alt="" coords="506,5980,779,6097">
+<area shape="rect" id="node44" title="phenome.locus_marker" alt="" coords="501,6115,784,6232">
+<area shape="rect" id="node45" title="phenome.locus_owner" alt="" coords="505,6249,780,6396">
+<area shape="rect" id="node46" title="phenome.locus_registry" alt="" coords="498,6413,787,6531">
+<area shape="rect" id="node47" title="phenome.locus_unigene" alt="" coords="497,6548,789,6665">
+<area shape="rect" id="node48" title="phenome.locusgroup" alt="" coords="511,6683,775,6800">
+<area shape="rect" id="node49" title="phenome.locusgroup_member" alt="" coords="469,6817,816,6935">
+<area shape="rect" id="node50" title="phenome.phenome_genotype" alt="" coords="473,6952,813,7069">
+<area shape="rect" id="node51" title="phenome.polymorphic_fragment" alt="" coords="459,7087,826,7204">
+<area shape="rect" id="node52" title="phenome.population" alt="" coords="505,7221,781,7368">
+<area shape="rect" id="node53" title="phenome.population_dbxref" alt="" coords="479,7385,807,7503">
+<area shape="rect" id="node54" title="phenome.project_owner" alt="" coords="497,7520,789,7637">
+<area shape="rect" id="node55" title="phenome.pub_curator" alt="" coords="507,7655,779,7831">
+<area shape="rect" id="node56" title="phenome.registry" alt="" coords="525,7848,760,7995">
+<area shape="rect" id="node57" title="phenome.stock_owner" alt="" coords="505,8012,781,8129">
+<area shape="rect" id="node58" title="phenome.user_trait" alt="" coords="517,8147,768,8264">
+<area shape="rect" id="node59" title="physical.manual_associations" alt="" coords="473,8281,813,8399">
+<area shape="rect" id="node60" title="public.blastwatch_queries" alt="" coords="488,8416,797,8533">
+<area shape="rect" id="node61" title="public.bug" alt="" coords="554,8551,731,8727">
+<area shape="rect" id="node62" title="public.phenotype" alt="" coords="527,8744,758,8861">
+<area shape="rect" id="node63" title="sgn.facility" alt="" coords="528,8879,757,8996">
+<area shape="rect" id="node64" title="sgn.library" alt="" coords="522,9013,763,9131">
+<area shape="rect" id="node65" title="sgn.manual_annotations" alt="" coords="495,9148,790,9265">
+<area shape="rect" id="node66" title="sgn.metadata" alt="" coords="519,9283,766,9429">
+<area shape="rect" id="node67" title="sgn.submit_user" alt="" coords="528,9447,757,9564">
+<area shape="rect" id="node68" href="bac_status.html" target="_top" title="bac_status" alt="" coords="547,9581,738,9787">
+<area shape="rect" id="node69" href="bac_status_log.html" target="_top" title="bac_status_log" alt="" coords="539,9804,746,9951">
+<area shape="rect" id="node70" href="clone_il_mapping_bin_log.html" target="_top" title="clone_il_mapping_bin_log" alt="" coords="951,3123,1281,3328">
+<area shape="rect" id="node71" href="clone_validation_log.html" target="_top" title="clone_validation_log" alt="" coords="515,9968,771,10115">
+<area shape="rect" id="node72" href="clone_verification_log.html" target="_top" title="clone_verification_log" alt="" coords="508,10132,777,10279">
+<area shape="rect" id="node73" href="forum_post.html" target="_top" title="forum_post" alt="" coords="1025,10251,1207,10427">
+<area shape="rect" id="node74" href="forum_topic.html" target="_top" title="forum_topic" alt="" coords="541,10332,745,10479">
+<area shape="rect" id="node75" href="list.html" target="_top" title="list" alt="" coords="554,10496,731,10672">
+<area shape="rect" id="node76" href="sp_clone_il_mapping_segment_log.html" target="_top" title="sp_clone_il_mapping_segment_log" alt="" coords="927,3480,1305,3656">
+<area shape="rect" id="node77" href="sp_dataset.html" target="_top" title="sp_dataset" alt="" coords="557,10689,729,10836">
+<area shape="rect" id="node78" href="sp_group_member.html" target="_top" title="sp_group_member" alt="" coords="523,10853,762,11000">
+<area shape="rect" id="node79" href="sp_order.html" target="_top" title="sp_order" alt="" coords="544,11017,741,11193">
+<area shape="rect" id="node80" href="sp_organization_person.html" target="_top" title="sp_organization_person" alt="" coords="499,11211,786,11357">
+<area shape="rect" id="node81" href="sp_papers.html" target="_top" title="sp_papers" alt="" coords="560,11375,725,11521">
+<area shape="rect" id="node82" href="sp_person_organisms.html" target="_top" title="sp_person_organisms" alt="" coords="509,11539,776,11691">
+<area shape="rect" id="node83" href="sp_person_roles.html" target="_top" title="sp_person_roles" alt="" coords="534,11708,751,11860">
+<area shape="rect" id="node84" href="sp_project_il_mapping_clone_log.html" target="_top" title="sp_project_il_mapping_clone_log" alt="" coords="461,11877,825,12053">
+<area shape="rect" id="node85" href="sp_project_person.html" target="_top" title="sp_project_person" alt="" coords="524,12071,761,12247">
+<area shape="rect" id="node86" href="sp_token.html" target="_top" title="sp_token" alt="" coords="536,12264,749,12411">
+<area shape="rect" id="node87" href="user_map.html" target="_top" title="user_map" alt="" coords="523,12428,763,12633">
+<area shape="rect" id="node88" href="user_map_data.html" target="_top" title="user_map_data" alt="" coords="1011,12460,1221,12665">
+<area shape="rect" id="node89" title="sgn_submit.facility" alt="" coords="521,12687,765,12804">
+<area shape="rect" id="node90" title="sgn_submit.library" alt="" coords="521,12821,764,12939">
+<area shape="rect" id="node91" title="sgn_submit.submit_user" alt="" coords="497,12956,789,13073">
+</map>
+                                        <a name='diagram'><img id="oneDegreeImg" src="../diagrams/tables/sp_person.1degree.png" usemap="#oneDegreeRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="twodegreesDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
+<area shape="rect" id="node1" title="annotation.annotation" alt="" coords="504,6281,781,6399">
+<area shape="rect" id="node2" href="sp_person.html" target="_top" title="sp_person" alt="" coords="5,6480,359,7429">
+<area shape="rect" id="node3" title="annotation.comment" alt="" coords="511,6416,774,6533">
+<area shape="rect" id="node4" title="annotation.comp_analysis" alt="" coords="489,6551,797,6668">
+<area shape="rect" id="node5" title="annotation.feature_set" alt="" coords="502,6685,783,6803">
+<area shape="rect" id="node6" title="annotation.seq" alt="" coords="537,6820,748,6937">
+<area shape="rect" id="node7" title="biosource.bs_sample" alt="" coords="512,6955,773,7072">
+<area shape="rect" id="node8" title="gem.ge_experiment" alt="" coords="512,7089,773,7207">
+<area shape="rect" id="node9" title="gem.ge_platform" alt="" coords="529,7224,756,7341">
+<area shape="rect" id="node10" title="insitu.experiment_image" alt="" coords="494,7359,791,7476">
+<area shape="rect" id="node11" title="insitu.experiment_tag" alt="" coords="507,7493,779,7611">
+<area shape="rect" id="node12" title="metadata.attribution_to" alt="" coords="497,5,788,181">
+<area shape="rect" id="node13" href="sp_organization.html" target="_top" title="sp_organization" alt="" coords="74,37,290,125">
+<area shape="rect" id="node14" href="sp_project.html" target="_top" title="sp_project" alt="" coords="99,231,265,319">
+<area shape="rect" id="node15" title="metadata.md_image" alt="" coords="513,8032,772,8149">
+<area shape="rect" id="node16" title="metadata.md_image_cvterm" alt="" coords="478,8167,807,8284">
+<area shape="rect" id="node17" title="metadata.md_image_organism" alt="" coords="467,8301,818,8419">
+<area shape="rect" id="node18" title="metadata.md_metadata" alt="" coords="498,8436,787,8583">
+<area shape="rect" id="node19" title="metadata.md_tag" alt="" coords="526,8600,759,8717">
+<area shape="rect" id="node20" title="metadata.md_tag_image" alt="" coords="495,8735,791,8852">
+<area shape="rect" id="node21" title="phenome.allele" alt="" coords="525,8869,760,9016">
+<area shape="rect" id="node22" title="phenome.allele_alias" alt="" coords="511,9033,774,9151">
+<area shape="rect" id="node23" title="phenome.allele_dbxref" alt="" coords="503,9168,783,9285">
+<area shape="rect" id="node24" title="phenome.allele_history" alt="" coords="501,9303,785,9449">
+<area shape="rect" id="node25" title="phenome.genotype_experiment" alt="" coords="463,9467,823,9584">
+<area shape="rect" id="node26" title="phenome.genotype_region" alt="" coords="485,2896,800,2984">
+<area shape="rect" id="node27" title="phenome.germplasm" alt="" coords="511,9601,775,9719">
+<area shape="rect" id="node28" title="phenome.individual" alt="" coords="517,4472,769,4560">
+<area shape="rect" id="node29" title="phenome.individual_alias" alt="" coords="491,9736,794,9853">
+<area shape="rect" id="node30" title="phenome.individual_allele" alt="" coords="488,9871,797,9988">
+<area shape="rect" id="node31" title="phenome.individual_dbxref" alt="" coords="483,10005,803,10123">
+<area shape="rect" id="node32" title="phenome.individual_dbxref_evidence" alt="" coords="439,10140,847,10287">
+<area shape="rect" id="node33" title="phenome.individual_dbxref_evidence_history" alt="" coords="403,10304,883,10451">
+<area shape="rect" id="node34" title="phenome.individual_history" alt="" coords="481,10468,805,10615">
+<area shape="rect" id="node35" title="phenome.individual_image" alt="" coords="485,10632,801,10749">
+<area shape="rect" id="node36" title="phenome.individual_locus" alt="" coords="489,10767,797,10884">
+<area shape="rect" id="node37" title="phenome.is_public" alt="" coords="522,10901,763,11019">
+<area shape="rect" id="node38" title="phenome.locus" alt="" coords="537,11036,748,11183">
+<area shape="rect" id="node39" title="phenome.locus2locus" alt="" coords="509,11200,777,11317">
+<area shape="rect" id="node40" title="phenome.locus_alias" alt="" coords="513,11335,773,11452">
+<area shape="rect" id="node41" title="phenome.locus_dbxref" alt="" coords="504,11469,781,11587">
+<area shape="rect" id="node42" title="phenome.locus_dbxref_evidence" alt="" coords="459,11604,826,11751">
+<area shape="rect" id="node43" title="phenome.locus_dbxref_evidence_history" alt="" coords="424,11768,861,11915">
+<area shape="rect" id="node44" title="phenome.locus_history" alt="" coords="502,11932,783,12079">
+<area shape="rect" id="node45" title="phenome.locus_image" alt="" coords="506,12096,779,12213">
+<area shape="rect" id="node46" title="phenome.locus_marker" alt="" coords="501,1127,784,1244">
+<area shape="rect" id="node47" title="phenome.locus_owner" alt="" coords="505,1261,780,1408">
+<area shape="rect" id="node48" title="phenome.locus_registry" alt="" coords="498,1425,787,1543">
+<area shape="rect" id="node49" title="phenome.locus_unigene" alt="" coords="497,1560,789,1677">
+<area shape="rect" id="node50" title="phenome.locusgroup" alt="" coords="511,1695,775,1812">
+<area shape="rect" id="node51" title="phenome.locusgroup_member" alt="" coords="469,1829,816,1947">
+<area shape="rect" id="node52" title="phenome.phenome_genotype" alt="" coords="473,1964,813,2081">
+<area shape="rect" id="node53" title="phenome.polymorphic_fragment" alt="" coords="459,2099,826,2216">
+<area shape="rect" id="node54" title="phenome.population" alt="" coords="505,2233,781,2380">
+<area shape="rect" id="node55" title="phenome.population_dbxref" alt="" coords="479,2397,807,2515">
+<area shape="rect" id="node56" title="phenome.project_owner" alt="" coords="497,2568,789,2685">
+<area shape="rect" id="node57" title="phenome.pub_curator" alt="" coords="507,2703,779,2879">
+<area shape="rect" id="node58" title="phenome.registry" alt="" coords="525,3001,760,3148">
+<area shape="rect" id="node59" title="phenome.stock_owner" alt="" coords="505,3165,781,3283">
+<area shape="rect" id="node60" title="phenome.user_trait" alt="" coords="517,3300,768,3417">
+<area shape="rect" id="node61" title="physical.manual_associations" alt="" coords="473,3435,813,3552">
+<area shape="rect" id="node62" title="public.blastwatch_queries" alt="" coords="488,3569,797,3687">
+<area shape="rect" id="node63" title="public.bug" alt="" coords="554,3704,731,3880">
+<area shape="rect" id="node64" title="public.phenotype" alt="" coords="527,3897,758,4015">
+<area shape="rect" id="node65" title="sgn.facility" alt="" coords="528,4032,757,4149">
+<area shape="rect" id="node66" title="sgn.library" alt="" coords="522,4167,763,4284">
+<area shape="rect" id="node67" title="sgn.manual_annotations" alt="" coords="495,4301,790,4419">
+<area shape="rect" id="node68" title="sgn.metadata" alt="" coords="519,4577,766,4724">
+<area shape="rect" id="node69" title="sgn.submit_user" alt="" coords="528,4741,757,4859">
+<area shape="rect" id="node70" href="bac_status.html" target="_top" title="bac_status" alt="" coords="547,5069,738,5275">
+<area shape="rect" id="node71" href="bac_status_log.html" target="_top" title="bac_status_log" alt="" coords="539,5292,746,5439">
+<area shape="rect" id="node72" href="clone_il_mapping_bin_log.html" target="_top" title="clone_il_mapping_bin_log" alt="" coords="966,2497,1266,2585">
+<area shape="rect" id="node73" title="genomic.clone" alt="" coords="80,584,284,672">
+<area shape="rect" id="node74" href="clone_validation_log.html" target="_top" title="clone_validation_log" alt="" coords="515,657,771,804">
+<area shape="rect" id="node75" href="clone_verification_log.html" target="_top" title="clone_verification_log" alt="" coords="508,821,777,968">
+<area shape="rect" id="node76" href="forum_post.html" target="_top" title="forum_post" alt="" coords="1028,1021,1204,1109">
+<area shape="rect" id="node77" href="forum_topic.html" target="_top" title="forum_topic" alt="" coords="552,985,733,1073">
+<area shape="rect" id="node78" href="list.html" target="_top" title="list" alt="" coords="554,12267,731,12443">
+<area shape="rect" id="node79" title="public.cvterm" alt="" coords="83,12328,281,12416">
+<area shape="rect" id="node80" href="list_dbxref.html" target="_top" title="list_dbxref" alt="" coords="1031,12295,1201,12383">
+<area shape="rect" id="node81" href="list_item.html" target="_top" title="list_item" alt="" coords="1041,12189,1191,12277">
+<area shape="rect" id="node82" href="listprop.html" target="_top" title="listprop" alt="" coords="1044,12413,1188,12501">
+<area shape="rect" id="node83" href="sp_clone_il_mapping_segment_log.html" target="_top" title="sp_clone_il_mapping_segment_log" alt="" coords="927,4401,1305,4489">
+<area shape="rect" id="node84" href="sp_dataset.html" target="_top" title="sp_dataset" alt="" coords="557,5456,729,5603">
+<area shape="rect" id="node85" href="sp_group_member.html" target="_top" title="sp_group_member" alt="" coords="523,12743,762,12889">
+<area shape="rect" id="node86" href="sp_group.html" target="_top" title="sp_group" alt="" coords="104,12775,260,12863">
+<area shape="rect" id="node87" href="sp_order.html" target="_top" title="sp_order" alt="" coords="544,4876,741,5052">
+<area shape="rect" id="node88" href="sp_orderprop.html" target="_top" title="sp_orderprop" alt="" coords="1019,8481,1213,8569">
+<area shape="rect" id="node89" href="sp_organization_person.html" target="_top" title="sp_organization_person" alt="" coords="499,5620,786,5767">
+<area shape="rect" id="node90" href="sp_papers.html" target="_top" title="sp_papers" alt="" coords="560,5784,725,5931">
+<area shape="rect" id="node91" href="sp_person_organisms.html" target="_top" title="sp_person_organisms" alt="" coords="509,5948,776,6100">
+<area shape="rect" id="node92" href="sp_person_roles.html" target="_top" title="sp_person_roles" alt="" coords="534,12907,751,13059">
+<area shape="rect" id="node93" href="sp_roles.html" target="_top" title="sp_roles" alt="" coords="108,12968,256,13056">
+<area shape="rect" id="node94" href="sp_project_il_mapping_clone_log.html" target="_top" title="sp_project_il_mapping_clone_log" alt="" coords="461,428,825,604">
+<area shape="rect" id="node95" href="sp_project_person.html" target="_top" title="sp_project_person" alt="" coords="524,199,761,375">
+<area shape="rect" id="node96" href="sp_token.html" target="_top" title="sp_token" alt="" coords="536,6117,749,6264">
+<area shape="rect" id="node97" href="user_map.html" target="_top" title="user_map" alt="" coords="563,12532,723,12620">
+<area shape="rect" id="node98" title="sgn.accession" alt="" coords="82,12529,282,12617">
+<area shape="rect" id="node99" href="user_map_data.html" target="_top" title="user_map_data" alt="" coords="1011,12532,1221,12620">
+<area shape="rect" id="node100" title="sgn.marker" alt="" coords="554,12637,731,12725">
+<area shape="rect" id="node101" title="sgn_submit.facility" alt="" coords="521,7628,765,7745">
+<area shape="rect" id="node102" title="sgn_submit.library" alt="" coords="521,7763,764,7880">
+<area shape="rect" id="node103" title="sgn_submit.submit_user" alt="" coords="497,7897,789,8015">
+</map>
+                                        <a name='diagram'><img id="twodegreesDegreeImg" src="../diagrams/tables/sp_person.2degrees.png" usemap="#twoDegreesRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="oneimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="oneDegreeRelationshipsDiagramImplied" name="oneDegreeRelationshipsDiagramImplied">
+<area shape="rect" id="node1" title="annotation.annotation" alt="" coords="504,5,781,123">
+<area shape="rect" id="node2" href="sp_person.html" target="_top" title="sp_person" alt="" coords="5,6045,359,6995">
+<area shape="rect" id="node3" title="annotation.comment" alt="" coords="511,140,774,257">
+<area shape="rect" id="node4" title="annotation.comp_analysis" alt="" coords="489,275,797,392">
+<area shape="rect" id="node5" title="annotation.feature_set" alt="" coords="502,409,783,527">
+<area shape="rect" id="node6" title="annotation.seq" alt="" coords="537,544,748,661">
+<area shape="rect" id="node7" title="biosource.bs_sample" alt="" coords="512,679,773,796">
+<area shape="rect" id="node8" title="gem.ge_experiment" alt="" coords="512,813,773,931">
+<area shape="rect" id="node9" title="gem.ge_platform" alt="" coords="529,948,756,1065">
+<area shape="rect" id="node10" title="insitu.experiment_image" alt="" coords="494,1083,791,1200">
+<area shape="rect" id="node11" title="insitu.experiment_tag" alt="" coords="507,1217,779,1335">
+<area shape="rect" id="node12" title="metadata.attribution_to" alt="" coords="497,1352,788,1528">
+<area shape="rect" id="node13" title="metadata.md_image" alt="" coords="513,1545,772,1663">
+<area shape="rect" id="node14" title="metadata.md_image_cvterm" alt="" coords="478,1680,807,1797">
+<area shape="rect" id="node15" title="metadata.md_image_organism" alt="" coords="467,1815,818,1932">
+<area shape="rect" id="node16" title="metadata.md_metadata" alt="" coords="498,1949,787,2096">
+<area shape="rect" id="node17" title="metadata.md_tag" alt="" coords="526,2113,759,2231">
+<area shape="rect" id="node18" title="metadata.md_tag_image" alt="" coords="495,2248,791,2365">
+<area shape="rect" id="node19" title="phenome.allele" alt="" coords="525,2383,760,2529">
+<area shape="rect" id="node20" title="phenome.allele_alias" alt="" coords="511,2547,774,2664">
+<area shape="rect" id="node21" title="phenome.allele_dbxref" alt="" coords="503,2681,783,2799">
+<area shape="rect" id="node22" title="phenome.allele_history" alt="" coords="501,2816,785,2963">
+<area shape="rect" id="node23" title="phenome.genotype_experiment" alt="" coords="463,2980,823,3097">
+<area shape="rect" id="node24" title="phenome.genotype_region" alt="" coords="485,3115,800,3232">
+<area shape="rect" id="node25" title="phenome.germplasm" alt="" coords="511,3285,775,3403">
+<area shape="rect" id="node26" title="phenome.individual" alt="" coords="517,3420,769,3567">
+<area shape="rect" id="node27" title="phenome.individual_alias" alt="" coords="491,3620,794,3737">
+<area shape="rect" id="node28" title="phenome.individual_allele" alt="" coords="488,3755,797,3872">
+<area shape="rect" id="node29" title="phenome.individual_dbxref" alt="" coords="483,3889,803,4007">
+<area shape="rect" id="node30" title="phenome.individual_dbxref_evidence" alt="" coords="439,4024,847,4171">
+<area shape="rect" id="node31" title="phenome.individual_dbxref_evidence_history" alt="" coords="403,4188,883,4335">
+<area shape="rect" id="node32" title="phenome.individual_history" alt="" coords="481,4352,805,4499">
+<area shape="rect" id="node33" title="phenome.individual_image" alt="" coords="485,4516,801,4633">
+<area shape="rect" id="node34" title="phenome.individual_locus" alt="" coords="489,4651,797,4768">
+<area shape="rect" id="node35" title="phenome.is_public" alt="" coords="522,4785,763,4903">
+<area shape="rect" id="node36" title="phenome.locus" alt="" coords="537,4920,748,5067">
+<area shape="rect" id="node37" title="phenome.locus2locus" alt="" coords="509,5084,777,5201">
+<area shape="rect" id="node38" title="phenome.locus_alias" alt="" coords="513,5219,773,5336">
+<area shape="rect" id="node39" title="phenome.locus_dbxref" alt="" coords="504,5353,781,5471">
+<area shape="rect" id="node40" title="phenome.locus_dbxref_evidence" alt="" coords="459,5488,826,5635">
+<area shape="rect" id="node41" title="phenome.locus_dbxref_evidence_history" alt="" coords="424,5652,861,5799">
+<area shape="rect" id="node42" title="phenome.locus_history" alt="" coords="502,5816,783,5963">
+<area shape="rect" id="node43" title="phenome.locus_image" alt="" coords="506,5980,779,6097">
+<area shape="rect" id="node44" title="phenome.locus_marker" alt="" coords="501,6115,784,6232">
+<area shape="rect" id="node45" title="phenome.locus_owner" alt="" coords="505,6249,780,6396">
+<area shape="rect" id="node46" title="phenome.locus_registry" alt="" coords="498,6413,787,6531">
+<area shape="rect" id="node47" title="phenome.locus_unigene" alt="" coords="497,6548,789,6665">
+<area shape="rect" id="node48" title="phenome.locusgroup" alt="" coords="511,6683,775,6800">
+<area shape="rect" id="node49" title="phenome.locusgroup_member" alt="" coords="469,6817,816,6935">
+<area shape="rect" id="node50" title="phenome.phenome_genotype" alt="" coords="473,6952,813,7069">
+<area shape="rect" id="node51" title="phenome.polymorphic_fragment" alt="" coords="459,7087,826,7204">
+<area shape="rect" id="node52" title="phenome.population" alt="" coords="505,7221,781,7368">
+<area shape="rect" id="node53" title="phenome.population_dbxref" alt="" coords="479,7385,807,7503">
+<area shape="rect" id="node54" title="phenome.project_owner" alt="" coords="497,7520,789,7637">
+<area shape="rect" id="node55" title="phenome.pub_curator" alt="" coords="507,7655,779,7831">
+<area shape="rect" id="node56" title="phenome.registry" alt="" coords="525,7848,760,7995">
+<area shape="rect" id="node57" title="phenome.stock_owner" alt="" coords="505,8012,781,8129">
+<area shape="rect" id="node58" title="phenome.user_trait" alt="" coords="517,8147,768,8264">
+<area shape="rect" id="node59" title="physical.manual_associations" alt="" coords="473,8281,813,8399">
+<area shape="rect" id="node60" title="public.blastwatch_queries" alt="" coords="488,8416,797,8533">
+<area shape="rect" id="node61" title="public.bug" alt="" coords="554,8551,731,8727">
+<area shape="rect" id="node62" title="public.phenotype" alt="" coords="527,8744,758,8861">
+<area shape="rect" id="node63" title="sgn.facility" alt="" coords="528,8879,757,8996">
+<area shape="rect" id="node64" title="sgn.library" alt="" coords="522,9013,763,9131">
+<area shape="rect" id="node65" title="sgn.manual_annotations" alt="" coords="495,9148,790,9265">
+<area shape="rect" id="node66" title="sgn.metadata" alt="" coords="519,9283,766,9429">
+<area shape="rect" id="node67" title="sgn.submit_user" alt="" coords="528,9447,757,9564">
+<area shape="rect" id="node68" href="bac_status.html" target="_top" title="bac_status" alt="" coords="547,9581,738,9787">
+<area shape="rect" id="node69" href="bac_status_log.html" target="_top" title="bac_status_log" alt="" coords="539,9804,746,9951">
+<area shape="rect" id="node70" href="clone_il_mapping_bin_log.html" target="_top" title="clone_il_mapping_bin_log" alt="" coords="951,3123,1281,3328">
+<area shape="rect" id="node71" href="clone_validation_log.html" target="_top" title="clone_validation_log" alt="" coords="515,9968,771,10115">
+<area shape="rect" id="node72" href="clone_verification_log.html" target="_top" title="clone_verification_log" alt="" coords="508,10132,777,10279">
+<area shape="rect" id="node73" href="forum_post.html" target="_top" title="forum_post" alt="" coords="1025,10251,1207,10427">
+<area shape="rect" id="node74" href="forum_topic.html" target="_top" title="forum_topic" alt="" coords="541,10332,745,10479">
+<area shape="rect" id="node75" href="list.html" target="_top" title="list" alt="" coords="554,10496,731,10672">
+<area shape="rect" id="node76" href="sp_clone_il_mapping_segment_log.html" target="_top" title="sp_clone_il_mapping_segment_log" alt="" coords="927,3480,1305,3656">
+<area shape="rect" id="node77" href="sp_dataset.html" target="_top" title="sp_dataset" alt="" coords="557,10689,729,10836">
+<area shape="rect" id="node78" href="sp_group_member.html" target="_top" title="sp_group_member" alt="" coords="523,10853,762,11000">
+<area shape="rect" id="node79" href="sp_order.html" target="_top" title="sp_order" alt="" coords="544,11017,741,11193">
+<area shape="rect" id="node80" href="sp_organization_person.html" target="_top" title="sp_organization_person" alt="" coords="499,11211,786,11357">
+<area shape="rect" id="node81" href="sp_papers.html" target="_top" title="sp_papers" alt="" coords="560,11375,725,11521">
+<area shape="rect" id="node82" href="sp_person_organisms.html" target="_top" title="sp_person_organisms" alt="" coords="509,11539,776,11691">
+<area shape="rect" id="node83" href="sp_person_roles.html" target="_top" title="sp_person_roles" alt="" coords="534,11708,751,11860">
+<area shape="rect" id="node84" href="sp_project_il_mapping_clone_log.html" target="_top" title="sp_project_il_mapping_clone_log" alt="" coords="461,11877,825,12053">
+<area shape="rect" id="node85" href="sp_project_person.html" target="_top" title="sp_project_person" alt="" coords="524,12071,761,12247">
+<area shape="rect" id="node86" href="sp_token.html" target="_top" title="sp_token" alt="" coords="536,12264,749,12411">
+<area shape="rect" id="node87" href="user_map.html" target="_top" title="user_map" alt="" coords="523,12428,763,12633">
+<area shape="rect" id="node88" href="user_map_data.html" target="_top" title="user_map_data" alt="" coords="1011,12460,1221,12665">
+<area shape="rect" id="node89" title="sgn_submit.facility" alt="" coords="521,12687,765,12804">
+<area shape="rect" id="node90" title="sgn_submit.library" alt="" coords="521,12821,764,12939">
+<area shape="rect" id="node91" title="sgn_submit.submit_user" alt="" coords="497,12956,789,13073">
+</map>
+                                        <a name='diagram'><img id="oneimpliedDegreeImg" src="../diagrams/tables/sp_person.implied1degrees.png" usemap="#oneDegreeRelationshipsDiagramImplied" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="twoimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="twoDegreesRelationshipsDiagramImplied" name="twoDegreesRelationshipsDiagramImplied">
+<area shape="rect" id="node1" title="annotation.annotation" alt="" coords="504,3476,781,3593">
+<area shape="rect" id="node2" href="sp_person.html" target="_top" title="sp_person" alt="" coords="5,6761,359,7711">
+<area shape="rect" id="node3" title="annotation.comment" alt="" coords="511,3611,774,3728">
+<area shape="rect" id="node4" title="annotation.comp_analysis" alt="" coords="489,3745,797,3863">
+<area shape="rect" id="node5" title="annotation.feature_set" alt="" coords="502,3880,783,3997">
+<area shape="rect" id="node6" title="annotation.seq" alt="" coords="537,4015,748,4132">
+<area shape="rect" id="node7" title="biosource.bs_sample" alt="" coords="512,4149,773,4267">
+<area shape="rect" id="node8" title="gem.ge_experiment" alt="" coords="512,4284,773,4401">
+<area shape="rect" id="node9" title="gem.ge_platform" alt="" coords="529,4419,756,4536">
+<area shape="rect" id="node10" title="insitu.experiment_image" alt="" coords="494,4553,791,4671">
+<area shape="rect" id="node11" title="insitu.experiment_tag" alt="" coords="507,4688,779,4805">
+<area shape="rect" id="node12" title="metadata.attribution_to" alt="" coords="497,5,788,181">
+<area shape="rect" id="node13" href="sp_organization.html" target="_top" title="sp_organization" alt="" coords="74,37,290,125">
+<area shape="rect" id="node14" href="sp_project.html" target="_top" title="sp_project" alt="" coords="99,237,265,325">
+<area shape="rect" id="node15" title="metadata.md_image" alt="" coords="513,5561,772,5679">
+<area shape="rect" id="node16" title="metadata.md_image_cvterm" alt="" coords="478,5696,807,5813">
+<area shape="rect" id="node17" title="metadata.md_image_organism" alt="" coords="467,5831,818,5948">
+<area shape="rect" id="node18" title="metadata.md_metadata" alt="" coords="498,5965,787,6112">
+<area shape="rect" id="node19" title="metadata.md_tag" alt="" coords="526,6129,759,6247">
+<area shape="rect" id="node20" title="metadata.md_tag_image" alt="" coords="495,6264,791,6381">
+<area shape="rect" id="node21" title="phenome.allele" alt="" coords="525,6399,760,6545">
+<area shape="rect" id="node22" title="phenome.allele_alias" alt="" coords="511,6563,774,6680">
+<area shape="rect" id="node23" title="phenome.allele_dbxref" alt="" coords="503,6697,783,6815">
+<area shape="rect" id="node24" title="phenome.allele_history" alt="" coords="501,6832,785,6979">
+<area shape="rect" id="node25" title="phenome.genotype_experiment" alt="" coords="463,6996,823,7113">
+<area shape="rect" id="node26" title="phenome.genotype_region" alt="" coords="485,3207,800,3295">
+<area shape="rect" id="node27" title="phenome.germplasm" alt="" coords="511,7131,775,7248">
+<area shape="rect" id="node28" title="phenome.individual" alt="" coords="517,4859,769,4947">
+<area shape="rect" id="node29" title="phenome.individual_alias" alt="" coords="491,7265,794,7383">
+<area shape="rect" id="node30" title="phenome.individual_allele" alt="" coords="488,7400,797,7517">
+<area shape="rect" id="node31" title="phenome.individual_dbxref" alt="" coords="483,7535,803,7652">
+<area shape="rect" id="node32" title="phenome.individual_dbxref_evidence" alt="" coords="439,7669,847,7816">
+<area shape="rect" id="node33" title="phenome.individual_dbxref_evidence_history" alt="" coords="403,7833,883,7980">
+<area shape="rect" id="node34" title="phenome.individual_history" alt="" coords="481,7997,805,8144">
+<area shape="rect" id="node35" title="phenome.individual_image" alt="" coords="485,8161,801,8279">
+<area shape="rect" id="node36" title="phenome.individual_locus" alt="" coords="489,8296,797,8413">
+<area shape="rect" id="node37" title="phenome.is_public" alt="" coords="522,8431,763,8548">
+<area shape="rect" id="node38" title="phenome.locus" alt="" coords="537,8565,748,8712">
+<area shape="rect" id="node39" title="phenome.locus2locus" alt="" coords="509,8729,777,8847">
+<area shape="rect" id="node40" title="phenome.locus_alias" alt="" coords="513,8864,773,8981">
+<area shape="rect" id="node41" title="phenome.locus_dbxref" alt="" coords="504,8999,781,9116">
+<area shape="rect" id="node42" title="phenome.locus_dbxref_evidence" alt="" coords="459,9133,826,9280">
+<area shape="rect" id="node43" title="phenome.locus_dbxref_evidence_history" alt="" coords="424,9297,861,9444">
+<area shape="rect" id="node44" title="phenome.locus_history" alt="" coords="502,9461,783,9608">
+<area shape="rect" id="node45" title="phenome.locus_image" alt="" coords="506,9625,779,9743">
+<area shape="rect" id="node46" title="phenome.locus_marker" alt="" coords="501,9760,784,9877">
+<area shape="rect" id="node47" title="phenome.locus_owner" alt="" coords="505,9895,780,10041">
+<area shape="rect" id="node48" title="phenome.locus_registry" alt="" coords="498,10059,787,10176">
+<area shape="rect" id="node49" title="phenome.locus_unigene" alt="" coords="497,10193,789,10311">
+<area shape="rect" id="node50" title="phenome.locusgroup" alt="" coords="511,10328,775,10445">
+<area shape="rect" id="node51" title="phenome.locusgroup_member" alt="" coords="469,10463,816,10580">
+<area shape="rect" id="node52" title="phenome.phenome_genotype" alt="" coords="473,10597,813,10715">
+<area shape="rect" id="node53" title="phenome.polymorphic_fragment" alt="" coords="459,10732,826,10849">
+<area shape="rect" id="node54" title="phenome.population" alt="" coords="505,10867,781,11013">
+<area shape="rect" id="node55" title="phenome.population_dbxref" alt="" coords="479,11031,807,11148">
+<area shape="rect" id="node56" title="phenome.project_owner" alt="" coords="497,11165,789,11283">
+<area shape="rect" id="node57" title="phenome.pub_curator" alt="" coords="507,11300,779,11476">
+<area shape="rect" id="node58" title="phenome.registry" alt="" coords="525,11493,760,11640">
+<area shape="rect" id="node59" title="phenome.stock_owner" alt="" coords="505,11657,781,11775">
+<area shape="rect" id="node60" title="phenome.user_trait" alt="" coords="517,11792,768,11909">
+<area shape="rect" id="node61" title="physical.manual_associations" alt="" coords="473,11927,813,12044">
+<area shape="rect" id="node62" title="public.blastwatch_queries" alt="" coords="488,1127,797,1244">
+<area shape="rect" id="node63" title="public.bug" alt="" coords="554,1261,731,1437">
+<area shape="rect" id="node64" title="public.phenotype" alt="" coords="527,1455,758,1572">
+<area shape="rect" id="node65" title="sgn.facility" alt="" coords="528,1589,757,1707">
+<area shape="rect" id="node66" title="sgn.library" alt="" coords="522,1724,763,1841">
+<area shape="rect" id="node67" title="sgn.manual_annotations" alt="" coords="495,1859,790,1976">
+<area shape="rect" id="node68" title="sgn.metadata" alt="" coords="519,1993,766,2140">
+<area shape="rect" id="node69" title="sgn.submit_user" alt="" coords="528,2157,757,2275">
+<area shape="rect" id="node70" href="bac_status.html" target="_top" title="bac_status" alt="" coords="547,2292,738,2497">
+<area shape="rect" id="node71" href="bac_status_log.html" target="_top" title="bac_status_log" alt="" coords="539,2515,746,2661">
+<area shape="rect" id="node72" href="clone_il_mapping_bin_log.html" target="_top" title="clone_il_mapping_bin_log" alt="" coords="966,2808,1266,2896">
+<area shape="rect" id="node73" title="genomic.clone" alt="" coords="80,391,284,479">
+<area shape="rect" id="node74" href="clone_validation_log.html" target="_top" title="clone_validation_log" alt="" coords="515,657,771,804">
+<area shape="rect" id="node75" href="clone_verification_log.html" target="_top" title="clone_verification_log" alt="" coords="508,821,777,968">
+<area shape="rect" id="node76" href="forum_post.html" target="_top" title="forum_post" alt="" coords="1028,1021,1204,1109">
+<area shape="rect" id="node77" href="forum_topic.html" target="_top" title="forum_topic" alt="" coords="552,985,733,1073">
+<area shape="rect" id="node78" href="list.html" target="_top" title="list" alt="" coords="554,12636,731,12812">
+<area shape="rect" id="node79" title="public.cvterm" alt="" coords="83,12697,281,12785">
+<area shape="rect" id="node80" href="list_dbxref.html" target="_top" title="list_dbxref" alt="" coords="1031,12681,1201,12769">
+<area shape="rect" id="node81" href="list_item.html" target="_top" title="list_item" alt="" coords="1041,12576,1191,12664">
+<area shape="rect" id="node82" href="listprop.html" target="_top" title="listprop" alt="" coords="1044,12969,1188,13057">
+<area shape="rect" id="node83" href="sp_clone_il_mapping_segment_log.html" target="_top" title="sp_clone_il_mapping_segment_log" alt="" coords="927,4788,1305,4876">
+<area shape="rect" id="node84" href="sp_dataset.html" target="_top" title="sp_dataset" alt="" coords="557,2679,729,2825">
+<area shape="rect" id="node85" href="sp_group_member.html" target="_top" title="sp_group_member" alt="" coords="523,12097,762,12244">
+<area shape="rect" id="node86" href="sp_group.html" target="_top" title="sp_group" alt="" coords="104,12129,260,12217">
+<area shape="rect" id="node87" href="sp_order.html" target="_top" title="sp_order" alt="" coords="544,5233,741,5409">
+<area shape="rect" id="node88" href="sp_orderprop.html" target="_top" title="sp_orderprop" alt="" coords="1019,8853,1213,8941">
+<area shape="rect" id="node89" href="sp_organization_person.html" target="_top" title="sp_organization_person" alt="" coords="499,2879,786,3025">
+<area shape="rect" id="node90" href="sp_papers.html" target="_top" title="sp_papers" alt="" coords="560,3043,725,3189">
+<area shape="rect" id="node91" href="sp_person_organisms.html" target="_top" title="sp_person_organisms" alt="" coords="509,12261,776,12413">
+<area shape="rect" id="node92" href="sp_organisms.html" target="_top" title="sp_organisms" alt="" coords="83,12323,281,12411">
+<area shape="rect" id="node93" href="sp_person_roles.html" target="_top" title="sp_person_roles" alt="" coords="534,12431,751,12583">
+<area shape="rect" id="node94" href="sp_roles.html" target="_top" title="sp_roles" alt="" coords="108,12492,256,12580">
+<area shape="rect" id="node95" href="sp_project_il_mapping_clone_log.html" target="_top" title="sp_project_il_mapping_clone_log" alt="" coords="461,235,825,411">
+<area shape="rect" id="node96" href="sp_project_person.html" target="_top" title="sp_project_person" alt="" coords="524,464,761,640">
+<area shape="rect" id="node97" href="sp_token.html" target="_top" title="sp_token" alt="" coords="536,3312,749,3459">
+<area shape="rect" id="node98" href="user_map.html" target="_top" title="user_map" alt="" coords="563,12829,723,12917">
+<area shape="rect" id="node99" title="sgn.accession" alt="" coords="82,12827,282,12915">
+<area shape="rect" id="node100" href="user_map_data.html" target="_top" title="user_map_data" alt="" coords="1011,12829,1221,12917">
+<area shape="rect" id="node101" title="sgn.marker" alt="" coords="554,12935,731,13023">
+<area shape="rect" id="node102" title="sgn_submit.facility" alt="" coords="521,4964,765,5081">
+<area shape="rect" id="node103" title="sgn_submit.library" alt="" coords="521,5099,764,5216">
+<area shape="rect" id="node104" title="sgn_submit.submit_user" alt="" coords="497,5427,789,5544">
+</map>
+                                        <a name='diagram'><img id="twoimpliedDegreeImg" src="../diagrams/tables/sp_person.implied2degrees.png" usemap="#twoDegreesRelationshipsDiagramImplied" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- /.box-body -->
+                    </div>
+                </section>
+                <script>
+                    var config = {
+                        pagination: true
+                    }
+                </script>
+            </div>
+            <!-- /.content-wrapper -->
+            <footer class="main-footer">
+                <div>
+                    <div class="pull-right hidden-xs">
+                        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+                        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+                    </div>
+                    <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.2.4</a></strong>
+                </div>
+                <!-- /.container -->
+            </footer>
+        </div>
+        <!-- ./wrapper -->
+
+        <!-- jQuery 2.2.3 -->
+        <script src="../bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+        <script src="../bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+        <!-- Bootstrap 3.3.5 -->
+        <script src="../bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+        <!-- DataTables -->
+        <script src="../bower/datatables.net/jquery.dataTables.min.js"></script>
+        <script src="../bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+        <script src="../bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.html5.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.print.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+        <!-- SheetJS -->
+        <script src="../bower/js-xlsx/xlsx.full.min.js"></script>
+        <!-- pdfmake -->
+        <script src="../bower/pdfmake/pdfmake.min.js"></script>
+        <script src="../bower/pdfmake/vfs_fonts.js"></script>
+        <!-- SlimScroll -->
+        <script src="../bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+        <!-- FastClick -->
+        <script src="../bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+        <!-- Salvattore -->
+        <script src="../bower/salvattore/salvattore.min.js"></script>
+        <!-- AnchorJS -->
+        <script src="../bower/anchor-js/anchor.min.js"></script>
+        <!-- CodeMirror -->
+        <script src="../bower/codemirror/codemirror.js"></script>
+        <script src="../bower/codemirror/sql.js"></script>
+        <!-- AdminLTE App -->
+        <script src="../bower/admin-lte/dist/js/app.min.js"></script>
+        <script src="table.js"></script>
+        <script src="../schemaSpy.js"></script>
+    </body>
+</html>

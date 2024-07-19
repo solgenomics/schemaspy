@@ -1,0 +1,1445 @@
+<?xml version="1.0" encoding="UTF-8"?><database name="cxgn_breedbase" schema="phenome" type="PostgreSQL - 11.22 (Debian 11.22-0+deb10u2)">
+   <sequences>
+      <sequence increment="1" name="allele_alias_allele_alias_id_seq" startValue="1"/>
+      <sequence increment="1" name="allele_allele_id_seq" startValue="1"/>
+      <sequence increment="1" name="allele_dbxref_allele_dbxref_id_seq" startValue="1"/>
+      <sequence increment="1" name="allele_history_allele_history_id_seq" startValue="1"/>
+      <sequence increment="1" name="cross_type_cross_type_id_seq" startValue="1"/>
+      <sequence increment="1" name="dbxref_type_dbxref_type_id_seq" startValue="1"/>
+      <sequence increment="1" name="genotype_experiment_genotype_experiment_id_seq" startValue="1"/>
+      <sequence increment="1" name="genotype_genotype_id_seq" startValue="1"/>
+      <sequence increment="1" name="genotype_region_genotype_region_id_seq" startValue="1"/>
+      <sequence increment="1" name="germplasm_germplasm_id_seq" startValue="1"/>
+      <sequence increment="1" name="individual_alias_individual_alias_id_seq" startValue="1"/>
+      <sequence increment="1" name="individual_allele_individual_allele_id_seq" startValue="1"/>
+      <sequence increment="1" name="individual_dbxref_evidence_hi_individual_dbxref_evidence_hi_seq" startValue="1"/>
+      <sequence increment="1" name="individual_dbxref_evidence_individual_dbxref_evidence_id_seq" startValue="1"/>
+      <sequence increment="1" name="individual_dbxref_individual_dbxref_id_seq" startValue="1"/>
+      <sequence increment="1" name="individual_history_individual_history_id_seq" startValue="1"/>
+      <sequence increment="1" name="individual_image_individual_image_id_seq" startValue="1"/>
+      <sequence increment="1" name="individual_individual_id_seq" startValue="1"/>
+      <sequence increment="1" name="individual_locus_individual_locus_id_seq" startValue="1"/>
+      <sequence increment="1" name="is_public_is_public_id_seq" startValue="1"/>
+      <sequence increment="1" name="locus2locus_locus2locus_id_seq" startValue="1"/>
+      <sequence increment="1" name="locus_alias_locus_alias_id_seq" startValue="1"/>
+      <sequence increment="1" name="locus_dbxref_evidence_history_locus_dbxref_evidence_history_seq" startValue="1"/>
+      <sequence increment="1" name="locus_dbxref_evidence_locus_dbxref_evidence_id_seq" startValue="1"/>
+      <sequence increment="1" name="locus_dbxref_locus_dbxref_id_seq" startValue="1"/>
+      <sequence increment="1" name="locus_history_locus_history_id_seq" startValue="1"/>
+      <sequence increment="1" name="locus_image_locus_image_id_seq" startValue="1"/>
+      <sequence increment="1" name="locus_locus_id_seq" startValue="1"/>
+      <sequence increment="1" name="locus_marker_locus_marker_id_seq" startValue="1"/>
+      <sequence increment="1" name="locus_owner_locus_owner_id_seq" startValue="1"/>
+      <sequence increment="1" name="locus_registry_locus_registry_id_seq" startValue="1"/>
+      <sequence increment="1" name="locus_unigene_locus_unigene_id_seq" startValue="1"/>
+      <sequence increment="1" name="locusgroup_locusgroup_id_seq" startValue="1"/>
+      <sequence increment="1" name="locusgroup_member_locusgroup_member_id_seq" startValue="1"/>
+      <sequence increment="1" name="nd_experiment_md_files_nd_experiment_md_files_id_seq" startValue="1"/>
+      <sequence increment="1" name="nd_experiment_md_images_nd_experiment_md_images_id_seq" startValue="1"/>
+      <sequence increment="1" name="nd_experiment_md_json_nd_experiment_md_json_id_seq" startValue="1"/>
+      <sequence increment="1" name="phenotype_user_trait_phenotype_user_trait_id_seq" startValue="1"/>
+      <sequence increment="1" name="polymorphic_fragment_polymorphic_fragment_id_seq" startValue="1"/>
+      <sequence increment="1" name="population_dbxref_population_dbxref_id_seq" startValue="1"/>
+      <sequence increment="1" name="population_population_id_seq" startValue="1"/>
+      <sequence increment="1" name="project_md_image_project_md_image_id_seq" startValue="1"/>
+      <sequence increment="1" name="project_owner_project_owner_id_seq" startValue="1"/>
+      <sequence increment="1" name="pub_curator_pub_curator_id_seq" startValue="1"/>
+      <sequence increment="1" name="registry_registry_id_seq" startValue="1"/>
+      <sequence increment="1" name="stock_allele_stock_allele_id_seq" startValue="1"/>
+      <sequence increment="1" name="stock_file_stock_file_id_seq" startValue="1"/>
+      <sequence increment="1" name="stock_image_stock_image_id_seq" startValue="1"/>
+      <sequence increment="1" name="stock_owner_stock_owner_id_seq" startValue="1"/>
+      <sequence increment="1" name="tomato_il_bin_il_bin_id_seq" startValue="1"/>
+      <sequence increment="1" name="tomato_term2term_tomato_term2term_id_seq" startValue="1"/>
+      <sequence increment="1" name="tomato_term_tomato_term_id_seq" startValue="1"/>
+      <sequence increment="1" name="unit_unit_id_seq" startValue="1"/>
+      <sequence increment="1" name="user_trait_unit_user_trait_unit_id_seq" startValue="1"/>
+      <sequence increment="1" name="user_trait_user_trait_id_seq" startValue="1"/>
+      <sequence increment="1" name="variant_variant_id_seq" startValue="1"/>
+   </sequences>
+   <tables>
+      <table name="allele" numRows="1" remarks="" schema="phenome" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('phenome.allele_allele_id_seq'::regclass)" digits="0" id="0" name="allele_id" nullable="false" remarks="" size="10" type="serial" typeCode="4">
+            <child column="allele_id" foreignKey="allele_alias_allele_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="allele_alias"/>
+            <child column="allele_id" foreignKey="allele_dbxref_allele_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="allele_dbxref"/>
+            <child column="allele_id" foreignKey="allele_history_allele_id_fkey" implied="false" onDeleteCascade="true" schema="phenome" table="allele_history"/>
+            <child column="allele_id" foreignKey="individual_allele_allele_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="individual_allele"/>
+            <child column="allele_id" foreignKey="stock_allele_allele_id_fkey" implied="false" onDeleteCascade="true" schema="phenome" table="stock_allele"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="locus_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="locus_id" foreignKey="allele_locus_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="locus"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="allele_symbol" nullable="true" remarks="" size="32" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="allele_name" nullable="true" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="mode_of_inheritance" nullable="true" remarks="" size="18" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="allele_synonym" nullable="true" remarks="" size="255" type="_varchar" typeCode="2003"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="allele_phenotype" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="allele_notes" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="8" name="obsolete" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="9" name="sp_person_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="sp_person_id" foreignKey="allele_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="10" name="create_date" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="11" name="modified_date" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="12" name="updated_by" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="sp_person_id" foreignKey="allele_updated_by_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="true" digits="0" id="13" name="is_default" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="14" name="sequence" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <primaryKey column="allele_id" sequenceNumberInPK="1"/>
+         <index name="allele_pkey" unique="true">
+            <column ascending="true" name="allele_id"/>
+         </index>
+         <checkConstraint constraint="((((mode_of_inheritance)::text = 'recessive'::text) OR ((mode_of_inheritance)::text = 'partially dominant'::text) OR ((mode_of_inheritance)::text = 'dominant'::text) OR ((mode_of_inheritance)::text = ''::text)))" name="chk_allele_mode_of_inheritance"/>
+      </table>
+      <table name="allele_alias" numRows="0" remarks="" schema="phenome" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('phenome.allele_alias_allele_alias_id_seq'::regclass)" digits="0" id="0" name="allele_alias_id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="alias" nullable="false" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="allele_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="allele_id" foreignKey="allele_alias_allele_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="allele"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="preferred" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="4" name="obsolete" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="sp_person_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="sp_person_id" foreignKey="allele_alias_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="6" name="create_date" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="7" name="modified_date" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <primaryKey column="allele_alias_id" sequenceNumberInPK="1"/>
+         <index name="allele_alias_pkey" unique="true">
+            <column ascending="true" name="allele_alias_id"/>
+         </index>
+      </table>
+      <table name="allele_dbxref" numRows="0" remarks="" schema="phenome" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('phenome.allele_dbxref_allele_dbxref_id_seq'::regclass)" digits="0" id="0" name="allele_dbxref_id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="allele_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="allele_id" foreignKey="allele_dbxref_allele_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="allele"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="dbxref_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="dbxref_id" foreignKey="allele_dbxref_dbxref_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="dbxref"/>
+         </column>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="3" name="obsolete" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="sp_person_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="sp_person_id" foreignKey="allele_dbxref_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="5" name="create_date" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="6" name="modified_date" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <primaryKey column="allele_dbxref_id" sequenceNumberInPK="1"/>
+         <index name="allele_dbxref_pkey" unique="true">
+            <column ascending="true" name="allele_dbxref_id"/>
+         </index>
+         <index name="allele_dbxref_id_key" unique="true">
+            <column ascending="true" name="allele_id"/>
+            <column ascending="true" name="dbxref_id"/>
+         </index>
+      </table>
+      <table name="allele_history" numRows="0" remarks="" schema="phenome" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('phenome.allele_history_allele_history_id_seq'::regclass)" digits="0" id="0" name="allele_history_id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="allele_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="allele_id" foreignKey="allele_history_allele_id_fkey" implied="false" onDeleteCascade="true" schema="phenome" table="allele"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="locus_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="locus_id" foreignKey="allele_history_locus_id_fkey" implied="false" onDeleteCascade="true" schema="phenome" table="locus"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="allele_symbol" nullable="true" remarks="" size="32" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="allele_name" nullable="true" remarks="" size="32" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="mode_of_inheritance" nullable="true" remarks="" size="18" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="allele_phenotype" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="sp_person_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="sp_person_id" foreignKey="allele_history_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="8" name="updated_by" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="sp_person_id" foreignKey="allele_history_updated_by_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="9" name="obsolete" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="10" name="create_date" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="11" name="sequence" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <primaryKey column="allele_history_id" sequenceNumberInPK="1"/>
+         <index name="allele_history_pkey" unique="true">
+            <column ascending="true" name="allele_history_id"/>
+         </index>
+         <checkConstraint constraint="((((mode_of_inheritance)::text = 'dominant'::text) OR ((mode_of_inheritance)::text = 'partially dominant'::text) OR ((mode_of_inheritance)::text = 'recessive'::text) OR ((mode_of_inheritance)::text = ''::text)))" name="allele_history_mode_of_inheritance_check"/>
+      </table>
+      <table name="cross_type" numRows="0" remarks="" schema="phenome" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('phenome.cross_type_cross_type_id_seq'::regclass)" digits="0" id="0" name="cross_type_id" nullable="false" remarks="" size="10" type="serial" typeCode="4">
+            <child column="cross_type_id" foreignKey="population_cross_type_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="population"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="cross_type" nullable="false" remarks="" size="2147483647" type="varchar" typeCode="12"/>
+         <primaryKey column="cross_type_id" sequenceNumberInPK="1"/>
+         <index name="cross_type_pkey" unique="true">
+            <column ascending="true" name="cross_type_id"/>
+         </index>
+         <index name="cross_type_idx1" unique="false">
+            <column ascending="true" name="cross_type"/>
+         </index>
+      </table>
+      <table name="cvterm_pub_ranking" numRows="0" remarks="" schema="phenome" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="cvterm_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="cvterm_id" foreignKey="cvterm_pub_ranking_cvterm_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="cvterm"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="pub_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="pub_id" foreignKey="cvterm_pub_ranking_pub_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="pub"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="8" id="2" name="rank" nullable="true" remarks="" size="8" type="float4" typeCode="7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="match_type" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="headline" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+      </table>
+      <table name="dbxref_type" numRows="0" remarks="" schema="phenome" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('phenome.dbxref_type_dbxref_type_id_seq'::regclass)" digits="0" id="0" name="dbxref_type_id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="dbxref_type_name" nullable="true" remarks="" size="32" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="dbxref_type_definition" nullable="true" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="dbxref_type_url" nullable="true" remarks="" size="255" type="varchar" typeCode="12"/>
+         <primaryKey column="dbxref_type_id" sequenceNumberInPK="1"/>
+         <index name="dbxref_type_pkey" unique="true">
+            <column ascending="true" name="dbxref_type_id"/>
+         </index>
+         <index name="dbxref_type_dbxref_type_definition_key" unique="true">
+            <column ascending="true" name="dbxref_type_definition"/>
+         </index>
+         <index name="dbxref_type_dbxref_type_name_key" unique="true">
+            <column ascending="true" name="dbxref_type_name"/>
+         </index>
+         <index name="dbxref_type_dbxref_type_url_key" unique="true">
+            <column ascending="true" name="dbxref_type_url"/>
+         </index>
+      </table>
+      <table name="genotype_experiment" numRows="0" remarks="" schema="phenome" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('phenome.genotype_experiment_genotype_experiment_id_seq'::regclass)" digits="0" id="0" name="genotype_experiment_id" nullable="false" remarks="" size="10" type="serial" typeCode="4">
+            <child column="genotype_experiment_id" foreignKey="genotype_genotype_experiment_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="phenome_genotype"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="experiment_name" nullable="true" remarks="" size="100" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="reference_map_id" nullable="true" remarks="" size="19" type="int8" typeCode="-5">
+            <parent column="map_id" foreignKey="genotype_experiment_reference_map_id_fkey" implied="false" onDeleteCascade="true" schema="sgn" table="map"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="background_accession_id" nullable="true" remarks="" size="19" type="int8" typeCode="-5">
+            <parent column="accession_id" foreignKey="genotype_experiment_background_accession_id_fkey" implied="false" onDeleteCascade="false" schema="sgn" table="accession"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="preferred" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="sp_person_id" nullable="true" remarks="" size="19" type="int8" typeCode="-5">
+            <parent column="sp_person_id" foreignKey="genotype_experiment_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="6" name="modified_date" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="7" name="create_date" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="8" name="obsolete" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <primaryKey column="genotype_experiment_id" sequenceNumberInPK="1"/>
+         <index name="genotype_experiment_pkey" unique="true">
+            <column ascending="true" name="genotype_experiment_id"/>
+         </index>
+         <index name="background_accession_id_idx" unique="false">
+            <column ascending="true" name="background_accession_id"/>
+         </index>
+         <index name="reference_map_id_idx" unique="false">
+            <column ascending="true" name="reference_map_id"/>
+         </index>
+      </table>
+      <table name="genotype_region" numRows="0" remarks="polymorphic regions from a genotype, delineated by markers in a certain linkage group on a certain map" schema="phenome" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('phenome.genotype_region_genotype_region_id_seq'::regclass)" digits="0" id="0" name="genotype_region_id" nullable="false" remarks="" size="10" type="serial" typeCode="4">
+            <child column="genotype_region_id" foreignKey="clone_il_mapping_bin_log_genotype_region_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="clone_il_mapping_bin_log"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="phenome_genotype_id" nullable="true" remarks="optional genotype this region belongs to.  some regions are artificial, arising from combinations of other regions, and thus do not have an associated genotype" size="10" type="int4" typeCode="4">
+            <parent column="phenome_genotype_id" foreignKey="genotype_region_genotype_id_fkey" implied="false" onDeleteCascade="true" schema="phenome" table="phenome_genotype"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="marker_id_nn" nullable="true" remarks="the north marker in the pair of markers bracketing the north end of this region. this may be null for regions at the north end of a linkage group" size="19" type="int8" typeCode="-5">
+            <parent column="marker_id" foreignKey="genotype_region_marker_id_nn_fkey" implied="false" onDeleteCascade="false" schema="sgn" table="marker"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="marker_id_ns" nullable="false" remarks="the south marker in the pair of markers bracketing the north end of this region" size="19" type="int8" typeCode="-5">
+            <parent column="marker_id" foreignKey="genotype_region_marker_id_ns_fkey" implied="false" onDeleteCascade="false" schema="sgn" table="marker"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="marker_id_sn" nullable="false" remarks="the north marker in the pair of markers bracketing the south end of this region" size="19" type="int8" typeCode="-5">
+            <parent column="marker_id" foreignKey="genotype_region_marker_id_sn_fkey" implied="false" onDeleteCascade="false" schema="sgn" table="marker"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="marker_id_ss" nullable="true" remarks="the south marker in the pair of markers bracketing the south end of this region. this may be null for regions at the south end of a linkage group." size="19" type="int8" typeCode="-5">
+            <parent column="marker_id" foreignKey="genotype_region_marker_id_ss_fkey" implied="false" onDeleteCascade="false" schema="sgn" table="marker"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="zygocity_code" nullable="true" remarks="" size="1" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="lg_id" nullable="true" remarks="the linkage group in a specific version of a specific map where this region is located" size="10" type="int4" typeCode="4">
+            <parent column="lg_id" foreignKey="genotype_region_lg_id_fkey" implied="false" onDeleteCascade="false" schema="sgn" table="linkage_group"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="8" name="type" nullable="false" remarks="the type of polymorphic region this is.  map is mapping experiment data, inbred is IL lines segments, and bin is a derived region based on a boolean combination of inbred fragments.  For bin regions, the specific boolean combination of fragments that make the bin is not stored." size="32" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="9" name="name" nullable="true" remarks="special name for this region, if any.  optional" size="32" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="10" name="sp_person_id" nullable="true" remarks="the person who loaded this datum.  optional" size="10" type="int4" typeCode="4">
+            <parent column="sp_person_id" foreignKey="genotype_region_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="11" name="modified_date" nullable="false" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="12" name="create_date" nullable="false" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="13" name="obsolete" nullable="false" remarks="" size="1" type="bool" typeCode="-7"/>
+         <primaryKey column="genotype_region_id" sequenceNumberInPK="1"/>
+         <index name="genotype_region_pkey" unique="true">
+            <column ascending="true" name="genotype_region_id"/>
+         </index>
+         <index name="phenome_genotype_marker_id_nn_idx" unique="false">
+            <column ascending="true" name="marker_id_nn"/>
+         </index>
+         <index name="phenome_genotype_marker_id_ns_idx" unique="false">
+            <column ascending="true" name="marker_id_ns"/>
+         </index>
+         <index name="phenome_genotype_marker_id_sn_idx" unique="false">
+            <column ascending="true" name="marker_id_sn"/>
+         </index>
+         <index name="phenome_genotype_marker_id_ss_idx" unique="false">
+            <column ascending="true" name="marker_id_ss"/>
+         </index>
+         <index name="phenome_genotype_region_genotype_id_idx" unique="false">
+            <column ascending="true" name="phenome_genotype_id"/>
+         </index>
+         <index name="phenome_genotype_region_name" unique="false">
+            <column ascending="true" name="name"/>
+         </index>
+         <index name="phenome_genotype_region_type" unique="false">
+            <column ascending="true" name="type"/>
+         </index>
+         <index name="phenome_genotype_region_zygocity_code" unique="false">
+            <column ascending="true" name="zygocity_code"/>
+         </index>
+         <checkConstraint constraint="((((type)::text = 'bin'::text) OR ((type)::text = 'map'::text) OR ((type)::text = 'inbred'::text)))" name="genotype_region_type_check"/>
+         <checkConstraint constraint="((((zygocity_code)::text = 'a'::text) OR ((zygocity_code)::text = 'b'::text) OR ((zygocity_code)::text = 'c'::text) OR ((zygocity_code)::text = 'd'::text) OR ((zygocity_code)::text = 'h'::text)))" name="genotype_region_zygocity_code_check"/>
+      </table>
+      <table name="germplasm" numRows="0" remarks="" schema="phenome" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('phenome.germplasm_germplasm_id_seq'::regclass)" digits="0" id="0" name="germplasm_id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="germplasm_type" nullable="true" remarks="" size="10" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="individual_id" nullable="false" remarks="" size="19" type="int8" typeCode="-5">
+            <parent column="individual_id" foreignKey="germplasm_individual_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="individual"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="description" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="dbxref_id" nullable="true" remarks="" size="19" type="int8" typeCode="-5">
+            <parent column="dbxref_id" foreignKey="germplasm_dbxref_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="dbxref"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="sp_person_id" nullable="true" remarks="" size="19" type="int8" typeCode="-5">
+            <parent column="sp_person_id" foreignKey="germplasm_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="6" name="create_date" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="7" name="modified_date" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="8" name="obsolete" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <primaryKey column="germplasm_id" sequenceNumberInPK="1"/>
+         <index name="germplasm_pkey" unique="true">
+            <column ascending="true" name="germplasm_id"/>
+         </index>
+         <checkConstraint constraint="((((germplasm_type)::text = 'seed'::text) OR ((germplasm_type)::text = 'vegetative'::text)))" name="chk_germplasm_germplasm_type"/>
+      </table>
+      <table name="individual" numRows="0" remarks="" schema="phenome" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('phenome.individual_individual_id_seq'::regclass)" digits="0" id="0" name="individual_id" nullable="false" remarks="" size="10" type="serial" typeCode="4">
+            <child column="individual_id" foreignKey="germplasm_individual_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="germplasm"/>
+            <child column="individual_id" foreignKey="individual_alias_individual_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="individual_alias"/>
+            <child column="individual_id" foreignKey="individual_allele_individual_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="individual_allele"/>
+            <child column="individual_id" foreignKey="individual_dbxref_individual_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="individual_dbxref"/>
+            <child column="individual_id" foreignKey="individual_history_individual_id_fkey" implied="false" onDeleteCascade="true" schema="phenome" table="individual_history"/>
+            <child column="individual_id" foreignKey="individual_image_individual_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="individual_image"/>
+            <child column="individual_id" foreignKey="individual_locus_individual_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="individual_locus"/>
+            <child column="individual_id" foreignKey="genotype_individual_id_fkey" implied="false" onDeleteCascade="true" schema="phenome" table="phenome_genotype"/>
+            <child column="individual_id" foreignKey="phenotype_individual_id_fkey" implied="false" onDeleteCascade="true" schema="public" table="phenotype"/>
+            <child column="individual_id" foreignKey="sp_clone_il_mapping_segment_log_individual_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_clone_il_mapping_segment_log"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="name" nullable="true" remarks="" size="100" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="description" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="sp_person_id" nullable="true" remarks="" size="19" type="int8" typeCode="-5">
+            <parent column="sp_person_id" foreignKey="individual_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="4" name="create_date" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="5" name="modified_date" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="6" name="obsolete" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="population_id" nullable="true" remarks="" size="19" type="int8" typeCode="-5">
+            <parent column="population_id" foreignKey="individual_population_id_fkey" implied="false" onDeleteCascade="true" schema="phenome" table="population"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="8" name="updated_by" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="sp_person_id" foreignKey="individual_updated_by_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="9" name="common_name_id" nullable="true" remarks="" size="19" type="int8" typeCode="-5">
+            <parent column="common_name_id" foreignKey="individual_common_name_id_fkey" implied="false" onDeleteCascade="false" schema="sgn" table="common_name"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="10" name="accession_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="accession_id" foreignKey="individual_accession_id_fkey" implied="false" onDeleteCascade="false" schema="sgn" table="accession"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="11" name="stock_id" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
+         <primaryKey column="individual_id" sequenceNumberInPK="1"/>
+         <index name="individual_pkey" unique="true">
+            <column ascending="true" name="individual_id"/>
+         </index>
+         <index name="phenome_individual_name_idx" unique="false">
+            <column ascending="true" name="name"/>
+         </index>
+         <index name="phenome_population_id_idx" unique="false">
+            <column ascending="true" name="population_id"/>
+         </index>
+      </table>
+      <table name="individual_alias" numRows="0" remarks="" schema="phenome" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('phenome.individual_alias_individual_alias_id_seq'::regclass)" digits="0" id="0" name="individual_alias_id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="alias" nullable="false" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="individual_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="individual_id" foreignKey="individual_alias_individual_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="individual"/>
+         </column>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="3" name="preferred" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="4" name="obsolete" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="sp_person_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="sp_person_id" foreignKey="individual_alias_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="6" name="create_date" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="7" name="modified_date" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <primaryKey column="individual_alias_id" sequenceNumberInPK="1"/>
+         <index name="individual_alias_pkey" unique="true">
+            <column ascending="true" name="individual_alias_id"/>
+         </index>
+      </table>
+      <table name="individual_allele" numRows="0" remarks="" schema="phenome" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('phenome.individual_allele_individual_allele_id_seq'::regclass)" digits="0" id="0" name="individual_allele_id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="individual_id" nullable="false" remarks="" size="19" type="int8" typeCode="-5">
+            <parent column="individual_id" foreignKey="individual_allele_individual_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="individual"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="allele_id" nullable="false" remarks="" size="19" type="int8" typeCode="-5">
+            <parent column="allele_id" foreignKey="individual_allele_allele_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="allele"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="sp_person_id" nullable="true" remarks="" size="19" type="int8" typeCode="-5">
+            <parent column="sp_person_id" foreignKey="individual_allele_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="4" name="create_date" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="5" name="modified_date" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="6" name="obsolete" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <primaryKey column="individual_allele_id" sequenceNumberInPK="1"/>
+         <index name="individual_allele_pkey" unique="true">
+            <column ascending="true" name="individual_allele_id"/>
+         </index>
+         <index name="individual_allele_ukey" unique="true">
+            <column ascending="true" name="individual_id"/>
+            <column ascending="true" name="allele_id"/>
+         </index>
+      </table>
+      <table name="individual_dbxref" numRows="0" remarks="" schema="phenome" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('phenome.individual_dbxref_individual_dbxref_id_seq'::regclass)" digits="0" id="0" name="individual_dbxref_id" nullable="false" remarks="" size="10" type="serial" typeCode="4">
+            <child column="individual_dbxref_id" foreignKey="individual_dbxref_evidence_individual_dbxref_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="individual_dbxref_evidence"/>
+            <child column="individual_dbxref_id" foreignKey="individual_dbxref_evidence_history_individual_dbxref_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="individual_dbxref_evidence_history"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="individual_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="individual_id" foreignKey="individual_dbxref_individual_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="individual"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="dbxref_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="dbxref_id" foreignKey="individual_dbxref_dbxref_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="dbxref"/>
+         </column>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="3" name="obsolete" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="sp_person_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="sp_person_id" foreignKey="individual_dbxref_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="5" name="create_date" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="6" name="modified_date" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <primaryKey column="individual_dbxref_id" sequenceNumberInPK="1"/>
+         <index name="individual_dbxref_pkey" unique="true">
+            <column ascending="true" name="individual_dbxref_id"/>
+         </index>
+      </table>
+      <table name="individual_dbxref_evidence" numRows="0" remarks="" schema="phenome" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('phenome.individual_dbxref_evidence_individual_dbxref_evidence_id_seq'::regclass)" digits="0" id="0" name="individual_dbxref_evidence_id" nullable="false" remarks="" size="10" type="serial" typeCode="4">
+            <child column="individual_dbxref_evidence_id" foreignKey="individual_dbxref_evidence_hi_individual_dbxref_evidence_i_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="individual_dbxref_evidence_history"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="individual_dbxref_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="individual_dbxref_id" foreignKey="individual_dbxref_evidence_individual_dbxref_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="individual_dbxref"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="relationship_type" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="dbxref_id" foreignKey="individual_dbxref_evidence_relationship_type_fkey" implied="false" onDeleteCascade="false" schema="public" table="dbxref"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="evidence_code" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="dbxref_id" foreignKey="individual_dbxref_evidence_evidence_code_fkey" implied="false" onDeleteCascade="false" schema="public" table="dbxref"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="evidence_description" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="dbxref_id" foreignKey="individual_dbxref_evidence_evidence_description_fkey" implied="false" onDeleteCascade="false" schema="public" table="dbxref"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="evidence_with" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="dbxref_id" foreignKey="individual_dbxref_evidence_evidence_with_fkey" implied="false" onDeleteCascade="false" schema="public" table="dbxref"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="reference_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="dbxref_id" foreignKey="individual_dbxref_evidence_reference_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="dbxref"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="sp_person_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="sp_person_id" foreignKey="individual_dbxref_evidence_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="8" name="updated_by" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="sp_person_id" foreignKey="individual_dbxref_evidence_updated_by_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="9" name="create_date" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="10" name="modified_date" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="11" name="obsolete" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <primaryKey column="individual_dbxref_evidence_id" sequenceNumberInPK="1"/>
+         <index name="individual_dbxref_evidence_pkey" unique="true">
+            <column ascending="true" name="individual_dbxref_evidence_id"/>
+         </index>
+      </table>
+      <table name="individual_dbxref_evidence_history" numRows="0" remarks="" schema="phenome" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('phenome.individual_dbxref_evidence_hi_individual_dbxref_evidence_hi_seq'::regclass)" digits="0" id="0" name="individual_dbxref_evidence_history_id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="individual_dbxref_evidence_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="individual_dbxref_evidence_id" foreignKey="individual_dbxref_evidence_hi_individual_dbxref_evidence_i_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="individual_dbxref_evidence"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="individual_dbxref_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="individual_dbxref_id" foreignKey="individual_dbxref_evidence_history_individual_dbxref_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="individual_dbxref"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="relationship_type" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="dbxref_id" foreignKey="individual_dbxref_evidence_history_relationship_type_fkey" implied="false" onDeleteCascade="false" schema="public" table="dbxref"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="evidence_code" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="dbxref_id" foreignKey="individual_dbxref_evidence_history_evidence_code_fkey" implied="false" onDeleteCascade="false" schema="public" table="dbxref"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="evidence_description" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="dbxref_id" foreignKey="individual_dbxref_evidence_history_evidence_description_fkey" implied="false" onDeleteCascade="false" schema="public" table="dbxref"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="evidence_with" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="dbxref_id" foreignKey="individual_dbxref_evidence_history_evidence_with_fkey" implied="false" onDeleteCascade="false" schema="public" table="dbxref"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="reference_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="dbxref_id" foreignKey="individual_dbxref_evidence_history_reference_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="dbxref"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="8" name="sp_person_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="sp_person_id" foreignKey="individual_dbxref_evidence_history_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="9" name="updated_by" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="sp_person_id" foreignKey="individual_dbxref_evidence_history_updated_by_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="10" name="create_date" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="11" name="modified_date" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="12" name="obsolete" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <primaryKey column="individual_dbxref_evidence_history_id" sequenceNumberInPK="1"/>
+         <index name="individual_dbxref_evidence_history_pkey" unique="true">
+            <column ascending="true" name="individual_dbxref_evidence_history_id"/>
+         </index>
+      </table>
+      <table name="individual_history" numRows="0" remarks="" schema="phenome" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('phenome.individual_history_individual_history_id_seq'::regclass)" digits="0" id="0" name="individual_history_id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="individual_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="individual_id" foreignKey="individual_history_individual_id_fkey" implied="false" onDeleteCascade="true" schema="phenome" table="individual"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="name" nullable="true" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="description" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="population_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="population_id" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" schema="phenome" table="population"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="sp_person_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="sp_person_id" foreignKey="individual_history_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="updated_by" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="sp_person_id" foreignKey="individual_history_updated_by_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="7" name="obsolete" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="8" name="create_date" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <primaryKey column="individual_history_id" sequenceNumberInPK="1"/>
+         <index name="individual_history_pkey" unique="true">
+            <column ascending="true" name="individual_history_id"/>
+         </index>
+      </table>
+      <table name="individual_image" numRows="0" remarks="" schema="phenome" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('phenome.individual_image_individual_image_id_seq'::regclass)" digits="0" id="0" name="individual_image_id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="image_id" nullable="true" remarks="" size="19" type="int8" typeCode="-5">
+            <parent column="image_id" foreignKey="individual_image_image_id_fkey" implied="false" onDeleteCascade="false" schema="metadata" table="md_image"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="individual_id" nullable="true" remarks="" size="19" type="int8" typeCode="-5">
+            <parent column="individual_id" foreignKey="individual_image_individual_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="individual"/>
+         </column>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="3" name="obsolete" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="sp_person_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="sp_person_id" foreignKey="individual_image_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="5" name="create_date" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="6" name="modified_date" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <primaryKey column="individual_image_id" sequenceNumberInPK="1"/>
+         <index name="individual_image_pkey" unique="true">
+            <column ascending="true" name="individual_image_id"/>
+         </index>
+      </table>
+      <table name="individual_locus" numRows="0" remarks="" schema="phenome" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('phenome.individual_locus_individual_locus_id_seq'::regclass)" digits="0" id="0" name="individual_locus_id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="individual_id" nullable="false" remarks="" size="19" type="int8" typeCode="-5">
+            <parent column="individual_id" foreignKey="individual_locus_individual_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="individual"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="locus_id" nullable="false" remarks="" size="19" type="int8" typeCode="-5">
+            <parent column="locus_id" foreignKey="individual_locus_locus_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="locus"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="sp_person_id" nullable="true" remarks="" size="19" type="int8" typeCode="-5">
+            <parent column="sp_person_id" foreignKey="individual_locus_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="4" name="create_date" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="5" name="modified_date" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="6" name="obsolete" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <primaryKey column="individual_locus_id" sequenceNumberInPK="1"/>
+         <index name="individual_locus_pkey" unique="true">
+            <column ascending="true" name="individual_locus_id"/>
+         </index>
+         <index name="individual_locus_ukey" unique="true">
+            <column ascending="true" name="individual_id"/>
+            <column ascending="true" name="locus_id"/>
+         </index>
+      </table>
+      <table name="is_public" numRows="0" remarks="" schema="phenome" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('phenome.is_public_is_public_id_seq'::regclass)" digits="0" id="0" name="is_public_id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="population_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="population_id" foreignKey="is_public_population_id_fkey" implied="false" onDeleteCascade="true" schema="phenome" table="population"/>
+         </column>
+         <column autoUpdated="false" defaultValue="true" digits="0" id="2" name="is_public" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="owner_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="sp_person_id" foreignKey="is_public_owner_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <primaryKey column="is_public_id" sequenceNumberInPK="1"/>
+         <index name="is_public_pkey" unique="true">
+            <column ascending="true" name="is_public_id"/>
+         </index>
+         <index name="is_public_population_id_key" unique="true">
+            <column ascending="true" name="population_id"/>
+         </index>
+      </table>
+      <table name="locus" numRows="2" remarks="" schema="phenome" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('phenome.locus_locus_id_seq'::regclass)" digits="0" id="0" name="locus_id" nullable="false" remarks="" size="10" type="serial" typeCode="4">
+            <child column="locus_id" foreignKey="allele_locus_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="allele"/>
+            <child column="locus_id" foreignKey="allele_history_locus_id_fkey" implied="false" onDeleteCascade="true" schema="phenome" table="allele_history"/>
+            <child column="locus_id" foreignKey="individual_locus_locus_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="individual_locus"/>
+            <child column="object_id" foreignKey="locus2locus_object_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="locus2locus"/>
+            <child column="subject_id" foreignKey="locus2locus_subject_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="locus2locus"/>
+            <child column="locus_id" foreignKey="locus_alias_locus_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="locus_alias"/>
+            <child column="locus_id" foreignKey="locus_dbxref_locus_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="locus_dbxref"/>
+            <child column="locus_id" foreignKey="locus_history_locus_id_fkey" implied="false" onDeleteCascade="true" schema="phenome" table="locus_history"/>
+            <child column="locus_id" foreignKey="locus_image_locus_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="locus_image"/>
+            <child column="locus_id" foreignKey="locus_marker_locus_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="locus_marker"/>
+            <child column="locus_id" foreignKey="locus_owner_locus_id_fkey" implied="false" onDeleteCascade="true" schema="phenome" table="locus_owner"/>
+            <child column="locus_id" foreignKey="locus_pub_ranking_locus_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="locus_pub_ranking"/>
+            <child column="locus_id" foreignKey="locus_pub_ranking_validate_locus_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="locus_pub_ranking_validate"/>
+            <child column="locus_id" foreignKey="locus_registry_locus_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="locus_registry"/>
+            <child column="locus_id" foreignKey="locus_unigene_locus_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="locus_unigene"/>
+            <child column="locus_id" foreignKey="locusgroup_member_locus_id_fkey" implied="false" onDeleteCascade="true" schema="phenome" table="locusgroup_member"/>
+            <child column="locus_id" foreignKey="variant_locus_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="variant"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="locus_name" nullable="false" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="locus_symbol" nullable="false" remarks="" size="32" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="original_symbol" nullable="true" remarks="" size="32" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="gene_activity" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="locus_notes" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="6" name="obsolete" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="sp_person_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="sp_person_id" foreignKey="locus_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="8" name="create_date" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="9" name="modified_date" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="10" name="description" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="11" name="linkage_group" nullable="true" remarks="" size="16" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="12" name="lg_arm" nullable="true" remarks="" size="16" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="13" name="common_name_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="common_name_id" foreignKey="locus_common_name_id_fkey" implied="false" onDeleteCascade="false" schema="sgn" table="common_name"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="14" name="updated_by" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="sp_person_id" foreignKey="locus_updated_by_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="15" name="locus" nullable="true" remarks="" size="24" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="16" name="organism_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="organism_id" foreignKey="locus_organism_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="organism"/>
+         </column>
+         <primaryKey column="locus_id" sequenceNumberInPK="1"/>
+         <index name="locus_pkey" unique="true">
+            <column ascending="true" name="locus_id"/>
+         </index>
+         <index name="locus_name_key" unique="true">
+            <column ascending="true" name="locus_name"/>
+            <column ascending="true" name="common_name_id"/>
+            <column ascending="true" name="obsolete"/>
+         </index>
+         <index name="locus_symbol_key" unique="true">
+            <column ascending="true" name="locus_symbol"/>
+            <column ascending="true" name="common_name_id"/>
+            <column ascending="true" name="obsolete"/>
+         </index>
+         <checkConstraint constraint="((((lg_arm)::text = 'short'::text) OR ((lg_arm)::text = 'long'::text) OR ((lg_arm)::text = ''::text)))" name="chk_lg_arm"/>
+      </table>
+      <table name="locus2locus" numRows="0" remarks="" schema="phenome" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('phenome.locus2locus_locus2locus_id_seq'::regclass)" digits="0" id="0" name="locus2locus_id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="subject_id" nullable="true" remarks="" size="19" type="int8" typeCode="-5">
+            <parent column="locus_id" foreignKey="locus2locus_subject_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="locus"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="object_id" nullable="true" remarks="" size="19" type="int8" typeCode="-5">
+            <parent column="locus_id" foreignKey="locus2locus_object_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="locus"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="relationship_id" nullable="true" remarks="" size="19" type="int8" typeCode="-5">
+            <parent column="dbxref_id" foreignKey="locus2locus_relationship_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="dbxref"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="evidence_id" nullable="true" remarks="" size="19" type="int8" typeCode="-5">
+            <parent column="dbxref_id" foreignKey="locus2locus_evidence_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="dbxref"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="reference_id" nullable="true" remarks="" size="19" type="int8" typeCode="-5">
+            <parent column="dbxref_id" foreignKey="locus2locus_reference_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="dbxref"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="sp_person_id" nullable="true" remarks="" size="19" type="int8" typeCode="-5">
+            <parent column="sp_person_id" foreignKey="locus2locus_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="7" name="obsolete" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="8" name="modified_date" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="9" name="create_date" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <primaryKey column="locus2locus_id" sequenceNumberInPK="1"/>
+         <index name="locus2locus_pkey" unique="true">
+            <column ascending="true" name="locus2locus_id"/>
+         </index>
+      </table>
+      <table name="locus_alias" numRows="1" remarks="" schema="phenome" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('phenome.locus_alias_locus_alias_id_seq'::regclass)" digits="0" id="0" name="locus_alias_id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="alias" nullable="false" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="locus_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="locus_id" foreignKey="locus_alias_locus_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="locus"/>
+         </column>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="3" name="preferred" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="4" name="obsolete" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="sp_person_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="sp_person_id" foreignKey="locus_alias_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="6" name="create_date" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="7" name="modified_date" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <primaryKey column="locus_alias_id" sequenceNumberInPK="1"/>
+         <index name="locus_alias_pkey" unique="true">
+            <column ascending="true" name="locus_alias_id"/>
+         </index>
+      </table>
+      <table name="locus_dbxref" numRows="0" remarks="" schema="phenome" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('phenome.locus_dbxref_locus_dbxref_id_seq'::regclass)" digits="0" id="0" name="locus_dbxref_id" nullable="false" remarks="" size="10" type="serial" typeCode="4">
+            <child column="locus_dbxref_id" foreignKey="locus_dbxref_evidence_locus_dbxref_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="locus_dbxref_evidence"/>
+            <child column="locus_dbxref_id" foreignKey="locus_dbxref_evidence_history_locus_dbxref_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="locus_dbxref_evidence_history"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="locus_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="locus_id" foreignKey="locus_dbxref_locus_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="locus"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="dbxref_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="dbxref_id" foreignKey="locus_dbxref_dbxref_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="dbxref"/>
+         </column>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="3" name="obsolete" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="sp_person_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="sp_person_id" foreignKey="locus_dbxref_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="5" name="create_date" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="6" name="modified_date" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <primaryKey column="locus_dbxref_id" sequenceNumberInPK="1"/>
+         <index name="locus_dbxref_pkey" unique="true">
+            <column ascending="true" name="locus_dbxref_id"/>
+         </index>
+         <index name="locus_dbxref_id_key" unique="true">
+            <column ascending="true" name="locus_id"/>
+            <column ascending="true" name="dbxref_id"/>
+         </index>
+      </table>
+      <table name="locus_dbxref_evidence" numRows="0" remarks="" schema="phenome" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('phenome.locus_dbxref_evidence_locus_dbxref_evidence_id_seq'::regclass)" digits="0" id="0" name="locus_dbxref_evidence_id" nullable="false" remarks="" size="10" type="serial" typeCode="4">
+            <child column="locus_dbxref_evidence_id" foreignKey="locus_dbxref_evidence_history_locus_dbxref_evidence_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="locus_dbxref_evidence_history"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="locus_dbxref_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="locus_dbxref_id" foreignKey="locus_dbxref_evidence_locus_dbxref_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="locus_dbxref"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="relationship_type_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="dbxref_id" foreignKey="locus_dbxref_evidence_evidence_relationship_type_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="dbxref"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="evidence_code_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="dbxref_id" foreignKey="locus_dbxref_evidence_evidence_code_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="dbxref"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="evidence_description_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="dbxref_id" foreignKey="locus_dbxref_evidence_evidence_description_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="dbxref"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="evidence_with" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="dbxref_id" foreignKey="locus_dbxref_evidence_evidence_with_fkey" implied="false" onDeleteCascade="false" schema="public" table="dbxref"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="reference_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="dbxref_id" foreignKey="locus_dbxref_evidence_reference_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="dbxref"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="sp_person_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="sp_person_id" foreignKey="locus_dbxref_evidence_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="8" name="updated_by" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="sp_person_id" foreignKey="locus_dbxref_evidence_updated_by_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="9" name="create_date" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="10" name="modified_date" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="11" name="obsolete" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <primaryKey column="locus_dbxref_evidence_id" sequenceNumberInPK="1"/>
+         <index name="locus_dbxref_evidence_pkey" unique="true">
+            <column ascending="true" name="locus_dbxref_evidence_id"/>
+         </index>
+      </table>
+      <table name="locus_dbxref_evidence_history" numRows="0" remarks="" schema="phenome" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('phenome.locus_dbxref_evidence_history_locus_dbxref_evidence_history_seq'::regclass)" digits="0" id="0" name="locus_dbxref_evidence_history_id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="locus_dbxref_evidence_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="locus_dbxref_evidence_id" foreignKey="locus_dbxref_evidence_history_locus_dbxref_evidence_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="locus_dbxref_evidence"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="locus_dbxref_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="locus_dbxref_id" foreignKey="locus_dbxref_evidence_history_locus_dbxref_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="locus_dbxref"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="relationship_type" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="dbxref_id" foreignKey="locus_dbxref_evidence_history_relationship_type_fkey" implied="false" onDeleteCascade="false" schema="public" table="dbxref"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="evidence_code" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="dbxref_id" foreignKey="locus_dbxref_evidence_history_evidence_code_fkey" implied="false" onDeleteCascade="false" schema="public" table="dbxref"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="evidence_description" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="dbxref_id" foreignKey="locus_dbxref_evidence_history_evidence_description_fkey" implied="false" onDeleteCascade="false" schema="public" table="dbxref"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="evidence_with" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="dbxref_id" foreignKey="locus_dbxref_evidence_history_evidence_with_fkey" implied="false" onDeleteCascade="false" schema="public" table="dbxref"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="reference_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="dbxref_id" foreignKey="locus_dbxref_evidence_history_reference_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="dbxref"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="8" name="sp_person_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="sp_person_id" foreignKey="locus_dbxref_evidence_history_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="9" name="updated_by" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="sp_person_id" foreignKey="locus_dbxref_evidence_history_updated_by_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="10" name="create_date" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="11" name="modified_date" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="12" name="obsolete" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <primaryKey column="locus_dbxref_evidence_history_id" sequenceNumberInPK="1"/>
+         <index name="locus_dbxref_evidence_history_pkey" unique="true">
+            <column ascending="true" name="locus_dbxref_evidence_history_id"/>
+         </index>
+      </table>
+      <table name="locus_history" numRows="3" remarks="" schema="phenome" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('phenome.locus_history_locus_history_id_seq'::regclass)" digits="0" id="0" name="locus_history_id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="locus_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="locus_id" foreignKey="locus_history_locus_id_fkey" implied="false" onDeleteCascade="true" schema="phenome" table="locus"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="locus_name" nullable="true" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="locus_symbol" nullable="true" remarks="" size="32" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="original_symbol" nullable="true" remarks="" size="32" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="gene_activity" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="locus_description" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="locus_notes" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="8" name="linkage_group" nullable="true" remarks="" size="16" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="9" name="lg_arm" nullable="true" remarks="" size="16" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="10" name="sp_person_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="sp_person_id" foreignKey="locus_history_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="11" name="updated_by" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="sp_person_id" foreignKey="locus_history_updated_by_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="12" name="obsolete" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="13" name="create_date" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <primaryKey column="locus_history_id" sequenceNumberInPK="1"/>
+         <index name="locus_history_pkey" unique="true">
+            <column ascending="true" name="locus_history_id"/>
+         </index>
+         <checkConstraint constraint="((((lg_arm)::text = 'short'::text) OR ((lg_arm)::text = 'long'::text) OR ((lg_arm)::text = ''::text)))" name="locus_history_lg_arm_check"/>
+      </table>
+      <table name="locus_image" numRows="0" remarks="" schema="phenome" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('phenome.locus_image_locus_image_id_seq'::regclass)" digits="0" id="0" name="locus_image_id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="image_id" nullable="true" remarks="" size="19" type="int8" typeCode="-5">
+            <parent column="image_id" foreignKey="locus_image_image_id_fkey" implied="false" onDeleteCascade="false" schema="metadata" table="md_image"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="locus_id" nullable="true" remarks="" size="19" type="int8" typeCode="-5">
+            <parent column="locus_id" foreignKey="locus_image_locus_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="locus"/>
+         </column>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="3" name="obsolete" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="sp_person_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="sp_person_id" foreignKey="locus_image_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="5" name="create_date" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="6" name="modified_date" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="50" digits="0" id="7" name="display_order" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
+         <primaryKey column="locus_image_id" sequenceNumberInPK="1"/>
+         <index name="locus_image_pkey" unique="true">
+            <column ascending="true" name="locus_image_id"/>
+         </index>
+      </table>
+      <table name="locus_marker" numRows="0" remarks="" schema="phenome" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('phenome.locus_marker_locus_marker_id_seq'::regclass)" digits="0" id="0" name="locus_marker_id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="locus_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="locus_id" foreignKey="locus_marker_locus_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="locus"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="marker_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="marker_id" foreignKey="locus_marker_marker_id_fkey" implied="false" onDeleteCascade="false" schema="sgn" table="marker"/>
+         </column>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="3" name="obsolete" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="sp_person_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="sp_person_id" foreignKey="locus_marker_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="5" name="create_date" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="6" name="modified_date" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <primaryKey column="locus_marker_id" sequenceNumberInPK="1"/>
+         <index name="locus_marker_pkey" unique="true">
+            <column ascending="true" name="locus_marker_id"/>
+         </index>
+      </table>
+      <table name="locus_owner" numRows="1" remarks="" schema="phenome" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('phenome.locus_owner_locus_owner_id_seq'::regclass)" digits="0" id="0" name="locus_owner_id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="locus_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="locus_id" foreignKey="locus_owner_locus_id_fkey" implied="false" onDeleteCascade="true" schema="phenome" table="locus"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="sp_person_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="sp_person_id" foreignKey="locus_owner_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="granted_by" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="sp_person_id" foreignKey="locus_owner_granted_by_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="4" name="obsolete" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="5" name="create_date" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="6" name="modified_date" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <primaryKey column="locus_owner_id" sequenceNumberInPK="1"/>
+         <index name="locus_owner_pkey" unique="true">
+            <column ascending="true" name="locus_owner_id"/>
+         </index>
+         <index name="locus_owner_key" unique="true">
+            <column ascending="true" name="locus_id"/>
+            <column ascending="true" name="sp_person_id"/>
+         </index>
+      </table>
+      <table name="locus_pub_ranking" numRows="0" remarks="" schema="phenome" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="locus_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="locus_id" foreignKey="locus_pub_ranking_locus_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="locus"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="pub_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="pub_id" foreignKey="locus_pub_ranking_pub_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="pub"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="8" id="2" name="rank" nullable="true" remarks="" size="8" type="float4" typeCode="7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="match_type" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="headline" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+      </table>
+      <table name="locus_pub_ranking_validate" numRows="0" remarks="" schema="phenome" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="locus_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="locus_id" foreignKey="locus_pub_ranking_validate_locus_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="locus"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="pub_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="pub_id" foreignKey="locus_pub_ranking_validate_pub_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="pub"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="validate" nullable="true" remarks="" size="18" type="varchar" typeCode="12"/>
+      </table>
+      <table name="locus_registry" numRows="0" remarks="" schema="phenome" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('phenome.locus_registry_locus_registry_id_seq'::regclass)" digits="0" id="0" name="locus_registry_id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="locus_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="locus_id" foreignKey="locus_registry_locus_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="locus"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="registry_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="registry_id" foreignKey="locus_registry_registry_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="registry"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="sp_person_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="sp_person_id" foreignKey="locus_registry_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="4" name="create_date" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="5" name="modified_date" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="6" name="obsolete" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <primaryKey column="locus_registry_id" sequenceNumberInPK="1"/>
+         <index name="locus_registry_pkey" unique="true">
+            <column ascending="true" name="locus_registry_id"/>
+         </index>
+         <index name="locus_registry_id_key" unique="true">
+            <column ascending="true" name="locus_id"/>
+            <column ascending="true" name="registry_id"/>
+         </index>
+      </table>
+      <table name="locus_unigene" numRows="0" remarks="" schema="phenome" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('phenome.locus_unigene_locus_unigene_id_seq'::regclass)" digits="0" id="0" name="locus_unigene_id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="locus_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="locus_id" foreignKey="locus_unigene_locus_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="locus"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="unigene_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="unigene_id" foreignKey="locus_unigene_unigene_id_fkey" implied="false" onDeleteCascade="false" schema="sgn" table="unigene"/>
+         </column>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="3" name="obsolete" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="sp_person_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="sp_person_id" foreignKey="locus_unigene_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="5" name="create_date" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="6" name="modified_date" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <primaryKey column="locus_unigene_id" sequenceNumberInPK="1"/>
+         <index name="locus_unigene_pkey" unique="true">
+            <column ascending="true" name="locus_unigene_id"/>
+         </index>
+         <index name="locus_unigene_key" unique="true">
+            <column ascending="true" name="locus_id"/>
+            <column ascending="true" name="unigene_id"/>
+         </index>
+      </table>
+      <table name="locusgroup" numRows="0" remarks="" schema="phenome" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('phenome.locusgroup_locusgroup_id_seq'::regclass)" digits="0" id="0" name="locusgroup_id" nullable="false" remarks="" size="10" type="serial" typeCode="4">
+            <child column="locusgroup_id" foreignKey="locusgroup_member_locusgroup_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="locusgroup_member"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="locusgroup_name" nullable="true" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="relationship_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="cvterm_id" foreignKey="locusgroup_relationship_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="cvterm"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="sp_person_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="sp_person_id" foreignKey="locusgroup_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="4" name="create_date" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="5" name="modified_date" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="6" name="obsolete" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <primaryKey column="locusgroup_id" sequenceNumberInPK="1"/>
+         <index name="locusgroup_pkey" unique="true">
+            <column ascending="true" name="locusgroup_id"/>
+         </index>
+         <index name="locusgroup_locusgroup_name_key" unique="true">
+            <column ascending="true" name="locusgroup_name"/>
+         </index>
+      </table>
+      <table name="locusgroup_member" numRows="0" remarks="" schema="phenome" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('phenome.locusgroup_member_locusgroup_member_id_seq'::regclass)" digits="0" id="0" name="locusgroup_member_id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="locusgroup_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="locusgroup_id" foreignKey="locusgroup_member_locusgroup_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="locusgroup"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="locus_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="locus_id" foreignKey="locusgroup_member_locus_id_fkey" implied="false" onDeleteCascade="true" schema="phenome" table="locus"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="direction" nullable="true" remarks="" size="16" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="evidence_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="cvterm_id" foreignKey="locusgroup_member_evidence_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="cvterm"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="reference_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="dbxref_id" foreignKey="locusgroup_member_reference_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="dbxref"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="sp_person_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="sp_person_id" foreignKey="locusgroup_member_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="7" name="create_date" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="8" name="modified_date" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="9" name="obsolete" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <primaryKey column="locusgroup_member_id" sequenceNumberInPK="1"/>
+         <index name="locusgroup_member_pkey" unique="true">
+            <column ascending="true" name="locusgroup_member_id"/>
+         </index>
+         <index name="locusgroup_member_key" unique="true">
+            <column ascending="true" name="locus_id"/>
+            <column ascending="true" name="locusgroup_id"/>
+         </index>
+         <checkConstraint constraint="((((direction)::text = 'subject'::text) OR ((direction)::text = 'object'::text) OR ((direction)::text = ''::text)))" name="locusgroup_member_direction_check"/>
+      </table>
+      <table name="nd_experiment_md_files" numRows="3503" remarks="" schema="phenome" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('phenome.nd_experiment_md_files_nd_experiment_md_files_id_seq'::regclass)" digits="0" id="0" name="nd_experiment_md_files_id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="nd_experiment_id" nullable="true" remarks="" size="19" type="int8" typeCode="-5">
+            <parent column="nd_experiment_id" foreignKey="nd_experiment_md_files_nd_experiment_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="nd_experiment"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="file_id" nullable="true" remarks="" size="19" type="int8" typeCode="-5"/>
+         <primaryKey column="nd_experiment_md_files_id" sequenceNumberInPK="1"/>
+         <index name="nd_experiment_md_files_pkey" unique="true">
+            <column ascending="true" name="nd_experiment_md_files_id"/>
+         </index>
+      </table>
+      <table name="nd_experiment_md_images" numRows="0" remarks="" schema="phenome" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('phenome.nd_experiment_md_images_nd_experiment_md_images_id_seq'::regclass)" digits="0" id="0" name="nd_experiment_md_images_id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="nd_experiment_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="nd_experiment_id" foreignKey="nd_experiment_md_images_nd_experiment_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="nd_experiment"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="image_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="image_id" foreignKey="nd_experiment_md_images_image_id_fkey" implied="false" onDeleteCascade="false" schema="metadata" table="md_image"/>
+         </column>
+         <primaryKey column="nd_experiment_md_images_id" sequenceNumberInPK="1"/>
+         <index name="nd_experiment_md_images_pkey" unique="true">
+            <column ascending="true" name="nd_experiment_md_images_id"/>
+         </index>
+      </table>
+      <table name="nd_experiment_md_json" numRows="0" remarks="" schema="phenome" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('phenome.nd_experiment_md_json_nd_experiment_md_json_id_seq'::regclass)" digits="0" id="0" name="nd_experiment_md_json_id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="nd_experiment_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="nd_experiment_id" foreignKey="nd_experiment_md_json_nd_experiment_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="nd_experiment"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="json_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="json_id" foreignKey="nd_experiment_md_json_json_id_fkey" implied="false" onDeleteCascade="false" schema="metadata" table="md_json"/>
+         </column>
+         <primaryKey column="nd_experiment_md_json_id" sequenceNumberInPK="1"/>
+         <index name="nd_experiment_md_json_pkey" unique="true">
+            <column ascending="true" name="nd_experiment_md_json_id"/>
+         </index>
+      </table>
+      <table name="phenome_genotype" numRows="0" remarks="" schema="phenome" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('phenome.genotype_genotype_id_seq'::regclass)" digits="0" id="0" name="phenome_genotype_id" nullable="false" remarks="" size="10" type="serial" typeCode="4">
+            <child column="phenome_genotype_id" foreignKey="genotype_region_genotype_id_fkey" implied="false" onDeleteCascade="true" schema="phenome" table="genotype_region"/>
+            <child column="phenome_genotype_id" foreignKey="polymorphic_fragment_genotype_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="polymorphic_fragment"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="individual_id" nullable="true" remarks="" size="19" type="int8" typeCode="-5">
+            <parent column="individual_id" foreignKey="genotype_individual_id_fkey" implied="false" onDeleteCascade="true" schema="phenome" table="individual"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="experiment_name" nullable="true" remarks="" size="100" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="reference_map_id" nullable="true" remarks="" size="19" type="int8" typeCode="-5">
+            <parent column="map_id" foreignKey="genotype_reference_map_id_fkey" implied="false" onDeleteCascade="false" schema="sgn" table="map"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="background_accession_id" nullable="true" remarks="" size="19" type="int8" typeCode="-5">
+            <parent column="accession_id" foreignKey="genotype_background_accession_id_fkey" implied="false" onDeleteCascade="false" schema="sgn" table="accession"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="preferred" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="sp_person_id" nullable="true" remarks="" size="19" type="int8" typeCode="-5">
+            <parent column="sp_person_id" foreignKey="genotype_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="7" name="modified_date" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="8" name="create_date" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="9" name="obsolete" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="10" name="genotype_experiment_id" nullable="true" remarks="" size="19" type="int8" typeCode="-5">
+            <parent column="genotype_experiment_id" foreignKey="genotype_genotype_experiment_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="genotype_experiment"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="11" name="stock_id" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
+         <primaryKey column="phenome_genotype_id" sequenceNumberInPK="1"/>
+         <index name="genotype_pkey" unique="true">
+            <column ascending="true" name="phenome_genotype_id"/>
+         </index>
+         <index name="genotype_individual_id_idx" unique="false">
+            <column ascending="true" name="individual_id"/>
+         </index>
+         <index name="genotype_reference_map_id_idx" unique="false">
+            <column ascending="true" name="reference_map_id"/>
+         </index>
+      </table>
+      <table name="phenotype_user_trait" numRows="0" remarks="" schema="phenome" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('phenome.phenotype_user_trait_phenotype_user_trait_id_seq'::regclass)" digits="0" id="0" name="phenotype_user_trait_id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="user_trait_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="user_trait_id" foreignKey="phenotype_user_trait_user_trait_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="user_trait"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="phenotype_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="phenotype_id" foreignKey="phenotype_user_trait_phenotype_id_fkey" implied="false" onDeleteCascade="true" schema="public" table="phenotype"/>
+         </column>
+         <primaryKey column="phenotype_user_trait_id" sequenceNumberInPK="1"/>
+         <index name="phenotype_user_trait_pkey" unique="true">
+            <column ascending="true" name="phenotype_user_trait_id"/>
+         </index>
+      </table>
+      <table name="polymorphic_fragment" numRows="0" remarks="" schema="phenome" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('phenome.polymorphic_fragment_polymorphic_fragment_id_seq'::regclass)" digits="0" id="0" name="polymorphic_fragment_id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="phenome_genotype_id" nullable="true" remarks="" size="19" type="int8" typeCode="-5">
+            <parent column="phenome_genotype_id" foreignKey="polymorphic_fragment_genotype_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="phenome_genotype"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="flanking_marker1_id" nullable="true" remarks="" size="19" type="int8" typeCode="-5">
+            <parent column="marker_id" foreignKey="polymorphic_fragment_flanking_marker1_id_fkey" implied="false" onDeleteCascade="false" schema="sgn" table="marker"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="flanking_marker2_id" nullable="true" remarks="" size="19" type="int8" typeCode="-5">
+            <parent column="marker_id" foreignKey="polymorphic_fragment_flanking_marker2_id_fkey" implied="false" onDeleteCascade="false" schema="sgn" table="marker"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="zygocity" nullable="true" remarks="" size="15" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="linkage_group" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="type" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="sp_person_id" nullable="true" remarks="" size="19" type="int8" typeCode="-5">
+            <parent column="sp_person_id" foreignKey="polymorphic_fragment_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="8" name="modified_date" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="9" name="create_date" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="10" name="obsolete" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <primaryKey column="polymorphic_fragment_id" sequenceNumberInPK="1"/>
+         <index name="polymorphic_fragment_pkey" unique="true">
+            <column ascending="true" name="polymorphic_fragment_id"/>
+         </index>
+      </table>
+      <table name="population" numRows="0" remarks="" schema="phenome" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('phenome.population_population_id_seq'::regclass)" digits="0" id="0" name="population_id" nullable="false" remarks="" size="10" type="serial" typeCode="4">
+            <child column="population_id" foreignKey="individual_population_id_fkey" implied="false" onDeleteCascade="true" schema="phenome" table="individual"/>
+            <child column="population_id" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" schema="phenome" table="individual_history"/>
+            <child column="population_id" foreignKey="is_public_population_id_fkey" implied="false" onDeleteCascade="true" schema="phenome" table="is_public"/>
+            <child column="population_id" foreignKey="population_dbxref_population_id_fkey" implied="false" onDeleteCascade="true" schema="phenome" table="population_dbxref"/>
+            <child column="population_id" foreignKey="user_trait_unit_population_id_fkey" implied="false" onDeleteCascade="true" schema="phenome" table="user_trait_unit"/>
+            <child column="population_id" foreignKey="map_population_id_fkey" implied="false" onDeleteCascade="true" schema="sgn" table="map"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="name" nullable="true" remarks="" size="100" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="description" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="person_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="sp_person_id" foreignKey="population_person_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="sp_person_id" nullable="true" remarks="" size="19" type="int8" typeCode="-5">
+            <parent column="sp_person_id" foreignKey="population_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="5" name="create_date" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="6" name="modified_date" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="background_accession_id" nullable="true" remarks="" size="19" type="int8" typeCode="-5">
+            <parent column="accession_id" foreignKey="population_background_accession_id_fkey" implied="false" onDeleteCascade="false" schema="sgn" table="accession"/>
+         </column>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="8" name="obsolete" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="9" name="cross_type_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="cross_type_id" foreignKey="population_cross_type_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="cross_type"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="10" name="female_parent_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="accession_id" foreignKey="population_female_parent_id_fkey" implied="false" onDeleteCascade="false" schema="sgn" table="accession"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="11" name="male_parent_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="accession_id" foreignKey="population_male_parent_id_fkey" implied="false" onDeleteCascade="false" schema="sgn" table="accession"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="12" name="recurrent_parent_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="accession_id" foreignKey="population_recurrent_parent_id_fkey" implied="false" onDeleteCascade="false" schema="sgn" table="accession"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="13" name="donor_parent_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="accession_id" foreignKey="population_donor_parent_id_fkey" implied="false" onDeleteCascade="false" schema="sgn" table="accession"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="14" name="comment" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="15" name="web_uploaded" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="16" name="common_name_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="common_name_id" foreignKey="population_common_name_id_fkey" implied="false" onDeleteCascade="false" schema="sgn" table="common_name"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="17" name="stock_id" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
+         <primaryKey column="population_id" sequenceNumberInPK="1"/>
+         <index name="population_pkey" unique="true">
+            <column ascending="true" name="population_id"/>
+         </index>
+         <index name="population_name_key" unique="true">
+            <column ascending="true" name="name"/>
+         </index>
+      </table>
+      <table name="population_dbxref" numRows="0" remarks="" schema="phenome" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('phenome.population_dbxref_population_dbxref_id_seq'::regclass)" digits="0" id="0" name="population_dbxref_id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="population_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="population_id" foreignKey="population_dbxref_population_id_fkey" implied="false" onDeleteCascade="true" schema="phenome" table="population"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="dbxref_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="dbxref_id" foreignKey="population_dbxref_dbxref_id_fkey" implied="false" onDeleteCascade="true" schema="public" table="dbxref"/>
+         </column>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="3" name="obsolete" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="sp_person_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="sp_person_id" foreignKey="population_dbxref_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="5" name="create_date" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="6" name="modified_date" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <primaryKey column="population_dbxref_id" sequenceNumberInPK="1"/>
+         <index name="population_dbxref_pkey" unique="true">
+            <column ascending="true" name="population_dbxref_id"/>
+         </index>
+      </table>
+      <table name="project_md_image" numRows="0" remarks="" schema="phenome" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('phenome.project_md_image_project_md_image_id_seq'::regclass)" digits="0" id="0" name="project_md_image_id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="project_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="project_id" foreignKey="project_md_image_project_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="project"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="image_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="image_id" foreignKey="project_md_image_image_id_fkey" implied="false" onDeleteCascade="false" schema="metadata" table="md_image"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="type_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="cvterm_id" foreignKey="project_md_image_type_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="cvterm"/>
+         </column>
+         <primaryKey column="project_md_image_id" sequenceNumberInPK="1"/>
+         <index name="project_md_image_pkey" unique="true">
+            <column ascending="true" name="project_md_image_id"/>
+         </index>
+      </table>
+      <table name="project_owner" numRows="0" remarks="" schema="phenome" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('phenome.project_owner_project_owner_id_seq'::regclass)" digits="0" id="0" name="project_owner_id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="project_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="project_id" foreignKey="project_owner_project_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="project"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="sp_person_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="sp_person_id" foreignKey="project_owner_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="3" name="create_date" nullable="true" remarks="" size="29" type="timestamp" typeCode="93"/>
+         <primaryKey column="project_owner_id" sequenceNumberInPK="1"/>
+         <index name="project_owner_pkey" unique="true">
+            <column ascending="true" name="project_owner_id"/>
+         </index>
+      </table>
+      <table name="pub_curator" numRows="0" remarks="" schema="phenome" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('phenome.pub_curator_pub_curator_id_seq'::regclass)" digits="0" id="0" name="pub_curator_id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="pub_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="pub_id" foreignKey="pub_curator_pub_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="pub"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="sp_person_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="sp_person_id" foreignKey="pub_curator_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="status" nullable="true" remarks="" size="32" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="4" name="date_stored" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="5" name="date_curated" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="curated_by" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="sp_person_id" foreignKey="pub_curator_curated_by_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="assigned_to" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="sp_person_id" foreignKey="pub_curator_assigned_to_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <primaryKey column="pub_curator_id" sequenceNumberInPK="1"/>
+         <index name="pub_curator_pkey" unique="true">
+            <column ascending="true" name="pub_curator_id"/>
+         </index>
+         <index name="pub_curator_pub_id_key" unique="true">
+            <column ascending="true" name="pub_id"/>
+         </index>
+      </table>
+      <table name="registry" numRows="0" remarks="" schema="phenome" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('phenome.registry_registry_id_seq'::regclass)" digits="0" id="0" name="registry_id" nullable="false" remarks="" size="10" type="serial" typeCode="4">
+            <child column="registry_id" foreignKey="locus_registry_registry_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="locus_registry"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="symbol" nullable="false" remarks="" size="32" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="name" nullable="false" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="description" nullable="false" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="origin" nullable="true" remarks="" size="32" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="sp_person_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="sp_person_id" foreignKey="registry_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="updated_by" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="sp_person_id" foreignKey="registry_updated_by_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="7" name="create_date" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="8" name="modified_date" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="9" name="status" nullable="true" remarks="" size="32" type="varchar" typeCode="12"/>
+         <primaryKey column="registry_id" sequenceNumberInPK="1"/>
+         <index name="registry_pkey" unique="true">
+            <column ascending="true" name="registry_id"/>
+         </index>
+         <index name="symbol_name_key" unique="true">
+            <column ascending="true" name="symbol"/>
+            <column ascending="true" name="name"/>
+         </index>
+         <checkConstraint constraint="((((status)::text = 'registered'::text) OR ((status)::text = 'active'::text) OR ((status)::text = 'inactive'::text) OR ((status)::text = 'deleted'::text) OR ((status)::text = 'obsolete'::text)))" name="registry_status_check"/>
+      </table>
+      <table name="stock_allele" numRows="0" remarks="" schema="phenome" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('phenome.stock_allele_stock_allele_id_seq'::regclass)" digits="0" id="0" name="stock_allele_id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="stock_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="stock_id" foreignKey="stock_allele_stock_id_fkey" implied="false" onDeleteCascade="true" schema="public" table="stock"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="allele_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="allele_id" foreignKey="stock_allele_allele_id_fkey" implied="false" onDeleteCascade="true" schema="phenome" table="allele"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="metadata_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="metadata_id" foreignKey="stock_image_metadata_id_fkey" implied="false" onDeleteCascade="true" schema="metadata" table="md_metadata"/>
+         </column>
+         <primaryKey column="stock_allele_id" sequenceNumberInPK="1"/>
+         <index name="stock_allele_pkey" unique="true">
+            <column ascending="true" name="stock_allele_id"/>
+         </index>
+      </table>
+      <table name="stock_file" numRows="0" remarks="" schema="phenome" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('phenome.stock_file_stock_file_id_seq'::regclass)" digits="0" id="0" name="stock_file_id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="stock_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="stock_id" foreignKey="stock_file_stock_id_fkey" implied="false" onDeleteCascade="true" schema="public" table="stock"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="file_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="file_id" foreignKey="stock_file_file_id_fkey" implied="false" onDeleteCascade="true" schema="metadata" table="md_files"/>
+         </column>
+         <primaryKey column="stock_file_id" sequenceNumberInPK="1"/>
+         <index name="stock_file_pkey" unique="true">
+            <column ascending="true" name="stock_file_id"/>
+         </index>
+      </table>
+      <table name="stock_image" numRows="0" remarks="" schema="phenome" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('phenome.stock_image_stock_image_id_seq'::regclass)" digits="0" id="0" name="stock_image_id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="stock_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="stock_id" foreignKey="stock_image_stock_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="stock"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="image_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="image_id" foreignKey="stock_image_image_id_fkey" implied="false" onDeleteCascade="false" schema="metadata" table="md_image"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="metadata_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="metadata_id" foreignKey="stock_image_metadata_id_fkey" implied="false" onDeleteCascade="false" schema="metadata" table="md_metadata"/>
+         </column>
+         <column autoUpdated="false" defaultValue="50" digits="0" id="4" name="display_order" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
+         <primaryKey column="stock_image_id" sequenceNumberInPK="1"/>
+         <index name="stock_image_pkey" unique="true">
+            <column ascending="true" name="stock_image_id"/>
+         </index>
+      </table>
+      <table name="stock_owner" numRows="489" remarks="" schema="phenome" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('phenome.stock_owner_stock_owner_id_seq'::regclass)" digits="0" id="0" name="stock_owner_id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="stock_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="stock_id" foreignKey="stock_owner_stock_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="stock"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="sp_person_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="sp_person_id" foreignKey="stock_owner_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="metadata_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="metadata_id" foreignKey="stock_owner_metadata_id_fkey" implied="false" onDeleteCascade="false" schema="metadata" table="md_metadata"/>
+         </column>
+         <primaryKey column="stock_owner_id" sequenceNumberInPK="1"/>
+         <index name="stock_owner_pkey" unique="true">
+            <column ascending="true" name="stock_owner_id"/>
+         </index>
+      </table>
+      <table name="tomato_il_bin" numRows="0" remarks="" schema="phenome" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('phenome.tomato_il_bin_il_bin_id_seq'::regclass)" digits="0" id="0" name="il_bin_id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="chromosome" nullable="false" remarks="" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="name" nullable="false" remarks="" size="32" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="n_marker_n" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="marker_id" foreignKey="tomato_il_bin_n_marker_n_fkey" implied="false" onDeleteCascade="false" schema="sgn" table="marker"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="n_marker_s" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="marker_id" foreignKey="tomato_il_bin_n_marker_s_fkey" implied="false" onDeleteCascade="false" schema="sgn" table="marker"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="s_marker_n" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="marker_id" foreignKey="tomato_il_bin_s_marker_n_fkey" implied="false" onDeleteCascade="false" schema="sgn" table="marker"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="s_marker_s" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="marker_id" foreignKey="tomato_il_bin_s_marker_s_fkey" implied="false" onDeleteCascade="false" schema="sgn" table="marker"/>
+         </column>
+         <primaryKey column="il_bin_id" sequenceNumberInPK="1"/>
+         <index name="tomato_il_bin_pkey" unique="true">
+            <column ascending="true" name="il_bin_id"/>
+         </index>
+         <checkConstraint constraint="(((chromosome &gt;= 1) AND (chromosome &lt;= 12)))" name="tomato_il_bin_chromosome_check"/>
+      </table>
+      <table name="tomato_term" numRows="0" remarks="" schema="phenome" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('phenome.tomato_term_tomato_term_id_seq'::regclass)" digits="0" id="0" name="tomato_term_id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="''::character varying" digits="0" id="1" name="tomato_term_name" nullable="false" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="''::character varying" digits="0" id="2" name="tomato_term_type" nullable="false" remarks="" size="55" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="''::character varying" digits="0" id="3" name="tomato_term_acc" nullable="false" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="(0)::bigint" digits="0" id="4" name="is_obsolete" nullable="false" remarks="" size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="(0)::bigint" digits="0" id="5" name="is_root" nullable="false" remarks="" size="19" type="int8" typeCode="-5"/>
+         <primaryKey column="tomato_term_id" sequenceNumberInPK="1"/>
+         <index name="tomato_term_pkey" unique="true">
+            <column ascending="true" name="tomato_term_id"/>
+         </index>
+         <index name="tomato_term_acc_key" unique="true">
+            <column ascending="true" name="tomato_term_acc"/>
+         </index>
+      </table>
+      <table name="tomato_term2term" numRows="0" remarks="" schema="phenome" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('phenome.tomato_term2term_tomato_term2term_id_seq'::regclass)" digits="0" id="0" name="tomato_term2term_id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="(0)::bigint" digits="0" id="1" name="relationship_type_id" nullable="false" remarks="" size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="(0)::bigint" digits="0" id="2" name="term1_id" nullable="false" remarks="" size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="(0)::bigint" digits="0" id="3" name="term2_id" nullable="false" remarks="" size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="(0)::bigint" digits="0" id="4" name="complete" nullable="false" remarks="" size="19" type="int8" typeCode="-5"/>
+         <primaryKey column="tomato_term2term_id" sequenceNumberInPK="1"/>
+         <index name="tomato_term2term_pkey" unique="true">
+            <column ascending="true" name="tomato_term2term_id"/>
+         </index>
+         <index name="term1_id_key" unique="true">
+            <column ascending="true" name="term1_id"/>
+            <column ascending="true" name="term2_id"/>
+            <column ascending="true" name="relationship_type_id"/>
+         </index>
+      </table>
+      <table name="unit" numRows="0" remarks="" schema="phenome" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('phenome.unit_unit_id_seq'::regclass)" digits="0" id="0" name="unit_id" nullable="false" remarks="" size="10" type="serial" typeCode="4">
+            <child column="unit_id" foreignKey="user_trait_unit_unit_id_fkey" implied="false" onDeleteCascade="true" schema="phenome" table="user_trait_unit"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="name" nullable="false" remarks="" size="2147483647" type="varchar" typeCode="12"/>
+         <primaryKey column="unit_id" sequenceNumberInPK="1"/>
+         <index name="unit_pkey" unique="true">
+            <column ascending="true" name="unit_id"/>
+         </index>
+         <index name="unit_idx1" unique="false">
+            <column ascending="true" name="name"/>
+         </index>
+      </table>
+      <table name="user_trait" numRows="0" remarks="" schema="phenome" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('phenome.user_trait_user_trait_id_seq'::regclass)" digits="0" id="0" name="user_trait_id" nullable="false" remarks="" size="10" type="serial" typeCode="4">
+            <child column="user_trait_id" foreignKey="phenotype_user_trait_user_trait_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="phenotype_user_trait"/>
+            <child column="user_trait_id" foreignKey="user_trait_unit_user_trait_id_fkey" implied="false" onDeleteCascade="true" schema="phenome" table="user_trait_unit"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="cv_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="cv_id" foreignKey="user_trait_cv_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="cv"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="name" nullable="false" remarks="" size="2147483647" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="definition" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="dbxref_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="dbxref_id" foreignKey="user_trait_dbxref_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="dbxref"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="sp_person_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="sp_person_id" foreignKey="user_trait_sp_person_id_fkey" implied="false" onDeleteCascade="false" schema="sgn_people" table="sp_person"/>
+         </column>
+         <primaryKey column="user_trait_id" sequenceNumberInPK="1"/>
+         <index name="user_trait_pkey" unique="true">
+            <column ascending="true" name="user_trait_id"/>
+         </index>
+         <index name="user_trait_idx1" unique="false">
+            <column ascending="true" name="name"/>
+         </index>
+      </table>
+      <table name="user_trait_unit" numRows="0" remarks="" schema="phenome" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('phenome.user_trait_unit_user_trait_unit_id_seq'::regclass)" digits="0" id="0" name="user_trait_unit_id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="user_trait_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="user_trait_id" foreignKey="user_trait_unit_user_trait_id_fkey" implied="false" onDeleteCascade="true" schema="phenome" table="user_trait"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="unit_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="unit_id" foreignKey="user_trait_unit_unit_id_fkey" implied="false" onDeleteCascade="true" schema="phenome" table="unit"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="population_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="population_id" foreignKey="user_trait_unit_population_id_fkey" implied="false" onDeleteCascade="true" schema="phenome" table="population"/>
+         </column>
+         <primaryKey column="user_trait_unit_id" sequenceNumberInPK="1"/>
+         <index name="user_trait_unit_pkey" unique="true">
+            <column ascending="true" name="user_trait_unit_id"/>
+         </index>
+      </table>
+      <table name="variant" numRows="0" remarks="" schema="phenome" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('phenome.variant_variant_id_seq'::regclass)" digits="0" id="0" name="variant_id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="locus_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="locus_id" foreignKey="variant_locus_id_fkey" implied="false" onDeleteCascade="false" schema="phenome" table="locus"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="variant_name" nullable="true" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="variant_gi" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="variant_notes" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <primaryKey column="variant_id" sequenceNumberInPK="1"/>
+         <index name="variant_pkey" unique="true">
+            <column ascending="true" name="variant_id"/>
+         </index>
+         <index name="variant_gi_key" unique="true">
+            <column ascending="true" name="variant_gi"/>
+         </index>
+      </table>
+   </tables>
+</database>

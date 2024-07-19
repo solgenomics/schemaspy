@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>unigene - cxgn_breedbase.sgn</title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <link rel="icon" type="image/png" sizes="16x16" href="../favicon.png">
+        <!-- Bootstrap 3.3.5 -->
+        <link rel="stylesheet" href="../bower/admin-lte/bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="../bower/font-awesome/css/font-awesome.min.css">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="../bower/ionicons/css/ionicons.min.css">
+        <!-- DataTables -->
+        <link rel="stylesheet" href="../bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" href="../bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+        <!-- Code Mirror -->
+        <link rel="stylesheet" href="../bower/codemirror/codemirror.css">
+        <!-- Fonts -->
+        <link href='../fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+        <link href='../fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+
+        <!-- Theme style -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/AdminLTE.min.css">
+        <!-- Salvattore -->
+        <link rel="stylesheet" href="../bower/salvattore/salvattore.css">
+        <!-- AdminLTE Skins. Choose a skin from the css/skins
+           folder instead of downloading all of them to reduce the load. -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/skins/_all-skins.min.css">
+        <!-- SchemaSpy -->
+        <link rel="stylesheet" href="../schemaSpy.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="../bower/html5shiv/html5shiv.min.js"></script>
+        <script src="../bower/respond/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+    <body class="hold-transition skin-blue layout-top-nav">
+        <div class="wrapper">
+            <header class="main-header">
+                <nav class="navbar navbar-static-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <a href="../index.html" class="navbar-brand"><b>cxgn_breedbase</b></a><span class="navbar-brand" style="padding-left: 0">.sgn</span>
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"><i class="fa fa-bars"></i></button>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a href="../index.html">Tables <span class="sr-only">(current)</span></a></li>
+                                <li><a href="../columns.html" title="All of the columns in the schema">Columns</a></li>
+                                <li><a href="../constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+                                <li><a href="../relationships.html" title="Diagram of table relationships">Relationships</a></li>
+                                <li><a href="../orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>
+                                <li><a href="../anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+                                <li><a href="../routines.html" title="Procedures and functions">Routines</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                        <!-- Navbar Right Menu -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </nav>
+            </header>
+            <!-- Main content -->
+            <!-- Full Width Column -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>unigene</h1><p><span id="recordNumber">0</span> rows</p><br />
+                </section>
+                <!-- Main content -->
+                <section class="content">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+                            <h3 id="Columns" class="box-title">Columns</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table
+                                    id="standard_table"
+                                    class="table table-bordered table-striped dataTable"
+                                    role="grid"
+                                    data-paging="true"
+                                    data-page-length="10"
+                                    data-length-change="false">
+                                <thead align='left'>
+                                <tr>
+                                    <th>Column</th>
+                                    <th>Type</th>
+                                    <th>Size</th>
+                                    <th title='Are nulls allowed?'>Nulls</th>
+                                    <th title='Is column automatically updated?'>Auto</th>
+                                    <th title='Default value'>Default</th>
+                                    <th title='Columns in tables that reference this column'>Children</th>
+                                    <th title='Columns in tables that are referenced by this column'>Parents</th>
+                                    <th title='Comments' class="toggle"><span>Comments</span></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="unigene_id">unigene_id</span></td>
+                                    <td>serial</td>
+                                    <td>10</td>
+                                    <td title=''></td>
+                                    <td title='Automatically updated by the database'>√</td>
+                                    <td>nextval(&#39;sgn.unigene_unigene_id_seq&#39;::regclass)</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="locus_unigene.unigene_id references unigene.unigene_id via locus_unigene_unigene_id_fkey"><a href='../../phenome/tables/locus_unigene.html'>locus_unigene</a><span class='relatedKey'>.unigene_id</span></td>
+                                                <td class="constraint detail">locus_unigene_unigene_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="unigene_dbxref.unigene_id references unigene.unigene_id via unigene_dbxref_unigene_id_fkey"><a href='../../public/tables/unigene_dbxref.html'>unigene_dbxref</a><span class='relatedKey'>.unigene_id</span></td>
+                                                <td class="constraint detail">unigene_dbxref_unigene_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="unigene_relations.superceded_by references unigene.unigene_id via unigene_relations_superceded_by_fkey"><a href='../../public/tables/unigene_relations.html'>unigene_relations</a><span class='relatedKey'>.superceded_by</span></td>
+                                                <td class="constraint detail">unigene_relations_superceded_by_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="unigene_relations.unigene_id references unigene.unigene_id via unigene_relations_unigene_id_fkey"><a href='../../public/tables/unigene_relations.html'>unigene_relations</a><span class='relatedKey'>.unigene_id</span></td>
+                                                <td class="constraint detail">unigene_relations_unigene_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="unigene_signalp.unigene_id references unigene.unigene_id via unigene_signalp_unigene_id_fkey"><a href='../../public/tables/unigene_signalp.html'>unigene_signalp</a><span class='relatedKey'>.unigene_id</span></td>
+                                                <td class="constraint detail">unigene_signalp_unigene_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="blast_annotations.apply_id references unigene.unigene_id via apply_id_fkey"><a href='blast_annotations.html'>blast_annotations</a><span class='relatedKey'>.apply_id</span></td>
+                                                <td class="constraint detail">apply_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="cds.unigene_id references unigene.unigene_id via cds_unigene_id_fkey"><a href='cds.html'>cds</a><span class='relatedKey'>.unigene_id</span></td>
+                                                <td class="constraint detail">cds_unigene_id_fkey</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="cosii_ortholog.unigene_id&#39;s name implies that it&#39;s a child of unigene.unigene_id, but it doesn&#39;t reference that column."><a href='cosii_ortholog.html'>cosii_ortholog</a><span class='relatedKey'>.unigene_id</span></td>
+                                                <td class="constraint detail">Implied Constraint</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="primer_unigene_match.unigene_id references unigene.unigene_id via primer_unigene_match_unigene_id_fkey"><a href='primer_unigene_match.html'>primer_unigene_match</a><span class='relatedKey'>.unigene_id</span></td>
+                                                <td class="constraint detail">primer_unigene_match_unigene_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="rflp_unigene_associations.unigene_id references unigene.unigene_id via unigene_id_fk"><a href='rflp_unigene_associations.html'>rflp_unigene_associations</a><span class='relatedKey'>.unigene_id</span></td>
+                                                <td class="constraint detail">unigene_id_fk</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="ssr_primer_unigene_matches.unigene_id references unigene.unigene_id via unigene_id_fk"><a href='ssr_primer_unigene_matches.html'>ssr_primer_unigene_matches</a><span class='relatedKey'>.unigene_id</span></td>
+                                                <td class="constraint detail">unigene_id_fk</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="unigene_member.unigene_id references unigene.unigene_id via unigene_member_unigene_id_fkey"><a href='unigene_member.html'>unigene_member</a><span class='relatedKey'>.unigene_id</span></td>
+                                                <td class="constraint detail">unigene_member_unigene_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="unigene_build_id">unigene_build_id</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="unigene.unigene_build_id references unigene_build.unigene_build_id via unigene_unigene_build_id_fkey"><a href='unigene_build.html'>unigene_build</a><span class='relatedKey'>.unigene_build_id</span></td>
+                                                <td class="constraint detail">unigene_unigene_build_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="consensi_id">consensi_id</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="unigene.consensi_id references unigene_consensi.consensi_id via unigene_unigene_consensi_id_fkey"><a href='unigene_consensi.html'>unigene_consensi</a><span class='relatedKey'>.consensi_id</span></td>
+                                                <td class="constraint detail">unigene_unigene_consensi_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='indexedColumn' title='Indexed'><i class='fa fa-sitemap fa-rotate-120' style='padding-right: 5px;'></i><span id="cluster_no">cluster_no</span></td>
+                                    <td>int8</td>
+                                    <td>19</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='indexedColumn' title='Indexed'><i class='fa fa-sitemap fa-rotate-120' style='padding-right: 5px;'></i><span id="contig_no">contig_no</span></td>
+                                    <td>int8</td>
+                                    <td>19</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="nr_members">nr_members</span></td>
+                                    <td>int8</td>
+                                    <td>19</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="database_name">database_name</span></td>
+                                    <td>varchar</td>
+                                    <td>2147483647</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>&#39;SGN&#39;::character varying</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='indexedColumn' title='Indexed'><i class='fa fa-sitemap fa-rotate-120' style='padding-right: 5px;'></i><span id="sequence_name">sequence_name</span></td>
+                                    <td>int8</td>
+                                    <td>19</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-sitemap"></i>
+                            <h3 id="Indexes" class="box-title">Indexes</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table
+                                    id="indexes_table"
+                                    class="table table-bordered table-striped dataTable"
+                                    role="grid"
+                                    data-paging="true"
+                                    data-page-length="10"
+                                    data-length-change="false">
+                                <thead>
+                                <tr>
+                                    <th>Constraint Name</th>
+                                    <th>Type</th>
+                                    <th>Sort</th>
+                                    <th>Column(s)</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey'></i> unigene_pkey</td>
+                                    <td>Primary key</td>
+                                    <td><span title='Ascending'>Asc</span></td>
+                                    <td>unigene_id</td>
+                                </tr>
+                                <tr>
+                                    <td title='Indexed'>cluster_no_2_idx</td>
+                                    <td>Performance</td>
+                                    <td><span title='Ascending'>Asc</span>/<span title='Ascending'>Asc</span></td>
+                                    <td>cluster_no + contig_no</td>
+                                </tr>
+                                <tr>
+                                    <td title='Indexed'>cluster_no_idx</td>
+                                    <td>Performance</td>
+                                    <td><span title='Ascending'>Asc</span></td>
+                                    <td>cluster_no</td>
+                                </tr>
+                                <tr>
+                                    <td title='Indexed'>consensi_id_idx</td>
+                                    <td>Performance</td>
+                                    <td><span title='Ascending'>Asc</span></td>
+                                    <td>consensi_id</td>
+                                </tr>
+                                <tr>
+                                    <td title='Indexed'>unigene_build_id_idx</td>
+                                    <td>Performance</td>
+                                    <td><span title='Ascending'>Asc</span>/<span title='Ascending'>Asc</span></td>
+                                    <td>unigene_build_id + cluster_no</td>
+                                </tr>
+                                <tr>
+                                    <td title='Indexed'>unigene_sequence_name</td>
+                                    <td>Performance</td>
+                                    <td><span title='Ascending'>Asc</span></td>
+                                    <td>sequence_name</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div><!-- /.box-body -->
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-sitemap"></i>
+                            <h3 class="box-title">Check Constraints</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table
+                                    id="check_table"
+                                    class="table table-bordered table-striped dataTable"
+                                    role="grid"
+                                    data-paging="true"
+                                    data-page-length="10"
+                                    data-length-change="false">
+                                <thead align='left'>
+                                <tr>
+                                    <th>Constraint Name</th>
+                                    <th>Constraint</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>unigene_database_name_check</td>
+                                    <td>((((database_name)::text &#61; &#39;SGN&#39;::text) OR ((database_name)::text &#61; &#39;CGN&#39;::text)))</td>
+                                </tr>
+                                <tr>
+                                    <td>unigene_nr_members_iff_consensi_id</td>
+                                    <td>((((nr_members &gt; 1) AND (consensi_id IS NOT NULL)) OR ((nr_members &#61; 1) AND (consensi_id IS NULL))))</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-code-fork"></i>
+                            <h3 id="Relationships" class="box-title">Relationships</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <div class="nav-tabs-custom"><!-- Tabs within a box -->
+                                <h5>Close relationships within degrees of separation</h5>
+                                <ul class="nav nav-tabs pull-left ui-sortable-handle">
+                                    <li class="active"><a href="#oneDegreeImg-chart" data-toggle="tab" aria-expanded="true">One</a></li>
+                                    <li class=""><a href="#twodegreesDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two degrees</a></li>
+                                    <li class=""><a href="#oneimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">One implied</a></li>
+                                    <li class=""><a href="#twoimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two implied</a></li>
+                                </ul>
+                                <div class="tab-content no-padding">
+                                    <div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
+<area shape="rect" id="node1" title="phenome.locus_unigene" alt="" coords="709,5,1001,123">
+<area shape="rect" id="node2" href="unigene.html" target="_top" title="unigene" alt="" coords="293,501,644,805">
+<area shape="rect" id="node11" href="unigene_consensi.html" target="_top" title="unigene_consensi" alt="" coords="11,717,244,835">
+<area shape="rect" id="node12" href="unigene_build.html" target="_top" title="unigene_build" alt="" coords="5,377,249,700">
+<area shape="rect" id="node3" title="public.unigene_dbxref" alt="" coords="718,140,993,257">
+<area shape="rect" id="node4" title="public.unigene_relations" alt="" coords="707,275,1003,421">
+<area shape="rect" id="node5" title="public.unigene_signalp" alt="" coords="1067,423,1348,569">
+<area shape="rect" id="node6" href="cds.html" target="_top" title="cds" alt="" coords="749,475,962,739">
+<area shape="rect" id="node7" href="blast_annotations.html" target="_top" title="blast_annotations" alt="" coords="738,756,973,961">
+<area shape="rect" id="node8" href="primer_unigene_match.html" target="_top" title="primer_unigene_match" alt="" coords="716,979,995,1155">
+<area shape="rect" id="node9" href="rflp_unigene_associations.html" target="_top" title="rflp_unigene_associations" alt="" coords="702,1172,1009,1377">
+<area shape="rect" id="node10" href="ssr_primer_unigene_matches.html" target="_top" title="ssr_primer_unigene_matches" alt="" coords="688,1395,1023,1659">
+<area shape="rect" id="node13" href="unigene_member.html" target="_top" title="unigene_member" alt="" coords="741,1676,970,1852">
+</map>
+                                        <a name='diagram'><img id="oneDegreeImg" src="../diagrams/tables/unigene.1degree.png" usemap="#oneDegreeRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="twodegreesDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
+<area shape="rect" id="node1" title="phenome.locus_unigene" alt="" coords="889,385,1181,503">
+<area shape="rect" id="node2" href="unigene.html" target="_top" title="unigene" alt="" coords="487,667,837,971">
+<area shape="rect" id="node17" href="unigene_consensi.html" target="_top" title="unigene_consensi" alt="" coords="204,884,437,1001">
+<area shape="rect" id="node18" href="unigene_build.html" target="_top" title="unigene_build" alt="" coords="199,544,443,867">
+<area shape="rect" id="node3" title="public.unigene_dbxref" alt="" coords="897,520,1172,637">
+<area shape="rect" id="node4" title="public.unigene_relations" alt="" coords="887,655,1183,801">
+<area shape="rect" id="node5" title="public.unigene_signalp" alt="" coords="1259,111,1540,199">
+<area shape="rect" id="node6" href="cds.html" target="_top" title="cds" alt="" coords="969,57,1101,145">
+<area shape="rect" id="node9" title="public.feature" alt="" coords="561,55,763,143">
+<area shape="rect" id="node7" href="blast_annotations.html" target="_top" title="blast_annotations" alt="" coords="917,163,1152,368">
+<area shape="rect" id="node8" href="blast_hits.html" target="_top" title="blast_hits" alt="" coords="1319,216,1480,304">
+<area shape="rect" id="node10" href="domain_match.html" target="_top" title="domain_match" alt="" coords="1297,5,1502,93">
+<area shape="rect" id="node11" href="primer_unigene_match.html" target="_top" title="primer_unigene_match" alt="" coords="895,1113,1174,1289">
+<area shape="rect" id="node12" href="marker.html" target="_top" title="marker" alt="" coords="590,1227,734,1315">
+<area shape="rect" id="node13" href="rflp_unigene_associations.html" target="_top" title="rflp_unigene_associations" alt="" coords="881,891,1188,1096">
+<area shape="rect" id="node14" href="rflp_sequences.html" target="_top" title="rflp_sequences" alt="" coords="557,988,767,1076">
+<area shape="rect" id="node15" href="ssr.html" target="_top" title="ssr" alt="" coords="969,1307,1101,1395">
+<area shape="rect" id="node16" href="ssr_primer_unigene_matches.html" target="_top" title="ssr_primer_unigene_matches" alt="" coords="1232,1015,1567,1279">
+<area shape="rect" id="node19" href="blast_db.html" target="_top" title="blast_db" alt="" coords="5,752,155,840">
+<area shape="rect" id="node20" href="groups.html" target="_top" title="groups" alt="" coords="11,605,149,693">
+<area shape="rect" id="node21" href="unigene_member.html" target="_top" title="unigene_member" alt="" coords="920,1412,1149,1588">
+<area shape="rect" id="node22" href="est.html" target="_top" title="est" alt="" coords="596,1473,728,1561">
+</map>
+                                        <a name='diagram'><img id="twodegreesDegreeImg" src="../diagrams/tables/unigene.2degrees.png" usemap="#twoDegreesRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="oneimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="oneDegreeRelationshipsDiagramImplied" name="oneDegreeRelationshipsDiagramImplied">
+<area shape="rect" id="node1" title="phenome.locus_unigene" alt="" coords="709,5,1001,123">
+<area shape="rect" id="node2" href="unigene.html" target="_top" title="unigene" alt="" coords="293,643,644,947">
+<area shape="rect" id="node12" href="unigene_consensi.html" target="_top" title="unigene_consensi" alt="" coords="11,859,244,976">
+<area shape="rect" id="node13" href="unigene_build.html" target="_top" title="unigene_build" alt="" coords="5,519,249,841">
+<area shape="rect" id="node3" title="public.unigene_dbxref" alt="" coords="718,140,993,257">
+<area shape="rect" id="node4" title="public.unigene_relations" alt="" coords="707,275,1003,421">
+<area shape="rect" id="node5" title="public.unigene_signalp" alt="" coords="1067,423,1348,569">
+<area shape="rect" id="node6" href="cds.html" target="_top" title="cds" alt="" coords="749,475,962,739">
+<area shape="rect" id="node7" href="blast_annotations.html" target="_top" title="blast_annotations" alt="" coords="738,756,973,961">
+<area shape="rect" id="node8" href="cosii_ortholog.html" target="_top" title="cosii_ortholog" alt="" coords="737,979,973,1213">
+<area shape="rect" id="node9" href="primer_unigene_match.html" target="_top" title="primer_unigene_match" alt="" coords="716,1231,995,1407">
+<area shape="rect" id="node10" href="rflp_unigene_associations.html" target="_top" title="rflp_unigene_associations" alt="" coords="702,1424,1009,1629">
+<area shape="rect" id="node11" href="ssr_primer_unigene_matches.html" target="_top" title="ssr_primer_unigene_matches" alt="" coords="688,1647,1023,1911">
+<area shape="rect" id="node14" href="unigene_member.html" target="_top" title="unigene_member" alt="" coords="741,1928,970,2104">
+</map>
+                                        <a name='diagram'><img id="oneimpliedDegreeImg" src="../diagrams/tables/unigene.implied1degrees.png" usemap="#oneDegreeRelationshipsDiagramImplied" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="twoimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="twoDegreesRelationshipsDiagramImplied" name="twoDegreesRelationshipsDiagramImplied">
+<area shape="rect" id="node1" title="phenome.locus_unigene" alt="" coords="903,388,1195,505">
+<area shape="rect" id="node2" href="unigene.html" target="_top" title="unigene" alt="" coords="487,707,837,1011">
+<area shape="rect" id="node22" href="unigene_consensi.html" target="_top" title="unigene_consensi" alt="" coords="204,924,437,1041">
+<area shape="rect" id="node23" href="unigene_build.html" target="_top" title="unigene_build" alt="" coords="199,584,443,907">
+<area shape="rect" id="node3" title="public.unigene_dbxref" alt="" coords="911,523,1186,640">
+<area shape="rect" id="node4" title="public.unigene_relations" alt="" coords="901,657,1197,804">
+<area shape="rect" id="node5" title="public.unigene_signalp" alt="" coords="1260,475,1541,563">
+<area shape="rect" id="node6" href="cds.html" target="_top" title="cds" alt="" coords="983,60,1115,148">
+<area shape="rect" id="node11" title="public.feature" alt="" coords="561,57,763,145">
+<area shape="rect" id="node7" href="blast_annotations.html" target="_top" title="blast_annotations" alt="" coords="931,1332,1166,1537">
+<area shape="rect" id="node8" href="blast_targets.html" target="_top" title="blast_targets" alt="" coords="565,1393,759,1481">
+<area shape="rect" id="node9" href="p_markers.html" target="_top" title="p_markers" alt="" coords="578,1508,746,1596">
+<area shape="rect" id="node14" href="marker.html" target="_top" title="marker" alt="" coords="249,1544,393,1632">
+<area shape="rect" id="node10" href="blast_hits.html" target="_top" title="blast_hits" alt="" coords="1320,1335,1481,1423">
+<area shape="rect" id="node12" href="cosii_ortholog.html" target="_top" title="cosii_ortholog" alt="" coords="931,1748,1167,1983">
+<area shape="rect" id="node13" href="sequence.html" target="_top" title="sequence" alt="" coords="582,1853,742,1941">
+<area shape="rect" id="node15" href="domain_match.html" target="_top" title="domain_match" alt="" coords="1298,5,1503,93">
+<area shape="rect" id="node16" href="family_member.html" target="_top" title="family_member" alt="" coords="1295,111,1507,199">
+<area shape="rect" id="node17" href="primer_unigene_match.html" target="_top" title="primer_unigene_match" alt="" coords="909,1555,1188,1731">
+<area shape="rect" id="node18" href="rflp_unigene_associations.html" target="_top" title="rflp_unigene_associations" alt="" coords="895,165,1202,371">
+<area shape="rect" id="node19" href="rflp_sequences.html" target="_top" title="rflp_sequences" alt="" coords="557,197,767,285">
+<area shape="rect" id="node20" href="ssr.html" target="_top" title="ssr" alt="" coords="596,1051,728,1139">
+<area shape="rect" id="node21" href="ssr_primer_unigene_matches.html" target="_top" title="ssr_primer_unigene_matches" alt="" coords="881,857,1216,1121">
+<area shape="rect" id="node24" href="blast_db.html" target="_top" title="blast_db" alt="" coords="5,792,155,880">
+<area shape="rect" id="node25" href="groups.html" target="_top" title="groups" alt="" coords="11,631,149,719">
+<area shape="rect" id="node26" href="unigene_member.html" target="_top" title="unigene_member" alt="" coords="934,1139,1163,1315">
+<area shape="rect" id="node27" href="est.html" target="_top" title="est" alt="" coords="596,1200,728,1288">
+</map>
+                                        <a name='diagram'><img id="twoimpliedDegreeImg" src="../diagrams/tables/unigene.implied2degrees.png" usemap="#twoDegreesRelationshipsDiagramImplied" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- /.box-body -->
+                    </div>
+                </section>
+                <script>
+                    var config = {
+                        pagination: true
+                    }
+                </script>
+            </div>
+            <!-- /.content-wrapper -->
+            <footer class="main-footer">
+                <div>
+                    <div class="pull-right hidden-xs">
+                        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+                        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+                    </div>
+                    <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.2.4</a></strong>
+                </div>
+                <!-- /.container -->
+            </footer>
+        </div>
+        <!-- ./wrapper -->
+
+        <!-- jQuery 2.2.3 -->
+        <script src="../bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+        <script src="../bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+        <!-- Bootstrap 3.3.5 -->
+        <script src="../bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+        <!-- DataTables -->
+        <script src="../bower/datatables.net/jquery.dataTables.min.js"></script>
+        <script src="../bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+        <script src="../bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.html5.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.print.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+        <!-- SheetJS -->
+        <script src="../bower/js-xlsx/xlsx.full.min.js"></script>
+        <!-- pdfmake -->
+        <script src="../bower/pdfmake/pdfmake.min.js"></script>
+        <script src="../bower/pdfmake/vfs_fonts.js"></script>
+        <!-- SlimScroll -->
+        <script src="../bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+        <!-- FastClick -->
+        <script src="../bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+        <!-- Salvattore -->
+        <script src="../bower/salvattore/salvattore.min.js"></script>
+        <!-- AnchorJS -->
+        <script src="../bower/anchor-js/anchor.min.js"></script>
+        <!-- CodeMirror -->
+        <script src="../bower/codemirror/codemirror.js"></script>
+        <script src="../bower/codemirror/sql.js"></script>
+        <!-- AdminLTE App -->
+        <script src="../bower/admin-lte/dist/js/app.min.js"></script>
+        <script src="table.js"></script>
+        <script src="../schemaSpy.js"></script>
+    </body>
+</html>

@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>phylonode - cxgn_breedbase.public</title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <link rel="icon" type="image/png" sizes="16x16" href="../favicon.png">
+        <!-- Bootstrap 3.3.5 -->
+        <link rel="stylesheet" href="../bower/admin-lte/bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="../bower/font-awesome/css/font-awesome.min.css">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="../bower/ionicons/css/ionicons.min.css">
+        <!-- DataTables -->
+        <link rel="stylesheet" href="../bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" href="../bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+        <!-- Code Mirror -->
+        <link rel="stylesheet" href="../bower/codemirror/codemirror.css">
+        <!-- Fonts -->
+        <link href='../fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+        <link href='../fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+
+        <!-- Theme style -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/AdminLTE.min.css">
+        <!-- Salvattore -->
+        <link rel="stylesheet" href="../bower/salvattore/salvattore.css">
+        <!-- AdminLTE Skins. Choose a skin from the css/skins
+           folder instead of downloading all of them to reduce the load. -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/skins/_all-skins.min.css">
+        <!-- SchemaSpy -->
+        <link rel="stylesheet" href="../schemaSpy.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="../bower/html5shiv/html5shiv.min.js"></script>
+        <script src="../bower/respond/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+    <body class="hold-transition skin-blue layout-top-nav">
+        <div class="wrapper">
+            <header class="main-header">
+                <nav class="navbar navbar-static-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <a href="../index.html" class="navbar-brand"><b>cxgn_breedbase</b></a><span class="navbar-brand" style="padding-left: 0">.public</span>
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"><i class="fa fa-bars"></i></button>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a href="../index.html">Tables <span class="sr-only">(current)</span></a></li>
+                                <li><a href="../columns.html" title="All of the columns in the schema">Columns</a></li>
+                                <li><a href="../constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+                                <li><a href="../relationships.html" title="Diagram of table relationships">Relationships</a></li>
+                                <li><a href="../orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>
+                                <li><a href="../anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+                                <li><a href="../routines.html" title="Procedures and functions">Routines</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                        <!-- Navbar Right Menu -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </nav>
+            </header>
+            <!-- Main content -->
+            <!-- Full Width Column -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>phylonode</h1><p><span id="recordNumber">0</span> rows</p><br />
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-file-text-o"></i>
+                            <h3 id="Description" class="box-title">Description</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div><!-- /.box-header -->
+                        <div class="box-body clearfix">
+                            <p>This is the most pervasive element in the phylogeny module, cataloging the &ldquo;phylonodes&rdquo; of tree graphs. Edges are implied by the parent_phylonode_id reflexive closure. For all nodes in a nested set implementation the left and right index will be <em>between</em> the parents left and right indexes.</p>
+                        </div><!-- /.box-body -->
+                    </div>
+                </section>
+                <!-- Main content -->
+                <section class="content">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+                            <h3 id="Columns" class="box-title">Columns</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table
+                                    id="standard_table"
+                                    class="table table-bordered table-striped dataTable"
+                                    role="grid"
+                                    data-paging="true"
+                                    data-page-length="10"
+                                    data-length-change="false">
+                                <thead align='left'>
+                                <tr>
+                                    <th>Column</th>
+                                    <th>Type</th>
+                                    <th>Size</th>
+                                    <th title='Are nulls allowed?'>Nulls</th>
+                                    <th title='Is column automatically updated?'>Auto</th>
+                                    <th title='Default value'>Default</th>
+                                    <th title='Columns in tables that reference this column'>Children</th>
+                                    <th title='Columns in tables that are referenced by this column'>Parents</th>
+                                    <th title='Comments' class="toggle"><span>Comments</span></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="phylonode_id">phylonode_id</span></td>
+                                    <td>serial</td>
+                                    <td>10</td>
+                                    <td title=''></td>
+                                    <td title='Automatically updated by the database'>√</td>
+                                    <td>nextval(&#39;phylonode_phylonode_id_seq&#39;::regclass)</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="phylonode.parent_phylonode_id references phylonode.phylonode_id via phylonode_parent_phylonode_id_fkey"><a href='phylonode.html'>phylonode</a><span class='relatedKey'>.parent_phylonode_id</span></td>
+                                                <td class="constraint detail">phylonode_parent_phylonode_id_fkey</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="phylonode_dbxref.phylonode_id references phylonode.phylonode_id via phylonode_dbxref_phylonode_id_fkey"><a href='phylonode_dbxref.html'>phylonode_dbxref</a><span class='relatedKey'>.phylonode_id</span></td>
+                                                <td class="constraint detail">phylonode_dbxref_phylonode_id_fkey</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="phylonode_organism.phylonode_id references phylonode.phylonode_id via phylonode_organism_phylonode_id_fkey"><a href='phylonode_organism.html'>phylonode_organism</a><span class='relatedKey'>.phylonode_id</span></td>
+                                                <td class="constraint detail">phylonode_organism_phylonode_id_fkey</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="phylonode_pub.phylonode_id references phylonode.phylonode_id via phylonode_pub_phylonode_id_fkey"><a href='phylonode_pub.html'>phylonode_pub</a><span class='relatedKey'>.phylonode_id</span></td>
+                                                <td class="constraint detail">phylonode_pub_phylonode_id_fkey</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="phylonode_relationship.object_id references phylonode.phylonode_id via phylonode_relationship_object_id_fkey"><a href='phylonode_relationship.html'>phylonode_relationship</a><span class='relatedKey'>.object_id</span></td>
+                                                <td class="constraint detail">phylonode_relationship_object_id_fkey</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="phylonode_relationship.subject_id references phylonode.phylonode_id via phylonode_relationship_subject_id_fkey"><a href='phylonode_relationship.html'>phylonode_relationship</a><span class='relatedKey'>.subject_id</span></td>
+                                                <td class="constraint detail">phylonode_relationship_subject_id_fkey</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="phylonodeprop.phylonode_id references phylonode.phylonode_id via phylonodeprop_phylonode_id_fkey"><a href='phylonodeprop.html'>phylonodeprop</a><span class='relatedKey'>.phylonode_id</span></td>
+                                                <td class="constraint detail">phylonodeprop_phylonode_id_fkey</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="phylotree_id">phylotree_id</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="phylonode.phylotree_id references phylotree.phylotree_id via phylonode_phylotree_id_fkey"><a href='phylotree.html'>phylotree</a><span class='relatedKey'>.phylotree_id</span></td>
+                                                <td class="constraint detail">phylonode_phylotree_id_fkey</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="parent_phylonode_id">parent_phylonode_id</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="phylonode.parent_phylonode_id references phylonode.phylonode_id via phylonode_parent_phylonode_id_fkey"><a href='phylonode.html'>phylonode</a><span class='relatedKey'>.phylonode_id</span></td>
+                                                <td class="constraint detail">phylonode_parent_phylonode_id_fkey</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td><p>Root phylonode can have null parent_phylonode_id value.</p></td>
+                                </tr>
+                                <tr>
+                                    <td class='indexedColumn' title='Indexed'><i class='fa fa-sitemap fa-rotate-120' style='padding-right: 5px;'></i><span id="left_idx">left_idx</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='indexedColumn' title='Indexed'><i class='fa fa-sitemap fa-rotate-120' style='padding-right: 5px;'></i><span id="right_idx">right_idx</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="type_id">type_id</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="phylonode.type_id references cvterm.cvterm_id via phylonode_type_id_fkey"><a href='cvterm.html'>cvterm</a><span class='relatedKey'>.cvterm_id</span></td>
+                                                <td class="constraint detail">phylonode_type_id_fkey</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td><p>Type: e.g. root, interior, leaf.</p></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="feature_id">feature_id</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="phylonode.feature_id references feature.feature_id via phylonode_feature_id_fkey"><a href='feature.html'>feature</a><span class='relatedKey'>.feature_id</span></td>
+                                                <td class="constraint detail">phylonode_feature_id_fkey</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td><p>Phylonodes can have optional features attached to them e.g. a protein or nucleotide sequence usually attached to a leaf of the phylotree for non-leaf nodes, the feature may be a feature that is an instance of SO:match; this feature is the alignment of all leaf features beneath it.</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="label">label</span></td>
+                                    <td>varchar</td>
+                                    <td>255</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="distance">distance</span></td>
+                                    <td>float8</td>
+                                    <td>17,17</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-sitemap"></i>
+                            <h3 id="Indexes" class="box-title">Indexes</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table
+                                    id="indexes_table"
+                                    class="table table-bordered table-striped dataTable"
+                                    role="grid"
+                                    data-paging="true"
+                                    data-page-length="10"
+                                    data-length-change="false">
+                                <thead>
+                                <tr>
+                                    <th>Constraint Name</th>
+                                    <th>Type</th>
+                                    <th>Sort</th>
+                                    <th>Column(s)</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey'></i> phylonode_pkey</td>
+                                    <td>Primary key</td>
+                                    <td><span title='Ascending'>Asc</span></td>
+                                    <td>phylonode_id</td>
+                                </tr>
+                                <tr>
+                                    <td title='Indexed'>phylonode_feature_id_idx</td>
+                                    <td>Performance</td>
+                                    <td><span title='Ascending'>Asc</span></td>
+                                    <td>feature_id</td>
+                                </tr>
+                                <tr>
+                                    <td class='uniqueKey' title='Unique Key'><i class='icon ion-key iconkey'></i> phylonode_phylotree_id_key</td>
+                                    <td>Must be unique</td>
+                                    <td><span title='Ascending'>Asc</span>/<span title='Ascending'>Asc</span></td>
+                                    <td>phylotree_id + left_idx</td>
+                                </tr>
+                                <tr>
+                                    <td class='uniqueKey' title='Unique Key'><i class='icon ion-key iconkey'></i> phylonode_phylotree_id_key1</td>
+                                    <td>Must be unique</td>
+                                    <td><span title='Ascending'>Asc</span>/<span title='Ascending'>Asc</span></td>
+                                    <td>phylotree_id + right_idx</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div><!-- /.box-body -->
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-code-fork"></i>
+                            <h3 id="Relationships" class="box-title">Relationships</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <div class="nav-tabs-custom"><!-- Tabs within a box -->
+                                <h5>Close relationships within degrees of separation</h5>
+                                <ul class="nav nav-tabs pull-left ui-sortable-handle">
+                                    <li class="active"><a href="#oneDegreeImg-chart" data-toggle="tab" aria-expanded="true">One</a></li>
+                                    <li class=""><a href="#twodegreesDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two degrees</a></li>
+                                    <li class=""><a href="#oneimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">One implied</a></li>
+                                    <li class=""><a href="#twoimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two implied</a></li>
+                                </ul>
+                                <div class="tab-content no-padding">
+                                    <div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
+<area shape="rect" id="node1" href="feature.html" target="_top" title="feature" alt="" coords="269,488,472,752">
+<area shape="rect" id="node2" href="cvterm.html" target="_top" title="cvterm" alt="" coords="5,412,225,647">
+<area shape="rect" id="node3" href="phylonode.html" target="_top" title="phylonode" alt="" coords="516,284,847,617">
+<area shape="rect" id="node4" href="phylotree.html" target="_top" title="phylotree" alt="" coords="290,229,451,435">
+<area shape="rect" id="node5" href="phylonode_dbxref.html" target="_top" title="phylonode_dbxref" alt="" coords="915,257,1151,409">
+<area shape="rect" id="node6" href="phylonode_organism.html" target="_top" title="phylonode_organism" alt="" coords="903,427,1163,579">
+<area shape="rect" id="node7" href="phylonode_pub.html" target="_top" title="phylonode_pub" alt="" coords="928,596,1139,748">
+<area shape="rect" id="node8" href="phylonode_relationship.html" target="_top" title="phylonode_relationship" alt="" coords="891,5,1176,240">
+<area shape="rect" id="node9" href="phylonodeprop.html" target="_top" title="phylonodeprop" alt="" coords="928,765,1139,976">
+</map>
+                                        <a name='diagram'><img id="oneDegreeImg" src="../diagrams/tables/phylonode.1degree.png" usemap="#oneDegreeRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="twodegreesDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
+<area shape="rect" id="node1" title="biosource.bs_sample" alt="" coords="514,531,775,619">
+<area shape="rect" id="node2" href="organism.html" target="_top" title="organism" alt="" coords="230,320,389,408">
+<area shape="rect" id="node3" href="cvterm.html" target="_top" title="cvterm" alt="" coords="225,3477,393,3565">
+<area shape="rect" id="node14" href="dbxref.html" target="_top" title="dbxref" alt="" coords="5,916,181,1004">
+<area shape="rect" id="node23" href="cv.html" target="_top" title="cv" alt="" coords="29,5585,157,5673">
+<area shape="rect" id="node4" title="biosource.bs_sample_cvterm" alt="" coords="478,2191,811,2279">
+<area shape="rect" id="node5" title="biosource.bs_sample_element_cvterm" alt="" coords="437,2296,852,2384">
+<area shape="rect" id="node6" title="biosource.bs_sample_relationship" alt="" coords="455,2401,834,2489">
+<area shape="rect" id="node7" title="genomic.clone_feature" alt="" coords="934,1085,1213,1173">
+<area shape="rect" id="node8" href="feature.html" target="_top" title="feature" alt="" coords="575,919,715,1007">
+<area shape="rect" id="node9" title="metadata.md_image_cvterm" alt="" coords="480,2507,809,2595">
+<area shape="rect" id="node10" title="phenome.cvterm_pub_ranking" alt="" coords="900,3573,1247,3661">
+<area shape="rect" id="node11" href="pub.html" target="_top" title="pub" alt="" coords="578,3527,711,3615">
+<area shape="rect" id="node12" title="phenome.locusgroup" alt="" coords="513,2612,777,2700">
+<area shape="rect" id="node13" title="phenome.locusgroup_member" alt="" coords="471,1129,818,1217">
+<area shape="rect" id="node15" title="phenome.project_md_image" alt="" coords="910,4488,1237,4576">
+<area shape="rect" id="node16" href="project.html" target="_top" title="project" alt="" coords="575,4627,715,4715">
+<area shape="rect" id="node17" href="analysisfeature.html" target="_top" title="analysisfeature" alt="" coords="967,289,1180,377">
+<area shape="rect" id="node18" href="analysis.html" target="_top" title="analysis" alt="" coords="235,775,383,863">
+<area shape="rect" id="node19" href="analysisprop.html" target="_top" title="analysisprop" alt="" coords="550,1024,739,1112">
+<area shape="rect" id="node20" href="contact.html" target="_top" title="contact" alt="" coords="574,4876,715,4964">
+<area shape="rect" id="node21" href="contact_relationship.html" target="_top" title="contact_relationship" alt="" coords="945,4945,1202,5033">
+<area shape="rect" id="node22" href="cvprop.html" target="_top" title="cvprop" alt="" coords="577,5691,713,5779">
+<area shape="rect" id="node24" href="cvterm_dbxref.html" target="_top" title="cvterm_dbxref" alt="" coords="543,1235,747,1323">
+<area shape="rect" id="node25" href="cvterm_relationship.html" target="_top" title="cvterm_relationship" alt="" coords="518,3105,771,3193">
+<area shape="rect" id="node26" href="cvtermpath.html" target="_top" title="cvtermpath" alt="" coords="555,5585,734,5673">
+<area shape="rect" id="node27" href="cvtermprop.html" target="_top" title="cvtermprop" alt="" coords="555,3211,734,3299">
+<area shape="rect" id="node28" href="cvtermsynonym.html" target="_top" title="cvtermsynonym" alt="" coords="536,3316,753,3404">
+<area shape="rect" id="node29" href="dbxrefprop.html" target="_top" title="dbxrefprop" alt="" coords="557,636,732,724">
+<area shape="rect" id="node30" href="environment_cvterm.html" target="_top" title="environment_cvterm" alt="" coords="515,3421,775,3509">
+<area shape="rect" id="node31" href="feature_cvterm.html" target="_top" title="feature_cvterm" alt="" coords="967,1720,1179,1808">
+<area shape="rect" id="node32" href="feature_cvtermprop.html" target="_top" title="feature_cvtermprop" alt="" coords="1323,1555,1576,1643">
+<area shape="rect" id="node33" href="feature_dbxref.html" target="_top" title="feature_dbxref" alt="" coords="970,148,1177,236">
+<area shape="rect" id="node34" href="feature_genotype.html" target="_top" title="feature_genotype" alt="" coords="957,1473,1190,1561">
+<area shape="rect" id="node35" href="genotype.html" target="_top" title="genotype" alt="" coords="565,4308,724,4396">
+<area shape="rect" id="node36" href="feature_pub.html" target="_top" title="feature_pub" alt="" coords="982,1615,1165,1703">
+<area shape="rect" id="node37" href="feature_relationship.html" target="_top" title="feature_relationship" alt="" coords="945,1296,1202,1384">
+<area shape="rect" id="node38" href="feature_relationshipprop.html" target="_top" title="feature_relationshipprop" alt="" coords="1300,3085,1599,3173">
+<area shape="rect" id="node39" href="feature_synonym.html" target="_top" title="feature_synonym" alt="" coords="959,2735,1188,2823">
+<area shape="rect" id="node40" href="synonym.html" target="_top" title="synonym" alt="" coords="567,2753,722,2841">
+<area shape="rect" id="node41" href="featureloc.html" target="_top" title="featureloc" alt="" coords="990,875,1157,963">
+<area shape="rect" id="node42" href="featureprop.html" target="_top" title="featureprop" alt="" coords="982,1191,1165,1279">
+<area shape="rect" id="node43" href="featureprop_json.html" target="_top" title="featureprop_json" alt="" coords="959,2840,1187,2928">
+<area shape="rect" id="node44" href="nd_protocol.html" target="_top" title="nd_protocol" alt="" coords="555,5231,735,5319">
+<area shape="rect" id="node45" href="genotypeprop.html" target="_top" title="genotypeprop" alt="" coords="973,4383,1174,4471">
+<area shape="rect" id="node46" href="nd_experiment.html" target="_top" title="nd_experiment" alt="" coords="541,5053,749,5141">
+<area shape="rect" id="node47" href="nd_experiment_stock.html" target="_top" title="nd_experiment_stock" alt="" coords="941,5051,1205,5139">
+<area shape="rect" id="node48" href="stock.html" target="_top" title="stock" alt="" coords="561,1733,729,1821">
+<area shape="rect" id="node49" href="nd_experiment_stockprop.html" target="_top" title="nd_experiment_stockprop" alt="" coords="1296,5191,1603,5279">
+<area shape="rect" id="node50" href="nd_experimentprop.html" target="_top" title="nd_experimentprop" alt="" coords="948,5156,1199,5244">
+<area shape="rect" id="node51" href="nd_geolocationprop.html" target="_top" title="nd_geolocationprop" alt="" coords="519,4413,771,4501">
+<area shape="rect" id="node52" href="nd_protocol_reagent.html" target="_top" title="nd_protocol_reagent" alt="" coords="944,5403,1203,5491">
+<area shape="rect" id="node53" href="nd_reagent.html" target="_top" title="nd_reagent" alt="" coords="557,5444,733,5532">
+<area shape="rect" id="node54" href="nd_protocolprop.html" target="_top" title="nd_protocolprop" alt="" coords="963,5261,1184,5349">
+<area shape="rect" id="node55" href="nd_reagent_relationship.html" target="_top" title="nd_reagent_relationship" alt="" coords="927,5508,1219,5596">
+<area shape="rect" id="node56" href="nd_reagentprop.html" target="_top" title="nd_reagentprop" alt="" coords="965,5613,1182,5701">
+<area shape="rect" id="node57" href="organism_relationship.html" target="_top" title="organism_relationship" alt="" coords="507,215,782,303">
+<area shape="rect" id="node58" href="organismpath.html" target="_top" title="organismpath" alt="" coords="545,320,745,408">
+<area shape="rect" id="node59" href="organismprop.html" target="_top" title="organismprop" alt="" coords="545,425,745,513">
+<area shape="rect" id="node60" href="phendesc.html" target="_top" title="phendesc" alt="" coords="993,4172,1153,4260">
+<area shape="rect" id="node61" href="phenotype.html" target="_top" title="phenotype" alt="" coords="559,4059,730,4147">
+<area shape="rect" id="node62" href="phenotype_comparison_cvterm.html" target="_top" title="phenotype_comparison_cvterm" alt="" coords="896,3679,1251,3767">
+<area shape="rect" id="node63" href="phenotype_cvterm.html" target="_top" title="phenotype_cvterm" alt="" coords="953,3889,1194,3977">
+<area shape="rect" id="node64" href="phenotypeprop.html" target="_top" title="phenotypeprop" alt="" coords="967,3995,1179,4083">
+<area shape="rect" id="node65" href="phenstatement.html" target="_top" title="phenstatement" alt="" coords="967,4277,1179,4365">
+<area shape="rect" id="node66" href="phylonode.html" target="_top" title="phylonode" alt="" coords="908,419,1239,752">
+<area shape="rect" id="node67" href="phylotree.html" target="_top" title="phylotree" alt="" coords="564,777,725,865">
+<area shape="rect" id="node68" href="phylonode_dbxref.html" target="_top" title="phylonode_dbxref" alt="" coords="1331,5,1567,157">
+<area shape="rect" id="node69" href="phylonode_organism.html" target="_top" title="phylonode_organism" alt="" coords="1319,203,1579,355">
+<area shape="rect" id="node70" href="phylonode_pub.html" target="_top" title="phylonode_pub" alt="" coords="1344,952,1555,1104">
+<area shape="rect" id="node71" href="phylonode_relationship.html" target="_top" title="phylonode_relationship" alt="" coords="1307,427,1592,515">
+<area shape="rect" id="node72" href="phylonodeprop.html" target="_top" title="phylonodeprop" alt="" coords="1344,1687,1555,1775">
+<area shape="rect" id="node73" href="phylotree_pub.html" target="_top" title="phylotree_pub" alt="" coords="972,769,1175,857">
+<area shape="rect" id="node74" href="project_relationship.html" target="_top" title="project_relationship" alt="" coords="946,4593,1201,4681">
+<area shape="rect" id="node75" href="projectprop.html" target="_top" title="projectprop" alt="" coords="983,4699,1163,4787">
+<area shape="rect" id="node76" href="pub_relationship.html" target="_top" title="pub_relationship" alt="" coords="961,3468,1186,3556">
+<area shape="rect" id="node77" href="pubprop.html" target="_top" title="pubprop" alt="" coords="998,3784,1149,3872">
+<area shape="rect" id="node78" href="stock_cvterm.html" target="_top" title="stock_cvterm" alt="" coords="977,1861,1170,1949">
+<area shape="rect" id="node79" href="stock_cvtermprop.html" target="_top" title="stock_cvtermprop" alt="" coords="1332,1847,1567,1935">
+<area shape="rect" id="node80" href="stock_dbxrefprop.html" target="_top" title="stock_dbxrefprop" alt="" coords="529,1412,760,1500">
+<area shape="rect" id="node81" href="stock_relationship.html" target="_top" title="stock_relationship" alt="" coords="954,1967,1193,2055">
+<area shape="rect" id="node82" href="stock_relationship_cvterm.html" target="_top" title="stock_relationship_cvterm" alt="" coords="1295,1967,1604,2055">
+<area shape="rect" id="node83" href="stockcollection.html" target="_top" title="stockcollection" alt="" coords="969,4840,1178,4928">
+<area shape="rect" id="node84" href="stockcollectionprop.html" target="_top" title="stockcollectionprop" alt="" coords="1323,4804,1575,4892">
+<area shape="rect" id="node85" href="stockprop.html" target="_top" title="stockprop" alt="" coords="991,2072,1155,2160">
+<area shape="rect" id="node86" title="sgn.cds" alt="" coords="1002,980,1145,1068">
+<area shape="rect" id="node87" title="sgn.chadoprop" alt="" coords="541,1875,749,1963">
+<area shape="rect" id="node88" title="sgn.common_nameprop" alt="" coords="501,1980,789,2068">
+<area shape="rect" id="node89" title="sgn.pcr_experiment_sequence" alt="" coords="471,2085,818,2173">
+<area shape="rect" id="node90" title="sgn.snpprop" alt="" coords="551,2895,738,2983">
+<area shape="rect" id="node91" title="sgn_people.list" alt="" coords="540,3000,749,3088">
+<area shape="rect" id="node92" title="sgn_people.listprop" alt="" coords="519,3632,771,3720">
+<area shape="rect" id="node93" title="sgn_people.sp_orderprop" alt="" coords="494,3809,795,3897">
+</map>
+                                        <a name='diagram'><img id="twodegreesDegreeImg" src="../diagrams/tables/phylonode.2degrees.png" usemap="#twoDegreesRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="oneimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="oneDegreeRelationshipsDiagramImplied" name="oneDegreeRelationshipsDiagramImplied">
+<area shape="rect" id="node1" href="feature.html" target="_top" title="feature" alt="" coords="269,488,472,752">
+<area shape="rect" id="node2" href="cvterm.html" target="_top" title="cvterm" alt="" coords="5,412,225,647">
+<area shape="rect" id="node3" href="phylonode.html" target="_top" title="phylonode" alt="" coords="516,284,847,617">
+<area shape="rect" id="node4" href="phylotree.html" target="_top" title="phylotree" alt="" coords="290,229,451,435">
+<area shape="rect" id="node5" href="phylonode_dbxref.html" target="_top" title="phylonode_dbxref" alt="" coords="915,257,1151,409">
+<area shape="rect" id="node6" href="phylonode_organism.html" target="_top" title="phylonode_organism" alt="" coords="903,427,1163,579">
+<area shape="rect" id="node7" href="phylonode_pub.html" target="_top" title="phylonode_pub" alt="" coords="928,596,1139,748">
+<area shape="rect" id="node8" href="phylonode_relationship.html" target="_top" title="phylonode_relationship" alt="" coords="891,5,1176,240">
+<area shape="rect" id="node9" href="phylonodeprop.html" target="_top" title="phylonodeprop" alt="" coords="928,765,1139,976">
+</map>
+                                        <a name='diagram'><img id="oneimpliedDegreeImg" src="../diagrams/tables/phylonode.implied1degrees.png" usemap="#oneDegreeRelationshipsDiagramImplied" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="twoimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="twoDegreesRelationshipsDiagramImplied" name="twoDegreesRelationshipsDiagramImplied">
+<area shape="rect" id="node1" title="biosource.bs_sample" alt="" coords="514,763,775,851">
+<area shape="rect" id="node2" href="organism.html" target="_top" title="organism" alt="" coords="230,552,389,640">
+<area shape="rect" id="node3" href="cvterm.html" target="_top" title="cvterm" alt="" coords="225,3457,393,3545">
+<area shape="rect" id="node14" href="dbxref.html" target="_top" title="dbxref" alt="" coords="5,1112,181,1200">
+<area shape="rect" id="node24" href="cv.html" target="_top" title="cv" alt="" coords="29,5785,157,5873">
+<area shape="rect" id="node4" title="biosource.bs_sample_cvterm" alt="" coords="478,2492,811,2580">
+<area shape="rect" id="node5" title="biosource.bs_sample_element_cvterm" alt="" coords="437,2597,852,2685">
+<area shape="rect" id="node6" title="biosource.bs_sample_relationship" alt="" coords="455,2703,834,2791">
+<area shape="rect" id="node7" title="genomic.clone_feature" alt="" coords="934,709,1213,797">
+<area shape="rect" id="node8" href="feature.html" target="_top" title="feature" alt="" coords="575,447,715,535">
+<area shape="rect" id="node9" title="metadata.md_image_cvterm" alt="" coords="480,2808,809,2896">
+<area shape="rect" id="node10" title="phenome.cvterm_pub_ranking" alt="" coords="900,4057,1247,4145">
+<area shape="rect" id="node11" href="pub.html" target="_top" title="pub" alt="" coords="578,4444,711,4532">
+<area shape="rect" id="node12" title="phenome.locusgroup" alt="" coords="513,2985,777,3073">
+<area shape="rect" id="node13" title="phenome.locusgroup_member" alt="" coords="471,1220,818,1308">
+<area shape="rect" id="node15" title="phenome.project_md_image" alt="" coords="910,5008,1237,5096">
+<area shape="rect" id="node16" href="project.html" target="_top" title="project" alt="" coords="575,5120,715,5208">
+<area shape="rect" id="node17" href="all_gs_traits.html" target="_top" title="all_gs_traits" alt="" coords="555,3163,734,3227">
+<area shape="rect" id="node18" href="analysisfeature.html" target="_top" title="analysisfeature" alt="" coords="967,920,1180,1008">
+<area shape="rect" id="node19" href="analysis.html" target="_top" title="analysis" alt="" coords="235,1009,383,1097">
+<area shape="rect" id="node20" href="analysisprop.html" target="_top" title="analysisprop" alt="" coords="550,1009,739,1097">
+<area shape="rect" id="node21" href="contact.html" target="_top" title="contact" alt="" coords="574,5324,715,5412">
+<area shape="rect" id="node22" href="contact_relationship.html" target="_top" title="contact_relationship" alt="" coords="945,5324,1202,5412">
+<area shape="rect" id="node23" href="cvprop.html" target="_top" title="cvprop" alt="" coords="577,5891,713,5979">
+<area shape="rect" id="node25" href="cvterm_dbxref.html" target="_top" title="cvterm_dbxref" alt="" coords="543,1325,747,1413">
+<area shape="rect" id="node26" href="cvterm_relationship.html" target="_top" title="cvterm_relationship" alt="" coords="518,3455,771,3543">
+<area shape="rect" id="node27" href="cvtermpath.html" target="_top" title="cvtermpath" alt="" coords="555,5785,734,5873">
+<area shape="rect" id="node28" href="cvtermprop.html" target="_top" title="cvtermprop" alt="" coords="555,3560,734,3648">
+<area shape="rect" id="node29" href="cvtermsynonym.html" target="_top" title="cvtermsynonym" alt="" coords="536,3665,753,3753">
+<area shape="rect" id="node30" href="dbxrefprop.html" target="_top" title="dbxrefprop" alt="" coords="557,269,732,357">
+<area shape="rect" id="node31" href="environment_cvterm.html" target="_top" title="environment_cvterm" alt="" coords="515,3771,775,3859">
+<area shape="rect" id="node32" href="feature_cvterm.html" target="_top" title="feature_cvterm" alt="" coords="967,2035,1179,2123">
+<area shape="rect" id="node33" href="feature_cvtermprop.html" target="_top" title="feature_cvtermprop" alt="" coords="1323,1920,1576,2008">
+<area shape="rect" id="node34" href="feature_dbxref.html" target="_top" title="feature_dbxref" alt="" coords="970,113,1177,201">
+<area shape="rect" id="node35" href="feature_genotype.html" target="_top" title="feature_genotype" alt="" coords="957,2600,1190,2688">
+<area shape="rect" id="node36" href="genotype.html" target="_top" title="genotype" alt="" coords="565,4835,724,4923">
+<area shape="rect" id="node37" href="feature_pub.html" target="_top" title="feature_pub" alt="" coords="982,3739,1165,3827">
+<area shape="rect" id="node38" href="feature_relationship.html" target="_top" title="feature_relationship" alt="" coords="945,1472,1202,1560">
+<area shape="rect" id="node39" href="feature_relationshipprop.html" target="_top" title="feature_relationshipprop" alt="" coords="1300,1587,1599,1675">
+<area shape="rect" id="node40" href="feature_synonym.html" target="_top" title="feature_synonym" alt="" coords="959,3597,1188,3685">
+<area shape="rect" id="node41" href="synonym.html" target="_top" title="synonym" alt="" coords="567,3244,722,3332">
+<area shape="rect" id="node42" href="featureloc.html" target="_top" title="featureloc" alt="" coords="990,815,1157,903">
+<area shape="rect" id="node43" href="featureprop.html" target="_top" title="featureprop" alt="" coords="982,1613,1165,1701">
+<area shape="rect" id="node44" href="featureprop_json.html" target="_top" title="featureprop_json" alt="" coords="959,3387,1187,3475">
+<area shape="rect" id="node45" href="nd_protocol.html" target="_top" title="nd_protocol" alt="" coords="555,4161,735,4249">
+<area shape="rect" id="node46" href="genotypeprop.html" target="_top" title="genotypeprop" alt="" coords="973,4903,1174,4991">
+<area shape="rect" id="node47" href="gff3atts.html" target="_top" title="gff3atts" alt="" coords="1001,441,1145,505">
+<area shape="rect" id="node48" href="gff3view.html" target="_top" title="gff3view" alt="" coords="999,255,1148,319">
+<area shape="rect" id="node49" href="gffatts.html" target="_top" title="gffatts" alt="" coords="1007,523,1139,587">
+<area shape="rect" id="node50" href="nd_experiment.html" target="_top" title="nd_experiment" alt="" coords="541,5608,749,5696">
+<area shape="rect" id="node51" href="nd_experiment_stock.html" target="_top" title="nd_experiment_stock" alt="" coords="941,5712,1205,5800">
+<area shape="rect" id="node52" href="stock.html" target="_top" title="stock" alt="" coords="561,1575,729,1663">
+<area shape="rect" id="node53" href="nd_experiment_stockprop.html" target="_top" title="nd_experiment_stockprop" alt="" coords="1296,5747,1603,5835">
+<area shape="rect" id="node54" href="nd_experimentprop.html" target="_top" title="nd_experimentprop" alt="" coords="948,5607,1199,5695">
+<area shape="rect" id="node55" href="nd_geolocationprop.html" target="_top" title="nd_geolocationprop" alt="" coords="519,4657,771,4745">
+<area shape="rect" id="node56" href="nd_protocol_reagent.html" target="_top" title="nd_protocol_reagent" alt="" coords="1320,3984,1579,4072">
+<area shape="rect" id="node57" href="nd_reagent.html" target="_top" title="nd_reagent" alt="" coords="985,3281,1161,3369">
+<area shape="rect" id="node58" href="nd_protocolprop.html" target="_top" title="nd_protocolprop" alt="" coords="963,4199,1184,4287">
+<area shape="rect" id="node59" href="nd_reagent_relationship.html" target="_top" title="nd_reagent_relationship" alt="" coords="1303,3281,1595,3369">
+<area shape="rect" id="node60" href="nd_reagentprop.html" target="_top" title="nd_reagentprop" alt="" coords="1341,3632,1558,3720">
+<area shape="rect" id="node61" href="organism_relationship.html" target="_top" title="organism_relationship" alt="" coords="507,552,782,640">
+<area shape="rect" id="node62" href="organismpath.html" target="_top" title="organismpath" alt="" coords="545,657,745,745">
+<area shape="rect" id="node63" href="organismprop.html" target="_top" title="organismprop" alt="" coords="545,904,745,992">
+<area shape="rect" id="node64" href="phendesc.html" target="_top" title="phendesc" alt="" coords="993,4797,1153,4885">
+<area shape="rect" id="node65" href="phenotype.html" target="_top" title="phenotype" alt="" coords="559,1821,730,1909">
+<area shape="rect" id="node66" href="phenotype_comparison_cvterm.html" target="_top" title="phenotype_comparison_cvterm" alt="" coords="896,4445,1251,4533">
+<area shape="rect" id="node67" href="phenotype_cvterm.html" target="_top" title="phenotype_cvterm" alt="" coords="953,1719,1194,1807">
+<area shape="rect" id="node68" href="phenotypeprop.html" target="_top" title="phenotypeprop" alt="" coords="967,1824,1179,1912">
+<area shape="rect" id="node69" href="phenstatement.html" target="_top" title="phenstatement" alt="" coords="967,4551,1179,4639">
+<area shape="rect" id="node70" href="phylonode.html" target="_top" title="phylonode" alt="" coords="908,1085,1239,1419">
+<area shape="rect" id="node71" href="phylotree.html" target="_top" title="phylotree" alt="" coords="564,1115,725,1203">
+<area shape="rect" id="node72" href="phylonode_dbxref.html" target="_top" title="phylonode_dbxref" alt="" coords="1331,173,1567,325">
+<area shape="rect" id="node73" href="phylonode_organism.html" target="_top" title="phylonode_organism" alt="" coords="1319,536,1579,688">
+<area shape="rect" id="node74" href="phylonode_pub.html" target="_top" title="phylonode_pub" alt="" coords="1344,2713,1555,2865">
+<area shape="rect" id="node75" href="phylonode_relationship.html" target="_top" title="phylonode_relationship" alt="" coords="1307,1093,1592,1181">
+<area shape="rect" id="node76" href="phylonodeprop.html" target="_top" title="phylonodeprop" alt="" coords="1344,2408,1555,2496">
+<area shape="rect" id="node77" href="phylotree_pub.html" target="_top" title="phylotree_pub" alt="" coords="972,3844,1175,3932">
+<area shape="rect" id="node78" href="project_relationship.html" target="_top" title="project_relationship" alt="" coords="946,5113,1201,5201">
+<area shape="rect" id="node79" href="projectprop.html" target="_top" title="projectprop" alt="" coords="983,5219,1163,5307">
+<area shape="rect" id="node80" href="pub_relationship.html" target="_top" title="pub_relationship" alt="" coords="961,4340,1186,4428">
+<area shape="rect" id="node81" href="pubprop.html" target="_top" title="pubprop" alt="" coords="998,4656,1149,4744">
+<area shape="rect" id="node82" href="stock_cvterm.html" target="_top" title="stock_cvterm" alt="" coords="977,3163,1170,3251">
+<area shape="rect" id="node83" href="stock_cvtermprop.html" target="_top" title="stock_cvtermprop" alt="" coords="1332,2203,1567,2291">
+<area shape="rect" id="node84" href="stock_dbxrefprop.html" target="_top" title="stock_dbxrefprop" alt="" coords="529,1680,760,1768">
+<area shape="rect" id="node85" href="stock_relationship.html" target="_top" title="stock_relationship" alt="" coords="954,3492,1193,3580">
+<area shape="rect" id="node86" href="stock_relationship_cvterm.html" target="_top" title="stock_relationship_cvterm" alt="" coords="1295,4267,1604,4355">
+<area shape="rect" id="node87" href="stockcollection.html" target="_top" title="stockcollection" alt="" coords="969,5465,1178,5553">
+<area shape="rect" id="node88" href="stockcollectionprop.html" target="_top" title="stockcollectionprop" alt="" coords="1323,5500,1575,5588">
+<area shape="rect" id="node89" href="stockprop.html" target="_top" title="stockprop" alt="" coords="991,1929,1155,2017">
+<area shape="rect" id="node90" href="tmp_gff_load_cache.html" target="_top" title="tmp_gff_load_cache" alt="" coords="949,336,1198,424">
+<area shape="rect" id="node91" title="sgn.cds" alt="" coords="1002,604,1145,692">
+<area shape="rect" id="node92" title="sgn.chadoprop" alt="" coords="541,2071,749,2159">
+<area shape="rect" id="node93" title="sgn.common_nameprop" alt="" coords="501,2176,789,2264">
+<area shape="rect" id="node94" title="sgn.pcr_experiment_sequence" alt="" coords="471,2281,818,2369">
+<area shape="rect" id="node95" title="sgn.snpprop" alt="" coords="551,2387,738,2475">
+<area shape="rect" id="node96" title="sgn_people.list" alt="" coords="540,3349,749,3437">
+<area shape="rect" id="node97" title="sgn_people.listprop" alt="" coords="519,3876,771,3964">
+<area shape="rect" id="node98" title="sgn_people.sp_orderprop" alt="" coords="494,4303,795,4391">
+</map>
+                                        <a name='diagram'><img id="twoimpliedDegreeImg" src="../diagrams/tables/phylonode.implied2degrees.png" usemap="#twoDegreesRelationshipsDiagramImplied" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- /.box-body -->
+                    </div>
+                </section>
+                <script>
+                    var config = {
+                        pagination: true
+                    }
+                </script>
+            </div>
+            <!-- /.content-wrapper -->
+            <footer class="main-footer">
+                <div>
+                    <div class="pull-right hidden-xs">
+                        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+                        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+                    </div>
+                    <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.2.4</a></strong>
+                </div>
+                <!-- /.container -->
+            </footer>
+        </div>
+        <!-- ./wrapper -->
+
+        <!-- jQuery 2.2.3 -->
+        <script src="../bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+        <script src="../bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+        <!-- Bootstrap 3.3.5 -->
+        <script src="../bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+        <!-- DataTables -->
+        <script src="../bower/datatables.net/jquery.dataTables.min.js"></script>
+        <script src="../bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+        <script src="../bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.html5.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.print.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+        <!-- SheetJS -->
+        <script src="../bower/js-xlsx/xlsx.full.min.js"></script>
+        <!-- pdfmake -->
+        <script src="../bower/pdfmake/pdfmake.min.js"></script>
+        <script src="../bower/pdfmake/vfs_fonts.js"></script>
+        <!-- SlimScroll -->
+        <script src="../bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+        <!-- FastClick -->
+        <script src="../bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+        <!-- Salvattore -->
+        <script src="../bower/salvattore/salvattore.min.js"></script>
+        <!-- AnchorJS -->
+        <script src="../bower/anchor-js/anchor.min.js"></script>
+        <!-- CodeMirror -->
+        <script src="../bower/codemirror/codemirror.js"></script>
+        <script src="../bower/codemirror/sql.js"></script>
+        <!-- AdminLTE App -->
+        <script src="../bower/admin-lte/dist/js/app.min.js"></script>
+        <script src="table.js"></script>
+        <script src="../schemaSpy.js"></script>
+    </body>
+</html>

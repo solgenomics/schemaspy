@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>cxgn_breedbase.sgn</title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+        <!-- Bootstrap 3.3.5 -->
+        <link rel="stylesheet" href="bower/admin-lte/bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="bower/font-awesome/css/font-awesome.min.css">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="bower/ionicons/css/ionicons.min.css">
+        <!-- DataTables -->
+        <link rel="stylesheet" href="bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" href="bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+        <!-- Code Mirror -->
+        <link rel="stylesheet" href="bower/codemirror/codemirror.css">
+        <!-- Fonts -->
+        <link href='fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+        <link href='fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+
+        <!-- Theme style -->
+        <link rel="stylesheet" href="bower/admin-lte/dist/css/AdminLTE.min.css">
+        <!-- Salvattore -->
+        <link rel="stylesheet" href="bower/salvattore/salvattore.css">
+        <!-- AdminLTE Skins. Choose a skin from the css/skins
+           folder instead of downloading all of them to reduce the load. -->
+        <link rel="stylesheet" href="bower/admin-lte/dist/css/skins/_all-skins.min.css">
+        <!-- SchemaSpy -->
+        <link rel="stylesheet" href="schemaSpy.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="bower/html5shiv/html5shiv.min.js"></script>
+        <script src="bower/respond/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+    <body class="hold-transition skin-blue layout-top-nav">
+        <div class="wrapper">
+            <header class="main-header">
+                <nav class="navbar navbar-static-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <a href="index.html" class="navbar-brand"><b>cxgn_breedbase</b></a><span class="navbar-brand" style="padding-left: 0">.sgn</span>
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"><i class="fa fa-bars"></i></button>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a href="index.html">Tables <span class="sr-only">(current)</span></a></li>
+                                <li><a href="columns.html" title="All of the columns in the schema">Columns</a></li>
+                                <li><a href="constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+                                <li><a href="relationships.html" title="Diagram of table relationships">Relationships</a></li>
+                                <li><a href="orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>
+                                <li><a href="anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+                                <li><a href="routines.html" title="Procedures and functions">Routines</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                        <!-- Navbar Right Menu -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </nav>
+            </header>
+            <!-- Main content -->
+            <!-- Full Width Column -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>All Relationships</h1>
+                </section>
+                <!-- Main content -->
+                <section class="content">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-code-fork"></i>
+                            <h3 class="box-title">Diagrams</h3>
+                        </div>
+                        <div class="box-body">
+                            <div class="nav-tabs-custom">
+                                <!-- Tabs within a box -->
+                                <h5>By default only columns that are primary keys, foreign keys or indexes are shown.</h5>
+                                <ul class="nav nav-tabs pull-left ui-sortable-handle">
+                                    <li class="active"><a href="#compactDegreeImg-chart" data-toggle="tab" aria-expanded="true">Compact</a></li>
+                                    <li class=""><a href="#largeDegreeImg-chart" data-toggle="tab" aria-expanded="true">Large</a></li>
+                                    <li class=""><a href="#compactimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">Compact Implied</a></li>
+                                    <li class=""><a href="#largeimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">Large Implied</a></li>
+                                </ul>
+                                <div class="tab-content no-padding">
+                                    <div class="chart tab-pane active" id="compactDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="compactRelationshipsDiagram" name="compactRelationshipsDiagram">
+<area shape="rect" id="node1" href="tables/accession.html" target="_top" title="accession" alt="" coords="674,1908,894,2113">
+<area shape="rect" id="node63" href="tables/accession_names.html" target="_top" title="accession_names" alt="" coords="353,1967,583,2113">
+<area shape="rect" id="node72" href="tables/organism.html" target="_top" title="organism" alt="" coords="350,5567,586,5889">
+<area shape="rect" id="node110" title="public.organism" alt="" coords="32,6789,251,6907">
+<area shape="rect" id="node2" href="tables/groups.html" target="_top" title="groups" alt="" coords="715,6869,853,6987">
+<area shape="rect" id="node3" href="tables/common_name.html" target="_top" title="common_name" alt="" coords="37,2091,245,2213">
+<area shape="rect" id="node4" href="tables/ests_mapped_by_clone.html" target="_top" title="ests_mapped_by_clone" alt="" coords="1791,5436,2069,5588">
+<area shape="rect" id="node8" href="tables/marker.html" target="_top" title="marker" alt="" coords="1419,3829,1583,3947">
+<area shape="rect" id="node92" title="genomic.clone" alt="" coords="1399,5897,1603,5985">
+<area shape="rect" id="node5" href="tables/family_tree.html" target="_top" title="family_tree" alt="" coords="3017,299,3209,445">
+<area shape="rect" id="node25" href="tables/family.html" target="_top" title="family" alt="" coords="2614,497,2853,644">
+<area shape="rect" id="node6" href="tables/cds.html" target="_top" title="cds" alt="" coords="1823,7883,2037,8147">
+<area shape="rect" id="node30" href="tables/unigene.html" target="_top" title="unigene" alt="" coords="1401,7220,1601,7484">
+<area shape="rect" id="node99" title="public.feature" alt="" coords="1401,8035,1602,8123">
+<area shape="rect" id="node7" href="tables/snp_file.html" target="_top" title="snp_file" alt="" coords="2272,691,2415,843">
+<area shape="rect" id="node29" href="tables/snp.html" target="_top" title="snp" alt="" coords="1811,1091,2049,1384">
+<area shape="rect" id="node102" title="metadata.md_files" alt="" coords="1809,749,2051,837">
+<area shape="rect" id="node9" href="tables/facility.html" target="_top" title="facility" alt="" coords="669,8673,899,8849">
+<area shape="rect" id="node112" title="sgn_people.sp_person" alt="" coords="5,8907,277,8995">
+<area shape="rect" id="node10" href="tables/library.html" target="_top" title="library" alt="" coords="347,8419,589,8712">
+<area shape="rect" id="node49" href="tables/types.html" target="_top" title="types" alt="" coords="75,8448,207,8565">
+<area shape="rect" id="node11" href="tables/deprecated_marker_types.html" target="_top" title="deprecated_marker_types" alt="" coords="960,5757,1268,5904">
+<area shape="rect" id="node12" href="tables/ssr_primer_unigene_matches.html" target="_top" title="ssr_primer_unigene_matches" alt="" coords="2176,6844,2511,7108">
+<area shape="rect" id="node86" href="tables/ssr.html" target="_top" title="ssr" alt="" coords="1833,4393,2027,4569">
+<area shape="rect" id="node13" href="tables/organismgroup_member.html" target="_top" title="organismgroup_member" alt="" coords="321,7577,615,7729">
+<area shape="rect" id="node37" href="tables/organismgroup.html" target="_top" title="organismgroup" alt="" coords="35,7607,247,7724">
+<area shape="rect" id="node14" href="tables/common_nameprop.html" target="_top" title="common_nameprop" alt="" coords="2219,869,2468,1045">
+<area shape="rect" id="node121" title="public.cvterm" alt="" coords="1831,1401,2029,1489">
+<area shape="rect" id="node15" href="tables/deprecated_markers.html" target="_top" title="deprecated_markers" alt="" coords="1372,5728,1631,5880">
+<area shape="rect" id="node16" href="tables/blast_db_blast_db_group.html" target="_top" title="blast_db_blast_db_group" alt="" coords="967,7589,1261,7741">
+<area shape="rect" id="node24" href="tables/blast_db.html" target="_top" title="blast_db" alt="" coords="663,7384,905,7560">
+<area shape="rect" id="node69" href="tables/blast_db_group.html" target="_top" title="blast_db_group" alt="" coords="363,7443,573,7560">
+<area shape="rect" id="node17" href="tables/pcr_exp_accession.html" target="_top" title="pcr_exp_accession" alt="" coords="2224,5459,2463,5640">
+<area shape="rect" id="node26" href="tables/pcr_experiment.html" target="_top" title="pcr_experiment" alt="" coords="1817,1507,2043,1800">
+<area shape="rect" id="node101" title="public.stock" alt="" coords="1023,2131,1205,2219">
+<area shape="rect" id="node18" href="tables/map.html" target="_top" title="map" alt="" coords="1388,1653,1615,1976">
+<area shape="rect" id="node119" title="phenome.population" alt="" coords="976,1849,1252,2113">
+<area shape="rect" id="node19" href="tables/interpro_go.html" target="_top" title="interpro_go" alt="" coords="3005,117,3222,269">
+<area shape="rect" id="node83" href="tables/go.html" target="_top" title="go" alt="" coords="2621,199,2845,375">
+<area shape="rect" id="node87" href="tables/interpro.html" target="_top" title="interpro" alt="" coords="2621,5,2845,181">
+<area shape="rect" id="node20" href="tables/domain.html" target="_top" title="domain" alt="" coords="1818,8749,2042,9013">
+<area shape="rect" id="node89" href="tables/metadata.html" target="_top" title="metadata" alt="" coords="661,8896,907,9072">
+<area shape="rect" id="node113" title="public.dbxref" alt="" coords="1405,8737,1598,8825">
+<area shape="rect" id="node21" href="tables/derived_from_source.html" target="_top" title="derived_from_source" alt="" coords="1371,6352,1632,6557">
+<area shape="rect" id="node22" href="tables/cosii_ortholog.html" target="_top" title="cosii_ortholog" alt="" coords="1812,2276,2048,2511">
+<area shape="rect" id="node23" href="tables/unigene_build.html" target="_top" title="unigene_build" alt="" coords="992,6811,1236,7133">
+<area shape="rect" id="node62" href="tables/family_build.html" target="_top" title="family_build" alt="" coords="2252,527,2435,673">
+<area shape="rect" id="node60" href="tables/experiment_type.html" target="_top" title="experiment_type" alt="" coords="1389,2065,1614,2183">
+<area shape="rect" id="node76" href="tables/sequence.html" target="_top" title="sequence" alt="" coords="1421,1179,1581,1301">
+<area shape="rect" id="node27" href="tables/temp_marker_correspondence.html" target="_top" title="temp_marker_correspondence" alt="" coords="1757,5936,2103,6083">
+<area shape="rect" id="node28" href="tables/taxonomy.html" target="_top" title="taxonomy" alt="" coords="60,5699,223,5816">
+<area shape="rect" id="node100" title="metadata.md_metadata" alt="" coords="1357,2272,1646,2360">
+<area shape="rect" id="node84" href="tables/unigene_consensi.html" target="_top" title="unigene_consensi" alt="" coords="997,7151,1231,7268">
+<area shape="rect" id="node31" href="tables/marker_collectible.html" target="_top" title="marker_collectible" alt="" coords="1773,4623,2087,4775">
+<area shape="rect" id="node34" href="tables/marker_collection.html" target="_top" title="marker_collection" alt="" coords="1384,4681,1619,4828">
+<area shape="rect" id="node32" href="tables/enzymes.html" target="_top" title="enzymes" alt="" coords="2255,7125,2431,7248">
+<area shape="rect" id="node33" href="tables/pcr_experiment_sequence.html" target="_top" title="pcr_experiment_sequence" alt="" coords="2189,1303,2497,1484">
+<area shape="rect" id="node35" href="tables/blast_db_organism.html" target="_top" title="blast_db_organism" alt="" coords="993,7285,1235,7437">
+<area shape="rect" id="node36" href="tables/deprecated_marker_locations.html" target="_top" title="deprecated_marker_locations" alt="" coords="1761,5713,2099,5919">
+<area shape="rect" id="node46" href="tables/deprecated_mapdata.html" target="_top" title="deprecated_mapdata" alt="" coords="1369,6003,1633,6179">
+<area shape="rect" id="node48" href="tables/deprecated_marker_confidences.html" target="_top" title="deprecated_marker_confidences" alt="" coords="1319,4239,1684,4391">
+<area shape="rect" id="node38" href="tables/domain_match.html" target="_top" title="domain_match" alt="" coords="2241,8661,2446,8925">
+<area shape="rect" id="node39" href="tables/est.html" target="_top" title="est" alt="" coords="1359,8387,1644,8592">
+<area shape="rect" id="node57" href="tables/seqread.html" target="_top" title="seqread" alt="" coords="1026,8416,1202,8651">
+<area shape="rect" id="node40" href="tables/temp_map_correspondence.html" target="_top" title="temp_map_correspondence" alt="" coords="2183,5657,2503,5809">
+<area shape="rect" id="node51" href="tables/map_version.html" target="_top" title="map_version" alt="" coords="1826,2053,2034,2259">
+<area shape="rect" id="node78" href="tables/deprecated_maps.html" target="_top" title="deprecated_maps" alt="" coords="659,5985,909,6132">
+<area shape="rect" id="node41" href="tables/marker_experiment.html" target="_top" title="marker_experiment" alt="" coords="2608,4105,2859,4340">
+<area shape="rect" id="node71" href="tables/marker_location.html" target="_top" title="marker_location" alt="" coords="2234,2889,2453,3095">
+<area shape="rect" id="node74" href="tables/rflp_markers.html" target="_top" title="rflp_markers" alt="" coords="1834,4932,2026,5284">
+<area shape="rect" id="node42" href="tables/snpprop.html" target="_top" title="snpprop" alt="" coords="2269,1083,2417,1259">
+<area shape="rect" id="node43" href="tables/manual_annotations.html" target="_top" title="manual_annotations" alt="" coords="325,9031,611,9265">
+<area shape="rect" id="node44" href="tables/marker_confidence.html" target="_top" title="marker_confidence" alt="" coords="1807,4792,2053,4915">
+<area shape="rect" id="node45" href="tables/blast_hits.html" target="_top" title="blast_hits" alt="" coords="2229,7595,2458,7829">
+<area shape="rect" id="node65" href="tables/blast_annotations.html" target="_top" title="blast_annotations" alt="" coords="1813,7624,2047,7829">
+<area shape="rect" id="node53" href="tables/deprecated_linkage_groups.html" target="_top" title="deprecated_linkage_groups" alt="" coords="953,6061,1275,6208">
+<area shape="rect" id="node47" href="tables/linkage_group.html" target="_top" title="linkage_group" alt="" coords="2631,2757,2836,2997">
+<area shape="rect" id="node50" href="tables/cos_markers.html" target="_top" title="cos_markers" alt="" coords="1809,2528,2051,2704">
+<area shape="rect" id="node52" href="tables/tm_markers.html" target="_top" title="tm_markers" alt="" coords="1840,2781,2020,2987">
+<area shape="rect" id="node54" href="tables/marker_derived_from.html" target="_top" title="marker_derived_from" alt="" coords="1785,6293,2075,6469">
+<area shape="rect" id="node55" href="tables/cloning_vector.html" target="_top" title="cloning_vector" alt="" coords="681,3908,887,4055">
+<area shape="rect" id="node56" href="tables/p_markers.html" target="_top" title="p_markers" alt="" coords="1845,3004,2015,3185">
+<area shape="rect" id="node85" href="tables/clone.html" target="_top" title="clone" alt="" coords="693,8417,875,8599">
+<area shape="rect" id="node58" href="tables/fish_result.html" target="_top" title="fish_result" alt="" coords="1789,6815,2071,7137">
+<area shape="rect" id="node67" href="tables/fish_experimenter.html" target="_top" title="fish_experimenter" alt="" coords="1367,6873,1636,6996">
+<area shape="rect" id="node122" title="metadata.attribution" alt="" coords="1369,7025,1633,7113">
+<area shape="rect" id="node59" href="tables/deprecated_map_cross.html" target="_top" title="deprecated_map_cross" alt="" coords="975,5508,1253,5660">
+<area shape="rect" id="node61" href="tables/est_dbxref.html" target="_top" title="est_dbxref" alt="" coords="1845,8580,2015,8732">
+<area shape="rect" id="node64" href="tables/marker_alias.html" target="_top" title="marker_alias" alt="" coords="1835,3203,2025,3379">
+<area shape="rect" id="node66" href="tables/ssr_repeats.html" target="_top" title="ssr_repeats" alt="" coords="2255,4440,2432,4616">
+<area shape="rect" id="node68" href="tables/pcr_product.html" target="_top" title="pcr_product" alt="" coords="2614,6124,2853,6364">
+<area shape="rect" id="node70" href="tables/fish_result_image.html" target="_top" title="fish_result_image" alt="" coords="2227,6675,2459,6827">
+<area shape="rect" id="node114" title="metadata.md_image" alt="" coords="1801,6709,2059,6797">
+<area shape="rect" id="node73" href="tables/chadoprop.html" target="_top" title="chadoprop" alt="" coords="2259,1501,2428,1677">
+<area shape="rect" id="node81" href="tables/rflp_sequences.html" target="_top" title="rflp_sequences" alt="" coords="1397,5137,1606,5255">
+<area shape="rect" id="node75" href="tables/primer_unigene_match.html" target="_top" title="primer_unigene_match" alt="" coords="1791,6100,2069,6276">
+<area shape="rect" id="node77" href="tables/submit_user.html" target="_top" title="submit_user" alt="" coords="353,8729,583,8905">
+<area shape="rect" id="node79" href="tables/family_member.html" target="_top" title="family_member" alt="" coords="3004,463,3223,668">
+<area shape="rect" id="node80" href="tables/rflp_unigene_associations.html" target="_top" title="rflp_unigene_associations" alt="" coords="1777,6487,2083,6692">
+<area shape="rect" id="node82" href="tables/qc_report.html" target="_top" title="qc_report" alt="" coords="1804,8357,2056,8563">
+<area shape="rect" id="node88" href="tables/unigene_member.html" target="_top" title="unigene_member" alt="" coords="1815,8164,2045,8340">
+<area shape="rect" id="node90" title="phenome.polymorphic_fragment" alt="" coords="1747,3396,2113,3543">
+<area shape="rect" id="node91" title="public.fpc_fingerprint" alt="" coords="2599,7193,2867,7311">
+<area shape="rect" id="node93" title="physical.probe_markers" alt="" coords="1785,3560,2075,3677">
+<area shape="rect" id="node94" title="public.unigene_dbxref" alt="" coords="1793,7489,2067,7607">
+<area shape="rect" id="node95" title="public.unigene_signalp" alt="" coords="2203,7851,2484,7997">
+<area shape="rect" id="node96" title="public.unigene_relations" alt="" coords="1782,7191,2078,7337">
+<area shape="rect" id="node97" title="genomic.blast_query" alt="" coords="983,7455,1245,7572">
+<area shape="rect" id="node98" title="phenome.locus" alt="" coords="363,1832,573,1949">
+<area shape="rect" id="node103" title="physical.manual_associations" alt="" coords="1760,3695,2100,3812">
+<area shape="rect" id="node104" title="phenome.locus_marker" alt="" coords="1789,3829,2071,3947">
+<area shape="rect" id="node105" title="phenome.genotype_experiment" alt="" coords="1750,1817,2110,1964">
+<area shape="rect" id="node106" title="phenome.phenome_genotype" alt="" coords="1760,927,2100,1073">
+<area shape="rect" id="node107" title="phenome.tomato_il_bin" alt="" coords="1788,3964,2072,4169">
+<area shape="rect" id="node108" title="physical.computational_associations" alt="" coords="1728,5301,2132,5419">
+<area shape="rect" id="node109" title="phenome.individual" alt="" coords="988,3744,1240,3891">
+<area shape="rect" id="node111" title="sgn_people.user_map_data" alt="" coords="1771,4187,2089,4304">
+<area shape="rect" id="node115" title="public.enzyme_restriction_sites" alt="" coords="2555,7059,2912,7176">
+<area shape="rect" id="node116" title="sgn_people.user_map" alt="" coords="980,1649,1248,1796">
+<area shape="rect" id="node117" title="genomic.library" alt="" coords="1006,3908,1222,4055">
+<area shape="rect" id="node118" title="phenome.genotype_region" alt="" coords="2956,2623,3271,2857">
+<area shape="rect" id="node120" title="phenome.locus_unigene" alt="" coords="1784,7355,2076,7472">
+</map>
+                                        <a name='diagram'><img id="compactDegreeImg" src="diagrams/summary/relationships.real.compact.png" usemap="#compactRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="largeDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="largeRelationshipsDiagram" name="largeRelationshipsDiagram">
+<area shape="rect" id="node1" href="tables/accession.html" target="_top" title="accession" alt="" coords="674,3080,894,3320">
+<area shape="rect" id="node63" href="tables/accession_names.html" target="_top" title="accession_names" alt="" coords="353,3168,583,3320">
+<area shape="rect" id="node72" href="tables/organism.html" target="_top" title="organism" alt="" coords="350,8985,586,9489">
+<area shape="rect" id="node110" title="public.organism" alt="" coords="32,10816,251,11144">
+<area shape="rect" id="node2" href="tables/groups.html" target="_top" title="groups" alt="" coords="715,10840,853,10992">
+<area shape="rect" id="node3" href="tables/common_name.html" target="_top" title="common_name" alt="" coords="37,3297,245,3420">
+<area shape="rect" id="node4" href="tables/ests_mapped_by_clone.html" target="_top" title="ests_mapped_by_clone" alt="" coords="1791,8855,2069,9007">
+<area shape="rect" id="node8" href="tables/marker.html" target="_top" title="marker" alt="" coords="1419,6219,1583,6341">
+<area shape="rect" id="node92" title="genomic.clone" alt="" coords="1390,9316,1613,9644">
+<area shape="rect" id="node5" href="tables/family_tree.html" target="_top" title="family_tree" alt="" coords="3017,291,3209,501">
+<area shape="rect" id="node25" href="tables/family.html" target="_top" title="family" alt="" coords="2614,539,2853,867">
+<area shape="rect" id="node6" href="tables/cds.html" target="_top" title="cds" alt="" coords="1823,12269,2037,12773">
+<area shape="rect" id="node30" href="tables/unigene.html" target="_top" title="unigene" alt="" coords="1401,11289,1601,11588">
+<area shape="rect" id="node99" title="public.feature" alt="" coords="1400,12677,1603,13123">
+<area shape="rect" id="node7" href="tables/snp_file.html" target="_top" title="snp_file" alt="" coords="2272,825,2415,977">
+<area shape="rect" id="node29" href="tables/snp.html" target="_top" title="snp" alt="" coords="1811,1597,2049,1955">
+<area shape="rect" id="node102" title="metadata.md_files" alt="" coords="1795,717,2065,1075">
+<area shape="rect" id="node9" href="tables/facility.html" target="_top" title="facility" alt="" coords="669,13368,899,13843">
+<area shape="rect" id="node112" title="sgn_people.sp_person" alt="" coords="5,14044,277,14988">
+<area shape="rect" id="node10" href="tables/library.html" target="_top" title="library" alt="" coords="347,12759,589,13615">
+<area shape="rect" id="node49" href="tables/types.html" target="_top" title="types" alt="" coords="75,12788,207,12911">
+<area shape="rect" id="node11" href="tables/deprecated_marker_types.html" target="_top" title="deprecated_marker_types" alt="" coords="960,9176,1268,9357">
+<area shape="rect" id="node12" href="tables/ssr_primer_unigene_matches.html" target="_top" title="ssr_primer_unigene_matches" alt="" coords="2176,10588,2511,10945">
+<area shape="rect" id="node86" href="tables/ssr.html" target="_top" title="ssr" alt="" coords="1833,7239,2027,7625">
+<area shape="rect" id="node13" href="tables/organismgroup_member.html" target="_top" title="organismgroup_member" alt="" coords="321,11863,615,12015">
+<area shape="rect" id="node37" href="tables/organismgroup.html" target="_top" title="organismgroup" alt="" coords="35,11892,247,12044">
+<area shape="rect" id="node14" href="tables/common_nameprop.html" target="_top" title="common_nameprop" alt="" coords="2219,1183,2468,1393">
+<area shape="rect" id="node121" title="public.cvterm" alt="" coords="1820,1972,2040,2241">
+<area shape="rect" id="node15" href="tables/deprecated_markers.html" target="_top" title="deprecated_markers" alt="" coords="1372,9147,1631,9299">
+<area shape="rect" id="node16" href="tables/blast_db_blast_db_group.html" target="_top" title="blast_db_blast_db_group" alt="" coords="967,11840,1261,11992">
+<area shape="rect" id="node24" href="tables/blast_db.html" target="_top" title="blast_db" alt="" coords="663,11429,905,11875">
+<area shape="rect" id="node69" href="tables/blast_db_group.html" target="_top" title="blast_db_group" alt="" coords="363,11693,573,11845">
+<area shape="rect" id="node17" href="tables/pcr_exp_accession.html" target="_top" title="pcr_exp_accession" alt="" coords="2224,8877,2463,9059">
+<area shape="rect" id="node26" href="tables/pcr_experiment.html" target="_top" title="pcr_experiment" alt="" coords="1817,2259,2043,2763">
+<area shape="rect" id="node101" title="public.stock" alt="" coords="1023,3367,1205,3695">
+<area shape="rect" id="node18" href="tables/map.html" target="_top" title="map" alt="" coords="1388,2493,1615,2939">
+<area shape="rect" id="node119" title="phenome.population" alt="" coords="976,2757,1252,3349">
+<area shape="rect" id="node19" href="tables/interpro_go.html" target="_top" title="interpro_go" alt="" coords="3005,107,3222,259">
+<area shape="rect" id="node83" href="tables/go.html" target="_top" title="go" alt="" coords="2621,204,2845,385">
+<area shape="rect" id="node87" href="tables/interpro.html" target="_top" title="interpro" alt="" coords="2621,5,2845,187">
+<area shape="rect" id="node20" href="tables/domain.html" target="_top" title="domain" alt="" coords="1818,13797,2042,14096">
+<area shape="rect" id="node89" href="tables/metadata.html" target="_top" title="metadata" alt="" coords="661,14003,907,14301">
+<area shape="rect" id="node113" title="public.dbxref" alt="" coords="1405,13751,1598,13961">
+<area shape="rect" id="node21" href="tables/derived_from_source.html" target="_top" title="derived_from_source" alt="" coords="1371,10021,1632,10232">
+<area shape="rect" id="node22" href="tables/cosii_ortholog.html" target="_top" title="cosii_ortholog" alt="" coords="1812,3513,2048,3841">
+<area shape="rect" id="node23" href="tables/unigene_build.html" target="_top" title="unigene_build" alt="" coords="992,10781,1236,11197">
+<area shape="rect" id="node62" href="tables/family_build.html" target="_top" title="family_build" alt="" coords="2252,568,2435,808">
+<area shape="rect" id="node60" href="tables/experiment_type.html" target="_top" title="experiment_type" alt="" coords="1389,3028,1614,3180">
+<area shape="rect" id="node76" href="tables/sequence.html" target="_top" title="sequence" alt="" coords="1421,1773,1581,1896">
+<area shape="rect" id="node27" href="tables/temp_marker_correspondence.html" target="_top" title="temp_marker_correspondence" alt="" coords="1757,9419,2103,9571">
+<area shape="rect" id="node28" href="tables/taxonomy.html" target="_top" title="taxonomy" alt="" coords="60,9176,223,9328">
+<area shape="rect" id="node100" title="metadata.md_metadata" alt="" coords="1357,3748,1646,4105">
+<area shape="rect" id="node84" href="tables/unigene_consensi.html" target="_top" title="unigene_consensi" alt="" coords="997,11215,1231,11367">
+<area shape="rect" id="node31" href="tables/marker_collectible.html" target="_top" title="marker_collectible" alt="" coords="1773,7679,2087,7831">
+<area shape="rect" id="node34" href="tables/marker_collection.html" target="_top" title="marker_collection" alt="" coords="1384,7737,1619,7889">
+<area shape="rect" id="node32" href="tables/enzymes.html" target="_top" title="enzymes" alt="" coords="2255,10963,2431,11085">
+<area shape="rect" id="node33" href="tables/pcr_experiment_sequence.html" target="_top" title="pcr_experiment_sequence" alt="" coords="2189,1863,2497,2044">
+<area shape="rect" id="node35" href="tables/blast_db_organism.html" target="_top" title="blast_db_organism" alt="" coords="993,11384,1235,11536">
+<area shape="rect" id="node36" href="tables/deprecated_marker_locations.html" target="_top" title="deprecated_marker_locations" alt="" coords="1761,9132,2099,9401">
+<area shape="rect" id="node46" href="tables/deprecated_mapdata.html" target="_top" title="deprecated_mapdata" alt="" coords="1369,9661,1633,9901">
+<area shape="rect" id="node48" href="tables/deprecated_marker_confidences.html" target="_top" title="deprecated_marker_confidences" alt="" coords="1319,6964,1684,7116">
+<area shape="rect" id="node38" href="tables/domain_match.html" target="_top" title="domain_match" alt="" coords="2241,13709,2446,14067">
+<area shape="rect" id="node39" href="tables/est.html" target="_top" title="est" alt="" coords="1359,13140,1644,13556">
+<area shape="rect" id="node57" href="tables/seqread.html" target="_top" title="seqread" alt="" coords="1026,13169,1202,13585">
+<area shape="rect" id="node40" href="tables/temp_map_correspondence.html" target="_top" title="temp_map_correspondence" alt="" coords="2183,9076,2503,9228">
+<area shape="rect" id="node51" href="tables/map_version.html" target="_top" title="map_version" alt="" coords="1826,3197,2034,3496">
+<area shape="rect" id="node78" href="tables/deprecated_maps.html" target="_top" title="deprecated_maps" alt="" coords="659,9644,909,10148">
+<area shape="rect" id="node41" href="tables/marker_experiment.html" target="_top" title="marker_experiment" alt="" coords="2608,5829,2859,6069">
+<area shape="rect" id="node71" href="tables/marker_location.html" target="_top" title="marker_location" alt="" coords="2234,4583,2453,4881">
+<area shape="rect" id="node74" href="tables/rflp_markers.html" target="_top" title="rflp_markers" alt="" coords="1834,7988,2026,8433">
+<area shape="rect" id="node42" href="tables/snpprop.html" target="_top" title="snpprop" alt="" coords="2269,1591,2417,1801">
+<area shape="rect" id="node43" href="tables/manual_annotations.html" target="_top" title="manual_annotations" alt="" coords="325,14173,611,14472">
+<area shape="rect" id="node44" href="tables/marker_confidence.html" target="_top" title="marker_confidence" alt="" coords="1807,7848,2053,7971">
+<area shape="rect" id="node45" href="tables/blast_hits.html" target="_top" title="blast_hits" alt="" coords="2229,11848,2458,12176">
+<area shape="rect" id="node65" href="tables/blast_annotations.html" target="_top" title="blast_annotations" alt="" coords="1813,11888,2047,12216">
+<area shape="rect" id="node53" href="tables/deprecated_linkage_groups.html" target="_top" title="deprecated_linkage_groups" alt="" coords="953,9720,1275,9901">
+<area shape="rect" id="node47" href="tables/linkage_group.html" target="_top" title="linkage_group" alt="" coords="2631,4451,2836,4691">
+<area shape="rect" id="node50" href="tables/cos_markers.html" target="_top" title="cos_markers" alt="" coords="1809,3859,2051,4392">
+<area shape="rect" id="node52" href="tables/tm_markers.html" target="_top" title="tm_markers" alt="" coords="1840,4469,2020,4739">
+<area shape="rect" id="node54" href="tables/marker_derived_from.html" target="_top" title="marker_derived_from" alt="" coords="1785,9963,2075,10144">
+<area shape="rect" id="node55" href="tables/cloning_vector.html" target="_top" title="cloning_vector" alt="" coords="681,6604,887,6756">
+<area shape="rect" id="node56" href="tables/p_markers.html" target="_top" title="p_markers" alt="" coords="1845,4756,2015,4937">
+<area shape="rect" id="node85" href="tables/clone.html" target="_top" title="clone" alt="" coords="693,12880,875,13061">
+<area shape="rect" id="node58" href="tables/fish_result.html" target="_top" title="fish_result" alt="" coords="1789,10823,2071,11180">
+<area shape="rect" id="node67" href="tables/fish_experimenter.html" target="_top" title="fish_experimenter" alt="" coords="1367,10881,1636,11004">
+<area shape="rect" id="node122" title="metadata.attribution" alt="" coords="1356,11061,1647,11272">
+<area shape="rect" id="node59" href="tables/deprecated_map_cross.html" target="_top" title="deprecated_map_cross" alt="" coords="975,8927,1253,9079">
+<area shape="rect" id="node61" href="tables/est_dbxref.html" target="_top" title="est_dbxref" alt="" coords="1845,13628,2015,13780">
+<area shape="rect" id="node64" href="tables/marker_alias.html" target="_top" title="marker_alias" alt="" coords="1835,4955,2025,5136">
+<area shape="rect" id="node66" href="tables/ssr_repeats.html" target="_top" title="ssr_repeats" alt="" coords="2255,7361,2432,7572">
+<area shape="rect" id="node68" href="tables/pcr_product.html" target="_top" title="pcr_product" alt="" coords="2614,9723,2853,9963">
+<area shape="rect" id="node70" href="tables/fish_result_image.html" target="_top" title="fish_result_image" alt="" coords="2227,10419,2459,10571">
+<area shape="rect" id="node114" title="metadata.md_image" alt="" coords="1801,10448,2059,10805">
+<area shape="rect" id="node73" href="tables/chadoprop.html" target="_top" title="chadoprop" alt="" coords="2259,2061,2428,2243">
+<area shape="rect" id="node81" href="tables/rflp_sequences.html" target="_top" title="rflp_sequences" alt="" coords="1397,8223,1606,8345">
+<area shape="rect" id="node75" href="tables/primer_unigene_match.html" target="_top" title="primer_unigene_match" alt="" coords="1791,9588,2069,9945">
+<area shape="rect" id="node77" href="tables/submit_user.html" target="_top" title="submit_user" alt="" coords="353,13632,583,14048">
+<area shape="rect" id="node79" href="tables/family_member.html" target="_top" title="family_member" alt="" coords="3004,519,3223,788">
+<area shape="rect" id="node80" href="tables/rflp_unigene_associations.html" target="_top" title="rflp_unigene_associations" alt="" coords="1777,10161,2083,10431">
+<area shape="rect" id="node82" href="tables/qc_report.html" target="_top" title="qc_report" alt="" coords="1804,13107,2056,13611">
+<area shape="rect" id="node88" href="tables/unigene_member.html" target="_top" title="unigene_member" alt="" coords="1815,12791,2045,13089">
+<area shape="rect" id="node90" title="phenome.polymorphic_fragment" alt="" coords="1747,5153,2113,5540">
+<area shape="rect" id="node91" title="public.fpc_fingerprint" alt="" coords="2599,10975,2867,11156">
+<area shape="rect" id="node93" title="physical.probe_markers" alt="" coords="1785,5557,2075,5885">
+<area shape="rect" id="node94" title="public.unigene_dbxref" alt="" coords="1793,11719,2067,11871">
+<area shape="rect" id="node95" title="public.unigene_signalp" alt="" coords="2203,12193,2484,12873">
+<area shape="rect" id="node96" title="public.unigene_relations" alt="" coords="1782,11233,2078,11415">
+<area shape="rect" id="node97" title="genomic.blast_query" alt="" coords="983,11553,1245,11823">
+<area shape="rect" id="node98" title="phenome.locus" alt="" coords="363,2588,573,3151">
+<area shape="rect" id="node103" title="physical.manual_associations" alt="" coords="1760,5903,2100,6143">
+<area shape="rect" id="node104" title="phenome.locus_marker" alt="" coords="1789,6160,2071,6429">
+<area shape="rect" id="node105" title="phenome.genotype_experiment" alt="" coords="1750,2780,2110,3108">
+<area shape="rect" id="node106" title="phenome.phenome_genotype" alt="" coords="1760,1164,2100,1580">
+<area shape="rect" id="node107" title="phenome.tomato_il_bin" alt="" coords="1788,6447,2072,6716">
+<area shape="rect" id="node108" title="physical.computational_associations" alt="" coords="1728,8451,2132,8837">
+<area shape="rect" id="node109" title="phenome.individual" alt="" coords="988,5877,1240,6293">
+<area shape="rect" id="node111" title="sgn_people.user_map_data" alt="" coords="1771,6733,2089,7149">
+<area shape="rect" id="node115" title="public.enzyme_restriction_sites" alt="" coords="2555,10805,2912,10957">
+<area shape="rect" id="node116" title="sgn_people.user_map" alt="" coords="980,2259,1248,2704">
+<area shape="rect" id="node117" title="genomic.library" alt="" coords="1006,6311,1222,6815">
+<area shape="rect" id="node118" title="phenome.genotype_region" alt="" coords="2956,4245,3271,4720">
+<area shape="rect" id="node120" title="phenome.locus_unigene" alt="" coords="1784,11432,2076,11701">
+</map>
+                                        <a name='diagram'><img id="largeDegreeImg" src="diagrams/summary/relationships.real.large.png" usemap="#largeRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="compactimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="compactImpliedRelationshipsDiagram" name="compactImpliedRelationshipsDiagram">
+<area shape="rect" id="node1" href="tables/accession.html" target="_top" title="accession" alt="" coords="687,1010,907,1216">
+<area shape="rect" id="node71" href="tables/accession_names.html" target="_top" title="accession_names" alt="" coords="367,1069,596,1216">
+<area shape="rect" id="node82" href="tables/organism.html" target="_top" title="organism" alt="" coords="363,6196,599,6518">
+<area shape="rect" id="node126" title="public.organism" alt="" coords="39,6588,257,6705">
+<area shape="rect" id="node2" href="tables/groups.html" target="_top" title="groups" alt="" coords="729,7518,866,7636">
+<area shape="rect" id="node3" href="tables/common_name.html" target="_top" title="common_name" alt="" coords="44,1929,252,2052">
+<area shape="rect" id="node4" href="tables/ests_mapped_by_clone.html" target="_top" title="ests_mapped_by_clone" alt="" coords="1817,5013,2096,5165">
+<area shape="rect" id="node10" href="tables/marker.html" target="_top" title="marker" alt="" coords="1439,2780,1603,2897">
+<area shape="rect" id="node108" title="genomic.clone" alt="" coords="1419,5973,1623,6061">
+<area shape="rect" id="node5" href="tables/family_tree.html" target="_top" title="family_tree" alt="" coords="2274,8942,2466,9089">
+<area shape="rect" id="node28" href="tables/family.html" target="_top" title="family" alt="" coords="1837,8982,2076,9129">
+<area shape="rect" id="node6" href="tables/cds.html" target="_top" title="cds" alt="" coords="1850,8214,2063,8478">
+<area shape="rect" id="node33" href="tables/unigene.html" target="_top" title="unigene" alt="" coords="1421,7682,1621,7946">
+<area shape="rect" id="node115" title="public.feature" alt="" coords="1421,8366,1622,8454">
+<area shape="rect" id="node7" href="tables/annotation_target_type.html" target="_top" title="annotation_target_type" alt="" coords="5,7472,291,7618">
+<area shape="rect" id="node8" href="tables/tigrtc_membership.html" target="_top" title="tigrtc_membership" alt="" coords="1835,6822,2079,7004">
+<area shape="rect" id="node18" href="tables/tigrtc_index.html" target="_top" title="tigrtc_index" alt="" coords="1431,6708,1612,6825">
+<area shape="rect" id="node61" href="tables/seqread.html" target="_top" title="seqread" alt="" coords="1433,7065,1609,7300">
+<area shape="rect" id="node9" href="tables/snp_file.html" target="_top" title="snp_file" alt="" coords="2299,93,2441,245">
+<area shape="rect" id="node32" href="tables/snp.html" target="_top" title="snp" alt="" coords="1837,1014,2076,1308">
+<area shape="rect" id="node118" title="metadata.md_files" alt="" coords="1836,157,2077,245">
+<area shape="rect" id="node11" href="tables/facility.html" target="_top" title="facility" alt="" coords="683,7084,912,7260">
+<area shape="rect" id="node87" href="tables/submit_user.html" target="_top" title="submit_user" alt="" coords="367,7112,596,7288">
+<area shape="rect" id="node128" title="sgn_people.sp_person" alt="" coords="12,7289,284,7377">
+<area shape="rect" id="node12" href="tables/library.html" target="_top" title="library" alt="" coords="677,6546,918,6840">
+<area shape="rect" id="node53" href="tables/types.html" target="_top" title="types" alt="" coords="415,6576,547,6693">
+<area shape="rect" id="node13" href="tables/deprecated_marker_types.html" target="_top" title="deprecated_marker_types" alt="" coords="973,5593,1281,5740">
+<area shape="rect" id="node14" href="tables/ssr_primer_unigene_matches.html" target="_top" title="ssr_primer_unigene_matches" alt="" coords="2203,3829,2537,4093">
+<area shape="rect" id="node97" href="tables/ssr.html" target="_top" title="ssr" alt="" coords="1860,3712,2053,3888">
+<area shape="rect" id="node15" href="tables/organismgroup_member.html" target="_top" title="organismgroup_member" alt="" coords="335,6893,628,7045">
+<area shape="rect" id="node40" href="tables/organismgroup.html" target="_top" title="organismgroup" alt="" coords="42,6922,254,7040">
+<area shape="rect" id="node16" href="tables/common_nameprop.html" target="_top" title="common_nameprop" alt="" coords="2245,1709,2495,1885">
+<area shape="rect" id="node137" title="public.cvterm" alt="" coords="1858,1361,2055,1449">
+<area shape="rect" id="node17" href="tables/deprecated_markers.html" target="_top" title="deprecated_markers" alt="" coords="1392,5540,1651,5692">
+<area shape="rect" id="node19" href="tables/blast_db_blast_db_group.html" target="_top" title="blast_db_blast_db_group" alt="" coords="980,9117,1275,9269">
+<area shape="rect" id="node27" href="tables/blast_db.html" target="_top" title="blast_db" alt="" coords="677,8982,918,9158">
+<area shape="rect" id="node79" href="tables/blast_db_group.html" target="_top" title="blast_db_group" alt="" coords="376,9108,587,9225">
+<area shape="rect" id="node20" href="tables/pcr_exp_accession.html" target="_top" title="pcr_exp_accession" alt="" coords="2251,1902,2489,2084">
+<area shape="rect" id="node29" href="tables/pcr_experiment.html" target="_top" title="pcr_experiment" alt="" coords="1843,1466,2070,1760">
+<area shape="rect" id="node117" title="public.stock" alt="" coords="1036,1262,1219,1350">
+<area shape="rect" id="node21" href="tables/map.html" target="_top" title="map" alt="" coords="1408,816,1635,1138">
+<area shape="rect" id="node135" title="phenome.population" alt="" coords="989,981,1265,1245">
+<area shape="rect" id="node22" href="tables/interpro_go.html" target="_top" title="interpro_go" alt="" coords="1848,8777,2065,8929">
+<area shape="rect" id="node94" href="tables/go.html" target="_top" title="go" alt="" coords="1409,8753,1633,8929">
+<area shape="rect" id="node98" href="tables/interpro.html" target="_top" title="interpro" alt="" coords="1409,8506,1633,8682">
+<area shape="rect" id="node23" href="tables/domain.html" target="_top" title="domain" alt="" coords="1845,8496,2069,8760">
+<area shape="rect" id="node101" href="tables/metadata.html" target="_top" title="metadata" alt="" coords="674,8032,921,8208">
+<area shape="rect" id="node129" title="public.dbxref" alt="" coords="1425,8117,1618,8205">
+<area shape="rect" id="node24" href="tables/derived_from_source.html" target="_top" title="derived_from_source" alt="" coords="1391,5750,1652,5956">
+<area shape="rect" id="node25" href="tables/cosii_ortholog.html" target="_top" title="cosii_ortholog" alt="" coords="1839,1849,2075,2084">
+<area shape="rect" id="node86" href="tables/sequence.html" target="_top" title="sequence" alt="" coords="1441,1502,1601,1625">
+<area shape="rect" id="node26" href="tables/unigene_build.html" target="_top" title="unigene_build" alt="" coords="1005,7729,1249,8052">
+<area shape="rect" id="node67" href="tables/family_build.html" target="_top" title="family_build" alt="" coords="1430,9012,1613,9158">
+<area shape="rect" id="node64" href="tables/experiment_type.html" target="_top" title="experiment_type" alt="" coords="1409,1642,1634,1760">
+<area shape="rect" id="node30" href="tables/temp_marker_correspondence.html" target="_top" title="temp_marker_correspondence" alt="" coords="1784,5510,2129,5657">
+<area shape="rect" id="node31" href="tables/taxonomy.html" target="_top" title="taxonomy" alt="" coords="67,6328,229,6445">
+<area shape="rect" id="node116" title="metadata.md_metadata" alt="" coords="1377,1192,1666,1280">
+<area shape="rect" id="node95" href="tables/unigene_consensi.html" target="_top" title="unigene_consensi" alt="" coords="1011,8069,1244,8186">
+<area shape="rect" id="node34" href="tables/marker_collectible.html" target="_top" title="marker_collectible" alt="" coords="1800,4268,2113,4420">
+<area shape="rect" id="node37" href="tables/marker_collection.html" target="_top" title="marker_collection" alt="" coords="1404,4273,1639,4420">
+<area shape="rect" id="node35" href="tables/enzymes.html" target="_top" title="enzymes" alt="" coords="2282,9106,2458,9229">
+<area shape="rect" id="node36" href="tables/pcr_experiment_sequence.html" target="_top" title="pcr_experiment_sequence" alt="" coords="2216,1474,2524,1656">
+<area shape="rect" id="node38" href="tables/blast_db_organism.html" target="_top" title="blast_db_organism" alt="" coords="1006,7488,1249,7640">
+<area shape="rect" id="node39" href="tables/deprecated_marker_locations.html" target="_top" title="deprecated_marker_locations" alt="" coords="1787,5288,2126,5493">
+<area shape="rect" id="node49" href="tables/deprecated_mapdata.html" target="_top" title="deprecated_mapdata" alt="" coords="1389,5346,1653,5522">
+<area shape="rect" id="node51" href="tables/deprecated_marker_confidences.html" target="_top" title="deprecated_marker_confidences" alt="" coords="1339,1333,1704,1485">
+<area shape="rect" id="node41" href="tables/domain_match.html" target="_top" title="domain_match" alt="" coords="2267,8408,2473,8672">
+<area shape="rect" id="node42" href="tables/est.html" target="_top" title="est" alt="" coords="1814,7280,2099,7485">
+<area shape="rect" id="node43" href="tables/temp_map_correspondence.html" target="_top" title="temp_map_correspondence" alt="" coords="2210,1305,2530,1457">
+<area shape="rect" id="node55" href="tables/map_version.html" target="_top" title="map_version" alt="" coords="1853,792,2061,997">
+<area shape="rect" id="node88" href="tables/deprecated_maps.html" target="_top" title="deprecated_maps" alt="" coords="672,5458,923,5605">
+<area shape="rect" id="node44" href="tables/marker_experiment.html" target="_top" title="marker_experiment" alt="" coords="2983,1804,3233,2038">
+<area shape="rect" id="node81" href="tables/marker_location.html" target="_top" title="marker_location" alt="" coords="2651,409,2869,614">
+<area shape="rect" id="node84" href="tables/rflp_markers.html" target="_top" title="rflp_markers" alt="" coords="1861,4509,2053,4861">
+<area shape="rect" id="node45" href="tables/snpprop.html" target="_top" title="snpprop" alt="" coords="2296,918,2444,1094">
+<area shape="rect" id="node46" href="tables/manual_annotations.html" target="_top" title="manual_annotations" alt="" coords="339,7413,624,7648">
+<area shape="rect" id="node47" href="tables/marker_confidence.html" target="_top" title="marker_confidence" alt="" coords="2247,556,2493,678">
+<area shape="rect" id="node48" href="tables/blast_hits.html" target="_top" title="blast_hits" alt="" coords="2645,7746,2875,7981">
+<area shape="rect" id="node70" href="tables/blast_defline.html" target="_top" title="blast_defline" alt="" coords="2232,8016,2508,8221">
+<area shape="rect" id="node73" href="tables/blast_annotations.html" target="_top" title="blast_annotations" alt="" coords="2253,7624,2487,7829">
+<area shape="rect" id="node57" href="tables/deprecated_linkage_groups.html" target="_top" title="deprecated_linkage_groups" alt="" coords="967,5429,1288,5576">
+<area shape="rect" id="node50" href="tables/linkage_group.html" target="_top" title="linkage_group" alt="" coords="2267,262,2473,502">
+<area shape="rect" id="node52" href="tables/fish_result_composite.html" target="_top" title="fish_result_composite" alt="" coords="1816,6401,2097,6606">
+<area shape="rect" id="node69" href="tables/fish_chromatin_density_constants.html" target="_top" title="fish_chromatin_density_constants" alt="" coords="1332,6494,1711,6612">
+<area shape="rect" id="node75" href="tables/fish_karyotype_constants_old.html" target="_top" title="fish_karyotype_constants_old" alt="" coords="1352,6360,1691,6477">
+<area shape="rect" id="node76" href="tables/fish_experimenter.html" target="_top" title="fish_experimenter" alt="" coords="1387,6220,1656,6342">
+<area shape="rect" id="node54" href="tables/cos_markers.html" target="_top" title="cos_markers" alt="" coords="1836,3078,2077,3254">
+<area shape="rect" id="node56" href="tables/tm_markers.html" target="_top" title="tm_markers" alt="" coords="1867,3296,2047,3501">
+<area shape="rect" id="node58" href="tables/marker_derived_from.html" target="_top" title="marker_derived_from" alt="" coords="1812,5868,2101,6044">
+<area shape="rect" id="node59" href="tables/cloning_vector.html" target="_top" title="cloning_vector" alt="" coords="695,2049,900,2196">
+<area shape="rect" id="node60" href="tables/p_markers.html" target="_top" title="p_markers" alt="" coords="1872,4069,2041,4250">
+<area shape="rect" id="node96" href="tables/clone.html" target="_top" title="clone" alt="" coords="1036,6925,1219,7106">
+<area shape="rect" id="node100" href="tables/manual_censor_reasons.html" target="_top" title="manual_censor_reasons" alt="" coords="983,7353,1271,7470">
+<area shape="rect" id="node62" href="tables/fish_result.html" target="_top" title="fish_result" alt="" coords="1816,6061,2097,6384">
+<area shape="rect" id="node138" title="metadata.attribution" alt="" coords="1389,6114,1653,6202">
+<area shape="rect" id="node63" href="tables/deprecated_map_cross.html" target="_top" title="deprecated_map_cross" alt="" coords="988,6133,1267,6285">
+<area shape="rect" id="node65" href="tables/est_dbxref.html" target="_top" title="est_dbxref" alt="" coords="2285,7846,2455,7998">
+<area shape="rect" id="node66" href="tables/trim_feature.html" target="_top" title="trim_feature" alt="" coords="2277,7014,2463,7190">
+<area shape="rect" id="node68" href="tables/group_linkage.html" target="_top" title="group_linkage" alt="" coords="1027,7160,1228,7336">
+<area shape="rect" id="node102" href="tables/blast_targets.html" target="_top" title="blast_targets" alt="" coords="1833,8044,2080,8161">
+<area shape="rect" id="node72" href="tables/marker_alias.html" target="_top" title="marker_alias" alt="" coords="1862,3518,2051,3694">
+<area shape="rect" id="node74" href="tables/ssr_repeats.html" target="_top" title="ssr_repeats" alt="" coords="2281,3086,2459,3262">
+<area shape="rect" id="node77" href="tables/microarray.html" target="_top" title="microarray" alt="" coords="1405,6842,1638,7048">
+<area shape="rect" id="node78" href="tables/pcr_product.html" target="_top" title="pcr_product" alt="" coords="2641,3165,2879,3405">
+<area shape="rect" id="node80" href="tables/fish_result_image.html" target="_top" title="fish_result_image" alt="" coords="2254,5576,2486,5728">
+<area shape="rect" id="node130" title="metadata.md_image" alt="" coords="1827,5182,2086,5270">
+<area shape="rect" id="node83" href="tables/chadoprop.html" target="_top" title="chadoprop" alt="" coords="2285,1112,2455,1288">
+<area shape="rect" id="node91" href="tables/rflp_sequences.html" target="_top" title="rflp_sequences" alt="" coords="1417,4714,1626,4832">
+<area shape="rect" id="node85" href="tables/primer_unigene_match.html" target="_top" title="primer_unigene_match" alt="" coords="1817,5674,2096,5850">
+<area shape="rect" id="node89" href="tables/family_member.html" target="_top" title="family_member" alt="" coords="2261,8709,2479,8914">
+<area shape="rect" id="node90" href="tables/rflp_unigene_associations.html" target="_top" title="rflp_unigene_associations" alt="" coords="1803,7021,2110,7226">
+<area shape="rect" id="node92" href="tables/qc_report.html" target="_top" title="qc_report" alt="" coords="2244,7208,2496,7413">
+<area shape="rect" id="node93" href="tables/tigrtc_tracking.html" target="_top" title="tigrtc_tracking" alt="" coords="1853,6624,2060,6805">
+<area shape="rect" id="node99" href="tables/unigene_member.html" target="_top" title="unigene_member" alt="" coords="2255,7430,2485,7606">
+<area shape="rect" id="node103" href="tables/enzyme_restriction_sites.html" target="_top" title="enzyme_restriction_sites" alt="" coords="2611,9241,2909,9388">
+<area shape="rect" id="node104" href="tables/il_info.html" target="_top" title="il_info" alt="" coords="2277,696,2463,901">
+<area shape="rect" id="node105" href="tables/marker_to_map.html" target="_top" title="marker_to_map" alt="" coords="3003,198,3213,321">
+<area shape="rect" id="node106" title="phenome.polymorphic_fragment" alt="" coords="1773,3905,2140,4052">
+<area shape="rect" id="node107" title="public.fpc_fingerprint" alt="" coords="2626,8972,2894,9089">
+<area shape="rect" id="node109" title="physical.probe_markers" alt="" coords="1812,2173,2101,2290">
+<area shape="rect" id="node110" title="public.unigene_dbxref" alt="" coords="1819,7673,2094,7790">
+<area shape="rect" id="node111" title="public.unigene_signalp" alt="" coords="2229,8238,2511,8385">
+<area shape="rect" id="node112" title="public.unigene_relations" alt="" coords="1809,7844,2105,7990">
+<area shape="rect" id="node113" title="genomic.blast_query" alt="" coords="997,8982,1258,9100">
+<area shape="rect" id="node114" title="phenome.locus" alt="" coords="376,1834,587,1952">
+<area shape="rect" id="node119" title="physical.manual_associations" alt="" coords="1787,2308,2127,2425">
+<area shape="rect" id="node120" title="phenome.locus_marker" alt="" coords="1815,2514,2098,2632">
+<area shape="rect" id="node121" title="phenome.genotype_experiment" alt="" coords="1777,628,2137,774">
+<area shape="rect" id="node122" title="phenome.phenome_genotype" alt="" coords="1787,464,2127,610">
+<area shape="rect" id="node123" title="phenome.tomato_il_bin" alt="" coords="1815,2721,2099,2926">
+<area shape="rect" id="node124" title="physical.computational_associations" alt="" coords="1755,4878,2159,4996">
+<area shape="rect" id="node125" title="phenome.individual" alt="" coords="1001,1885,1253,2032">
+<area shape="rect" id="node127" title="sgn_people.user_map_data" alt="" coords="1798,2944,2115,3061">
+<area shape="rect" id="node131" title="public.enzyme_restriction_sites" alt="" coords="2581,9106,2939,9224">
+<area shape="rect" id="node132" title="sgn_people.user_map" alt="" coords="993,709,1261,856">
+<area shape="rect" id="node133" title="genomic.library" alt="" coords="1019,2049,1235,2196">
+<area shape="rect" id="node134" title="phenome.genotype_region" alt="" coords="2603,2373,2917,2608">
+<area shape="rect" id="node136" title="phenome.locus_unigene" alt="" coords="1811,7538,2103,7656">
+</map>
+                                        <a name='diagram'><img id="compactimpliedDegreeImg" src="diagrams/summary/relationships.implied.compact.png" usemap="#compactImpliedRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="largeimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="largeImpliedRelationshipsDiagram" name="largeImpliedRelationshipsDiagram">
+<area shape="rect" id="node1" href="tables/accession.html" target="_top" title="accession" alt="" coords="687,1420,907,1660">
+<area shape="rect" id="node71" href="tables/accession_names.html" target="_top" title="accession_names" alt="" coords="367,1435,596,1587">
+<area shape="rect" id="node82" href="tables/organism.html" target="_top" title="organism" alt="" coords="363,3313,599,3817">
+<area shape="rect" id="node126" title="public.organism" alt="" coords="39,5359,257,5687">
+<area shape="rect" id="node2" href="tables/groups.html" target="_top" title="groups" alt="" coords="729,9512,866,9664">
+<area shape="rect" id="node3" href="tables/common_name.html" target="_top" title="common_name" alt="" coords="44,2581,252,2704">
+<area shape="rect" id="node4" href="tables/ests_mapped_by_clone.html" target="_top" title="ests_mapped_by_clone" alt="" coords="1817,10271,2096,10423">
+<area shape="rect" id="node10" href="tables/marker.html" target="_top" title="marker" alt="" coords="1439,4983,1603,5105">
+<area shape="rect" id="node108" title="genomic.clone" alt="" coords="1410,10289,1633,10617">
+<area shape="rect" id="node5" href="tables/family_tree.html" target="_top" title="family_tree" alt="" coords="2274,13288,2466,13499">
+<area shape="rect" id="node28" href="tables/family.html" target="_top" title="family" alt="" coords="1837,13369,2076,13697">
+<area shape="rect" id="node6" href="tables/cds.html" target="_top" title="cds" alt="" coords="1850,11115,2063,11619">
+<area shape="rect" id="node33" href="tables/unigene.html" target="_top" title="unigene" alt="" coords="1421,9804,1621,10103">
+<area shape="rect" id="node115" title="public.feature" alt="" coords="1420,10635,1623,11080">
+<area shape="rect" id="node7" href="tables/annotation_target_type.html" target="_top" title="annotation_target_type" alt="" coords="5,11519,291,11729">
+<area shape="rect" id="node8" href="tables/tigrtc_membership.html" target="_top" title="tigrtc_membership" alt="" coords="1835,7244,2079,7425">
+<area shape="rect" id="node18" href="tables/tigrtc_index.html" target="_top" title="tigrtc_index" alt="" coords="1431,6612,1612,6735">
+<area shape="rect" id="node61" href="tables/seqread.html" target="_top" title="seqread" alt="" coords="1433,7360,1609,7776">
+<area shape="rect" id="node9" href="tables/snp_file.html" target="_top" title="snp_file" alt="" coords="2299,1129,2441,1281">
+<area shape="rect" id="node32" href="tables/snp.html" target="_top" title="snp" alt="" coords="1837,1041,2076,1399">
+<area shape="rect" id="node118" title="metadata.md_files" alt="" coords="1821,667,2092,1024">
+<area shape="rect" id="node11" href="tables/facility.html" target="_top" title="facility" alt="" coords="683,7605,912,8080">
+<area shape="rect" id="node87" href="tables/submit_user.html" target="_top" title="submit_user" alt="" coords="367,7635,596,8051">
+<area shape="rect" id="node128" title="sgn_people.sp_person" alt="" coords="12,9196,284,10140">
+<area shape="rect" id="node12" href="tables/library.html" target="_top" title="library" alt="" coords="677,6447,918,7303">
+<area shape="rect" id="node53" href="tables/types.html" target="_top" title="types" alt="" coords="415,6253,547,6376">
+<area shape="rect" id="node13" href="tables/deprecated_marker_types.html" target="_top" title="deprecated_marker_types" alt="" coords="973,8795,1281,8976">
+<area shape="rect" id="node14" href="tables/ssr_primer_unigene_matches.html" target="_top" title="ssr_primer_unigene_matches" alt="" coords="2203,7075,2537,7432">
+<area shape="rect" id="node97" href="tables/ssr.html" target="_top" title="ssr" alt="" coords="1860,4132,2053,4519">
+<area shape="rect" id="node15" href="tables/organismgroup_member.html" target="_top" title="organismgroup_member" alt="" coords="335,6429,628,6581">
+<area shape="rect" id="node40" href="tables/organismgroup.html" target="_top" title="organismgroup" alt="" coords="42,6459,254,6611">
+<area shape="rect" id="node16" href="tables/common_nameprop.html" target="_top" title="common_nameprop" alt="" coords="2245,2448,2495,2659">
+<area shape="rect" id="node137" title="public.cvterm" alt="" coords="1847,1416,2067,1685">
+<area shape="rect" id="node17" href="tables/deprecated_markers.html" target="_top" title="deprecated_markers" alt="" coords="1392,8765,1651,8917">
+<area shape="rect" id="node19" href="tables/blast_db_blast_db_group.html" target="_top" title="blast_db_blast_db_group" alt="" coords="980,11351,1275,11503">
+<area shape="rect" id="node27" href="tables/blast_db.html" target="_top" title="blast_db" alt="" coords="677,10955,918,11400">
+<area shape="rect" id="node79" href="tables/blast_db_group.html" target="_top" title="blast_db_group" alt="" coords="376,11219,587,11371">
+<area shape="rect" id="node20" href="tables/pcr_exp_accession.html" target="_top" title="pcr_exp_accession" alt="" coords="2251,6876,2489,7057">
+<area shape="rect" id="node29" href="tables/pcr_experiment.html" target="_top" title="pcr_experiment" alt="" coords="1843,2172,2070,2676">
+<area shape="rect" id="node117" title="public.stock" alt="" coords="1036,1707,1219,2035">
+<area shape="rect" id="node21" href="tables/map.html" target="_top" title="map" alt="" coords="1408,833,1635,1279">
+<area shape="rect" id="node135" title="phenome.population" alt="" coords="989,1097,1265,1689">
+<area shape="rect" id="node22" href="tables/interpro_go.html" target="_top" title="interpro_go" alt="" coords="1848,12877,2065,13029">
+<area shape="rect" id="node94" href="tables/go.html" target="_top" title="go" alt="" coords="1409,12907,1633,13088">
+<area shape="rect" id="node98" href="tables/interpro.html" target="_top" title="interpro" alt="" coords="1409,12693,1633,12875">
+<area shape="rect" id="node23" href="tables/domain.html" target="_top" title="domain" alt="" coords="1845,12561,2069,12860">
+<area shape="rect" id="node101" href="tables/metadata.html" target="_top" title="metadata" alt="" coords="674,11969,921,12268">
+<area shape="rect" id="node129" title="public.dbxref" alt="" coords="1425,11169,1618,11380">
+<area shape="rect" id="node24" href="tables/derived_from_source.html" target="_top" title="derived_from_source" alt="" coords="1391,9404,1652,9615">
+<area shape="rect" id="node25" href="tables/cosii_ortholog.html" target="_top" title="cosii_ortholog" alt="" coords="1839,2765,2075,3093">
+<area shape="rect" id="node86" href="tables/sequence.html" target="_top" title="sequence" alt="" coords="1441,2244,1601,2367">
+<area shape="rect" id="node26" href="tables/unigene_build.html" target="_top" title="unigene_build" alt="" coords="1005,9632,1249,10048">
+<area shape="rect" id="node67" href="tables/family_build.html" target="_top" title="family_build" alt="" coords="1430,13399,1613,13639">
+<area shape="rect" id="node64" href="tables/experiment_type.html" target="_top" title="experiment_type" alt="" coords="1409,2384,1634,2536">
+<area shape="rect" id="node30" href="tables/temp_marker_correspondence.html" target="_top" title="temp_marker_correspondence" alt="" coords="1784,9176,2129,9328">
+<area shape="rect" id="node31" href="tables/taxonomy.html" target="_top" title="taxonomy" alt="" coords="67,3504,229,3656">
+<area shape="rect" id="node116" title="metadata.md_metadata" alt="" coords="1377,1301,1666,1659">
+<area shape="rect" id="node95" href="tables/unigene_consensi.html" target="_top" title="unigene_consensi" alt="" coords="1011,10065,1244,10217">
+<area shape="rect" id="node34" href="tables/marker_collectible.html" target="_top" title="marker_collectible" alt="" coords="1800,6804,2113,6956">
+<area shape="rect" id="node37" href="tables/marker_collection.html" target="_top" title="marker_collection" alt="" coords="1404,7039,1639,7191">
+<area shape="rect" id="node35" href="tables/enzymes.html" target="_top" title="enzymes" alt="" coords="2282,13680,2458,13803">
+<area shape="rect" id="node36" href="tables/pcr_experiment_sequence.html" target="_top" title="pcr_experiment_sequence" alt="" coords="2216,2037,2524,2219">
+<area shape="rect" id="node38" href="tables/blast_db_organism.html" target="_top" title="blast_db_organism" alt="" coords="1006,10895,1249,11047">
+<area shape="rect" id="node39" href="tables/deprecated_marker_locations.html" target="_top" title="deprecated_marker_locations" alt="" coords="1787,8111,2126,8380">
+<area shape="rect" id="node49" href="tables/deprecated_mapdata.html" target="_top" title="deprecated_mapdata" alt="" coords="1389,8169,1653,8409">
+<area shape="rect" id="node51" href="tables/deprecated_marker_confidences.html" target="_top" title="deprecated_marker_confidences" alt="" coords="1339,2645,1704,2797">
+<area shape="rect" id="node41" href="tables/domain_match.html" target="_top" title="domain_match" alt="" coords="2267,12473,2473,12831">
+<area shape="rect" id="node42" href="tables/est.html" target="_top" title="est" alt="" coords="1814,7479,2099,7895">
+<area shape="rect" id="node43" href="tables/temp_map_correspondence.html" target="_top" title="temp_map_correspondence" alt="" coords="2210,960,2530,1112">
+<area shape="rect" id="node55" href="tables/map_version.html" target="_top" title="map_version" alt="" coords="1853,351,2061,649">
+<area shape="rect" id="node88" href="tables/deprecated_maps.html" target="_top" title="deprecated_maps" alt="" coords="672,8152,923,8656">
+<area shape="rect" id="node44" href="tables/marker_experiment.html" target="_top" title="marker_experiment" alt="" coords="2983,3008,3233,3248">
+<area shape="rect" id="node81" href="tables/marker_location.html" target="_top" title="marker_location" alt="" coords="2651,269,2869,568">
+<area shape="rect" id="node84" href="tables/rflp_markers.html" target="_top" title="rflp_markers" alt="" coords="1861,13715,2053,14160">
+<area shape="rect" id="node45" href="tables/snpprop.html" target="_top" title="snpprop" alt="" coords="2296,1299,2444,1509">
+<area shape="rect" id="node46" href="tables/manual_annotations.html" target="_top" title="manual_annotations" alt="" coords="339,11460,624,11759">
+<area shape="rect" id="node47" href="tables/marker_confidence.html" target="_top" title="marker_confidence" alt="" coords="2247,820,2493,943">
+<area shape="rect" id="node48" href="tables/blast_hits.html" target="_top" title="blast_hits" alt="" coords="2645,10039,2875,10367">
+<area shape="rect" id="node70" href="tables/blast_defline.html" target="_top" title="blast_defline" alt="" coords="2232,10349,2508,10589">
+<area shape="rect" id="node73" href="tables/blast_annotations.html" target="_top" title="blast_annotations" alt="" coords="2253,9992,2487,10320">
+<area shape="rect" id="node57" href="tables/deprecated_linkage_groups.html" target="_top" title="deprecated_linkage_groups" alt="" coords="967,8228,1288,8409">
+<area shape="rect" id="node50" href="tables/linkage_group.html" target="_top" title="linkage_group" alt="" coords="2267,123,2473,363">
+<area shape="rect" id="node52" href="tables/fish_result_composite.html" target="_top" title="fish_result_composite" alt="" coords="1816,12011,2097,12544">
+<area shape="rect" id="node69" href="tables/fish_chromatin_density_constants.html" target="_top" title="fish_chromatin_density_constants" alt="" coords="1332,12187,1711,12309">
+<area shape="rect" id="node75" href="tables/fish_karyotype_constants_old.html" target="_top" title="fish_karyotype_constants_old" alt="" coords="1352,11841,1691,12169">
+<area shape="rect" id="node76" href="tables/fish_experimenter.html" target="_top" title="fish_experimenter" alt="" coords="1387,11701,1656,11824">
+<area shape="rect" id="node54" href="tables/cos_markers.html" target="_top" title="cos_markers" alt="" coords="1836,6253,2077,6787">
+<area shape="rect" id="node56" href="tables/tm_markers.html" target="_top" title="tm_markers" alt="" coords="1867,3207,2047,3476">
+<area shape="rect" id="node58" href="tables/marker_derived_from.html" target="_top" title="marker_derived_from" alt="" coords="1812,9345,2101,9527">
+<area shape="rect" id="node59" href="tables/cloning_vector.html" target="_top" title="cloning_vector" alt="" coords="695,2851,900,3003">
+<area shape="rect" id="node60" href="tables/p_markers.html" target="_top" title="p_markers" alt="" coords="1872,7912,2041,8093">
+<area shape="rect" id="node96" href="tables/clone.html" target="_top" title="clone" alt="" coords="1036,7145,1219,7327">
+<area shape="rect" id="node100" href="tables/manual_censor_reasons.html" target="_top" title="manual_censor_reasons" alt="" coords="983,7683,1271,7805">
+<area shape="rect" id="node62" href="tables/fish_result.html" target="_top" title="fish_result" alt="" coords="1816,11636,2097,11993">
+<area shape="rect" id="node138" title="metadata.attribution" alt="" coords="1376,11473,1667,11684">
+<area shape="rect" id="node63" href="tables/deprecated_map_cross.html" target="_top" title="deprecated_map_cross" alt="" coords="988,3115,1267,3267">
+<area shape="rect" id="node65" href="tables/est_dbxref.html" target="_top" title="est_dbxref" alt="" coords="2285,9797,2455,9949">
+<area shape="rect" id="node66" href="tables/trim_feature.html" target="_top" title="trim_feature" alt="" coords="2277,7971,2463,8211">
+<area shape="rect" id="node68" href="tables/group_linkage.html" target="_top" title="group_linkage" alt="" coords="1027,9332,1228,9543">
+<area shape="rect" id="node102" href="tables/blast_targets.html" target="_top" title="blast_targets" alt="" coords="1833,10476,2080,10687">
+<area shape="rect" id="node72" href="tables/marker_alias.html" target="_top" title="marker_alias" alt="" coords="1862,3529,2051,3711">
+<area shape="rect" id="node74" href="tables/ssr_repeats.html" target="_top" title="ssr_repeats" alt="" coords="2281,3720,2459,3931">
+<area shape="rect" id="node77" href="tables/microarray.html" target="_top" title="microarray" alt="" coords="1405,6752,1638,7021">
+<area shape="rect" id="node78" href="tables/pcr_product.html" target="_top" title="pcr_product" alt="" coords="2641,8355,2879,8595">
+<area shape="rect" id="node80" href="tables/fish_result_image.html" target="_top" title="fish_result_image" alt="" coords="2254,11467,2486,11619">
+<area shape="rect" id="node130" title="metadata.md_image" alt="" coords="1827,10740,2086,11097">
+<area shape="rect" id="node83" href="tables/chadoprop.html" target="_top" title="chadoprop" alt="" coords="2285,1527,2455,1708">
+<area shape="rect" id="node91" href="tables/rflp_sequences.html" target="_top" title="rflp_sequences" alt="" coords="1417,13920,1626,14043">
+<area shape="rect" id="node85" href="tables/primer_unigene_match.html" target="_top" title="primer_unigene_match" alt="" coords="1817,8801,2096,9159">
+<area shape="rect" id="node89" href="tables/family_member.html" target="_top" title="family_member" alt="" coords="2261,12899,2479,13168">
+<area shape="rect" id="node90" href="tables/rflp_unigene_associations.html" target="_top" title="rflp_unigene_associations" alt="" coords="1803,13047,2110,13316">
+<area shape="rect" id="node92" href="tables/qc_report.html" target="_top" title="qc_report" alt="" coords="2244,7449,2496,7953">
+<area shape="rect" id="node93" href="tables/tigrtc_tracking.html" target="_top" title="tigrtc_tracking" alt="" coords="1853,7009,2060,7191">
+<area shape="rect" id="node99" href="tables/unigene_member.html" target="_top" title="unigene_member" alt="" coords="2255,8852,2485,9151">
+<area shape="rect" id="node103" href="tables/enzyme_restriction_sites.html" target="_top" title="enzyme_restriction_sites" alt="" coords="2611,13552,2909,13704">
+<area shape="rect" id="node104" href="tables/il_info.html" target="_top" title="il_info" alt="" coords="2277,416,2463,803">
+<area shape="rect" id="node105" href="tables/marker_to_map.html" target="_top" title="marker_to_map" alt="" coords="3003,12,3213,433">
+<area shape="rect" id="node106" title="phenome.polymorphic_fragment" alt="" coords="1773,3728,2140,4115">
+<area shape="rect" id="node107" title="public.fpc_fingerprint" alt="" coords="2626,13721,2894,13903">
+<area shape="rect" id="node109" title="physical.probe_markers" alt="" coords="1812,4608,2101,4936">
+<area shape="rect" id="node110" title="public.unigene_dbxref" alt="" coords="1819,9903,2094,10055">
+<area shape="rect" id="node111" title="public.unigene_signalp" alt="" coords="2229,10657,2511,11337">
+<area shape="rect" id="node112" title="public.unigene_relations" alt="" coords="1809,10072,2105,10253">
+<area shape="rect" id="node113" title="genomic.blast_query" alt="" coords="997,11064,1258,11333">
+<area shape="rect" id="node114" title="phenome.locus" alt="" coords="376,2041,587,2604">
+<area shape="rect" id="node119" title="physical.manual_associations" alt="" coords="1787,4953,2127,5193">
+<area shape="rect" id="node120" title="phenome.locus_marker" alt="" coords="1815,5211,2098,5480">
+<area shape="rect" id="node121" title="phenome.genotype_experiment" alt="" coords="1777,5,2137,333">
+<area shape="rect" id="node122" title="phenome.phenome_genotype" alt="" coords="1787,1703,2127,2119">
+<area shape="rect" id="node123" title="phenome.tomato_il_bin" alt="" coords="1815,5497,2099,5767">
+<area shape="rect" id="node124" title="physical.computational_associations" alt="" coords="1755,8397,2159,8784">
+<area shape="rect" id="node125" title="phenome.individual" alt="" coords="1001,2124,1253,2540">
+<area shape="rect" id="node127" title="sgn_people.user_map_data" alt="" coords="1798,5784,2115,6200">
+<area shape="rect" id="node131" title="public.enzyme_restriction_sites" alt="" coords="2581,13920,2939,14072">
+<area shape="rect" id="node132" title="sgn_people.user_map" alt="" coords="993,635,1261,1080">
+<area shape="rect" id="node133" title="genomic.library" alt="" coords="1019,2557,1235,3061">
+<area shape="rect" id="node134" title="phenome.genotype_region" alt="" coords="2603,4408,2917,4883">
+<area shape="rect" id="node136" title="phenome.locus_unigene" alt="" coords="1811,9616,2103,9885">
+</map>
+                                        <a name='diagram'><img id="largeimpliedDegreeImg" src="diagrams/summary/relationships.implied.large.png" usemap="#largeImpliedRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- /.box-body -->
+                    </div>
+                </section>
+            </div>
+            <!-- /.content-wrapper -->
+            <footer class="main-footer">
+                <div>
+                    <div class="pull-right hidden-xs">
+                        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+                        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+                    </div>
+                    <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.2.4</a></strong>
+                </div>
+                <!-- /.container -->
+            </footer>
+        </div>
+        <!-- ./wrapper -->
+
+        <!-- jQuery 2.2.3 -->
+        <script src="bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+        <script src="bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+        <!-- Bootstrap 3.3.5 -->
+        <script src="bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+        <!-- DataTables -->
+        <script src="bower/datatables.net/jquery.dataTables.min.js"></script>
+        <script src="bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <script src="bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+        <script src="bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+        <script src="bower/datatables.net-buttons/buttons.html5.min.js"></script>
+        <script src="bower/datatables.net-buttons/buttons.print.min.js"></script>
+        <script src="bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+        <!-- SheetJS -->
+        <script src="bower/js-xlsx/xlsx.full.min.js"></script>
+        <!-- pdfmake -->
+        <script src="bower/pdfmake/pdfmake.min.js"></script>
+        <script src="bower/pdfmake/vfs_fonts.js"></script>
+        <!-- SlimScroll -->
+        <script src="bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+        <!-- FastClick -->
+        <script src="bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+        <!-- Salvattore -->
+        <script src="bower/salvattore/salvattore.min.js"></script>
+        <!-- AnchorJS -->
+        <script src="bower/anchor-js/anchor.min.js"></script>
+        <!-- CodeMirror -->
+        <script src="bower/codemirror/codemirror.js"></script>
+        <script src="bower/codemirror/sql.js"></script>
+        <!-- AdminLTE App -->
+        <script src="bower/admin-lte/dist/js/app.min.js"></script>
+        <script src="relationships.js"></script>
+        <script src="schemaSpy.js"></script>
+    </body>
+</html>

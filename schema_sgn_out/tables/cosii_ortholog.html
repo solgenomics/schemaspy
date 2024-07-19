@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>cosii_ortholog - cxgn_breedbase.sgn</title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <link rel="icon" type="image/png" sizes="16x16" href="../favicon.png">
+        <!-- Bootstrap 3.3.5 -->
+        <link rel="stylesheet" href="../bower/admin-lte/bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="../bower/font-awesome/css/font-awesome.min.css">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="../bower/ionicons/css/ionicons.min.css">
+        <!-- DataTables -->
+        <link rel="stylesheet" href="../bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" href="../bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+        <!-- Code Mirror -->
+        <link rel="stylesheet" href="../bower/codemirror/codemirror.css">
+        <!-- Fonts -->
+        <link href='../fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+        <link href='../fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+
+        <!-- Theme style -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/AdminLTE.min.css">
+        <!-- Salvattore -->
+        <link rel="stylesheet" href="../bower/salvattore/salvattore.css">
+        <!-- AdminLTE Skins. Choose a skin from the css/skins
+           folder instead of downloading all of them to reduce the load. -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/skins/_all-skins.min.css">
+        <!-- SchemaSpy -->
+        <link rel="stylesheet" href="../schemaSpy.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="../bower/html5shiv/html5shiv.min.js"></script>
+        <script src="../bower/respond/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+    <body class="hold-transition skin-blue layout-top-nav">
+        <div class="wrapper">
+            <header class="main-header">
+                <nav class="navbar navbar-static-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <a href="../index.html" class="navbar-brand"><b>cxgn_breedbase</b></a><span class="navbar-brand" style="padding-left: 0">.sgn</span>
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"><i class="fa fa-bars"></i></button>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a href="../index.html">Tables <span class="sr-only">(current)</span></a></li>
+                                <li><a href="../columns.html" title="All of the columns in the schema">Columns</a></li>
+                                <li><a href="../constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+                                <li><a href="../relationships.html" title="Diagram of table relationships">Relationships</a></li>
+                                <li><a href="../orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>
+                                <li><a href="../anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+                                <li><a href="../routines.html" title="Procedures and functions">Routines</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                        <!-- Navbar Right Menu -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </nav>
+            </header>
+            <!-- Main content -->
+            <!-- Full Width Column -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>cosii_ortholog</h1><p><span id="recordNumber">0</span> rows</p><br />
+                </section>
+                <!-- Main content -->
+                <section class="content">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+                            <h3 id="Columns" class="box-title">Columns</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table
+                                    id="standard_table"
+                                    class="table table-bordered table-striped dataTable"
+                                    role="grid"
+                                    data-paging="true"
+                                    data-page-length="10"
+                                    data-length-change="false">
+                                <thead align='left'>
+                                <tr>
+                                    <th>Column</th>
+                                    <th>Type</th>
+                                    <th>Size</th>
+                                    <th title='Are nulls allowed?'>Nulls</th>
+                                    <th title='Is column automatically updated?'>Auto</th>
+                                    <th title='Default value'>Default</th>
+                                    <th title='Columns in tables that reference this column'>Children</th>
+                                    <th title='Columns in tables that are referenced by this column'>Parents</th>
+                                    <th title='Comments' class="toggle"><span>Comments</span></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="cosii_unigene_id">cosii_unigene_id</span></td>
+                                    <td>bigserial</td>
+                                    <td>19</td>
+                                    <td title=''></td>
+                                    <td title='Automatically updated by the database'>√</td>
+                                    <td>nextval(&#39;sgn.cosii_ortholog_cosii_unigene_id_seq&#39;::regclass)</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="marker_id">marker_id</span></td>
+                                    <td>int8</td>
+                                    <td>19</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="cosii_ortholog.marker_id references marker.marker_id via marker_id_fk"><a href='marker.html'>marker</a><span class='relatedKey'>.marker_id</span></td>
+                                                <td class="constraint detail">marker_id_fk</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="unigene_id">unigene_id</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="cosii_ortholog.unigene_id&#39;s name implies that it&#39;s a child of unigene.unigene_id, but it doesn&#39;t reference that column."><a href='unigene.html'>unigene</a><span class='relatedKey'>.unigene_id</span></td>
+                                                <td class="constraint detail">Implied Constraint</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="copies">copies</span></td>
+                                    <td>varchar</td>
+                                    <td>1</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="database_name">database_name</span></td>
+                                    <td>varchar</td>
+                                    <td>11</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="sequence_name">sequence_name</span></td>
+                                    <td>varchar</td>
+                                    <td>255</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="edited_sequence_id">edited_sequence_id</span></td>
+                                    <td>int8</td>
+                                    <td>19</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="cosii_ortholog.edited_sequence_id&#39;s name implies that it&#39;s a child of sequence.sequence_id, but it doesn&#39;t reference that column."><a href='sequence.html'>sequence</a><span class='relatedKey'>.sequence_id</span></td>
+                                                <td class="constraint detail">Implied Constraint</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="peptide_sequence_id">peptide_sequence_id</span></td>
+                                    <td>int8</td>
+                                    <td>19</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="cosii_ortholog.peptide_sequence_id&#39;s name implies that it&#39;s a child of sequence.sequence_id, but it doesn&#39;t reference that column."><a href='sequence.html'>sequence</a><span class='relatedKey'>.sequence_id</span></td>
+                                                <td class="constraint detail">Implied Constraint</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="introns">introns</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-sitemap"></i>
+                            <h3 id="Indexes" class="box-title">Indexes</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table
+                                    id="indexes_table"
+                                    class="table table-bordered table-striped dataTable"
+                                    role="grid"
+                                    data-paging="true"
+                                    data-page-length="10"
+                                    data-length-change="false">
+                                <thead>
+                                <tr>
+                                    <th>Constraint Name</th>
+                                    <th>Type</th>
+                                    <th>Sort</th>
+                                    <th>Column(s)</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey'></i> cosii_ortholog_pkey</td>
+                                    <td>Primary key</td>
+                                    <td><span title='Ascending'>Asc</span></td>
+                                    <td>cosii_unigene_id</td>
+                                </tr>
+                                <tr>
+                                    <td title='Indexed'>marker_id_idx2</td>
+                                    <td>Performance</td>
+                                    <td><span title='Ascending'>Asc</span>/<span title='Ascending'>Asc</span></td>
+                                    <td>marker_id + unigene_id</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div><!-- /.box-body -->
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-sitemap"></i>
+                            <h3 class="box-title">Check Constraints</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table
+                                    id="check_table"
+                                    class="table table-bordered table-striped dataTable"
+                                    role="grid"
+                                    data-paging="true"
+                                    data-page-length="10"
+                                    data-length-change="false">
+                                <thead align='left'>
+                                <tr>
+                                    <th>Constraint Name</th>
+                                    <th>Constraint</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>cosii_ortholog_copies_check</td>
+                                    <td>((((copies)::text &#61; &#39;S&#39;::text) OR ((copies)::text &#61; &#39;M&#39;::text)))</td>
+                                </tr>
+                                <tr>
+                                    <td>cosii_ortholog_database_name_check</td>
+                                    <td>((((database_name)::text &#61; &#39;SGN&#39;::text) OR ((database_name)::text &#61; &#39;Arabidopsis&#39;::text) OR ((database_name)::text &#61; &#39;Coffee&#39;::text)))</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-code-fork"></i>
+                            <h3 id="Relationships" class="box-title">Relationships</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <div class="nav-tabs-custom"><!-- Tabs within a box -->
+                                <h5>Close relationships within degrees of separation</h5>
+                                <ul class="nav nav-tabs pull-left ui-sortable-handle">
+                                    <li class="active"><a href="#oneDegreeImg-chart" data-toggle="tab" aria-expanded="true">One</a></li>
+                                    <li class=""><a href="#twodegreesDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two degrees</a></li>
+                                    <li class=""><a href="#oneimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">One implied</a></li>
+                                    <li class=""><a href="#twoimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two implied</a></li>
+                                </ul>
+                                <div class="tab-content no-padding">
+                                    <div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
+<area shape="rect" id="node1" href="cosii_ortholog.html" target="_top" title="cosii_ortholog" alt="" coords="213,5,575,339">
+<area shape="rect" id="node2" href="marker.html" target="_top" title="marker" alt="" coords="5,37,169,155">
+</map>
+                                        <a name='diagram'><img id="oneDegreeImg" src="../diagrams/tables/cosii_ortholog.1degree.png" usemap="#oneDegreeRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="twodegreesDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
+<area shape="rect" id="node1" title="phenome.genotype_region" alt="" coords="258,5,573,93">
+<area shape="rect" id="node2" href="marker.html" target="_top" title="marker" alt="" coords="5,740,169,857">
+<area shape="rect" id="node3" title="phenome.locus_marker" alt="" coords="274,111,557,199">
+<area shape="rect" id="node4" title="phenome.polymorphic_fragment" alt="" coords="232,216,599,304">
+<area shape="rect" id="node5" title="phenome.tomato_il_bin" alt="" coords="273,321,557,409">
+<area shape="rect" id="node6" title="physical.computational_associations" alt="" coords="213,427,617,515">
+<area shape="rect" id="node7" title="physical.manual_associations" alt="" coords="245,532,585,620">
+<area shape="rect" id="node8" title="physical.probe_markers" alt="" coords="271,637,560,725">
+<area shape="rect" id="node9" href="cos_markers.html" target="_top" title="cos_markers" alt="" coords="322,743,509,831">
+<area shape="rect" id="node10" href="cosii_ortholog.html" target="_top" title="cosii_ortholog" alt="" coords="235,848,596,1181">
+<area shape="rect" id="node11" href="ests_mapped_by_clone.html" target="_top" title="ests_mapped_by_clone" alt="" coords="276,1199,555,1287">
+<area shape="rect" id="node12" href="marker_alias.html" target="_top" title="marker_alias" alt="" coords="321,1304,510,1392">
+<area shape="rect" id="node13" href="marker_collectible.html" target="_top" title="marker_collectible" alt="" coords="295,1409,535,1497">
+<area shape="rect" id="node14" href="marker_experiment.html" target="_top" title="marker_experiment" alt="" coords="661,1551,912,1639">
+<area shape="rect" id="node15" href="pcr_experiment.html" target="_top" title="pcr_experiment" alt="" coords="308,1551,523,1639">
+<area shape="rect" id="node16" href="rflp_markers.html" target="_top" title="rflp_markers" alt="" coords="321,1656,509,1744">
+<area shape="rect" id="node17" href="p_markers.html" target="_top" title="p_markers" alt="" coords="331,1761,499,1849">
+<area shape="rect" id="node18" href="primer_unigene_match.html" target="_top" title="primer_unigene_match" alt="" coords="276,1867,555,1955">
+<area shape="rect" id="node19" href="snp.html" target="_top" title="snp" alt="" coords="349,1972,481,2060">
+<area shape="rect" id="node20" href="ssr.html" target="_top" title="ssr" alt="" coords="349,2113,481,2201">
+<area shape="rect" id="node21" href="ssr_repeats.html" target="_top" title="ssr_repeats" alt="" coords="698,2076,875,2164">
+<area shape="rect" id="node22" href="tm_markers.html" target="_top" title="tm_markers" alt="" coords="325,2219,505,2307">
+<area shape="rect" id="node23" title="sgn_people.user_map_data" alt="" coords="257,2324,574,2412">
+</map>
+                                        <a name='diagram'><img id="twodegreesDegreeImg" src="../diagrams/tables/cosii_ortholog.2degrees.png" usemap="#twoDegreesRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="oneimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="oneDegreeRelationshipsDiagramImplied" name="oneDegreeRelationshipsDiagramImplied">
+<area shape="rect" id="node1" href="cosii_ortholog.html" target="_top" title="cosii_ortholog" alt="" coords="249,147,611,480">
+<area shape="rect" id="node2" href="sequence.html" target="_top" title="sequence" alt="" coords="25,421,185,544">
+<area shape="rect" id="node3" href="marker.html" target="_top" title="marker" alt="" coords="23,5,187,123">
+<area shape="rect" id="node4" href="unigene.html" target="_top" title="unigene" alt="" coords="5,140,205,404">
+</map>
+                                        <a name='diagram'><img id="oneimpliedDegreeImg" src="../diagrams/tables/cosii_ortholog.implied1degrees.png" usemap="#oneDegreeRelationshipsDiagramImplied" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="twoimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="twoDegreesRelationshipsDiagramImplied" name="twoDegreesRelationshipsDiagramImplied">
+<area shape="rect" id="node1" title="phenome.genotype_region" alt="" coords="571,5,886,93">
+<area shape="rect" id="node2" href="marker.html" target="_top" title="marker" alt="" coords="301,671,465,788">
+<area shape="rect" id="node3" title="phenome.locus_marker" alt="" coords="587,111,870,199">
+<area shape="rect" id="node4" title="phenome.locus_unigene" alt="" coords="583,2995,875,3083">
+<area shape="rect" id="node5" href="unigene.html" target="_top" title="unigene" alt="" coords="283,2585,483,2849">
+<area shape="rect" id="node34" href="unigene_consensi.html" target="_top" title="unigene_consensi" alt="" coords="5,2685,239,2773">
+<area shape="rect" id="node35" href="unigene_build.html" target="_top" title="unigene_build" alt="" coords="22,2580,222,2668">
+<area shape="rect" id="node6" title="phenome.polymorphic_fragment" alt="" coords="545,216,912,304">
+<area shape="rect" id="node7" title="phenome.tomato_il_bin" alt="" coords="587,321,871,409">
+<area shape="rect" id="node8" title="physical.computational_associations" alt="" coords="527,463,931,551">
+<area shape="rect" id="node9" title="physical.manual_associations" alt="" coords="559,568,899,656">
+<area shape="rect" id="node10" title="physical.probe_markers" alt="" coords="584,673,873,761">
+<area shape="rect" id="node11" title="public.unigene_dbxref" alt="" coords="591,3100,866,3188">
+<area shape="rect" id="node12" title="public.unigene_relations" alt="" coords="581,2501,877,2589">
+<area shape="rect" id="node13" title="public.unigene_signalp" alt="" coords="1001,2695,1283,2783">
+<area shape="rect" id="node14" href="cds.html" target="_top" title="cds" alt="" coords="663,2784,795,2872">
+<area shape="rect" id="node15" href="blast_annotations.html" target="_top" title="blast_annotations" alt="" coords="1025,1752,1259,1840">
+<area shape="rect" id="node16" href="p_markers.html" target="_top" title="p_markers" alt="" coords="645,1657,813,1745">
+<area shape="rect" id="node17" href="cos_markers.html" target="_top" title="cos_markers" alt="" coords="635,815,822,903">
+<area shape="rect" id="node18" href="cosii_ortholog.html" target="_top" title="cosii_ortholog" alt="" coords="548,2115,909,2448">
+<area shape="rect" id="node19" href="sequence.html" target="_top" title="sequence" alt="" coords="303,1865,463,1988">
+<area shape="rect" id="node20" href="ests_mapped_by_clone.html" target="_top" title="ests_mapped_by_clone" alt="" coords="589,920,868,1008">
+<area shape="rect" id="node21" href="marker_alias.html" target="_top" title="marker_alias" alt="" coords="634,1025,823,1113">
+<area shape="rect" id="node22" href="marker_collectible.html" target="_top" title="marker_collectible" alt="" coords="609,1131,849,1219">
+<area shape="rect" id="node23" href="marker_experiment.html" target="_top" title="marker_experiment" alt="" coords="1017,1236,1267,1324">
+<area shape="rect" id="node24" href="pcr_experiment.html" target="_top" title="pcr_experiment" alt="" coords="621,1868,836,1956">
+<area shape="rect" id="node25" href="rflp_markers.html" target="_top" title="rflp_markers" alt="" coords="635,1236,823,1324">
+<area shape="rect" id="node26" href="pcr_experiment_sequence.html" target="_top" title="pcr_experiment_sequence" alt="" coords="988,1980,1296,2068">
+<area shape="rect" id="node27" href="primer_unigene_match.html" target="_top" title="primer_unigene_match" alt="" coords="589,1973,868,2061">
+<area shape="rect" id="node28" href="rflp_unigene_associations.html" target="_top" title="rflp_unigene_associations" alt="" coords="575,2679,882,2767">
+<area shape="rect" id="node29" href="snp.html" target="_top" title="snp" alt="" coords="663,1763,795,1851">
+<area shape="rect" id="node30" href="ssr.html" target="_top" title="ssr" alt="" coords="663,1341,795,1429">
+<area shape="rect" id="node31" href="ssr_primer_unigene_matches.html" target="_top" title="ssr_primer_unigene_matches" alt="" coords="975,1403,1309,1491">
+<area shape="rect" id="node32" href="ssr_repeats.html" target="_top" title="ssr_repeats" alt="" coords="1053,760,1231,848">
+<area shape="rect" id="node33" href="tm_markers.html" target="_top" title="tm_markers" alt="" coords="639,1447,819,1535">
+<area shape="rect" id="node36" href="unigene_member.html" target="_top" title="unigene_member" alt="" coords="614,2889,843,2977">
+<area shape="rect" id="node37" title="sgn_people.user_map_data" alt="" coords="570,1552,887,1640">
+</map>
+                                        <a name='diagram'><img id="twoimpliedDegreeImg" src="../diagrams/tables/cosii_ortholog.implied2degrees.png" usemap="#twoDegreesRelationshipsDiagramImplied" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- /.box-body -->
+                    </div>
+                </section>
+                <script>
+                    var config = {
+                        pagination: true
+                    }
+                </script>
+            </div>
+            <!-- /.content-wrapper -->
+            <footer class="main-footer">
+                <div>
+                    <div class="pull-right hidden-xs">
+                        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+                        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+                    </div>
+                    <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.2.4</a></strong>
+                </div>
+                <!-- /.container -->
+            </footer>
+        </div>
+        <!-- ./wrapper -->
+
+        <!-- jQuery 2.2.3 -->
+        <script src="../bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+        <script src="../bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+        <!-- Bootstrap 3.3.5 -->
+        <script src="../bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+        <!-- DataTables -->
+        <script src="../bower/datatables.net/jquery.dataTables.min.js"></script>
+        <script src="../bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+        <script src="../bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.html5.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.print.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+        <!-- SheetJS -->
+        <script src="../bower/js-xlsx/xlsx.full.min.js"></script>
+        <!-- pdfmake -->
+        <script src="../bower/pdfmake/pdfmake.min.js"></script>
+        <script src="../bower/pdfmake/vfs_fonts.js"></script>
+        <!-- SlimScroll -->
+        <script src="../bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+        <!-- FastClick -->
+        <script src="../bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+        <!-- Salvattore -->
+        <script src="../bower/salvattore/salvattore.min.js"></script>
+        <!-- AnchorJS -->
+        <script src="../bower/anchor-js/anchor.min.js"></script>
+        <!-- CodeMirror -->
+        <script src="../bower/codemirror/codemirror.js"></script>
+        <script src="../bower/codemirror/sql.js"></script>
+        <!-- AdminLTE App -->
+        <script src="../bower/admin-lte/dist/js/app.min.js"></script>
+        <script src="table.js"></script>
+        <script src="../schemaSpy.js"></script>
+    </body>
+</html>

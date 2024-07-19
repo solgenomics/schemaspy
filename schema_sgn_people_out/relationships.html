@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>cxgn_breedbase.sgn_people</title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+        <!-- Bootstrap 3.3.5 -->
+        <link rel="stylesheet" href="bower/admin-lte/bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="bower/font-awesome/css/font-awesome.min.css">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="bower/ionicons/css/ionicons.min.css">
+        <!-- DataTables -->
+        <link rel="stylesheet" href="bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" href="bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+        <!-- Code Mirror -->
+        <link rel="stylesheet" href="bower/codemirror/codemirror.css">
+        <!-- Fonts -->
+        <link href='fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+        <link href='fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+
+        <!-- Theme style -->
+        <link rel="stylesheet" href="bower/admin-lte/dist/css/AdminLTE.min.css">
+        <!-- Salvattore -->
+        <link rel="stylesheet" href="bower/salvattore/salvattore.css">
+        <!-- AdminLTE Skins. Choose a skin from the css/skins
+           folder instead of downloading all of them to reduce the load. -->
+        <link rel="stylesheet" href="bower/admin-lte/dist/css/skins/_all-skins.min.css">
+        <!-- SchemaSpy -->
+        <link rel="stylesheet" href="schemaSpy.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="bower/html5shiv/html5shiv.min.js"></script>
+        <script src="bower/respond/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+    <body class="hold-transition skin-blue layout-top-nav">
+        <div class="wrapper">
+            <header class="main-header">
+                <nav class="navbar navbar-static-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <a href="index.html" class="navbar-brand"><b>cxgn_breedbase</b></a><span class="navbar-brand" style="padding-left: 0">.sgn_people</span>
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"><i class="fa fa-bars"></i></button>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a href="index.html">Tables <span class="sr-only">(current)</span></a></li>
+                                <li><a href="columns.html" title="All of the columns in the schema">Columns</a></li>
+                                <li><a href="constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+                                <li><a href="relationships.html" title="Diagram of table relationships">Relationships</a></li>
+                                <li><a href="orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>
+                                <li><a href="anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+                                <li><a href="routines.html" title="Procedures and functions">Routines</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                        <!-- Navbar Right Menu -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </nav>
+            </header>
+            <!-- Main content -->
+            <!-- Full Width Column -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>All Relationships</h1>
+                </section>
+                <!-- Main content -->
+                <section class="content">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-code-fork"></i>
+                            <h3 class="box-title">Diagrams</h3>
+                        </div>
+                        <div class="box-body">
+                            <div class="nav-tabs-custom">
+                                <!-- Tabs within a box -->
+                                <h5>By default only columns that are primary keys, foreign keys or indexes are shown.</h5>
+                                <ul class="nav nav-tabs pull-left ui-sortable-handle">
+                                    <li class="active"><a href="#compactDegreeImg-chart" data-toggle="tab" aria-expanded="true">Compact</a></li>
+                                    <li class=""><a href="#largeDegreeImg-chart" data-toggle="tab" aria-expanded="true">Large</a></li>
+                                    <li class=""><a href="#compactimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">Compact Implied</a></li>
+                                    <li class=""><a href="#largeimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">Large Implied</a></li>
+                                </ul>
+                                <div class="tab-content no-padding">
+                                    <div class="chart tab-pane active" id="compactDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="compactRelationshipsDiagram" name="compactRelationshipsDiagram">
+<area shape="rect" id="node1" href="tables/clone_validation_log.html" target="_top" title="clone_validation_log" alt="" coords="408,796,664,942">
+<area shape="rect" id="node6" href="tables/sp_person.html" target="_top" title="sp_person" alt="" coords="15,6932,243,7225">
+<area shape="rect" id="node34" title="genomic.clone" alt="" coords="27,502,231,590">
+<area shape="rect" id="node2" href="tables/sp_project_il_mapping_clone_log.html" target="_top" title="sp_project_il_mapping_clone_log" alt="" coords="354,438,718,614">
+<area shape="rect" id="node8" href="tables/sp_project.html" target="_top" title="sp_project" alt="" coords="45,1070,212,1188">
+<area shape="rect" id="node3" href="tables/sp_group_member.html" target="_top" title="sp_group_member" alt="" coords="417,69,655,216">
+<area shape="rect" id="node15" href="tables/sp_group.html" target="_top" title="sp_group" alt="" coords="51,98,207,245">
+<area shape="rect" id="node4" href="tables/sp_person_roles.html" target="_top" title="sp_person_roles" alt="" coords="427,233,645,385">
+<area shape="rect" id="node5" href="tables/sp_roles.html" target="_top" title="sp_roles" alt="" coords="55,292,203,409">
+<area shape="rect" id="node7" href="tables/bac_status_log.html" target="_top" title="bac_status_log" alt="" coords="433,7298,639,7445">
+<area shape="rect" id="node9" href="tables/forum_topic.html" target="_top" title="forum_topic" alt="" coords="434,4833,638,4980">
+<area shape="rect" id="node10" href="tables/forum_post.html" target="_top" title="forum_post" alt="" coords="919,4684,1100,4860">
+<area shape="rect" id="node11" href="tables/sp_order.html" target="_top" title="sp_order" alt="" coords="437,9220,635,9396">
+<area shape="rect" id="node12" href="tables/clone_verification_log.html" target="_top" title="clone_verification_log" alt="" coords="401,632,671,778">
+<area shape="rect" id="node13" href="tables/user_map.html" target="_top" title="user_map" alt="" coords="416,1346,656,1552">
+<area shape="rect" id="node63" title="sgn.accession" alt="" coords="29,1396,229,1484">
+<area shape="rect" id="node14" href="tables/sp_organization.html" target="_top" title="sp_organization" alt="" coords="5,936,252,1053">
+<area shape="rect" id="node16" href="tables/sp_token.html" target="_top" title="sp_token" alt="" coords="429,7633,643,7780">
+<area shape="rect" id="node17" href="tables/bac_status.html" target="_top" title="bac_status" alt="" coords="441,7797,631,8002">
+<area shape="rect" id="node18" href="tables/sp_dataset.html" target="_top" title="sp_dataset" alt="" coords="450,8020,622,8166">
+<area shape="rect" id="node19" href="tables/listprop.html" target="_top" title="listprop" alt="" coords="937,13172,1081,13348">
+<area shape="rect" id="node30" href="tables/list.html" target="_top" title="list" alt="" coords="447,13138,625,13314">
+<area shape="rect" id="node72" title="public.cvterm" alt="" coords="30,13202,227,13290">
+<area shape="rect" id="node20" href="tables/sp_clone_il_mapping_segment_log.html" target="_top" title="sp_clone_il_mapping_segment_log" alt="" coords="820,6725,1199,6901">
+<area shape="rect" id="node47" title="phenome.individual" alt="" coords="410,6701,662,6848">
+<area shape="rect" id="node21" href="tables/clone_il_mapping_bin_log.html" target="_top" title="clone_il_mapping_bin_log" alt="" coords="845,1549,1174,1754">
+<area shape="rect" id="node101" title="phenome.genotype_region" alt="" coords="379,1569,693,1686">
+<area shape="rect" id="node22" href="tables/sp_orderprop.html" target="_top" title="sp_orderprop" alt="" coords="913,11033,1106,11209">
+<area shape="rect" id="node23" href="tables/sp_papers.html" target="_top" title="sp_papers" alt="" coords="453,8453,619,8600">
+<area shape="rect" id="node24" href="tables/list_item.html" target="_top" title="list_item" alt="" coords="934,13008,1085,13154">
+<area shape="rect" id="node25" href="tables/sp_organization_person.html" target="_top" title="sp_organization_person" alt="" coords="393,8617,679,8764">
+<area shape="rect" id="node26" href="tables/sp_person_organisms.html" target="_top" title="sp_person_organisms" alt="" coords="403,8781,669,8933">
+<area shape="rect" id="node27" href="tables/user_map_data.html" target="_top" title="user_map_data" alt="" coords="905,2513,1114,2718">
+<area shape="rect" id="node79" title="sgn.marker" alt="" coords="447,2577,625,2665">
+<area shape="rect" id="node28" href="tables/list_dbxref.html" target="_top" title="list_dbxref" alt="" coords="925,13365,1094,13541">
+<area shape="rect" id="node93" title="public.dbxref" alt="" coords="439,13429,633,13517">
+<area shape="rect" id="node29" href="tables/sp_project_person.html" target="_top" title="sp_project_person" alt="" coords="417,1153,655,1329">
+<area shape="rect" id="node31" title="annotation.feature_set" alt="" coords="395,8950,677,9068">
+<area shape="rect" id="node32" title="phenome.locusgroup_member" alt="" coords="363,9085,709,9202">
+<area shape="rect" id="node33" title="phenome.stock_owner" alt="" coords="398,9413,674,9530">
+<area shape="rect" id="node35" title="gem.ge_platform" alt="" coords="423,9548,649,9665">
+<area shape="rect" id="node36" title="phenome.locus" alt="" coords="431,9682,641,9829">
+<area shape="rect" id="node37" title="metadata.md_metadata" alt="" coords="391,9846,681,9993">
+<area shape="rect" id="node38" title="phenome.individual_history" alt="" coords="374,10010,698,10157">
+<area shape="rect" id="node39" title="phenome.locus_dbxref_evidence" alt="" coords="353,10174,719,10321">
+<area shape="rect" id="node40" title="physical.manual_associations" alt="" coords="366,10338,706,10456">
+<area shape="rect" id="node41" title="phenome.phenome_genotype" alt="" coords="366,10473,706,10590">
+<area shape="rect" id="node42" title="annotation.comp_analysis" alt="" coords="382,10608,690,10725">
+<area shape="rect" id="node43" title="phenome.allele" alt="" coords="419,10742,653,10889">
+<area shape="rect" id="node44" title="sgn.library" alt="" coords="415,10906,657,11024">
+<area shape="rect" id="node45" title="sgn.facility" alt="" coords="421,11041,651,11158">
+<area shape="rect" id="node46" title="annotation.seq" alt="" coords="431,11176,641,11293">
+<area shape="rect" id="node48" title="public.bug" alt="" coords="447,11310,625,11486">
+<area shape="rect" id="node49" title="sgn.metadata" alt="" coords="413,11504,659,11650">
+<area shape="rect" id="node50" title="metadata.md_tag_image" alt="" coords="388,11668,684,11785">
+<area shape="rect" id="node51" title="phenome.individual_dbxref" alt="" coords="376,11802,696,11920">
+<area shape="rect" id="node52" title="phenome.pub_curator" alt="" coords="400,11937,672,12113">
+<area shape="rect" id="node53" title="phenome.individual_dbxref_evidence" alt="" coords="332,12130,740,12277">
+<area shape="rect" id="node54" title="phenome.locus2locus" alt="" coords="402,12294,670,12412">
+<area shape="rect" id="node55" title="phenome.locus_dbxref" alt="" coords="397,12429,675,12546">
+<area shape="rect" id="node56" title="sgn_submit.submit_user" alt="" coords="390,12564,682,12681">
+<area shape="rect" id="node57" title="phenome.locusgroup" alt="" coords="404,12698,668,12816">
+<area shape="rect" id="node58" title="phenome.population_dbxref" alt="" coords="372,12833,700,12950">
+<area shape="rect" id="node59" title="metadata.md_image" alt="" coords="407,12968,665,13085">
+<area shape="rect" id="node60" title="phenome.locus_dbxref_evidence_history" alt="" coords="317,1740,755,1886">
+<area shape="rect" id="node61" title="annotation.annotation" alt="" coords="397,1904,675,2021">
+<area shape="rect" id="node62" title="phenome.allele_alias" alt="" coords="405,2038,667,2156">
+<area shape="rect" id="node64" title="metadata.md_image_cvterm" alt="" coords="371,2173,701,2290">
+<area shape="rect" id="node65" title="phenome.locus_alias" alt="" coords="406,2308,666,2425">
+<area shape="rect" id="node66" title="phenome.locus_registry" alt="" coords="391,2442,681,2560">
+<area shape="rect" id="node67" title="public.blastwatch_queries" alt="" coords="381,2682,691,2800">
+<area shape="rect" id="node68" title="phenome.germplasm" alt="" coords="404,2853,668,2970">
+<area shape="rect" id="node69" title="phenome.locus_image" alt="" coords="399,2988,673,3105">
+<area shape="rect" id="node70" title="phenome.locus_unigene" alt="" coords="390,3122,682,3240">
+<area shape="rect" id="node71" title="phenome.allele_history" alt="" coords="394,3257,678,3404">
+<area shape="rect" id="node73" title="sgn_submit.facility" alt="" coords="414,3421,658,3538">
+<area shape="rect" id="node74" title="phenome.allele_dbxref" alt="" coords="396,3556,676,3673">
+<area shape="rect" id="node75" title="phenome.individual_alias" alt="" coords="385,3690,687,3808">
+<area shape="rect" id="node76" title="phenome.polymorphic_fragment" alt="" coords="353,7498,719,7616">
+<area shape="rect" id="node77" title="phenome.user_trait" alt="" coords="411,3825,661,3942">
+<area shape="rect" id="node78" title="insitu.experiment_image" alt="" coords="387,3960,685,4077">
+<area shape="rect" id="node80" title="phenome.individual_locus" alt="" coords="382,4094,690,4212">
+<area shape="rect" id="node81" title="gem.ge_experiment" alt="" coords="405,4229,667,4346">
+<area shape="rect" id="node82" title="metadata.md_image_organism" alt="" coords="361,4364,711,4481">
+<area shape="rect" id="node83" title="phenome.locus_history" alt="" coords="395,4498,677,4645">
+<area shape="rect" id="node84" title="sgn.submit_user" alt="" coords="421,4698,651,4816">
+<area shape="rect" id="node85" title="sgn.manual_annotations" alt="" coords="389,4997,683,5114">
+<area shape="rect" id="node86" title="phenome.is_public" alt="" coords="415,5132,657,5249">
+<area shape="rect" id="node87" title="phenome.locus_marker" alt="" coords="395,5266,677,5384">
+<area shape="rect" id="node88" title="phenome.genotype_experiment" alt="" coords="356,5401,716,5518">
+<area shape="rect" id="node89" title="public.phenotype" alt="" coords="421,5536,651,5653">
+<area shape="rect" id="node90" title="phenome.individual_image" alt="" coords="378,5670,694,5788">
+<area shape="rect" id="node91" title="metadata.md_tag" alt="" coords="419,5805,653,5922">
+<area shape="rect" id="node92" title="insitu.experiment_tag" alt="" coords="400,8184,672,8301">
+<area shape="rect" id="node94" title="annotation.comment" alt="" coords="405,5940,667,6057">
+<area shape="rect" id="node95" title="phenome.locus_owner" alt="" coords="399,6074,673,6221">
+<area shape="rect" id="node96" title="phenome.project_owner" alt="" coords="390,6238,682,6356">
+<area shape="rect" id="node97" title="phenome.individual_dbxref_evidence_history" alt="" coords="296,6373,776,6520">
+<area shape="rect" id="node98" title="phenome.registry" alt="" coords="419,6537,653,6684">
+<area shape="rect" id="node99" title="metadata.attribution_to" alt="" coords="391,960,681,1136">
+<area shape="rect" id="node100" title="biosource.bs_sample" alt="" coords="405,6865,667,6982">
+<area shape="rect" id="node102" title="phenome.individual_allele" alt="" coords="381,7000,691,7117">
+<area shape="rect" id="node103" title="phenome.population" alt="" coords="398,7134,674,7281">
+<area shape="rect" id="node104" title="sgn_submit.library" alt="" coords="415,8318,657,8436">
+</map>
+                                        <a name='diagram'><img id="compactDegreeImg" src="diagrams/summary/relationships.real.compact.png" usemap="#compactRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="largeDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="largeRelationshipsDiagram" name="largeRelationshipsDiagram">
+<area shape="rect" id="node1" href="tables/clone_validation_log.html" target="_top" title="clone_validation_log" alt="" coords="408,701,664,970">
+<area shape="rect" id="node6" href="tables/sp_person.html" target="_top" title="sp_person" alt="" coords="15,14929,243,15873">
+<area shape="rect" id="node34" title="genomic.clone" alt="" coords="17,532,240,860">
+<area shape="rect" id="node2" href="tables/sp_project_il_mapping_clone_log.html" target="_top" title="sp_project_il_mapping_clone_log" alt="" coords="354,444,718,684">
+<area shape="rect" id="node8" href="tables/sp_project.html" target="_top" title="sp_project" alt="" coords="45,1477,212,1629">
+<area shape="rect" id="node3" href="tables/sp_group_member.html" target="_top" title="sp_group_member" alt="" coords="417,69,655,221">
+<area shape="rect" id="node15" href="tables/sp_group.html" target="_top" title="sp_group" alt="" coords="51,98,207,250">
+<area shape="rect" id="node4" href="tables/sp_person_roles.html" target="_top" title="sp_person_roles" alt="" coords="427,238,645,390">
+<area shape="rect" id="node5" href="tables/sp_roles.html" target="_top" title="sp_roles" alt="" coords="55,297,203,420">
+<area shape="rect" id="node7" href="tables/bac_status_log.html" target="_top" title="bac_status_log" alt="" coords="433,15850,639,16090">
+<area shape="rect" id="node9" href="tables/forum_topic.html" target="_top" title="forum_topic" alt="" coords="434,10009,638,10337">
+<area shape="rect" id="node10" href="tables/forum_post.html" target="_top" title="forum_post" alt="" coords="919,9681,1100,9950">
+<area shape="rect" id="node11" href="tables/sp_order.html" target="_top" title="sp_order" alt="" coords="437,19854,635,20124">
+<area shape="rect" id="node12" href="tables/clone_verification_log.html" target="_top" title="clone_verification_log" alt="" coords="401,988,671,1257">
+<area shape="rect" id="node13" href="tables/user_map.html" target="_top" title="user_map" alt="" coords="416,1730,656,2176">
+<area shape="rect" id="node63" title="sgn.accession" alt="" coords="19,1906,239,2146">
+<area shape="rect" id="node14" href="tables/sp_organization.html" target="_top" title="sp_organization" alt="" coords="5,1014,252,1460">
+<area shape="rect" id="node16" href="tables/sp_token.html" target="_top" title="sp_token" alt="" coords="429,16548,643,16758">
+<area shape="rect" id="node17" href="tables/bac_status.html" target="_top" title="bac_status" alt="" coords="441,16776,631,17016">
+<area shape="rect" id="node18" href="tables/sp_dataset.html" target="_top" title="sp_dataset" alt="" coords="450,17033,622,17302">
+<area shape="rect" id="node19" href="tables/listprop.html" target="_top" title="listprop" alt="" coords="937,29925,1081,30136">
+<area shape="rect" id="node30" href="tables/list.html" target="_top" title="list" alt="" coords="447,29808,625,30165">
+<area shape="rect" id="node72" title="public.cvterm" alt="" coords="19,29984,239,30253">
+<area shape="rect" id="node20" href="tables/sp_clone_il_mapping_segment_log.html" target="_top" title="sp_clone_il_mapping_segment_log" alt="" coords="820,14088,1199,14328">
+<area shape="rect" id="node47" title="phenome.individual" alt="" coords="410,14117,662,14533">
+<area shape="rect" id="node21" href="tables/clone_il_mapping_bin_log.html" target="_top" title="clone_il_mapping_bin_log" alt="" coords="845,2164,1174,2462">
+<area shape="rect" id="node101" title="phenome.genotype_region" alt="" coords="379,2193,693,2668">
+<area shape="rect" id="node22" href="tables/sp_orderprop.html" target="_top" title="sp_orderprop" alt="" coords="913,24673,1106,24884">
+<area shape="rect" id="node23" href="tables/sp_papers.html" target="_top" title="sp_papers" alt="" coords="453,18362,619,18661">
+<area shape="rect" id="node24" href="tables/list_item.html" target="_top" title="list_item" alt="" coords="934,29749,1085,29901">
+<area shape="rect" id="node25" href="tables/sp_organization_person.html" target="_top" title="sp_organization_person" alt="" coords="393,18678,679,18830">
+<area shape="rect" id="node26" href="tables/sp_person_organisms.html" target="_top" title="sp_person_organisms" alt="" coords="403,18848,669,19000">
+<area shape="rect" id="node27" href="tables/user_map_data.html" target="_top" title="user_map_data" alt="" coords="905,4558,1114,4974">
+<area shape="rect" id="node79" title="sgn.marker" alt="" coords="447,4676,625,4798">
+<area shape="rect" id="node28" href="tables/list_dbxref.html" target="_top" title="list_dbxref" alt="" coords="925,30157,1094,30338">
+<area shape="rect" id="node93" title="public.dbxref" alt="" coords="439,30218,633,30429">
+<area shape="rect" id="node29" href="tables/sp_project_person.html" target="_top" title="sp_project_person" alt="" coords="417,1532,655,1713">
+<area shape="rect" id="node31" title="annotation.feature_set" alt="" coords="395,19017,677,19462">
+<area shape="rect" id="node32" title="phenome.locusgroup_member" alt="" coords="363,19480,709,19837">
+<area shape="rect" id="node33" title="phenome.stock_owner" alt="" coords="398,20141,674,20322">
+<area shape="rect" id="node35" title="gem.ge_platform" alt="" coords="423,20340,649,20580">
+<area shape="rect" id="node36" title="phenome.locus" alt="" coords="431,20597,641,21160">
+<area shape="rect" id="node37" title="metadata.md_metadata" alt="" coords="391,21177,681,21534">
+<area shape="rect" id="node38" title="phenome.individual_history" alt="" coords="374,21552,698,21880">
+<area shape="rect" id="node39" title="phenome.locus_dbxref_evidence" alt="" coords="353,21897,719,22313">
+<area shape="rect" id="node40" title="physical.manual_associations" alt="" coords="366,22330,706,22570">
+<area shape="rect" id="node41" title="phenome.phenome_genotype" alt="" coords="366,22588,706,23004">
+<area shape="rect" id="node42" title="annotation.comp_analysis" alt="" coords="382,23021,690,23290">
+<area shape="rect" id="node43" title="phenome.allele" alt="" coords="419,23308,653,23812">
+<area shape="rect" id="node44" title="sgn.library" alt="" coords="415,23829,657,24685">
+<area shape="rect" id="node45" title="sgn.facility" alt="" coords="421,24702,651,25177">
+<area shape="rect" id="node46" title="annotation.seq" alt="" coords="431,25194,641,25640">
+<area shape="rect" id="node48" title="public.bug" alt="" coords="447,25657,625,26073">
+<area shape="rect" id="node49" title="sgn.metadata" alt="" coords="413,26090,659,26389">
+<area shape="rect" id="node50" title="metadata.md_tag_image" alt="" coords="388,26406,684,26676">
+<area shape="rect" id="node51" title="phenome.individual_dbxref" alt="" coords="376,26693,696,26962">
+<area shape="rect" id="node52" title="phenome.pub_curator" alt="" coords="400,26980,672,27278">
+<area shape="rect" id="node53" title="phenome.individual_dbxref_evidence" alt="" coords="332,27296,740,27712">
+<area shape="rect" id="node54" title="phenome.locus2locus" alt="" coords="402,27729,670,28086">
+<area shape="rect" id="node55" title="phenome.locus_dbxref" alt="" coords="397,28104,675,28373">
+<area shape="rect" id="node56" title="sgn_submit.submit_user" alt="" coords="390,28390,682,28806">
+<area shape="rect" id="node57" title="phenome.locusgroup" alt="" coords="404,28824,668,29093">
+<area shape="rect" id="node58" title="phenome.population_dbxref" alt="" coords="372,29110,700,29380">
+<area shape="rect" id="node59" title="metadata.md_image" alt="" coords="407,29397,665,29754">
+<area shape="rect" id="node60" title="phenome.locus_dbxref_evidence_history" alt="" coords="317,2721,755,3166">
+<area shape="rect" id="node61" title="annotation.annotation" alt="" coords="397,3184,675,3512">
+<area shape="rect" id="node62" title="phenome.allele_alias" alt="" coords="405,3529,667,3828">
+<area shape="rect" id="node64" title="metadata.md_image_cvterm" alt="" coords="371,3845,701,4056">
+<area shape="rect" id="node65" title="phenome.locus_alias" alt="" coords="406,4073,666,4372">
+<area shape="rect" id="node66" title="phenome.locus_registry" alt="" coords="391,4389,681,4658">
+<area shape="rect" id="node67" title="public.blastwatch_queries" alt="" coords="381,4816,691,5144">
+<area shape="rect" id="node68" title="phenome.germplasm" alt="" coords="404,5197,668,5525">
+<area shape="rect" id="node69" title="phenome.locus_image" alt="" coords="399,5542,673,5841">
+<area shape="rect" id="node70" title="phenome.locus_unigene" alt="" coords="390,5858,682,6128">
+<area shape="rect" id="node71" title="phenome.allele_history" alt="" coords="394,6145,678,6561">
+<area shape="rect" id="node73" title="sgn_submit.facility" alt="" coords="414,6578,658,7053">
+<area shape="rect" id="node74" title="phenome.allele_dbxref" alt="" coords="396,7070,676,7340">
+<area shape="rect" id="node75" title="phenome.individual_alias" alt="" coords="385,7357,687,7656">
+<area shape="rect" id="node76" title="phenome.polymorphic_fragment" alt="" coords="353,16144,719,16530">
+<area shape="rect" id="node77" title="phenome.user_trait" alt="" coords="411,7673,661,7913">
+<area shape="rect" id="node78" title="insitu.experiment_image" alt="" coords="387,7930,685,8200">
+<area shape="rect" id="node80" title="phenome.individual_locus" alt="" coords="382,8217,690,8486">
+<area shape="rect" id="node81" title="gem.ge_experiment" alt="" coords="405,8504,667,8802">
+<area shape="rect" id="node82" title="metadata.md_image_organism" alt="" coords="361,8820,711,9030">
+<area shape="rect" id="node83" title="phenome.locus_history" alt="" coords="395,9048,677,9522">
+<area shape="rect" id="node84" title="sgn.submit_user" alt="" coords="421,9576,651,9992">
+<area shape="rect" id="node85" title="sgn.manual_annotations" alt="" coords="389,10354,683,10653">
+<area shape="rect" id="node86" title="phenome.is_public" alt="" coords="415,10670,657,10852">
+<area shape="rect" id="node87" title="phenome.locus_marker" alt="" coords="395,10869,677,11138">
+<area shape="rect" id="node88" title="phenome.genotype_experiment" alt="" coords="356,11156,716,11484">
+<area shape="rect" id="node89" title="public.phenotype" alt="" coords="421,11501,651,11946">
+<area shape="rect" id="node90" title="phenome.individual_image" alt="" coords="378,11964,694,12233">
+<area shape="rect" id="node91" title="metadata.md_tag" alt="" coords="419,12250,653,12520">
+<area shape="rect" id="node92" title="insitu.experiment_tag" alt="" coords="400,17320,672,17589">
+<area shape="rect" id="node94" title="annotation.comment" alt="" coords="405,12537,667,12777">
+<area shape="rect" id="node95" title="phenome.locus_owner" alt="" coords="399,12794,673,13064">
+<area shape="rect" id="node96" title="phenome.project_owner" alt="" coords="390,13081,682,13262">
+<area shape="rect" id="node97" title="phenome.individual_dbxref_evidence_history" alt="" coords="296,13280,776,13725">
+<area shape="rect" id="node98" title="phenome.registry" alt="" coords="419,13742,653,14100">
+<area shape="rect" id="node99" title="metadata.attribution_to" alt="" coords="391,1274,681,1514">
+<area shape="rect" id="node100" title="biosource.bs_sample" alt="" coords="405,14550,667,14937">
+<area shape="rect" id="node102" title="phenome.individual_allele" alt="" coords="381,14954,691,15224">
+<area shape="rect" id="node103" title="phenome.population" alt="" coords="398,15241,674,15833">
+<area shape="rect" id="node104" title="sgn_submit.library" alt="" coords="415,17606,657,18345">
+</map>
+                                        <a name='diagram'><img id="largeDegreeImg" src="diagrams/summary/relationships.real.large.png" usemap="#largeRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="compactimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="compactImpliedRelationshipsDiagram" name="compactImpliedRelationshipsDiagram">
+<area shape="rect" id="node1" href="tables/clone_validation_log.html" target="_top" title="clone_validation_log" alt="" coords="408,821,664,968">
+<area shape="rect" id="node6" href="tables/sp_person.html" target="_top" title="sp_person" alt="" coords="15,6728,243,7021">
+<area shape="rect" id="node35" title="genomic.clone" alt="" coords="27,587,231,675">
+<area shape="rect" id="node2" href="tables/sp_project_il_mapping_clone_log.html" target="_top" title="sp_project_il_mapping_clone_log" alt="" coords="354,392,718,568">
+<area shape="rect" id="node8" href="tables/sp_project.html" target="_top" title="sp_project" alt="" coords="45,228,212,345">
+<area shape="rect" id="node3" href="tables/sp_group_member.html" target="_top" title="sp_group_member" alt="" coords="417,985,655,1132">
+<area shape="rect" id="node16" href="tables/sp_group.html" target="_top" title="sp_group" alt="" coords="51,1015,207,1161">
+<area shape="rect" id="node4" href="tables/sp_person_roles.html" target="_top" title="sp_person_roles" alt="" coords="427,1149,645,1301">
+<area shape="rect" id="node5" href="tables/sp_roles.html" target="_top" title="sp_roles" alt="" coords="55,1208,203,1325">
+<area shape="rect" id="node7" href="tables/bac_status_log.html" target="_top" title="bac_status_log" alt="" coords="433,10076,639,10223">
+<area shape="rect" id="node9" href="tables/forum_topic.html" target="_top" title="forum_topic" alt="" coords="434,5525,638,5672">
+<area shape="rect" id="node10" href="tables/forum_post.html" target="_top" title="forum_post" alt="" coords="919,5376,1100,5552">
+<area shape="rect" id="node11" href="tables/sp_organisms.html" target="_top" title="sp_organisms" alt="" coords="30,1377,227,1495">
+<area shape="rect" id="node12" href="tables/sp_order.html" target="_top" title="sp_order" alt="" coords="437,11821,635,11997">
+<area shape="rect" id="node13" href="tables/clone_verification_log.html" target="_top" title="clone_verification_log" alt="" coords="401,657,671,804">
+<area shape="rect" id="node14" href="tables/user_map.html" target="_top" title="user_map" alt="" coords="416,1488,656,1693">
+<area shape="rect" id="node64" title="sgn.accession" alt="" coords="29,1537,229,1625">
+<area shape="rect" id="node15" href="tables/sp_organization.html" target="_top" title="sp_organization" alt="" coords="5,35,252,152">
+<area shape="rect" id="node17" href="tables/sp_token.html" target="_top" title="sp_token" alt="" coords="429,10375,643,10521">
+<area shape="rect" id="node18" href="tables/bac_status.html" target="_top" title="bac_status" alt="" coords="441,10539,631,10744">
+<area shape="rect" id="node19" href="tables/sp_dataset.html" target="_top" title="sp_dataset" alt="" coords="450,10761,622,10908">
+<area shape="rect" id="node20" href="tables/listprop.html" target="_top" title="listprop" alt="" coords="937,13144,1081,13320">
+<area shape="rect" id="node31" href="tables/list.html" target="_top" title="list" alt="" coords="447,13111,625,13287">
+<area shape="rect" id="node73" title="public.cvterm" alt="" coords="30,13175,227,13263">
+<area shape="rect" id="node21" href="tables/sp_clone_il_mapping_segment_log.html" target="_top" title="sp_clone_il_mapping_segment_log" alt="" coords="820,7224,1199,7400">
+<area shape="rect" id="node48" title="phenome.individual" alt="" coords="410,7200,662,7347">
+<area shape="rect" id="node22" href="tables/clone_il_mapping_bin_log.html" target="_top" title="clone_il_mapping_bin_log" alt="" coords="845,1691,1174,1896">
+<area shape="rect" id="node102" title="phenome.genotype_region" alt="" coords="379,1711,693,1828">
+<area shape="rect" id="node23" href="tables/sp_orderprop.html" target="_top" title="sp_orderprop" alt="" coords="913,12320,1106,12496">
+<area shape="rect" id="node24" href="tables/sp_papers.html" target="_top" title="sp_papers" alt="" coords="453,11359,619,11505">
+<area shape="rect" id="node25" href="tables/list_item.html" target="_top" title="list_item" alt="" coords="934,12980,1085,13127">
+<area shape="rect" id="node26" href="tables/sp_organization_person.html" target="_top" title="sp_organization_person" alt="" coords="393,11523,679,11669">
+<area shape="rect" id="node27" href="tables/sp_person_organisms.html" target="_top" title="sp_person_organisms" alt="" coords="403,1319,669,1471">
+<area shape="rect" id="node28" href="tables/user_map_data.html" target="_top" title="user_map_data" alt="" coords="905,2789,1114,2995">
+<area shape="rect" id="node80" title="sgn.marker" alt="" coords="447,2853,625,2941">
+<area shape="rect" id="node29" href="tables/list_dbxref.html" target="_top" title="list_dbxref" alt="" coords="925,13337,1094,13513">
+<area shape="rect" id="node94" title="public.dbxref" alt="" coords="439,13401,633,13489">
+<area shape="rect" id="node30" href="tables/sp_project_person.html" target="_top" title="sp_project_person" alt="" coords="417,199,655,375">
+<area shape="rect" id="node32" title="annotation.feature_set" alt="" coords="395,11687,677,11804">
+<area shape="rect" id="node33" title="phenome.locusgroup_member" alt="" coords="363,12015,709,12132">
+<area shape="rect" id="node34" title="phenome.stock_owner" alt="" coords="398,12149,674,12267">
+<area shape="rect" id="node36" title="gem.ge_platform" alt="" coords="423,12284,649,12401">
+<area shape="rect" id="node37" title="phenome.locus" alt="" coords="431,12419,641,12565">
+<area shape="rect" id="node38" title="metadata.md_metadata" alt="" coords="391,12583,681,12729">
+<area shape="rect" id="node39" title="phenome.individual_history" alt="" coords="374,12747,698,12893">
+<area shape="rect" id="node40" title="phenome.locus_dbxref_evidence" alt="" coords="353,12911,719,13057">
+<area shape="rect" id="node41" title="physical.manual_associations" alt="" coords="366,1881,706,1999">
+<area shape="rect" id="node42" title="phenome.phenome_genotype" alt="" coords="366,2016,706,2133">
+<area shape="rect" id="node43" title="annotation.comp_analysis" alt="" coords="382,2151,690,2268">
+<area shape="rect" id="node44" title="phenome.allele" alt="" coords="419,2285,653,2432">
+<area shape="rect" id="node45" title="sgn.library" alt="" coords="415,2449,657,2567">
+<area shape="rect" id="node46" title="sgn.facility" alt="" coords="421,2584,651,2701">
+<area shape="rect" id="node47" title="annotation.seq" alt="" coords="431,2719,641,2836">
+<area shape="rect" id="node49" title="public.bug" alt="" coords="447,2959,625,3135">
+<area shape="rect" id="node50" title="sgn.metadata" alt="" coords="413,3188,659,3335">
+<area shape="rect" id="node51" title="metadata.md_tag_image" alt="" coords="388,3352,684,3469">
+<area shape="rect" id="node52" title="phenome.individual_dbxref" alt="" coords="376,3487,696,3604">
+<area shape="rect" id="node53" title="phenome.pub_curator" alt="" coords="400,3621,672,3797">
+<area shape="rect" id="node54" title="phenome.individual_dbxref_evidence" alt="" coords="332,3815,740,3961">
+<area shape="rect" id="node55" title="phenome.locus2locus" alt="" coords="402,3979,670,4096">
+<area shape="rect" id="node56" title="phenome.locus_dbxref" alt="" coords="397,4113,675,4231">
+<area shape="rect" id="node57" title="sgn_submit.submit_user" alt="" coords="390,9672,682,9789">
+<area shape="rect" id="node58" title="phenome.locusgroup" alt="" coords="404,4248,668,4365">
+<area shape="rect" id="node59" title="phenome.population_dbxref" alt="" coords="372,4383,700,4500">
+<area shape="rect" id="node60" title="metadata.md_image" alt="" coords="407,4517,665,4635">
+<area shape="rect" id="node61" title="phenome.locus_dbxref_evidence_history" alt="" coords="317,4652,755,4799">
+<area shape="rect" id="node62" title="annotation.annotation" alt="" coords="397,4816,675,4933">
+<area shape="rect" id="node63" title="phenome.allele_alias" alt="" coords="405,4951,667,5068">
+<area shape="rect" id="node65" title="metadata.md_image_cvterm" alt="" coords="371,5085,701,5203">
+<area shape="rect" id="node66" title="phenome.locus_alias" alt="" coords="406,5220,666,5337">
+<area shape="rect" id="node67" title="phenome.locus_registry" alt="" coords="391,5391,681,5508">
+<area shape="rect" id="node68" title="public.blastwatch_queries" alt="" coords="381,5689,691,5807">
+<area shape="rect" id="node69" title="phenome.germplasm" alt="" coords="404,5824,668,5941">
+<area shape="rect" id="node70" title="phenome.locus_image" alt="" coords="399,5959,673,6076">
+<area shape="rect" id="node71" title="phenome.locus_unigene" alt="" coords="390,6093,682,6211">
+<area shape="rect" id="node72" title="phenome.allele_history" alt="" coords="394,6228,678,6375">
+<area shape="rect" id="node74" title="sgn_submit.facility" alt="" coords="414,6392,658,6509">
+<area shape="rect" id="node75" title="phenome.allele_dbxref" alt="" coords="396,10240,676,10357">
+<area shape="rect" id="node76" title="phenome.individual_alias" alt="" coords="385,6527,687,6644">
+<area shape="rect" id="node77" title="phenome.polymorphic_fragment" alt="" coords="353,6661,719,6779">
+<area shape="rect" id="node78" title="phenome.user_trait" alt="" coords="411,6796,661,6913">
+<area shape="rect" id="node79" title="insitu.experiment_image" alt="" coords="387,6931,685,7048">
+<area shape="rect" id="node81" title="phenome.individual_locus" alt="" coords="382,7065,690,7183">
+<area shape="rect" id="node82" title="gem.ge_experiment" alt="" coords="405,7364,667,7481">
+<area shape="rect" id="node83" title="metadata.md_image_organism" alt="" coords="361,7535,711,7652">
+<area shape="rect" id="node84" title="phenome.locus_history" alt="" coords="395,7669,677,7816">
+<area shape="rect" id="node85" title="sgn.submit_user" alt="" coords="421,7833,651,7951">
+<area shape="rect" id="node86" title="sgn.manual_annotations" alt="" coords="389,7968,683,8085">
+<area shape="rect" id="node87" title="phenome.is_public" alt="" coords="415,8103,657,8220">
+<area shape="rect" id="node88" title="phenome.locus_marker" alt="" coords="395,8237,677,8355">
+<area shape="rect" id="node89" title="phenome.genotype_experiment" alt="" coords="356,8372,716,8489">
+<area shape="rect" id="node90" title="public.phenotype" alt="" coords="421,8507,651,8624">
+<area shape="rect" id="node91" title="phenome.individual_image" alt="" coords="378,8641,694,8759">
+<area shape="rect" id="node92" title="metadata.md_tag" alt="" coords="419,10925,653,11043">
+<area shape="rect" id="node93" title="insitu.experiment_tag" alt="" coords="400,8776,672,8893">
+<area shape="rect" id="node95" title="annotation.comment" alt="" coords="405,8911,667,9028">
+<area shape="rect" id="node96" title="phenome.locus_owner" alt="" coords="399,9045,673,9192">
+<area shape="rect" id="node97" title="phenome.project_owner" alt="" coords="390,9209,682,9327">
+<area shape="rect" id="node98" title="phenome.individual_dbxref_evidence_history" alt="" coords="296,9344,776,9491">
+<area shape="rect" id="node99" title="phenome.registry" alt="" coords="419,9508,653,9655">
+<area shape="rect" id="node100" title="metadata.attribution_to" alt="" coords="391,5,681,181">
+<area shape="rect" id="node101" title="biosource.bs_sample" alt="" coords="405,9807,667,9924">
+<area shape="rect" id="node103" title="phenome.individual_allele" alt="" coords="381,9941,691,10059">
+<area shape="rect" id="node104" title="phenome.population" alt="" coords="398,11060,674,11207">
+<area shape="rect" id="node105" title="sgn_submit.library" alt="" coords="415,11224,657,11341">
+</map>
+                                        <a name='diagram'><img id="compactimpliedDegreeImg" src="diagrams/summary/relationships.implied.compact.png" usemap="#compactImpliedRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="largeimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="largeImpliedRelationshipsDiagram" name="largeImpliedRelationshipsDiagram">
+<area shape="rect" id="node1" href="tables/clone_validation_log.html" target="_top" title="clone_validation_log" alt="" coords="408,354,664,623">
+<area shape="rect" id="node6" href="tables/sp_person.html" target="_top" title="sp_person" alt="" coords="15,15315,243,16259">
+<area shape="rect" id="node35" title="genomic.clone" alt="" coords="17,184,240,512">
+<area shape="rect" id="node2" href="tables/sp_project_il_mapping_clone_log.html" target="_top" title="sp_project_il_mapping_clone_log" alt="" coords="354,96,718,336">
+<area shape="rect" id="node8" href="tables/sp_project.html" target="_top" title="sp_project" alt="" coords="45,1130,212,1282">
+<area shape="rect" id="node3" href="tables/sp_group_member.html" target="_top" title="sp_group_member" alt="" coords="417,1383,655,1535">
+<area shape="rect" id="node16" href="tables/sp_group.html" target="_top" title="sp_group" alt="" coords="51,1412,207,1564">
+<area shape="rect" id="node4" href="tables/sp_person_roles.html" target="_top" title="sp_person_roles" alt="" coords="427,1552,645,1704">
+<area shape="rect" id="node5" href="tables/sp_roles.html" target="_top" title="sp_roles" alt="" coords="55,1611,203,1734">
+<area shape="rect" id="node7" href="tables/bac_status_log.html" target="_top" title="bac_status_log" alt="" coords="433,22996,639,23236">
+<area shape="rect" id="node9" href="tables/forum_topic.html" target="_top" title="forum_topic" alt="" coords="434,10910,638,11238">
+<area shape="rect" id="node10" href="tables/forum_post.html" target="_top" title="forum_post" alt="" coords="919,10626,1100,10895">
+<area shape="rect" id="node11" href="tables/sp_organisms.html" target="_top" title="sp_organisms" alt="" coords="30,1780,227,1903">
+<area shape="rect" id="node12" href="tables/sp_order.html" target="_top" title="sp_order" alt="" coords="437,26912,635,27182">
+<area shape="rect" id="node13" href="tables/clone_verification_log.html" target="_top" title="clone_verification_log" alt="" coords="401,640,671,910">
+<area shape="rect" id="node14" href="tables/user_map.html" target="_top" title="user_map" alt="" coords="416,1891,656,2336">
+<area shape="rect" id="node64" title="sgn.accession" alt="" coords="19,2067,239,2307">
+<area shape="rect" id="node15" href="tables/sp_organization.html" target="_top" title="sp_organization" alt="" coords="5,667,252,1112">
+<area shape="rect" id="node17" href="tables/sp_token.html" target="_top" title="sp_token" alt="" coords="429,23540,643,23751">
+<area shape="rect" id="node18" href="tables/bac_status.html" target="_top" title="bac_status" alt="" coords="441,23768,631,24008">
+<area shape="rect" id="node19" href="tables/sp_dataset.html" target="_top" title="sp_dataset" alt="" coords="450,24026,622,24295">
+<area shape="rect" id="node20" href="tables/listprop.html" target="_top" title="listprop" alt="" coords="937,29916,1081,30127">
+<area shape="rect" id="node31" href="tables/list.html" target="_top" title="list" alt="" coords="447,29799,625,30156">
+<area shape="rect" id="node73" title="public.cvterm" alt="" coords="19,29975,239,30244">
+<area shape="rect" id="node21" href="tables/sp_clone_il_mapping_segment_log.html" target="_top" title="sp_clone_il_mapping_segment_log" alt="" coords="820,15855,1199,16095">
+<area shape="rect" id="node48" title="phenome.individual" alt="" coords="410,15884,662,16300">
+<area shape="rect" id="node22" href="tables/clone_il_mapping_bin_log.html" target="_top" title="clone_il_mapping_bin_log" alt="" coords="845,2324,1174,2623">
+<area shape="rect" id="node102" title="phenome.genotype_region" alt="" coords="379,2354,693,2828">
+<area shape="rect" id="node23" href="tables/sp_orderprop.html" target="_top" title="sp_orderprop" alt="" coords="913,28198,1106,28408">
+<area shape="rect" id="node24" href="tables/sp_papers.html" target="_top" title="sp_papers" alt="" coords="453,25964,619,26263">
+<area shape="rect" id="node25" href="tables/list_item.html" target="_top" title="list_item" alt="" coords="934,29740,1085,29892">
+<area shape="rect" id="node26" href="tables/sp_organization_person.html" target="_top" title="sp_organization_person" alt="" coords="393,26280,679,26432">
+<area shape="rect" id="node27" href="tables/sp_person_organisms.html" target="_top" title="sp_person_organisms" alt="" coords="403,1722,669,1874">
+<area shape="rect" id="node28" href="tables/user_map_data.html" target="_top" title="user_map_data" alt="" coords="905,4263,1114,4679">
+<area shape="rect" id="node80" title="sgn.marker" alt="" coords="447,4380,625,4503">
+<area shape="rect" id="node29" href="tables/list_dbxref.html" target="_top" title="list_dbxref" alt="" coords="925,30148,1094,30330">
+<area shape="rect" id="node94" title="public.dbxref" alt="" coords="439,30210,633,30420">
+<area shape="rect" id="node30" href="tables/sp_project_person.html" target="_top" title="sp_project_person" alt="" coords="417,1184,655,1366">
+<area shape="rect" id="node32" title="annotation.feature_set" alt="" coords="395,26450,677,26895">
+<area shape="rect" id="node33" title="phenome.locusgroup_member" alt="" coords="363,27199,709,27556">
+<area shape="rect" id="node34" title="phenome.stock_owner" alt="" coords="398,27574,674,27755">
+<area shape="rect" id="node36" title="gem.ge_platform" alt="" coords="423,27772,649,28012">
+<area shape="rect" id="node37" title="phenome.locus" alt="" coords="431,28030,641,28592">
+<area shape="rect" id="node38" title="metadata.md_metadata" alt="" coords="391,28610,681,28967">
+<area shape="rect" id="node39" title="phenome.individual_history" alt="" coords="374,28984,698,29312">
+<area shape="rect" id="node40" title="phenome.locus_dbxref_evidence" alt="" coords="353,29330,719,29746">
+<area shape="rect" id="node41" title="physical.manual_associations" alt="" coords="366,2882,706,3122">
+<area shape="rect" id="node42" title="phenome.phenome_genotype" alt="" coords="366,3139,706,3555">
+<area shape="rect" id="node43" title="annotation.comp_analysis" alt="" coords="382,3572,690,3842">
+<area shape="rect" id="node44" title="phenome.allele" alt="" coords="419,3859,653,4363">
+<area shape="rect" id="node45" title="sgn.library" alt="" coords="415,4520,657,5376">
+<area shape="rect" id="node46" title="sgn.facility" alt="" coords="421,5430,651,5904">
+<area shape="rect" id="node47" title="annotation.seq" alt="" coords="431,5922,641,6367">
+<area shape="rect" id="node49" title="public.bug" alt="" coords="447,6384,625,6800">
+<area shape="rect" id="node50" title="sgn.metadata" alt="" coords="413,6818,659,7116">
+<area shape="rect" id="node51" title="metadata.md_tag_image" alt="" coords="388,7134,684,7403">
+<area shape="rect" id="node52" title="phenome.individual_dbxref" alt="" coords="376,7420,696,7690">
+<area shape="rect" id="node53" title="phenome.pub_curator" alt="" coords="400,7707,672,8006">
+<area shape="rect" id="node54" title="phenome.individual_dbxref_evidence" alt="" coords="332,8023,740,8439">
+<area shape="rect" id="node55" title="phenome.locus2locus" alt="" coords="402,8456,670,8814">
+<area shape="rect" id="node56" title="phenome.locus_dbxref" alt="" coords="397,8831,675,9100">
+<area shape="rect" id="node57" title="sgn_submit.submit_user" alt="" coords="390,21872,682,22288">
+<area shape="rect" id="node58" title="phenome.locusgroup" alt="" coords="404,9118,668,9387">
+<area shape="rect" id="node59" title="phenome.population_dbxref" alt="" coords="372,9404,700,9674">
+<area shape="rect" id="node60" title="metadata.md_image" alt="" coords="407,9691,665,10048">
+<area shape="rect" id="node61" title="phenome.locus_dbxref_evidence_history" alt="" coords="317,10066,755,10511">
+<area shape="rect" id="node62" title="annotation.annotation" alt="" coords="397,10564,675,10892">
+<area shape="rect" id="node63" title="phenome.allele_alias" alt="" coords="405,11255,667,11554">
+<area shape="rect" id="node65" title="metadata.md_image_cvterm" alt="" coords="371,11571,701,11782">
+<area shape="rect" id="node66" title="phenome.locus_alias" alt="" coords="406,11799,666,12098">
+<area shape="rect" id="node67" title="phenome.locus_registry" alt="" coords="391,12115,681,12384">
+<area shape="rect" id="node68" title="public.blastwatch_queries" alt="" coords="381,12402,691,12730">
+<area shape="rect" id="node69" title="phenome.germplasm" alt="" coords="404,12747,668,13075">
+<area shape="rect" id="node70" title="phenome.locus_image" alt="" coords="399,13092,673,13391">
+<area shape="rect" id="node71" title="phenome.locus_unigene" alt="" coords="390,13408,682,13678">
+<area shape="rect" id="node72" title="phenome.allele_history" alt="" coords="394,13695,678,14111">
+<area shape="rect" id="node74" title="sgn_submit.facility" alt="" coords="414,14128,658,14603">
+<area shape="rect" id="node75" title="phenome.allele_dbxref" alt="" coords="396,23254,676,23523">
+<area shape="rect" id="node76" title="phenome.individual_alias" alt="" coords="385,14620,687,14919">
+<area shape="rect" id="node77" title="phenome.polymorphic_fragment" alt="" coords="353,14936,719,15323">
+<area shape="rect" id="node78" title="phenome.user_trait" alt="" coords="411,15340,661,15580">
+<area shape="rect" id="node79" title="insitu.experiment_image" alt="" coords="387,15598,685,15867">
+<area shape="rect" id="node81" title="phenome.individual_locus" alt="" coords="382,16318,690,16587">
+<area shape="rect" id="node82" title="gem.ge_experiment" alt="" coords="405,16640,667,16939">
+<area shape="rect" id="node83" title="metadata.md_image_organism" alt="" coords="361,16956,711,17167">
+<area shape="rect" id="node84" title="phenome.locus_history" alt="" coords="395,17184,677,17659">
+<area shape="rect" id="node85" title="sgn.submit_user" alt="" coords="421,17676,651,18092">
+<area shape="rect" id="node86" title="sgn.manual_annotations" alt="" coords="389,18110,683,18408">
+<area shape="rect" id="node87" title="phenome.is_public" alt="" coords="415,18426,657,18607">
+<area shape="rect" id="node88" title="phenome.locus_marker" alt="" coords="395,18624,677,18894">
+<area shape="rect" id="node89" title="phenome.genotype_experiment" alt="" coords="356,18911,716,19239">
+<area shape="rect" id="node90" title="public.phenotype" alt="" coords="421,19256,651,19702">
+<area shape="rect" id="node91" title="phenome.individual_image" alt="" coords="378,19719,694,19988">
+<area shape="rect" id="node92" title="metadata.md_tag" alt="" coords="419,24312,653,24582">
+<area shape="rect" id="node93" title="insitu.experiment_tag" alt="" coords="400,20006,672,20275">
+<area shape="rect" id="node95" title="annotation.comment" alt="" coords="405,20292,667,20532">
+<area shape="rect" id="node96" title="phenome.locus_owner" alt="" coords="399,20550,673,20819">
+<area shape="rect" id="node97" title="phenome.project_owner" alt="" coords="390,20836,682,21018">
+<area shape="rect" id="node98" title="phenome.individual_dbxref_evidence_history" alt="" coords="296,21035,776,21480">
+<area shape="rect" id="node99" title="phenome.registry" alt="" coords="419,21498,653,21855">
+<area shape="rect" id="node100" title="metadata.attribution_to" alt="" coords="391,927,681,1167">
+<area shape="rect" id="node101" title="biosource.bs_sample" alt="" coords="405,22306,667,22692">
+<area shape="rect" id="node103" title="phenome.individual_allele" alt="" coords="381,22710,691,22979">
+<area shape="rect" id="node104" title="phenome.population" alt="" coords="398,24599,674,25191">
+<area shape="rect" id="node105" title="sgn_submit.library" alt="" coords="415,25208,657,25947">
+</map>
+                                        <a name='diagram'><img id="largeimpliedDegreeImg" src="diagrams/summary/relationships.implied.large.png" usemap="#largeImpliedRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- /.box-body -->
+                    </div>
+                </section>
+            </div>
+            <!-- /.content-wrapper -->
+            <footer class="main-footer">
+                <div>
+                    <div class="pull-right hidden-xs">
+                        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+                        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+                    </div>
+                    <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.2.4</a></strong>
+                </div>
+                <!-- /.container -->
+            </footer>
+        </div>
+        <!-- ./wrapper -->
+
+        <!-- jQuery 2.2.3 -->
+        <script src="bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+        <script src="bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+        <!-- Bootstrap 3.3.5 -->
+        <script src="bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+        <!-- DataTables -->
+        <script src="bower/datatables.net/jquery.dataTables.min.js"></script>
+        <script src="bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <script src="bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+        <script src="bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+        <script src="bower/datatables.net-buttons/buttons.html5.min.js"></script>
+        <script src="bower/datatables.net-buttons/buttons.print.min.js"></script>
+        <script src="bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+        <!-- SheetJS -->
+        <script src="bower/js-xlsx/xlsx.full.min.js"></script>
+        <!-- pdfmake -->
+        <script src="bower/pdfmake/pdfmake.min.js"></script>
+        <script src="bower/pdfmake/vfs_fonts.js"></script>
+        <!-- SlimScroll -->
+        <script src="bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+        <!-- FastClick -->
+        <script src="bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+        <!-- Salvattore -->
+        <script src="bower/salvattore/salvattore.min.js"></script>
+        <!-- AnchorJS -->
+        <script src="bower/anchor-js/anchor.min.js"></script>
+        <!-- CodeMirror -->
+        <script src="bower/codemirror/codemirror.js"></script>
+        <script src="bower/codemirror/sql.js"></script>
+        <!-- AdminLTE App -->
+        <script src="bower/admin-lte/dist/js/app.min.js"></script>
+        <script src="relationships.js"></script>
+        <script src="schemaSpy.js"></script>
+    </body>
+</html>

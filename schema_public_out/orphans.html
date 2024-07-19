@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>cxgn_breedbase.public</title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+        <!-- Bootstrap 3.3.5 -->
+        <link rel="stylesheet" href="bower/admin-lte/bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="bower/font-awesome/css/font-awesome.min.css">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="bower/ionicons/css/ionicons.min.css">
+        <!-- DataTables -->
+        <link rel="stylesheet" href="bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" href="bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+        <!-- Code Mirror -->
+        <link rel="stylesheet" href="bower/codemirror/codemirror.css">
+        <!-- Fonts -->
+        <link href='fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+        <link href='fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+
+        <!-- Theme style -->
+        <link rel="stylesheet" href="bower/admin-lte/dist/css/AdminLTE.min.css">
+        <!-- Salvattore -->
+        <link rel="stylesheet" href="bower/salvattore/salvattore.css">
+        <!-- AdminLTE Skins. Choose a skin from the css/skins
+           folder instead of downloading all of them to reduce the load. -->
+        <link rel="stylesheet" href="bower/admin-lte/dist/css/skins/_all-skins.min.css">
+        <!-- SchemaSpy -->
+        <link rel="stylesheet" href="schemaSpy.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="bower/html5shiv/html5shiv.min.js"></script>
+        <script src="bower/respond/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+    <body class="hold-transition skin-blue layout-top-nav">
+        <div class="wrapper">
+            <header class="main-header">
+                <nav class="navbar navbar-static-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <a href="index.html" class="navbar-brand"><b>cxgn_breedbase</b></a><span class="navbar-brand" style="padding-left: 0">.public</span>
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"><i class="fa fa-bars"></i></button>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a href="index.html">Tables <span class="sr-only">(current)</span></a></li>
+                                <li><a href="columns.html" title="All of the columns in the schema">Columns</a></li>
+                                <li><a href="constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+                                <li><a href="relationships.html" title="Diagram of table relationships">Relationships</a></li>
+                                <li><a href="orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>
+                                <li><a href="anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+                                <li><a href="routines.html" title="Procedures and functions">Routines</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                        <!-- Navbar Right Menu -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </nav>
+            </header>
+            <!-- Main content -->
+            <!-- Full Width Column -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>Utility Tables</h1>
+                </section>
+                <!-- Main content -->
+                <section class="content">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-code-fork"></i>
+                            <h3 class="box-title">Orphan Tables</h3>
+                        </div>
+                        <div class="box-body">
+                            <div id="grid" data-columns>
+                                <div class="item">
+<img id="orphans" src="diagrams/orphans/orphans.png" usemap="#orphans" style="max-width:100%;" border="0" align="top">
+<map id="orphans" name="orphans">
+<area shape="rect" id="node1" href="tables/ara_annotation.html" target="_top" title="ara_annotation" alt="" coords="100,10168,493,10707">
+<area shape="rect" id="node2" href="tables/ara_domain.html" target="_top" title="ara_domain" alt="" coords="149,9729,444,10151">
+<area shape="rect" id="node3" href="tables/ara_evidef.html" target="_top" title="ara_evidef" alt="" coords="139,9555,454,9712">
+<area shape="rect" id="node4" href="tables/ara_family.html" target="_top" title="ara_family" alt="" coords="126,8999,467,9537">
+<area shape="rect" id="node5" href="tables/ara_gfp_ms.html" target="_top" title="ara_gfp_ms" alt="" coords="159,8795,435,8981">
+<area shape="rect" id="node6" href="tables/ara_go_term.html" target="_top" title="ara_go_term" alt="" coords="154,8415,439,8777">
+<area shape="rect" id="node7" href="tables/ara_interactome_all.html" target="_top" title="ara_interactome_all" alt="" coords="141,8123,453,8397">
+<area shape="rect" id="node8" href="tables/ara_interactome_unique.html" target="_top" title="ara_interactome_unique" alt="" coords="121,7977,473,8105">
+<area shape="rect" id="node9" href="tables/ara_intron.html" target="_top" title="ara_intron" alt="" coords="159,7715,435,7960">
+<area shape="rect" id="node10" href="tables/ara_map.html" target="_top" title="ara_map" alt="" coords="171,7481,422,7697">
+<area shape="rect" id="node11" href="tables/ara_myristoylation.html" target="_top" title="ara_myristoylation" alt="" coords="145,7336,449,7464">
+<area shape="rect" id="node12" href="tables/ara_pmidlink.html" target="_top" title="ara_pmidlink" alt="" coords="152,7191,441,7319">
+<area shape="rect" id="node13" href="tables/ara_prefix_info.html" target="_top" title="ara_prefix_info" alt="" coords="163,7045,431,7173">
+<area shape="rect" id="node14" href="tables/ara_properties.html" target="_top" title="ara_properties" alt="" coords="135,6695,459,7028">
+<area shape="rect" id="node15" href="tables/ara_scop.html" target="_top" title="ara_scop" alt="" coords="143,6373,450,6677">
+<area shape="rect" id="node16" href="tables/ara_sequence.html" target="_top" title="ara_sequence" alt="" coords="148,6052,445,6356">
+<area shape="rect" id="node17" href="tables/ara_signalp.html" target="_top" title="ara_signalp" alt="" coords="177,5349,417,6035">
+<area shape="rect" id="node18" href="tables/ara_targetp.html" target="_top" title="ara_targetp" alt="" coords="177,5028,417,5332">
+<area shape="rect" id="node19" href="tables/ara_users.html" target="_top" title="ara_users" alt="" coords="147,4736,447,5011">
+<area shape="rect" id="node20" href="tables/cxgn_bac_pipeline_genbank_log.html" target="_top" title="cxgn_bac_pipeline_genbank_log" alt="" coords="67,4385,526,4719">
+<area shape="rect" id="node21" href="tables/cxgn_bac_pipeline_loading_log.html" target="_top" title="cxgn_bac_pipeline_loading_log" alt="" coords="73,4035,521,4368">
+<area shape="rect" id="node22" href="tables/cxgn_bac_pipeline_processing_log.html" target="_top" title="cxgn_bac_pipeline_processing_log" alt="" coords="57,3684,536,4017">
+<area shape="rect" id="node23" href="tables/cxgn_indexedlog_test_feel_free__6ce552c6.html" target="_top" title="cxgn_indexedlog_test_feel_free_to_delete_me" alt="" coords="5,3333,588,3667">
+<area shape="rect" id="node24" href="tables/forward_amplicon_sequence_information.html" target="_top" title="forward_amplicon_sequence_information" alt="" coords="13,3071,580,3316">
+<area shape="rect" id="node25" href="tables/forward_amplicon_sequence_markers.html" target="_top" title="forward_amplicon_sequence_markers" alt="" coords="29,2867,565,3053">
+<area shape="rect" id="node26" href="tables/gff_meta.html" target="_top" title="gff_meta" alt="" coords="170,2692,423,2849">
+<area shape="rect" id="node27" href="tables/glossary.html" target="_top" title="glossary" alt="" coords="159,2517,434,2675">
+<area shape="rect" id="node28" href="tables/itag_loading_log.html" target="_top" title="itag_loading_log" alt="" coords="137,2167,457,2500">
+<area shape="rect" id="node29" href="tables/marker_names.html" target="_top" title="marker_names" alt="" coords="144,2021,449,2149">
+<area shape="rect" id="node30" href="tables/materialized_view.html" target="_top" title="materialized_view" alt="" coords="116,1671,477,2004">
+<area shape="rect" id="node31" href="tables/matviews.html" target="_top" title="matviews" alt="" coords="107,1408,487,1653">
+<area shape="rect" id="node32" href="tables/resource_file.html" target="_top" title="resource_file" alt="" coords="139,1233,454,1391">
+<area shape="rect" id="node33" href="tables/signalp.html" target="_top" title="signalp" alt="" coords="181,531,412,1216">
+<area shape="rect" id="node34" href="tables/tableinfo.html" target="_top" title="tableinfo" alt="" coords="137,209,456,513">
+<area shape="rect" id="node35" href="tables/tmp_gff_load_cache.html" target="_top" title="tmp_gff_load_cache" alt="" coords="133,5,460,192">
+</map>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <!-- /.content-wrapper -->
+            <footer class="main-footer">
+                <div>
+                    <div class="pull-right hidden-xs">
+                        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+                        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+                    </div>
+                    <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.2.4</a></strong>
+                </div>
+                <!-- /.container -->
+            </footer>
+        </div>
+        <!-- ./wrapper -->
+
+        <!-- jQuery 2.2.3 -->
+        <script src="bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+        <script src="bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+        <!-- Bootstrap 3.3.5 -->
+        <script src="bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+        <!-- DataTables -->
+        <script src="bower/datatables.net/jquery.dataTables.min.js"></script>
+        <script src="bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <script src="bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+        <script src="bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+        <script src="bower/datatables.net-buttons/buttons.html5.min.js"></script>
+        <script src="bower/datatables.net-buttons/buttons.print.min.js"></script>
+        <script src="bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+        <!-- SheetJS -->
+        <script src="bower/js-xlsx/xlsx.full.min.js"></script>
+        <!-- pdfmake -->
+        <script src="bower/pdfmake/pdfmake.min.js"></script>
+        <script src="bower/pdfmake/vfs_fonts.js"></script>
+        <!-- SlimScroll -->
+        <script src="bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+        <!-- FastClick -->
+        <script src="bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+        <!-- Salvattore -->
+        <script src="bower/salvattore/salvattore.min.js"></script>
+        <!-- AnchorJS -->
+        <script src="bower/anchor-js/anchor.min.js"></script>
+        <!-- CodeMirror -->
+        <script src="bower/codemirror/codemirror.js"></script>
+        <script src="bower/codemirror/sql.js"></script>
+        <!-- AdminLTE App -->
+        <script src="bower/admin-lte/dist/js/app.min.js"></script>
+        <script src=""></script>
+        <script src="schemaSpy.js"></script>
+    </body>
+</html>
